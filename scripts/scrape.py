@@ -47,21 +47,18 @@ def fetch(url, encoding="EUC-JP"):
 
 
 def get_target_dates():
-    """対象開催日（今週末＋来週末）を計算"""
+    """対象開催日（過去14日〜未来14日の全土日）"""
     today = datetime.now()
     dates = []
-
-    for week_offset in [0, 1]:
-        days_until_saturday = (5 - today.weekday()) % 7
-        if days_until_saturday == 0 and today.weekday() != 5:
-            days_until_saturday = 7
-        saturday = today + timedelta(days=days_until_saturday + 7 * week_offset)
-        sunday = saturday + timedelta(days=1)
-        dates.append(saturday.strftime("%Y%m%d"))
-        dates.append(sunday.strftime("%Y%m%d"))
-
-    return list(set(dates))
-
+    
+    # 過去14日〜未来14日の範囲で土日を全て対象に
+    for day_offset in range(-14, 15):
+        d = today + timedelta(days=day_offset)
+        # 土曜(5) or 日曜(6) のみ
+        if d.weekday() in [5, 6]:
+            dates.append(d.strftime("%Y%m%d"))
+    
+    return dates
 
 def fetch_race_list(date_str):
     """指定日のレース一覧を取得"""
