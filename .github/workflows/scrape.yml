@@ -1,46 +1,39 @@
 name: Scrape Race Data
 
-# 実行タイミング: 金・土・日 朝6時(JST=21時UTC前日)
-# cronはUTC基準で書く必要あり。JST 6:00 = UTC 前日21:00
 on:
-  schedule:
-    # 木曜21時UTC（金曜6時JST）、金曜21時UTC（土曜6時JST）、土曜21時UTC（日曜6時JST）
-    - cron: '0 21 * * 4,5,6'
-  # 手動実行も可能に（テスト用）
   workflow_dispatch:
+  schedule:
+    - cron: '0 21 * * 4,5,6'
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # データファイル更新のためにリポジトリ書き込み権限が必要
-
     steps:
       - name: コードを取得
         uses: actions/checkout@v4
-
+      
       - name: Python 3.11 をセットアップ
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+      
+      - name: Chromeをセットアップ
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+      
       - name: 必要なライブラリをインストール
         run: |
-          pip install requests beautifulsoup4 lxml
-
+          pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml selenium webdriver-manager
+      
       - name: スクレイピング実行
-        run: |
-          python scripts/scrape.py
-        continue-on-error: true  # スクレイピング失敗してもワークフロー継続
-
+        run: python scripts/scrape.py
+      
       - name: 取得データをコミット
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add data/
-          if git diff --staged --quiet; then
-            echo "変更なし - コミット不要"
-          else
-            git commit -m "📊 自動データ更新 $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git push
-          fi
+          git diff --cached --quiet || git commit -m "Auto-update race data $(date +'%Y-%m-%d %H:%M')"
+          git push
