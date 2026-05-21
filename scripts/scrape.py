@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ウマヨミ - Selenium版 (改良版)"""
+"""ウマヨミ - Selenium版 v4 (データ整形)"""
 
 import json
 import time
@@ -22,6 +22,27 @@ except ImportError:
 
 OUTPUT_DIR = Path("data")
 OUTPUT_DIR.mkdir(exist_ok=True)
+
+# 不要カラム（取得時に除外）
+EXCLUDE_COLS = {
+    "印", "お気に入り馬", "馬メモ切替",
+    "マスターレース別馬メモ切替", "オッズ更新"
+}
+
+# カラム名の英語マッピング
+COL_MAP = {
+    "枠": "waku",
+    "馬番": "umaban",
+    "馬名": "horse_name",
+    "性齢": "sex_age",
+    "斤量": "weight_carried",
+    "騎手": "jockey",
+    "厩舎": "stable",
+    "馬体重(増減)": "horse_weight",
+    "馬体重": "horse_weight",
+    "オッズ": "odds",
+    "人気": "popularity",
+}
 
 
 def create_driver():
@@ -53,12 +74,11 @@ def get_target_dates():
 
 
 def get_race_ids(driver, date_str):
-    """記事スタイル: シンプルにaタグから抽出"""
     url = f'https://race.netkeiba.com/top/race_list.html?kaisai_date={date_str}'
     print(f"  GET: {url}")
     
     driver.get(url)
-    time.sleep(5)  # JavaScript実行を待つ（記事は2秒だが余裕を持って5秒）
+    time.sleep(5)
     
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
@@ -67,7 +87,6 @@ def get_race_ids(driver, date_str):
     
     race_ids = []
     a_all = soup.find_all("a", href=True)
-    print(f"  found {len(a_all)} <a> tags")
     
     for a in a_all:
         match = re.search(r"race_id=(\d{12})", a["href"])
@@ -80,7 +99,7 @@ def get_race_ids(driver, date_str):
 
 
 def get_race_detail(driver, race_id):
-    """個別レース詳細を取得"""
+    """個別レース詳細を取得（整形版）"""
     url = f'https://race.netkeiba.com/race/shutuba.html?race_id={race_id}'
     print(f"    GET: {url}")
     
@@ -90,11 +109,33 @@ def get_race_detail(driver, race_id):
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
     
-    # レース名
-    race_name_el = soup.select_one(".RaceName, h1")
-    race_name = race_name_el.text.strip() if race_name_el else f"race_{race_id}"
+    # レース名取得（複数パターン試行）
+    race_name = ""
+    for selector in [".RaceName", ".RaceList_Item02 .RaceName", "h1.RaceName", ".Race_Name"]:
+        el = soup.select_one(selector)
+        if el and el.text.strip():
+            race_name = el.text.strip()
+            # 不要な空白除去
+            race_name = re.sub(r"\s+", " ", race_name)
+            break
     
-    # 出走表テーブル
+    # コース情報取得
+    course_info = ""
+    for selector in [".RaceData01", ".RaceList_Item02 .RaceData01"]:
+        el = soup.select_one(selector)
+        if el and el.text.strip():
+            course_info = re.sub(r"\s+", " ", el.text.strip())
+            break
+    
+    # 開催情報取得
+    venue_info = ""
+    for selector in [".RaceData02", ".RaceList_Item02 .RaceData02"]:
+        el = soup.select_one(selector)
+        if el and el.text.strip():
+            venue_info = re.sub(r"\s+", " ", el.text.strip())
+            break
+    
+    # 出走表テーブル取得
     table = soup.select_one("table.Shutuba_Table, table.RaceTable01")
     if not table:
         print(f"    no table found")
@@ -104,12 +145,41 @@ def get_race_detail(driver, race_id):
     if len(rows) < 2:
         return None
     
-    header = [th.get_text(strip=True) for th in rows[0].find_all("th")]
+    # ヘッダー取得
+    raw_header = [th.get_text(strip=True) for th in rows[0].find_all("th")]
+    
+    # 不要カラムのインデックスを記録
+    keep_indices = []
+    clean_header = []
+    for i, col_name in enumerate(raw_header):
+        if col_name not in EXCLUDE_COLS:
+            keep_indices.append(i)
+            # 英語化（マッピングにないものはそのまま）
+            clean_header.append(COL_MAP.get(col_name, col_name))
+    
+    # 馬データを辞書形式で整形
     horses = []
     for row in rows[1:]:
         cols = [td.get_text(strip=True) for td in row.find_all("td")]
-        if cols:
-            horses.append(cols)
+        if not cols:
+            continue
+        
+        # 不要カラムを除外
+        clean_cols = []
+        for i in keep_indices:
+            if i < len(cols):
+                clean_cols.append(cols[i])
+            else:
+                clean_cols.append("")
+        
+        # 辞書化
+        horse_dict = dict(zip(clean_header, clean_cols))
+        
+        # 馬名が空のものはスキップ
+        if not horse_dict.get("horse_name", "").strip():
+            continue
+        
+        horses.append(horse_dict)
     
     if not horses:
         return None
@@ -117,7 +187,8 @@ def get_race_detail(driver, race_id):
     return {
         "race_id": race_id,
         "race_name": race_name,
-        "header": header,
+        "course_info": course_info,
+        "venue_info": venue_info,
         "horses": horses,
         "url": url,
     }
@@ -125,7 +196,7 @@ def get_race_detail(driver, race_id):
 
 def main():
     print("=" * 60)
-    print(f"umayomi Selenium v3 - {datetime.now()}")
+    print(f"umayomi Selenium v4 - {datetime.now()}")
     print("=" * 60)
     
     driver = None
@@ -149,7 +220,7 @@ def main():
             if not race_ids:
                 continue
             
-            # 11Rを最大2つだけ
+            # 11Rを最大2つだけ取得
             mains = [r for r in race_ids if r.endswith("11")]
             target = mains[:2] if mains else race_ids[:2]
             
@@ -160,7 +231,8 @@ def main():
                     if data:
                         data["date"] = date_str
                         all_races[rid] = data
-                        print(f"    OK: {data['race_name']} ({len(data['horses'])} horses)")
+                        race_name_display = data['race_name'] or '(no name)'
+                        print(f"    OK: {race_name_display} ({len(data['horses'])} horses)")
                 except Exception as e:
                     print(f"    error: {e}")
                 
