@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ウマヨミ - Selenium版 v4 (データ整形)"""
+"""ウマヨミ - Selenium版 v5 (オッズ取得追加)"""
 
 import json
 import time
@@ -23,13 +23,11 @@ except ImportError:
 OUTPUT_DIR = Path("data")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-# 不要カラム（取得時に除外）
 EXCLUDE_COLS = {
     "印", "お気に入り馬", "馬メモ切替",
     "マスターレース別馬メモ切替", "オッズ更新"
 }
 
-# カラム名の英語マッピング
 COL_MAP = {
     "枠": "waku",
     "馬番": "umaban",
@@ -99,9 +97,9 @@ def get_race_ids(driver, date_str):
 
 
 def get_race_detail(driver, race_id):
-    """個別レース詳細を取得（整形版）"""
+    """出馬表ページから基本情報を取得"""
     url = f'https://race.netkeiba.com/race/shutuba.html?race_id={race_id}'
-    print(f"    GET: {url}")
+    print(f"    GET shutuba: {url}")
     
     driver.get(url)
     time.sleep(5)
@@ -109,31 +107,23 @@ def get_race_detail(driver, race_id):
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
     
-    # レース名取得（複数パターン試行）
+    # レース名取得
     race_name = ""
-    for selector in [".RaceName", ".RaceList_Item02 .RaceName", "h1.RaceName", ".Race_Name"]:
+    for selector in [".RaceName", ".RaceList_Item02 .RaceName", "h1.RaceName"]:
         el = soup.select_one(selector)
         if el and el.text.strip():
-            race_name = el.text.strip()
-            # 不要な空白除去
-            race_name = re.sub(r"\s+", " ", race_name)
+            race_name = re.sub(r"\s+", " ", el.text.strip())
             break
     
-    # コース情報取得
     course_info = ""
-    for selector in [".RaceData01", ".RaceList_Item02 .RaceData01"]:
-        el = soup.select_one(selector)
-        if el and el.text.strip():
-            course_info = re.sub(r"\s+", " ", el.text.strip())
-            break
+    el = soup.select_one(".RaceData01")
+    if el:
+        course_info = re.sub(r"\s+", " ", el.text.strip())
     
-    # 開催情報取得
     venue_info = ""
-    for selector in [".RaceData02", ".RaceList_Item02 .RaceData02"]:
-        el = soup.select_one(selector)
-        if el and el.text.strip():
-            venue_info = re.sub(r"\s+", " ", el.text.strip())
-            break
+    el = soup.select_one(".RaceData02")
+    if el:
+        venue_info = re.sub(r"\s+", " ", el.text.strip())
     
     # 出走表テーブル取得
     table = soup.select_one("table.Shutuba_Table, table.RaceTable01")
@@ -145,26 +135,21 @@ def get_race_detail(driver, race_id):
     if len(rows) < 2:
         return None
     
-    # ヘッダー取得
     raw_header = [th.get_text(strip=True) for th in rows[0].find_all("th")]
     
-    # 不要カラムのインデックスを記録
     keep_indices = []
     clean_header = []
     for i, col_name in enumerate(raw_header):
         if col_name not in EXCLUDE_COLS:
             keep_indices.append(i)
-            # 英語化（マッピングにないものはそのまま）
             clean_header.append(COL_MAP.get(col_name, col_name))
     
-    # 馬データを辞書形式で整形
     horses = []
     for row in rows[1:]:
         cols = [td.get_text(strip=True) for td in row.find_all("td")]
         if not cols:
             continue
         
-        # 不要カラムを除外
         clean_cols = []
         for i in keep_indices:
             if i < len(cols):
@@ -172,10 +157,8 @@ def get_race_detail(driver, race_id):
             else:
                 clean_cols.append("")
         
-        # 辞書化
         horse_dict = dict(zip(clean_header, clean_cols))
         
-        # 馬名が空のものはスキップ
         if not horse_dict.get("horse_name", "").strip():
             continue
         
@@ -194,9 +177,89 @@ def get_race_detail(driver, race_id):
     }
 
 
+def get_odds(driver, race_id):
+    """単勝・複勝オッズページから取得"""
+    url = f'https://race.netkeiba.com/odds/index.html?race_id={race_id}&type=b1'
+    print(f"    GET odds: {url}")
+    
+    try:
+        driver.get(url)
+        time.sleep(5)
+        
+        html = driver.page_source
+        soup = BeautifulSoup(html, "html.parser")
+        
+        # オッズテーブル取得
+        table = soup.select_one("table.RaceOdds_HorseList_Table, table.Odds_Table")
+        if not table:
+            print(f"    no odds table")
+            return {}
+        
+        # 馬番 → {tan: オッズ, fuku_min: 複勝下限, fuku_max: 複勝上限}
+        odds_data = {}
+        
+        rows = table.find_all("tr")
+        for row in rows[1:]:  # ヘッダースキップ
+            cols = row.find_all("td")
+            if len(cols) < 4:
+                continue
+            
+            # 馬番取得（通常は2列目あたり）
+            umaban_text = ""
+            for col in cols[:3]:
+                text = col.get_text(strip=True)
+                if text.isdigit():
+                    umaban_text = text
+                    break
+            
+            if not umaban_text:
+                continue
+            
+            # オッズらしき数値を探す
+            odds_values = []
+            for col in cols:
+                text = col.get_text(strip=True)
+                # 数値+小数点のパターン
+                if re.match(r"^\d+\.\d+$", text):
+                    odds_values.append(text)
+                elif re.match(r"^\d+\.\d+\s*[-~]\s*\d+\.\d+$", text):
+                    # 複勝の範囲表記
+                    odds_values.append(text)
+            
+            if odds_values:
+                odds_data[umaban_text] = {
+                    "tansho": odds_values[0] if len(odds_values) > 0 else "",
+                    "fukusho": odds_values[1] if len(odds_values) > 1 else "",
+                }
+        
+        print(f"    got odds for {len(odds_data)} horses")
+        return odds_data
+        
+    except Exception as e:
+        print(f"    odds error: {e}")
+        return {}
+
+
+def merge_odds(race_data, odds_data):
+    """馬データにオッズを合体"""
+    if not odds_data:
+        return race_data
+    
+    for horse in race_data["horses"]:
+        umaban = horse.get("umaban", "")
+        if umaban in odds_data:
+            horse["odds_tansho"] = odds_data[umaban].get("tansho", "")
+            horse["odds_fukusho"] = odds_data[umaban].get("fukusho", "")
+        else:
+            horse["odds_tansho"] = ""
+            horse["odds_fukusho"] = ""
+    
+    return race_data
+
+
 def main():
     print("=" * 60)
-    print(f"umayomi Selenium v4 - {datetime.now()}")
+    print(f"umayomi Selenium v5 - {datetime.now()}")
     print("=" * 60)
     
     driver = None
@@ -220,19 +283,25 @@ def main():
             if not race_ids:
                 continue
             
-            # 11Rを最大2つだけ取得
             mains = [r for r in race_ids if r.endswith("11")]
             target = mains[:2] if mains else race_ids[:2]
             
             for rid in target:
                 print(f"  race_id: {rid}")
                 try:
+                    # 出馬表取得
                     data = get_race_detail(driver, rid)
-                    if data:
-                        data["date"] = date_str
-                        all_races[rid] = data
-                        race_name_display = data['race_name'] or '(no name)'
-                        print(f"    OK: {race_name_display} ({len(data['horses'])} horses)")
+                    if not data:
+                        continue
+                    
+                    # オッズ取得して合体
+                    odds = get_odds(driver, rid)
+                    data = merge_odds(data, odds)
+                    
+                    data["date"] = date_str
+                    all_races[rid] = data
+                    race_name_display = data['race_name'] or '(no name)'
+                    print(f"    OK: {race_name_display} ({len(data['horses'])} horses, {len(odds)} odds)")
                 except Exception as e:
                     print(f"    error: {e}")
                 
