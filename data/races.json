@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-21T11:37:34.351032",
+  "updated_at": "2026-05-22T00:24:10.491334",
   "race_count": 13,
   "races": {
     "202604010311": {
@@ -17,7 +17,9 @@
           "jockey": "石田",
           "stable": "美浦新開",
           "horse_weight": "474(-10)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "251.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "1",
@@ -28,7 +30,9 @@
           "jockey": "野中",
           "stable": "美浦奥村武",
           "horse_weight": "474(0)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "111.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -39,7 +43,9 @@
           "jockey": "斎藤",
           "stable": "美浦武藤",
           "horse_weight": "490(0)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "252.6",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -50,7 +56,9 @@
           "jockey": "西塚",
           "stable": "栗東茶木",
           "horse_weight": "522(-2)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "9.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -61,7 +69,9 @@
           "jockey": "小林美",
           "stable": "美浦村田",
           "horse_weight": "514(0)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "158.4",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -72,7 +82,9 @@
           "jockey": "長浜",
           "stable": "美浦的場",
           "horse_weight": "468(+4)",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "17.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -83,7 +95,9 @@
           "jockey": "石川",
           "stable": "美浦蛯名利",
           "horse_weight": "482(-12)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "3.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -94,7 +108,9 @@
           "jockey": "富田",
           "stable": "栗東友道",
           "horse_weight": "458(+4)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "11.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -105,7 +121,9 @@
           "jockey": "長岡",
           "stable": "栗東高橋亮",
           "horse_weight": "494(-10)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -116,7 +134,9 @@
           "jockey": "河原田",
           "stable": "美浦村田",
           "horse_weight": "496(-2)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -127,7 +147,9 @@
           "jockey": "亀田",
           "stable": "栗東橋田",
           "horse_weight": "500(0)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -138,7 +160,9 @@
           "jockey": "横山琉",
           "stable": "栗東藤岡健",
           "horse_weight": "480(0)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -149,7 +173,9 @@
           "jockey": "丸山",
           "stable": "栗東森秀",
           "horse_weight": "494(-10)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -160,7 +186,9 @@
           "jockey": "菊沢",
           "stable": "美浦青木",
           "horse_weight": "454(-4)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -171,7 +199,9 @@
           "jockey": "ゴンサルベ",
           "stable": "美浦中舘",
           "horse_weight": "540(+4)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -182,7 +212,9 @@
           "jockey": "嶋田",
           "stable": "美浦佐藤吉",
           "horse_weight": "444(+2)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010311",
@@ -203,7 +235,9 @@
           "jockey": "佐々木",
           "stable": "栗東矢作",
           "horse_weight": "504(+4)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "12.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "1",
@@ -214,7 +248,9 @@
           "jockey": "武豊",
           "stable": "栗東庄野",
           "horse_weight": "478(0)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "4.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -225,7 +261,9 @@
           "jockey": "杉原",
           "stable": "美浦宮田",
           "horse_weight": "510(+2)",
-          "popularity": "17"
+          "popularity": "17",
+          "odds_tansho": "17.4",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -236,7 +274,9 @@
           "jockey": "津村",
           "stable": "美浦奥村武",
           "horse_weight": "474(-4)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "29.1",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -247,7 +287,9 @@
           "jockey": "荻野極",
           "stable": "栗東友道",
           "horse_weight": "476(-2)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "60.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -258,7 +300,9 @@
           "jockey": "横山和",
           "stable": "栗東須貝",
           "horse_weight": "528(+8)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "62.1",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -269,7 +313,9 @@
           "jockey": "北村宏",
           "stable": "美浦木村",
           "horse_weight": "518(0)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "2.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -280,7 +326,9 @@
           "jockey": "大野",
           "stable": "美浦新開",
           "horse_weight": "482(0)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "30.1",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -291,7 +339,9 @@
           "jockey": "横山典",
           "stable": "栗東昆",
           "horse_weight": "478(-14)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -302,7 +352,9 @@
           "jockey": "横山武",
           "stable": "栗東斉藤崇",
           "horse_weight": "470(+6)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -313,7 +365,9 @@
           "jockey": "ルメール",
           "stable": "美浦鹿戸",
           "horse_weight": "510(0)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -324,7 +378,9 @@
           "jockey": "丹内",
           "stable": "美浦高木",
           "horse_weight": "464(0)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -335,7 +391,9 @@
           "jockey": "菅原明",
           "stable": "美浦小島",
           "horse_weight": "474(+4)",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -346,7 +404,9 @@
           "jockey": "レーン",
           "stable": "美浦堀",
           "horse_weight": "516(-4)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -357,7 +417,9 @@
           "jockey": "田辺",
           "stable": "美浦岩戸",
           "horse_weight": "482(-4)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -368,7 +430,9 @@
           "jockey": "戸崎圭",
           "stable": "美浦宮田",
           "horse_weight": "478(-4)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -379,7 +443,9 @@
           "jockey": "岩田康",
           "stable": "美浦栗田",
           "horse_weight": "512(-4)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020511",
@@ -400,7 +466,9 @@
           "jockey": "菊沢",
           "stable": "栗東本田",
           "horse_weight": "478(0)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "17.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -411,7 +479,9 @@
           "jockey": "横山琉",
           "stable": "美浦千葉",
           "horse_weight": "474(-8)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "45.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -422,7 +492,9 @@
           "jockey": "富田",
           "stable": "栗東藤野",
           "horse_weight": "462(-2)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "171.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -433,7 +505,9 @@
           "jockey": "西村太",
           "stable": "美浦堀内",
           "horse_weight": "474(-10)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "9.5",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -444,7 +518,9 @@
           "jockey": "荻野極",
           "stable": "栗東池江",
           "horse_weight": "496(-14)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "25.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -455,7 +531,9 @@
           "jockey": "亀田",
           "stable": "栗東斉藤崇",
           "horse_weight": "508(-4)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "22.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -466,7 +544,9 @@
           "jockey": "石川",
           "stable": "栗東福永",
           "horse_weight": "446(-6)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "7.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -477,7 +557,9 @@
           "jockey": "和田陽",
           "stable": "栗東藤原",
           "horse_weight": "450(0)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "11.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -488,7 +570,9 @@
           "jockey": "国分優",
           "stable": "栗東須貝",
           "horse_weight": "454(-2)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -499,7 +583,9 @@
           "jockey": "杉原",
           "stable": "美浦木村",
           "horse_weight": "464(+2)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -510,7 +596,9 @@
           "jockey": "ゴンサルベ",
           "stable": "栗東杉山晴",
           "horse_weight": "472(+2)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -521,7 +609,9 @@
           "jockey": "菱田",
           "stable": "栗東長谷川",
           "horse_weight": "492(-2)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -532,7 +622,9 @@
           "jockey": "江田照",
           "stable": "栗東森秀",
           "horse_weight": "512(前計不)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -543,7 +635,9 @@
           "jockey": "小崎",
           "stable": "美浦堀",
           "horse_weight": "534(+2)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010411",
@@ -564,7 +658,9 @@
           "jockey": "佐々木",
           "stable": "美浦上原佑",
           "horse_weight": "510(+2)",
-          "popularity": "18"
+          "popularity": "18",
+          "odds_tansho": "135.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "1",
@@ -575,7 +671,9 @@
           "jockey": "松若",
           "stable": "栗東森秀",
           "horse_weight": "486(-8)",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "9.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -586,7 +684,9 @@
           "jockey": "津村",
           "stable": "美浦宮田",
           "horse_weight": "498(-6)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "43.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -597,7 +697,9 @@
           "jockey": "西村淳",
           "stable": "栗東吉岡",
           "horse_weight": "474(-8)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "28.5",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -608,7 +710,9 @@
           "jockey": "西塚",
           "stable": "美浦手塚久",
           "horse_weight": "422(+8)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "4.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -619,7 +723,9 @@
           "jockey": "斎藤",
           "stable": "美浦斎藤誠",
           "horse_weight": "490(-4)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "19.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -630,7 +736,9 @@
           "jockey": "川田",
           "stable": "栗東福永",
           "horse_weight": "480(+6)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "37.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -641,7 +749,9 @@
           "jockey": "松山",
           "stable": "栗東小林",
           "horse_weight": "484(0)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "38.5",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -652,7 +762,9 @@
           "jockey": "ルメール",
           "stable": "美浦木村",
           "horse_weight": "528(+10)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -663,7 +775,9 @@
           "jockey": "横山和",
           "stable": "美浦田村",
           "horse_weight": "480(+6)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -674,7 +788,9 @@
           "jockey": "坂井",
           "stable": "栗東友道",
           "horse_weight": "478(-4)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -685,7 +801,9 @@
           "jockey": "岩田望",
           "stable": "栗東中内田",
           "horse_weight": "468(+6)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -696,7 +814,9 @@
           "jockey": "三浦",
           "stable": "美浦武市",
           "horse_weight": "432(+4)",
-          "popularity": "17"
+          "popularity": "17",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -707,7 +827,9 @@
           "jockey": "北村友",
           "stable": "栗東松下",
           "horse_weight": "468(+8)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -718,7 +840,9 @@
           "jockey": "原",
           "stable": "栗東松下",
           "horse_weight": "458(0)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -729,7 +853,9 @@
           "jockey": "戸崎圭",
           "stable": "栗東藤原",
           "horse_weight": "488(-4)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -740,7 +866,9 @@
           "jockey": "レーン",
           "stable": "美浦辻",
           "horse_weight": "476(0)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -751,7 +879,9 @@
           "jockey": "横山武",
           "stable": "美浦加藤征",
           "horse_weight": "450(0)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020611",
@@ -772,7 +902,9 @@
           "jockey": "西塚",
           "stable": "栗東藤原",
           "horse_weight": "540(+2)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "29.6",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -783,7 +915,9 @@
           "jockey": "富田",
           "stable": "栗東友道",
           "horse_weight": "486(+2)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "15.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -794,7 +928,9 @@
           "jockey": "西村淳",
           "stable": "栗東中内田",
           "horse_weight": "488(-4)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "159.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -805,7 +941,9 @@
           "jockey": "岩田康",
           "stable": "美浦尾関",
           "horse_weight": "466(-8)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "18.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -816,7 +954,9 @@
           "jockey": "小林美",
           "stable": "美浦田島",
           "horse_weight": "450(-6)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "18.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -827,7 +967,9 @@
           "jockey": "ルメール",
           "stable": "美浦宮田",
           "horse_weight": "500(+2)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "49.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -838,7 +980,9 @@
           "jockey": "斎藤",
           "stable": "美浦加藤征",
           "horse_weight": "460(+8)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "55.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -849,7 +993,9 @@
           "jockey": "横山典",
           "stable": "栗東松永幹",
           "horse_weight": "518(前計不)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "7.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -860,7 +1006,9 @@
           "jockey": "ゴンサルベ",
           "stable": "美浦竹内",
           "horse_weight": "456(-4)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -871,7 +1019,9 @@
           "jockey": "丸山",
           "stable": "栗東池添",
           "horse_weight": "476(-2)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -882,7 +1032,9 @@
           "jockey": "菊沢",
           "stable": "栗東梅田",
           "horse_weight": "472(-2)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -893,7 +1045,9 @@
           "jockey": "浜中",
           "stable": "栗東四位",
           "horse_weight": "466(+6)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -904,7 +1058,9 @@
           "jockey": "丹内",
           "stable": "美浦堀",
           "horse_weight": "482(前計不)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -915,7 +1071,9 @@
           "jockey": "杉原",
           "stable": "美浦木村",
           "horse_weight": "466(-12)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -926,7 +1084,9 @@
           "jockey": "武豊",
           "stable": "栗東清水久",
           "horse_weight": "518(+14)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010511",
@@ -947,7 +1107,9 @@
           "jockey": "田辺",
           "stable": "栗東宮本",
           "horse_weight": "450(-4)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "116.2",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -958,7 +1120,9 @@
           "jockey": "戸崎圭",
           "stable": "美浦古賀慎",
           "horse_weight": "480(0)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "162.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -969,7 +1133,9 @@
           "jockey": "松岡",
           "stable": "美浦黒岩",
           "horse_weight": "480(+10)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "29.5",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -980,7 +1146,9 @@
           "jockey": "横山武",
           "stable": "美浦武井",
           "horse_weight": "516(0)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "14.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -991,7 +1159,9 @@
           "jockey": "三浦",
           "stable": "栗東長谷川",
           "horse_weight": "476(+6)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "27.5",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -1002,7 +1172,9 @@
           "jockey": "レーン",
           "stable": "美浦黒岩",
           "horse_weight": "470(+8)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "28.6",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -1013,7 +1185,9 @@
           "jockey": "吉田豊",
           "stable": "栗東矢作",
           "horse_weight": "490(-8)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "131.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -1024,7 +1198,9 @@
           "jockey": "佐々木",
           "stable": "栗東藤岡健",
           "horse_weight": "490(0)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "50.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -1035,7 +1211,9 @@
           "jockey": "大野",
           "stable": "美浦稲垣",
           "horse_weight": "502(+4)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -1046,7 +1224,9 @@
           "jockey": "津村",
           "stable": "美浦宮田",
           "horse_weight": "518(+4)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -1057,7 +1237,9 @@
           "jockey": "原",
           "stable": "栗東佐藤悠",
           "horse_weight": "502(-2)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -1068,7 +1250,9 @@
           "jockey": "菅原明",
           "stable": "美浦林",
           "horse_weight": "500(+6)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -1079,7 +1263,9 @@
           "jockey": "ディー",
           "stable": "栗東藤原",
           "horse_weight": "488(-4)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -1090,7 +1276,9 @@
           "jockey": "横山和",
           "stable": "美浦古賀慎",
           "horse_weight": "488(+2)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -1101,7 +1289,9 @@
           "jockey": "丸田",
           "stable": "栗東矢作",
           "horse_weight": "460(-10)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020711",
@@ -1122,7 +1312,9 @@
           "jockey": "丸山",
           "stable": "美浦鹿戸",
           "horse_weight": "448(0)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "135.1",
+          "odds_fukusho": ""
         },
         {
           "waku": "1",
@@ -1133,7 +1325,9 @@
           "jockey": "菊沢",
           "stable": "美浦矢野",
           "horse_weight": "482(+4)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "11.5",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -1144,7 +1338,9 @@
           "jockey": "西塚",
           "stable": "栗東藤原",
           "horse_weight": "512(-8)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "2.1",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -1155,7 +1351,9 @@
           "jockey": "吉田隼",
           "stable": "美浦和田郎",
           "horse_weight": "440(0)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "12.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -1166,7 +1364,9 @@
           "jockey": "小崎",
           "stable": "栗東清水久",
           "horse_weight": "488(+6)",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "108.4",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -1177,7 +1377,9 @@
           "jockey": "荻野極",
           "stable": "美浦高柳瑞",
           "horse_weight": "448(0)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "69.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -1188,7 +1390,9 @@
           "jockey": "斎藤",
           "stable": "栗東福永",
           "horse_weight": "486(-4)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "15.4",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -1199,7 +1403,9 @@
           "jockey": "富田",
           "stable": "栗東上村",
           "horse_weight": "470(-2)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "16.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -1210,7 +1416,9 @@
           "jockey": "泉谷",
           "stable": "栗東奥村豊",
           "horse_weight": "494(+2)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -1221,7 +1429,9 @@
           "jockey": "石田",
           "stable": "美浦武藤",
           "horse_weight": "454(-4)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -1232,7 +1442,9 @@
           "jockey": "長浜",
           "stable": "栗東藤岡健",
           "horse_weight": "518(-6)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -1243,7 +1455,9 @@
           "jockey": "武藤",
           "stable": "美浦畠山",
           "horse_weight": "484(0)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -1254,7 +1468,9 @@
           "jockey": "杉原",
           "stable": "美浦大竹",
           "horse_weight": "532(-4)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -1265,7 +1481,9 @@
           "jockey": "亀田",
           "stable": "栗東池江",
           "horse_weight": "454(+4)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -1276,7 +1494,9 @@
           "jockey": "横山琉",
           "stable": "美浦尾形",
           "horse_weight": "490(+2)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -1287,7 +1507,9 @@
           "jockey": "小沢",
           "stable": "美浦千葉",
           "horse_weight": "460(+2)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010611",
@@ -1308,7 +1530,9 @@
           "jockey": "横山典",
           "stable": "美浦田島",
           "horse_weight": "474(-2)",
-          "popularity": "17"
+          "popularity": "17",
+          "odds_tansho": "149.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "1",
@@ -1319,7 +1543,9 @@
           "jockey": "横山武",
           "stable": "栗東藤原",
           "horse_weight": "446(0)",
-          "popularity": "18"
+          "popularity": "18",
+          "odds_tansho": "16.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -1330,7 +1556,9 @@
           "jockey": "ゴンサルベ",
           "stable": "美浦和田勇",
           "horse_weight": "498(+4)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "23.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -1341,7 +1569,9 @@
           "jockey": "武豊",
           "stable": "栗東杉山晴",
           "horse_weight": "470(-2)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "5.3",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -1352,7 +1582,9 @@
           "jockey": "ディー",
           "stable": "栗東藤原",
           "horse_weight": "450(-2)",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "87.6",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -1363,7 +1595,9 @@
           "jockey": "岩田望",
           "stable": "栗東中村",
           "horse_weight": "494(+2)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "1.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -1374,7 +1608,9 @@
           "jockey": "西村淳",
           "stable": "栗東中内田",
           "horse_weight": "544(+2)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "49.4",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -1385,7 +1621,9 @@
           "jockey": "川田",
           "stable": "栗東友道",
           "horse_weight": "492(-6)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "19.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -1396,7 +1634,9 @@
           "jockey": "北村友",
           "stable": "栗東上村",
           "horse_weight": "462(+8)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -1407,7 +1647,9 @@
           "jockey": "松若",
           "stable": "栗東福永",
           "horse_weight": "438(-2)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -1418,7 +1660,9 @@
           "jockey": "丹内",
           "stable": "美浦手塚久",
           "horse_weight": "450(-4)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -1429,7 +1673,9 @@
           "jockey": "ルメール",
           "stable": "美浦森一",
           "horse_weight": "492(-4)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -1440,7 +1686,9 @@
           "jockey": "松山",
           "stable": "美浦堀",
           "horse_weight": "480(+2)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -1451,7 +1699,9 @@
           "jockey": "戸崎圭",
           "stable": "美浦鹿戸",
           "horse_weight": "478(+6)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -1462,7 +1712,9 @@
           "jockey": "幸",
           "stable": "栗東橋田",
           "horse_weight": "458(0)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -1473,7 +1725,9 @@
           "jockey": "津村",
           "stable": "美浦上原佑",
           "horse_weight": "450(+2)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -1484,7 +1738,9 @@
           "jockey": "坂井",
           "stable": "栗東千田",
           "horse_weight": "504(-6)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -1495,7 +1751,9 @@
           "jockey": "レーン",
           "stable": "美浦木村",
           "horse_weight": "502(+4)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020811",
@@ -1516,8 +1774,10 @@
           "jockey": "川須",
           "stable": "栗東畑端",
           "horse_weight": "",
-          "予想オッズ更新": "41.4",
-          "popularity": "11"
+          "予想オッズ更新": "41.5",
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1529,7 +1789,9 @@
           "stable": "栗東牧浦",
           "horse_weight": "",
           "予想オッズ更新": "3.9",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1541,7 +1803,9 @@
           "stable": "美浦蛯名利",
           "horse_weight": "",
           "予想オッズ更新": "74.8",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1553,7 +1817,9 @@
           "stable": "美浦斎藤誠",
           "horse_weight": "",
           "予想オッズ更新": "50.1",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1565,7 +1831,9 @@
           "stable": "栗東岡田",
           "horse_weight": "",
           "予想オッズ更新": "28.0",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1577,7 +1845,9 @@
           "stable": "美浦小手川",
           "horse_weight": "",
           "予想オッズ更新": "6.4",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1589,7 +1859,9 @@
           "stable": "栗東牧浦",
           "horse_weight": "",
           "予想オッズ更新": "9.5",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1601,7 +1873,9 @@
           "stable": "美浦高柳瑞",
           "horse_weight": "",
           "予想オッズ更新": "6.0",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1613,7 +1887,9 @@
           "stable": "栗東吉田",
           "horse_weight": "",
           "予想オッズ更新": "9.9",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1625,7 +1901,9 @@
           "stable": "栗東飯田",
           "horse_weight": "",
           "予想オッズ更新": "13.2",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1637,7 +1915,9 @@
           "stable": "栗東角田",
           "horse_weight": "",
           "予想オッズ更新": "11.4",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1649,7 +1929,9 @@
           "stable": "美浦武市",
           "horse_weight": "",
           "予想オッズ更新": "12.0",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1660,8 +1942,10 @@
           "jockey": "永島",
           "stable": "栗東藤岡健",
           "horse_weight": "",
-          "予想オッズ更新": "13.0",
-          "popularity": "8"
+          "予想オッズ更新": "13.1",
+          "popularity": "8",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1673,7 +1957,9 @@
           "stable": "美浦松永康",
           "horse_weight": "",
           "予想オッズ更新": "55.9",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1685,7 +1971,9 @@
           "stable": "美浦菊川",
           "horse_weight": "",
           "予想オッズ更新": "41.5",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1697,7 +1985,9 @@
           "stable": "美浦矢嶋",
           "horse_weight": "",
           "予想オッズ更新": "144.2",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010711",
@@ -1719,7 +2009,9 @@
           "stable": "栗東藤原",
           "horse_weight": "",
           "予想オッズ更新": "83.6",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1731,7 +2023,9 @@
           "stable": "美浦伊坂",
           "horse_weight": "",
           "予想オッズ更新": "104.3",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1743,7 +2037,9 @@
           "stable": "栗東森秀",
           "horse_weight": "",
           "予想オッズ更新": "127.8",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1755,7 +2051,9 @@
           "stable": "美浦大竹",
           "horse_weight": "",
           "予想オッズ更新": "43.4",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1767,7 +2065,9 @@
           "stable": "栗東須貝",
           "horse_weight": "",
           "予想オッズ更新": "82.5",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1779,7 +2079,9 @@
           "stable": "栗東寺島",
           "horse_weight": "",
           "予想オッズ更新": "9.3",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1791,7 +2093,9 @@
           "stable": "栗東石橋",
           "horse_weight": "",
           "予想オッズ更新": "28.7",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1802,8 +2106,10 @@
           "jockey": "松岡",
           "stable": "栗東牧浦",
           "horse_weight": "",
-          "予想オッズ更新": "39.1",
-          "popularity": "10"
+          "予想オッズ更新": "39.2",
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1815,7 +2121,9 @@
           "stable": "美浦菊沢",
           "horse_weight": "",
           "予想オッズ更新": "33.4",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1827,7 +2135,9 @@
           "stable": "栗東今野",
           "horse_weight": "",
           "予想オッズ更新": "2.3",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1839,7 +2149,9 @@
           "stable": "美浦鈴木伸",
           "horse_weight": "",
           "予想オッズ更新": "7.4",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1851,7 +2163,9 @@
           "stable": "栗東吉岡",
           "horse_weight": "",
           "予想オッズ更新": "9.0",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1863,7 +2177,9 @@
           "stable": "美浦矢野",
           "horse_weight": "",
           "予想オッズ更新": "70.1",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1875,7 +2191,9 @@
           "stable": "栗東宮",
           "horse_weight": "",
           "予想オッズ更新": "30.6",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1887,7 +2205,9 @@
           "stable": "栗東高橋康",
           "horse_weight": "",
           "予想オッズ更新": "4.9",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1899,7 +2219,9 @@
           "stable": "栗東前川",
           "horse_weight": "",
           "予想オッズ更新": "19.8",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020911",
@@ -1921,7 +2243,9 @@
           "stable": "栗東矢作",
           "horse_weight": "",
           "予想オッズ更新": "4.6",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1933,7 +2257,9 @@
           "stable": "美浦菊沢",
           "horse_weight": "",
           "予想オッズ更新": "12.7",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1945,7 +2271,9 @@
           "stable": "美浦矢野",
           "horse_weight": "",
           "予想オッズ更新": "8.6",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1957,7 +2285,9 @@
           "stable": "美浦千葉",
           "horse_weight": "",
           "予想オッズ更新": "46.7",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1969,7 +2299,9 @@
           "stable": "美浦佐藤吉",
           "horse_weight": "",
           "予想オッズ更新": "19.8",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1981,7 +2313,9 @@
           "stable": "美浦武藤",
           "horse_weight": "",
           "予想オッズ更新": "34.6",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -1993,7 +2327,9 @@
           "stable": "美浦的場",
           "horse_weight": "",
           "予想オッズ更新": "139.6",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2005,7 +2341,9 @@
           "stable": "栗東森秀",
           "horse_weight": "",
           "予想オッズ更新": "45.3",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2017,7 +2355,9 @@
           "stable": "栗東小椋",
           "horse_weight": "",
           "予想オッズ更新": "5.9",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2029,7 +2369,9 @@
           "stable": "栗東秋山",
           "horse_weight": "",
           "予想オッズ更新": "10.2",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2041,7 +2383,9 @@
           "stable": "栗東森秀",
           "horse_weight": "",
           "予想オッズ更新": "5.6",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2053,7 +2397,9 @@
           "stable": "美浦武井",
           "horse_weight": "",
           "予想オッズ更新": "38.9",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2065,7 +2411,9 @@
           "stable": "美浦嘉藤",
           "horse_weight": "",
           "予想オッズ更新": "35.3",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2077,7 +2425,9 @@
           "stable": "美浦蛯名利",
           "horse_weight": "",
           "予想オッズ更新": "42.4",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2089,7 +2439,9 @@
           "stable": "美浦青木",
           "horse_weight": "",
           "予想オッズ更新": "15.7",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2101,7 +2453,9 @@
           "stable": "栗東矢作",
           "horse_weight": "",
           "予想オッズ更新": "8.5",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010811",
@@ -2122,8 +2476,10 @@
           "jockey": "横山和生",
           "stable": "美浦鈴木伸尋",
           "horse_weight": "",
-          "予想オッズ更新": "168.2",
-          "popularity": "15"
+          "予想オッズ更新": "166.1",
+          "popularity": "15",
+          "odds_tansho": "2.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "1",
@@ -2134,8 +2490,10 @@
           "jockey": "Ｍ．ディー",
           "stable": "栗東新谷功一",
           "horse_weight": "",
-          "予想オッズ更新": "62.7",
-          "popularity": "11"
+          "予想オッズ更新": "62.0",
+          "popularity": "11",
+          "odds_tansho": "4.1",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -2146,8 +2504,10 @@
           "jockey": "武豊",
           "stable": "栗東斉藤崇史",
           "horse_weight": "",
-          "予想オッズ更新": "7.1",
-          "popularity": "4"
+          "予想オッズ更新": "7.9",
+          "popularity": "4",
+          "odds_tansho": "6.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "2",
@@ -2158,8 +2518,10 @@
           "jockey": "戸崎圭太",
           "stable": "栗東福永祐一",
           "horse_weight": "",
-          "予想オッズ更新": "219.6",
-          "popularity": "17"
+          "予想オッズ更新": "216.9",
+          "popularity": "17",
+          "odds_tansho": "7.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -2170,8 +2532,10 @@
           "jockey": "津村明秀",
           "stable": "栗東橋口慎介",
           "horse_weight": "",
-          "予想オッズ更新": "172.0",
-          "popularity": "16"
+          "予想オッズ更新": "169.9",
+          "popularity": "16",
+          "odds_tansho": "13.2",
+          "odds_fukusho": ""
         },
         {
           "waku": "3",
@@ -2182,8 +2546,10 @@
           "jockey": "石橋脩",
           "stable": "美浦竹内正洋",
           "horse_weight": "",
-          "予想オッズ更新": "133.6",
-          "popularity": "14"
+          "予想オッズ更新": "132.0",
+          "popularity": "14",
+          "odds_tansho": "20.7",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -2194,8 +2560,10 @@
           "jockey": "三浦皇成",
           "stable": "美浦高木登",
           "horse_weight": "",
-          "予想オッズ更新": "490.9",
-          "popularity": "18"
+          "予想オッズ更新": "485.0",
+          "popularity": "18",
+          "odds_tansho": "23.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "4",
@@ -2206,8 +2574,10 @@
           "jockey": "原優介",
           "stable": "栗東大久保龍志",
           "horse_weight": "",
-          "予想オッズ更新": "33.2",
-          "popularity": "9"
+          "予想オッズ更新": "32.8",
+          "popularity": "9",
+          "odds_tansho": "31.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -2218,8 +2588,10 @@
           "jockey": "西村淳也",
           "stable": "栗東安田翔伍",
           "horse_weight": "",
-          "予想オッズ更新": "32.3",
-          "popularity": "8"
+          "予想オッズ更新": "31.9",
+          "popularity": "8",
+          "odds_tansho": "32.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "5",
@@ -2230,8 +2602,10 @@
           "jockey": "松山弘平",
           "stable": "栗東高野友和",
           "horse_weight": "",
-          "予想オッズ更新": "2.9",
-          "popularity": "1"
+          "予想オッズ更新": "2.8",
+          "popularity": "1",
+          "odds_tansho": "56.5",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -2242,8 +2616,10 @@
           "jockey": "横山武史",
           "stable": "栗東牧浦充徳",
           "horse_weight": "",
-          "予想オッズ更新": "57.2",
-          "popularity": "10"
+          "予想オッズ更新": "56.5",
+          "popularity": "10",
+          "odds_tansho": "62.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "6",
@@ -2254,8 +2630,10 @@
           "jockey": "Ｃ．ルメール",
           "stable": "美浦大竹正博",
           "horse_weight": "",
-          "予想オッズ更新": "6.9",
-          "popularity": "3"
+          "予想オッズ更新": "6.8",
+          "popularity": "3",
+          "odds_tansho": "71.6",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -2266,8 +2644,10 @@
           "jockey": "坂井瑠星",
           "stable": "栗東吉岡辰弥",
           "horse_weight": "",
-          "予想オッズ更新": "13.4",
-          "popularity": "5"
+          "予想オッズ更新": "13.2",
+          "popularity": "5",
+          "odds_tansho": "86.8",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -2278,8 +2658,10 @@
           "jockey": "浜中俊",
           "stable": "栗東四位洋文",
           "horse_weight": "",
-          "予想オッズ更新": "87.9",
-          "popularity": "13"
+          "予想オッズ更新": "86.8",
+          "popularity": "13",
+          "odds_tansho": "132.0",
+          "odds_fukusho": ""
         },
         {
           "waku": "7",
@@ -2290,8 +2672,10 @@
           "jockey": "岩田望来",
           "stable": "栗東福永祐一",
           "horse_weight": "",
-          "予想オッズ更新": "23.3",
-          "popularity": "7"
+          "予想オッズ更新": "23.0",
+          "popularity": "7",
+          "odds_tansho": "166.1",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -2302,8 +2686,10 @@
           "jockey": "今村聖奈",
           "stable": "栗東寺島良",
           "horse_weight": "",
-          "予想オッズ更新": "21.0",
-          "popularity": "6"
+          "予想オッズ更新": "20.7",
+          "popularity": "6",
+          "odds_tansho": "169.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -2314,8 +2700,10 @@
           "jockey": "高杉吏麒",
           "stable": "栗東北出成人",
           "horse_weight": "",
-          "予想オッズ更新": "72.5",
-          "popularity": "12"
+          "予想オッズ更新": "71.6",
+          "popularity": "12",
+          "odds_tansho": "216.9",
+          "odds_fukusho": ""
         },
         {
           "waku": "8",
@@ -2327,7 +2715,9 @@
           "stable": "美浦小笠倫弘",
           "horse_weight": "",
           "予想オッズ更新": "4.1",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": "485.0",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605021011",
@@ -2348,8 +2738,10 @@
           "jockey": "レーン",
           "stable": "美浦手塚久",
           "horse_weight": "",
-          "予想オッズ更新": "13.7",
-          "popularity": "5"
+          "予想オッズ更新": "13.8",
+          "popularity": "5",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2360,8 +2752,10 @@
           "jockey": "岩田康",
           "stable": "栗東福永",
           "horse_weight": "",
-          "予想オッズ更新": "29.0",
-          "popularity": "11"
+          "予想オッズ更新": "29.2",
+          "popularity": "11",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2372,8 +2766,10 @@
           "jockey": "横山武",
           "stable": "栗東野中",
           "horse_weight": "",
-          "予想オッズ更新": "53.9",
-          "popularity": "16"
+          "予想オッズ更新": "54.2",
+          "popularity": "16",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2384,8 +2780,10 @@
           "jockey": "ゴンサルベ",
           "stable": "栗東友道",
           "horse_weight": "",
-          "予想オッズ更新": "39.9",
-          "popularity": "14"
+          "予想オッズ更新": "40.1",
+          "popularity": "15",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2396,8 +2794,10 @@
           "jockey": "○○",
           "stable": "栗東矢作",
           "horse_weight": "",
-          "予想オッズ更新": "78.9",
-          "popularity": "18"
+          "予想オッズ更新": "79.4",
+          "popularity": "18",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2408,8 +2808,10 @@
           "jockey": "戸崎圭",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "9.1",
-          "popularity": "3"
+          "予想オッズ更新": "10.0",
+          "popularity": "3",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2420,8 +2822,10 @@
           "jockey": "○○",
           "stable": "美浦田島",
           "horse_weight": "",
-          "予想オッズ更新": "176.9",
-          "popularity": "20"
+          "予想オッズ更新": "178.0",
+          "popularity": "20",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2432,8 +2836,10 @@
           "jockey": "西村淳",
           "stable": "栗東高野",
           "horse_weight": "",
-          "予想オッズ更新": "16.6",
-          "popularity": "8"
+          "予想オッズ更新": "16.7",
+          "popularity": "8",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2444,8 +2850,10 @@
           "jockey": "武豊",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "13.7",
-          "popularity": "7"
+          "予想オッズ更新": "13.8",
+          "popularity": "7",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2456,8 +2864,10 @@
           "jockey": "坂井",
           "stable": "栗東吉岡",
           "horse_weight": "",
-          "予想オッズ更新": "49.4",
-          "popularity": "15"
+          "予想オッズ更新": "33.9",
+          "popularity": "14",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2468,8 +2878,10 @@
           "jockey": "浜中",
           "stable": "栗東須貝",
           "horse_weight": "",
-          "予想オッズ更新": "157.6",
-          "popularity": "19"
+          "予想オッズ更新": "158.7",
+          "popularity": "19",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2480,8 +2892,10 @@
           "jockey": "川田",
           "stable": "栗東斉藤崇",
           "horse_weight": "",
-          "予想オッズ更新": "21.8",
-          "popularity": "9"
+          "予想オッズ更新": "22.0",
+          "popularity": "9",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2492,8 +2906,10 @@
           "jockey": "ルメール",
           "stable": "美浦木村",
           "horse_weight": "",
-          "予想オッズ更新": "31.5",
-          "popularity": "12"
+          "予想オッズ更新": "31.7",
+          "popularity": "12",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2504,8 +2920,10 @@
           "jockey": "荻野極",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "23.9",
-          "popularity": "10"
+          "予想オッズ更新": "24.1",
+          "popularity": "10",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2516,8 +2934,10 @@
           "jockey": "北村友",
           "stable": "栗東斉藤崇",
           "horse_weight": "",
-          "予想オッズ更新": "10.3",
-          "popularity": "4"
+          "予想オッズ更新": "10.4",
+          "popularity": "4",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2528,8 +2948,10 @@
           "jockey": "横山和",
           "stable": "栗東野中",
           "horse_weight": "",
-          "予想オッズ更新": "31.8",
-          "popularity": "13"
+          "予想オッズ更新": "32.0",
+          "popularity": "13",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2540,8 +2962,10 @@
           "jockey": "ディー",
           "stable": "栗東牧浦",
           "horse_weight": "",
-          "予想オッズ更新": "70.1",
-          "popularity": "17"
+          "予想オッズ更新": "70.5",
+          "popularity": "17",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2552,8 +2976,10 @@
           "jockey": "佐々木",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "13.7",
-          "popularity": "6"
+          "予想オッズ更新": "13.8",
+          "popularity": "6",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2564,8 +2990,10 @@
           "jockey": "津村",
           "stable": "美浦手塚久",
           "horse_weight": "",
-          "予想オッズ更新": "5.8",
-          "popularity": "2"
+          "予想オッズ更新": "5.6",
+          "popularity": "2",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         },
         {
           "waku": "",
@@ -2577,7 +3005,9 @@
           "stable": "栗東杉山晴",
           "horse_weight": "",
           "予想オッズ更新": "3.3",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": "",
+          "odds_fukusho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605021211",
