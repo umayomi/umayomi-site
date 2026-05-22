@@ -2086,11 +2086,139 @@ function logoutAuth(){
   location.reload();
 }
 
-// 実データ読み込み（将来用のスタブ）
-function loadRealData(){
-  // ここに将来、GitHub上のJSONを fetch する処理を追加予定
-  // 今はサンプルのまま動く
-  console.log('実データモードが有効になりました。データソースは将来的に切り替えられます。');
+// 実データ読み込み
+let REAL_DATA_LOADED = null;
+
+async function loadRealData(){
+  try {
+    console.log('実データ取得中...');
+    const response = await fetch('./data/races.json?t=' + Date.now());
+    if(!response.ok){
+      console.warn('データ取得失敗:', response.status);
+      return;
+    }
+    const data = await response.json();
+    REAL_DATA_LOADED = data;
+    console.log('✅ 実データ取得成功:', data.race_count, 'レース');
+    
+    // 実データを RACE_CALENDAR と RACE_HORSES に統合
+    integrateRealData(data);
+    
+    // カレンダーを再描画
+    renderDateTabs();
+    
+  } catch(err){
+    console.error('実データ読み込みエラー:', err);
+  }
+}
+
+function integrateRealData(data){
+  if(!data || !data.races) return;
+  
+  // 実データのレースを日付ごとにグループ化
+  const racesByDate = {};
+  Object.values(data.races).forEach(race => {
+    const date = race.date; // "20260524"
+    if(!date) return;
+    if(!racesByDate[date]) racesByDate[date] = [];
+    racesByDate[date].push(race);
+  });
+  
+  // 各日付を RACE_CALENDAR に追加（既存タブを置き換えず、先頭に追加）
+  Object.keys(racesByDate).sort().reverse().forEach(dateStr => {
+    // 20260524 → 2026-05-24
+    const formattedDate = `${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)}`;
+    
+    // 既存に同じ日付があるかチェック
+    const existing = RACE_CALENDAR.find(d => d.date === formattedDate);
+    if(existing) return;
+    
+    const d = new Date(formattedDate);
+    const dayNames = ['日','月','火','水','木','金','土'];
+    const dayName = dayNames[d.getDay()];
+    
+    const races = racesByDate[dateStr].map(realRace => {
+      const raceId = 'real-' + realRace.race_id;
+      
+      // 馬データを既存形式に変換
+      const horses = (realRace.horses || []).map((h, idx) => ({
+        waku: parseInt(h.waku) || Math.ceil((idx+1)/2),
+        num: parseInt(h.umaban) || idx+1,
+        name: h.horse_name || `馬${idx+1}`,
+        jockey: h.jockey || '騎手未定',
+        idx: 60 + Math.floor(Math.random()*32), // 仮の指数
+        odds: parseFloat(h.odds_tansho) || 99.9,
+        pop: parseInt(h.popularity) || idx+1,
+        oi: Math.floor(Math.random()*3)+2,
+        prev: Math.floor(Math.random()*8)+1,
+        rs: ['逃げ','先行','差し','追込'][Math.floor(Math.random()*4)],
+        weight: parseInt((h.horse_weight||'470').split('(')[0]) || 470,
+        trainer: h.stable || '厩舎未定',
+        sim_win: 0,
+        sim_rank: 0,
+        sex_age: h.sex_age || '',
+        weight_carried: h.weight_carried || '',
+      }));
+      
+      // sim_winを計算（オッズベース）
+      horses.forEach(h => {
+        const baseWin = h.odds > 0 ? Math.max(0, 100 - h.odds * 1.5) : 5;
+        h.sim_win = Math.round(Math.min(50, baseWin));
+      });
+      
+      // sim_rank割り当て
+      const ranked = [...horses].sort((a,b) => b.sim_win - a.sim_win);
+      ranked.forEach((h, r) => { h.sim_rank = r+1; });
+      
+      // RACE_HORSES に登録
+      RACE_HORSES[raceId] = horses;
+      
+      // venue推定（race_idの5-6桁目）
+      const venueCode = realRace.race_id.slice(4,6);
+      const venueMap = {'01':'札幌','02':'函館','03':'福島','04':'新潟','05':'東京','06':'中山','07':'中京','08':'京都','09':'阪神','10':'小倉'};
+      const venue = venueMap[venueCode] || '不明';
+      const raceNum = parseInt(realRace.race_id.slice(10,12));
+      
+      // レース名・コース情報から抽出
+      const courseMatch = (realRace.course_info||'').match(/(芝|ダ)(\d+)m/);
+      const distance = courseMatch ? `${courseMatch[1]}${courseMatch[2]}m` : '芝1600m';
+      const timeMatch = (realRace.course_info||'').match(/(\d+:\d+)発走/);
+      const startTime = timeMatch ? timeMatch[1] : '15:40';
+      
+      return {
+        id: raceId,
+        venue: venue,
+        raceNum: raceNum,
+        name: realRace.race_name || `${venue}${raceNum}R`,
+        grade: 'OP',
+        distance: distance,
+        age: '3歳上',
+        going: '良',
+        startTime: startTime,
+        isReal: true,
+        summary: {
+          maxIdx: 88,
+          top1Pop: horses[0]?.odds || 3.0,
+          top1Name: horses.find(h=>h.pop===1)?.name || horses[0]?.name || '',
+          winPct1: horses.find(h=>h.sim_rank===1)?.sim_win || 30,
+          paceLabel: 'M',
+          paceTime: '60.0秒'
+        }
+      };
+    });
+    
+    // 先頭に追加（最新が左に来る）
+    RACE_CALENDAR.unshift({
+      date: formattedDate,
+      day: dayName,
+      label: `🔴 実 ${parseInt(dateStr.slice(4,6))}/${parseInt(dateStr.slice(6,8))}(${dayName})`,
+      isPast: false,
+      isReal: true,
+      races: races,
+    });
+  });
+  
+  console.log('✅ 実データ統合完了:', RACE_CALENDAR.length, '日付');
 }
 
 // 初期化
