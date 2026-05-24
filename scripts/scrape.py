@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ウマヨミ - Selenium版 v7 (一覧軽量化)"""
+"""ウマヨミ - Selenium版 v6 (2勝クラス以上フィルタ)"""
 
 import json
 import time
@@ -36,11 +36,8 @@ COL_MAP = {
     "オッズ": "odds", "人気": "popularity",
 }
 
-# 取得対象クラス
+# 取得対象クラス（venue_infoに含まれていれば対象）
 TARGET_CLASSES = ["2勝", "3勝", "オープン", "OP", "G1", "G2", "G3", "Ｇ１", "Ｇ２", "Ｇ３", "GⅠ", "GⅡ", "GⅢ", "G", "L"]
-
-# 除外クラス（事前フィルタで判定）
-EXCLUDE_CLASSES = ["未勝利", "新馬", "1勝", "１勝"]
 
 
 def create_driver():
@@ -71,21 +68,7 @@ def get_target_dates():
     return dates
 
 
-def is_target_class(text):
-    """テキストに含まれるクラス情報から対象判定"""
-    if not text:
-        return False
-    
-    # 除外チェック（先に判定）
-    if any(kw in text for kw in EXCLUDE_CLASSES):
-        return False
-    
-    # 含まれているか
-    return any(kw in text for kw in TARGET_CLASSES)
-
-
-def get_race_list_with_class(driver, date_str):
-    """レース一覧ページから race_id とクラス情報を一緒に取得"""
+def get_race_ids(driver, date_str):
     url = f'https://race.netkeiba.com/top/race_list.html?kaisai_date={date_str}'
     print(f"  GET: {url}")
     
@@ -97,59 +80,33 @@ def get_race_list_with_class(driver, date_str):
     
     print(f"  html size: {len(html)}")
     
-    # race_id とそのレースの周辺テキスト（クラス情報含む）を取得
-    races = []
-    seen_ids = set()
-    
-    # レースリンクを全部探す
+    race_ids = []
     a_all = soup.find_all("a", href=True)
     
     for a in a_all:
         match = re.search(r"race_id=(\d{12})", a["href"])
-        if not match:
-            continue
-        
-        race_id = match.group(1)
-        if race_id in seen_ids:
-            continue
-        seen_ids.add(race_id)
-        
-        # 周辺テキストを取得（親要素や兄弟要素も含めて広めに）
-        parent = a.find_parent()
-        context_text = ""
-        if parent:
-            # 親の親まで遡って広い範囲のテキストを取得
-            grandparent = parent.find_parent()
-            if grandparent:
-                context_text = grandparent.get_text(" ", strip=True)
-            else:
-                context_text = parent.get_text(" ", strip=True)
-        
-        # aタグ自体のテキストも追加
-        context_text += " " + a.get_text(" ", strip=True)
-        
-        races.append({
-            "race_id": race_id,
-            "context": context_text,
-        })
+        if match:
+            race_ids.append(match.group(1))
     
-    print(f"  found {len(races)} unique races")
+    unique_ids = sorted(set(race_ids))
+    print(f"  unique race_ids: {len(unique_ids)}")
+    return unique_ids
+
+
+def is_target_class(venue_info, race_name):
+    """2勝クラス以上か判定"""
+    text = (venue_info or "") + " " + (race_name or "")
     
-    # 事前フィルタ: クラス判定
-    targets = []
-    skipped = 0
-    for r in races:
-        if is_target_class(r["context"]):
-            targets.append(r["race_id"])
-        else:
-            skipped += 1
+    # 除外: 未勝利・新馬・1勝クラス
+    if any(kw in text for kw in ["未勝利", "新馬", "1勝", "１勝"]):
+        return False
     
-    print(f"  target after filter: {len(targets)} (skipped {skipped})")
-    return targets
+    # 含まれているか
+    return any(kw in text for kw in TARGET_CLASSES)
 
 
 def get_race_detail(driver, race_id):
-    """出馬表ページから基本情報を取得（クラス再確認も）"""
+    """出馬表ページから基本情報を取得"""
     url = f'https://race.netkeiba.com/race/shutuba.html?race_id={race_id}'
     print(f"    GET shutuba: {url}")
     
@@ -176,16 +133,16 @@ def get_race_detail(driver, race_id):
     if el:
         venue_info = re.sub(r"\s+", " ", el.text.strip())
     
-    # クラス再確認（念のため）
-    full_text = (venue_info or "") + " " + (race_name or "")
-    if not is_target_class(full_text):
-        print(f"    SKIP (re-check): not target - {race_name}")
+    # クラスフィルタ
+    if not is_target_class(venue_info, race_name):
+        print(f"    SKIP: not target class - {race_name}")
         return None
     
     print(f"    TARGET: {race_name}")
     
     table = soup.select_one("table.Shutuba_Table, table.RaceTable01")
     if not table:
+        print(f"    no table found")
         return None
     
     rows = table.find_all("tr")
@@ -235,7 +192,6 @@ def get_race_detail(driver, race_id):
 
 
 def get_odds(driver, race_id):
-    """単勝オッズページから取得"""
     url = f'https://race.netkeiba.com/odds/index.html?race_id={race_id}&type=b1'
     print(f"    GET odds: {url}")
     
@@ -274,7 +230,9 @@ def get_odds(driver, race_id):
                     odds_values.append(text)
             
             if odds_values:
-                odds_data[umaban_text] = {"tansho": odds_values[0]}
+                odds_data[umaban_text] = {
+                    "tansho": odds_values[0] if len(odds_values) > 0 else "",
+                }
         
         print(f"    got odds for {len(odds_data)} horses")
         return odds_data
@@ -300,7 +258,7 @@ def merge_odds(race_data, odds_data):
 
 def main():
     print("=" * 60)
-    print(f"umayomi Selenium v7 (lightweight filter) - {datetime.now()}")
+    print(f"umayomi Selenium v6 - {datetime.now()}")
     print("=" * 60)
     
     driver = None
@@ -312,27 +270,28 @@ def main():
         print(f"target dates: {dates}")
         
         all_races = {}
-        total_skipped = 0
+        skipped_count = 0
         
         for date_str in dates:
             print(f"\n[{date_str}]")
             try:
-                target_ids = get_race_list_with_class(driver, date_str)
+                race_ids = get_race_ids(driver, date_str)
             except Exception as e:
                 print(f"  error: {e}")
                 continue
             
-            if not target_ids:
+            if not race_ids:
                 continue
             
-            print(f"  processing {len(target_ids)} target races")
+            # 全レースID対象に（フィルタは個別取得時）
+            print(f"  processing {len(race_ids)} race_ids")
             
-            for rid in target_ids:
+            for rid in race_ids:
                 print(f"  race_id: {rid}")
                 try:
                     data = get_race_detail(driver, rid)
                     if not data:
-                        total_skipped += 1
+                        skipped_count += 1
                         continue
                     
                     odds = get_odds(driver, rid)
@@ -355,7 +314,7 @@ def main():
                 "races": all_races,
             }, f, ensure_ascii=False, indent=2)
         
-        print(f"\nDONE: {len(all_races)} races saved, {total_skipped} skipped (re-check)")
+        print(f"\nDONE: {len(all_races)} races saved, {skipped_count} skipped")
         
     except Exception as e:
         print(f"FATAL: {e}")
