@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ウマヨミ - Selenium版 v6 (2勝クラス以上フィルタ)"""
+"""ウマヨミ - Selenium版 v8 (v6ベース + 過去レースオッズ修正)"""
 
 import json
 import time
@@ -36,7 +36,6 @@ COL_MAP = {
     "オッズ": "odds", "人気": "popularity",
 }
 
-# 取得対象クラス（venue_infoに含まれていれば対象）
 TARGET_CLASSES = ["2勝", "3勝", "オープン", "OP", "G1", "G2", "G3", "Ｇ１", "Ｇ２", "Ｇ３", "GⅠ", "GⅡ", "GⅢ", "G", "L"]
 
 
@@ -68,6 +67,12 @@ def get_target_dates():
     return dates
 
 
+def is_past_date(date_str):
+    """過去の日付かどうか判定"""
+    today = datetime.now().strftime("%Y%m%d")
+    return date_str < today
+
+
 def get_race_ids(driver, date_str):
     url = f'https://race.netkeiba.com/top/race_list.html?kaisai_date={date_str}'
     print(f"  GET: {url}")
@@ -94,14 +99,11 @@ def get_race_ids(driver, date_str):
 
 
 def is_target_class(venue_info, race_name):
-    """2勝クラス以上か判定"""
     text = (venue_info or "") + " " + (race_name or "")
     
-    # 除外: 未勝利・新馬・1勝クラス
     if any(kw in text for kw in ["未勝利", "新馬", "1勝", "１勝"]):
         return False
     
-    # 含まれているか
     return any(kw in text for kw in TARGET_CLASSES)
 
 
@@ -133,7 +135,6 @@ def get_race_detail(driver, race_id):
     if el:
         venue_info = re.sub(r"\s+", " ", el.text.strip())
     
-    # クラスフィルタ
     if not is_target_class(venue_info, race_name):
         print(f"    SKIP: not target class - {race_name}")
         return None
@@ -142,7 +143,6 @@ def get_race_detail(driver, race_id):
     
     table = soup.select_one("table.Shutuba_Table, table.RaceTable01")
     if not table:
-        print(f"    no table found")
         return None
     
     rows = table.find_all("tr")
@@ -191,9 +191,10 @@ def get_race_detail(driver, race_id):
     }
 
 
-def get_odds(driver, race_id):
+def get_odds_future(driver, race_id):
+    """未来レース: 単勝オッズページから取得"""
     url = f'https://race.netkeiba.com/odds/index.html?race_id={race_id}&type=b1'
-    print(f"    GET odds: {url}")
+    print(f"    GET odds (future): {url}")
     
     try:
         driver.get(url)
@@ -204,6 +205,7 @@ def get_odds(driver, race_id):
         
         table = soup.select_one("table.RaceOdds_HorseList_Table, table.Odds_Table")
         if not table:
+            print(f"    no odds table")
             return {}
         
         odds_data = {}
@@ -230,15 +232,80 @@ def get_odds(driver, race_id):
                     odds_values.append(text)
             
             if odds_values:
-                odds_data[umaban_text] = {
-                    "tansho": odds_values[0] if len(odds_values) > 0 else "",
-                }
+                odds_data[umaban_text] = {"tansho": odds_values[0]}
         
         print(f"    got odds for {len(odds_data)} horses")
         return odds_data
         
     except Exception as e:
         print(f"    odds error: {e}")
+        return {}
+
+
+def get_odds_past(driver, race_id):
+    """過去レース: 結果ページから単勝オッズ取得"""
+    url = f'https://db.netkeiba.com/race/{race_id}/'
+    print(f"    GET result (past): {url}")
+    
+    try:
+        # まず race.netkeiba を Referer に設定するため一度アクセス
+        driver.get(f'https://race.netkeiba.com/race/result.html?race_id={race_id}')
+        time.sleep(3)
+        
+        # 次にdbページへ
+        driver.get(url)
+        time.sleep(5)
+        
+        html = driver.page_source
+        soup = BeautifulSoup(html, "html.parser")
+        
+        # 結果テーブルを探す
+        table = soup.select_one("table.race_table_01, table.nk_tb_common")
+        if not table:
+            print(f"    no result table")
+            return {}
+        
+        # ヘッダーから「単勝」列のインデックスを探す
+        rows = table.find_all("tr")
+        if len(rows) < 2:
+            return {}
+        
+        header_cells = rows[0].find_all(["th", "td"])
+        odds_col_idx = -1
+        umaban_col_idx = -1
+        
+        for i, cell in enumerate(header_cells):
+            text = cell.get_text(strip=True)
+            if text == "単勝":
+                odds_col_idx = i
+            if text == "馬番":
+                umaban_col_idx = i
+        
+        if odds_col_idx == -1 or umaban_col_idx == -1:
+            print(f"    odds/umaban column not found (odds_idx={odds_col_idx}, umaban_idx={umaban_col_idx})")
+            return {}
+        
+        odds_data = {}
+        for row in rows[1:]:
+            cols = row.find_all("td")
+            if len(cols) <= max(odds_col_idx, umaban_col_idx):
+                continue
+            
+            umaban_text = cols[umaban_col_idx].get_text(strip=True)
+            odds_text = cols[odds_col_idx].get_text(strip=True)
+            
+            if not umaban_text.isdigit():
+                continue
+            
+            # オッズが数字+小数点のパターン
+            if re.match(r"^\d+\.\d+$", odds_text):
+                odds_data[umaban_text] = {"tansho": odds_text}
+        
+        print(f"    got past odds for {len(odds_data)} horses")
+        return odds_data
+        
+    except Exception as e:
+        print(f"    past odds error: {e}")
         return {}
 
 
@@ -258,7 +325,7 @@ def merge_odds(race_data, odds_data):
 
 def main():
     print("=" * 60)
-    print(f"umayomi Selenium v6 - {datetime.now()}")
+    print(f"umayomi Selenium v8 (past odds fix) - {datetime.now()}")
     print("=" * 60)
     
     driver = None
@@ -274,6 +341,9 @@ def main():
         
         for date_str in dates:
             print(f"\n[{date_str}]")
+            is_past = is_past_date(date_str)
+            print(f"  is_past: {is_past}")
+            
             try:
                 race_ids = get_race_ids(driver, date_str)
             except Exception as e:
@@ -283,7 +353,6 @@ def main():
             if not race_ids:
                 continue
             
-            # 全レースID対象に（フィルタは個別取得時）
             print(f"  processing {len(race_ids)} race_ids")
             
             for rid in race_ids:
@@ -294,10 +363,16 @@ def main():
                         skipped_count += 1
                         continue
                     
-                    odds = get_odds(driver, rid)
+                    # 過去か未来かでオッズ取得方法を切り替え
+                    if is_past:
+                        odds = get_odds_past(driver, rid)
+                    else:
+                        odds = get_odds_future(driver, rid)
+                    
                     data = merge_odds(data, odds)
                     
                     data["date"] = date_str
+                    data["is_past"] = is_past
                     all_races[rid] = data
                     race_name_display = data['race_name'] or '(no name)'
                     print(f"    OK: {race_name_display} ({len(data['horses'])} horses)")
