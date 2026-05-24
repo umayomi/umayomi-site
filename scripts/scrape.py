@@ -176,6 +176,13 @@ def get_race_detail(driver, race_id):
         if not horse_dict.get("horse_name", "").strip():
             continue
         
+        # horse_id を馬名リンクから抽出
+        horse_link = row.select_one('a[href*="/horse/"]')
+        if horse_link:
+            m = re.search(r"/horse/(\d+)", horse_link.get("href", ""))
+            if m:
+                horse_dict["horse_id"] = m.group(1)
+        
         horses.append(horse_dict)
     
     if not horses:
