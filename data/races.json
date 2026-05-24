@@ -1,1229 +1,7 @@
 {
-  "updated_at": "2026-05-23T07:20:44.270081",
-  "race_count": 31,
+  "updated_at": "2026-05-24T00:44:03.806959",
+  "race_count": 24,
   "races": {
-    "202604010304": {
-      "race_id": "202604010304",
-      "race_name": "4歳以上障害OP",
-      "course_info": "11:20発走 / 障2890m (芝 外-内) / 天候:晴 / 馬場:稍",
-      "venue_info": "1回 新潟 3日目 障害４歳以上 オープン (混) 別定 11頭 本賞金:1430,570,360,210,143万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "テクネチウム",
-          "sex_age": "セ5",
-          "weight_carried": "57.0",
-          "jockey": "▲井上",
-          "stable": "栗東前川",
-          "horse_weight": "484(-16)",
-          "popularity": "9",
-          "odds_tansho": "72.6"
-        },
-        {
-          "waku": "2",
-          "umaban": "2",
-          "horse_name": "スコラーリ",
-          "sex_age": "牡7",
-          "weight_carried": "60.0",
-          "jockey": "伴",
-          "stable": "美浦萩原",
-          "horse_weight": "482(-2)",
-          "popularity": "2",
-          "odds_tansho": "4.3"
-        },
-        {
-          "waku": "3",
-          "umaban": "3",
-          "horse_name": "キングサーガ",
-          "sex_age": "セ9",
-          "weight_carried": "60.0",
-          "jockey": "小牧加",
-          "stable": "栗東小栗",
-          "horse_weight": "496(-4)",
-          "popularity": "4",
-          "odds_tansho": "7.5"
-        },
-        {
-          "waku": "4",
-          "umaban": "4",
-          "horse_name": "ローンウルフ",
-          "sex_age": "牡5",
-          "weight_carried": "60.0",
-          "jockey": "大江圭",
-          "stable": "美浦武市",
-          "horse_weight": "490(-4)",
-          "popularity": "11",
-          "odds_tansho": "116.3"
-        },
-        {
-          "waku": "5",
-          "umaban": "5",
-          "horse_name": "タイセイジャスパー",
-          "sex_age": "セ7",
-          "weight_carried": "60.0",
-          "jockey": "難波",
-          "stable": "美浦伊藤圭",
-          "horse_weight": "496(-6)",
-          "popularity": "10",
-          "odds_tansho": "76.5"
-        },
-        {
-          "waku": "6",
-          "umaban": "6",
-          "horse_name": "ロードリベラシオン",
-          "sex_age": "牡4",
-          "weight_carried": "59.0",
-          "jockey": "五十嵐",
-          "stable": "美浦尾形",
-          "horse_weight": "510(+2)",
-          "popularity": "5",
-          "odds_tansho": "3.0"
-        },
-        {
-          "waku": "6",
-          "umaban": "7",
-          "horse_name": "コレクテイニア",
-          "sex_age": "牡6",
-          "weight_carried": "60.0",
-          "jockey": "草野",
-          "stable": "美浦戸田",
-          "horse_weight": "470(0)",
-          "popularity": "1",
-          "odds_tansho": "34.0"
-        },
-        {
-          "waku": "7",
-          "umaban": "8",
-          "horse_name": "ジーティーオウジャ",
-          "sex_age": "セ5",
-          "weight_carried": "57.0",
-          "jockey": "▲水沼",
-          "stable": "美浦石栗",
-          "horse_weight": "504(-12)",
-          "popularity": "7",
-          "odds_tansho": "9.3"
-        },
-        {
-          "waku": "7",
-          "umaban": "9",
-          "horse_name": "モズバンディット",
-          "sex_age": "牡6",
-          "weight_carried": "60.0",
-          "jockey": "中村",
-          "stable": "栗東中尾",
-          "horse_weight": "462(+6)",
-          "popularity": "8",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "10",
-          "horse_name": "バルサムノート",
-          "sex_age": "牡6",
-          "weight_carried": "60.0",
-          "jockey": "森一",
-          "stable": "栗東高野",
-          "horse_weight": "516(-2)",
-          "popularity": "3",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "11",
-          "horse_name": "ルドヴィクス",
-          "sex_age": "牡8",
-          "weight_carried": "60.0",
-          "jockey": "上野",
-          "stable": "美浦久保田",
-          "horse_weight": "532(+14)",
-          "popularity": "6",
-          "odds_tansho": ""
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010304",
-      "date": "20260509"
-    },
-    "202605020508": {
-      "race_id": "202605020508",
-      "race_name": "4歳以上2勝クラス",
-      "course_info": "14:01発走 / 芝2000m (左 A) / 天候:晴 / 馬場:良",
-      "venue_info": "2回 東京 5日目 サラ系４歳以上 ２勝クラス (混)(特指) 定量 8頭 本賞金:1190,480,300,180,119万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "ホークマン",
-          "sex_age": "牡5",
-          "weight_carried": "54.0",
-          "jockey": "★谷原",
-          "stable": "美浦粕谷",
-          "horse_weight": "492(0)",
-          "popularity": "6",
-          "odds_tansho": "105.7"
-        },
-        {
-          "waku": "2",
-          "umaban": "2",
-          "horse_name": "ウィッシュツリー",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "戸崎圭",
-          "stable": "美浦宮田",
-          "horse_weight": "468(+6)",
-          "popularity": "2",
-          "odds_tansho": "2.3"
-        },
-        {
-          "waku": "3",
-          "umaban": "3",
-          "horse_name": "エーデル",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "岩田康",
-          "stable": "美浦金成",
-          "horse_weight": "476(+8)",
-          "popularity": "5",
-          "odds_tansho": "47.3"
-        },
-        {
-          "waku": "4",
-          "umaban": "4",
-          "horse_name": "コスタデラルス",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "柴田大",
-          "stable": "美浦和田雄",
-          "horse_weight": "450(+8)",
-          "popularity": "8",
-          "odds_tansho": "254.8"
-        },
-        {
-          "waku": "5",
-          "umaban": "5",
-          "horse_name": "ミッドセンチュリー",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "江田照",
-          "stable": "美浦松山",
-          "horse_weight": "482(+6)",
-          "popularity": "4",
-          "odds_tansho": "29.1"
-        },
-        {
-          "waku": "6",
-          "umaban": "6",
-          "horse_name": "カリーニョ",
-          "sex_age": "牡5",
-          "weight_carried": "58.0",
-          "jockey": "ルメール",
-          "stable": "栗東杉山晴",
-          "horse_weight": "468(-4)",
-          "popularity": "1",
-          "odds_tansho": "1.7"
-        },
-        {
-          "waku": "7",
-          "umaban": "7",
-          "horse_name": "チャイボーグ",
-          "sex_age": "牝6",
-          "weight_carried": "56.0",
-          "jockey": "木幡巧",
-          "stable": "美浦的場",
-          "horse_weight": "492(-10)",
-          "popularity": "7",
-          "odds_tansho": "128.5"
-        },
-        {
-          "waku": "8",
-          "umaban": "8",
-          "horse_name": "ショウナンマクベス",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "津村",
-          "stable": "美浦武市",
-          "horse_weight": "496(+14)",
-          "popularity": "3",
-          "odds_tansho": "5.7"
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020508",
-      "date": "20260509"
-    },
-    "202605020510": {
-      "race_id": "202605020510",
-      "race_name": "青竜S",
-      "course_info": "15:05発走 / ダ1600m (左) / 天候:晴 / 馬場:良",
-      "venue_info": "2回 東京 5日目 サラ系３歳 オープン (国際)(特指) 別定 15頭 本賞金:1900,760,480,290,190万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "サンライズケヴィン",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "松若",
-          "stable": "栗東平田",
-          "horse_weight": "494(+4)",
-          "popularity": "8",
-          "odds_tansho": "39.1"
-        },
-        {
-          "waku": "2",
-          "umaban": "2",
-          "horse_name": "マクリール",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "ルメール",
-          "stable": "美浦手塚久",
-          "horse_weight": "470(+2)",
-          "popularity": "2",
-          "odds_tansho": "48.4"
-        },
-        {
-          "waku": "2",
-          "umaban": "3",
-          "horse_name": "ポッドデスペア",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "横山武",
-          "stable": "美浦畠山",
-          "horse_weight": "482(+2)",
-          "popularity": "10",
-          "odds_tansho": "49.5"
-        },
-        {
-          "waku": "3",
-          "umaban": "4",
-          "horse_name": "エコロシード",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "レーン",
-          "stable": "美浦堀",
-          "horse_weight": "544(0)",
-          "popularity": "6",
-          "odds_tansho": "11.9"
-        },
-        {
-          "waku": "3",
-          "umaban": "5",
-          "horse_name": "マイネルミストラル",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "津村",
-          "stable": "美浦萱野",
-          "horse_weight": "516(-8)",
-          "popularity": "11",
-          "odds_tansho": "509.4"
-        },
-        {
-          "waku": "4",
-          "umaban": "6",
-          "horse_name": "エスシーレイジュ",
-          "sex_age": "牝3",
-          "weight_carried": "55.0",
-          "jockey": "大野",
-          "stable": "美浦松山",
-          "horse_weight": "454(-2)",
-          "popularity": "14",
-          "odds_tansho": "21.7"
-        },
-        {
-          "waku": "4",
-          "umaban": "7",
-          "horse_name": "テイエムキハク",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "丹内",
-          "stable": "美浦伊藤圭",
-          "horse_weight": "478(+10)",
-          "popularity": "4",
-          "odds_tansho": "14.4"
-        },
-        {
-          "waku": "5",
-          "umaban": "8",
-          "horse_name": "アトミックブレス",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "ディー",
-          "stable": "美浦加藤征",
-          "horse_weight": "516(+2)",
-          "popularity": "12",
-          "odds_tansho": "244.6"
-        },
-        {
-          "waku": "5",
-          "umaban": "9",
-          "horse_name": "アンヘリータス",
-          "sex_age": "牝3",
-          "weight_carried": "55.0",
-          "jockey": "石橋脩",
-          "stable": "栗東吉村",
-          "horse_weight": "410(-4)",
-          "popularity": "15",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "10",
-          "horse_name": "ドンエレクトス",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "荻野極",
-          "stable": "美浦高木",
-          "horse_weight": "468(+2)",
-          "popularity": "1",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "11",
-          "horse_name": "ケブランリ",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "岩田康",
-          "stable": "美浦加藤士",
-          "horse_weight": "500(+8)",
-          "popularity": "7",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "12",
-          "horse_name": "チュウワカーネギー",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "横山典",
-          "stable": "栗東大久保",
-          "horse_weight": "520(+2)",
-          "popularity": "3",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "13",
-          "horse_name": "アルデトップガン",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "菅原明",
-          "stable": "美浦田中剛",
-          "horse_weight": "466(0)",
-          "popularity": "5",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "14",
-          "horse_name": "メイショウバルク",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "武豊",
-          "stable": "栗東安達",
-          "horse_weight": "490(-4)",
-          "popularity": "9",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "15",
-          "horse_name": "ミリオンクラウン",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "佐々木",
-          "stable": "美浦和田雄",
-          "horse_weight": "500(+8)",
-          "popularity": "13",
-          "odds_tansho": ""
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020510",
-      "date": "20260509"
-    },
-    "202605020511": {
-      "race_id": "202605020511",
-      "race_name": "エプソムC",
-      "course_info": "15:45発走 / 芝1800m (左 A) / 天候:晴 / 馬場:良",
-      "venue_info": "2回 東京 5日目 サラ系４歳以上 オープン (国際)(特指) 別定 17頭 本賞金:4300,1700,1100,650,430万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "ジュタ",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "佐々木",
-          "stable": "栗東矢作",
-          "horse_weight": "504(+4)",
-          "popularity": "9",
-          "odds_tansho": "12.3"
-        },
-        {
-          "waku": "1",
-          "umaban": "2",
-          "horse_name": "サブマリーナ",
-          "sex_age": "牡5",
-          "weight_carried": "57.0",
-          "jockey": "武豊",
-          "stable": "栗東庄野",
-          "horse_weight": "478(0)",
-          "popularity": "4",
-          "odds_tansho": "4.8"
-        },
-        {
-          "waku": "2",
-          "umaban": "3",
-          "horse_name": "エピファニー",
-          "sex_age": "牡7",
-          "weight_carried": "57.0",
-          "jockey": "杉原",
-          "stable": "美浦宮田",
-          "horse_weight": "510(+2)",
-          "popularity": "17",
-          "odds_tansho": "17.4"
-        },
-        {
-          "waku": "2",
-          "umaban": "4",
-          "horse_name": "カラマティアノス",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "津村",
-          "stable": "美浦奥村武",
-          "horse_weight": "474(-4)",
-          "popularity": "3",
-          "odds_tansho": "29.1"
-        },
-        {
-          "waku": "3",
-          "umaban": "5",
-          "horse_name": "ジュンブロッサム",
-          "sex_age": "牡7",
-          "weight_carried": "58.0",
-          "jockey": "荻野極",
-          "stable": "栗東友道",
-          "horse_weight": "476(-2)",
-          "popularity": "7",
-          "odds_tansho": "60.7"
-        },
-        {
-          "waku": "3",
-          "umaban": "6",
-          "horse_name": "マジックサンズ",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "横山和",
-          "stable": "栗東須貝",
-          "horse_weight": "528(+8)",
-          "popularity": "6",
-          "odds_tansho": "62.1"
-        },
-        {
-          "waku": "4",
-          "umaban": "7",
-          "horse_name": "オクタヴィアヌス",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "北村宏",
-          "stable": "美浦木村",
-          "horse_weight": "518(0)",
-          "popularity": "15",
-          "odds_tansho": "2.7"
-        },
-        {
-          "waku": "4",
-          "umaban": "8",
-          "horse_name": "シルトホルン",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "大野",
-          "stable": "美浦新開",
-          "horse_weight": "482(0)",
-          "popularity": "8",
-          "odds_tansho": "30.1"
-        },
-        {
-          "waku": "5",
-          "umaban": "9",
-          "horse_name": "マテンロウレオ",
-          "sex_age": "牡7",
-          "weight_carried": "57.0",
-          "jockey": "横山典",
-          "stable": "栗東昆",
-          "horse_weight": "478(-14)",
-          "popularity": "11",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "5",
-          "umaban": "10",
-          "horse_name": "センツブラッド",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "横山武",
-          "stable": "栗東斉藤崇",
-          "horse_weight": "470(+6)",
-          "popularity": "13",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "11",
-          "horse_name": "トロヴァトーレ",
-          "sex_age": "牡5",
-          "weight_carried": "58.0",
-          "jockey": "ルメール",
-          "stable": "美浦鹿戸",
-          "horse_weight": "510(0)",
-          "popularity": "2",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "12",
-          "horse_name": "マイネルモーント",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "丹内",
-          "stable": "美浦高木",
-          "horse_weight": "464(0)",
-          "popularity": "14",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "13",
-          "horse_name": "オニャンコポン",
-          "sex_age": "セ7",
-          "weight_carried": "57.0",
-          "jockey": "菅原明",
-          "stable": "美浦小島",
-          "horse_weight": "474(+4)",
-          "popularity": "16",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "14",
-          "horse_name": "サクラファレル",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "レーン",
-          "stable": "美浦堀",
-          "horse_weight": "516(-4)",
-          "popularity": "1",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "15",
-          "horse_name": "ストレイトトーカー",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "田辺",
-          "stable": "美浦岩戸",
-          "horse_weight": "482(-4)",
-          "popularity": "12",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "16",
-          "horse_name": "ステレンボッシュ",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "戸崎圭",
-          "stable": "美浦宮田",
-          "horse_weight": "478(-4)",
-          "popularity": "5",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "17",
-          "horse_name": "レガーロデルシエロ",
-          "sex_age": "牡5",
-          "weight_carried": "57.0",
-          "jockey": "岩田康",
-          "stable": "美浦栗田",
-          "horse_weight": "512(-4)",
-          "popularity": "10",
-          "odds_tansho": ""
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020511",
-      "date": "20260509"
-    },
-    "202605020512": {
-      "race_id": "202605020512",
-      "race_name": "4歳以上2勝クラス",
-      "course_info": "16:30発走 / ダ1400m (左) / 天候:晴 / 馬場:良",
-      "venue_info": "2回 東京 5日目 サラ系４歳以上 ２勝クラス 牝[指] 定量 16頭 本賞金:1190,480,300,180,119万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "アクアマリーナ",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "佐々木",
-          "stable": "美浦伊坂",
-          "horse_weight": "474(+8)",
-          "popularity": "4",
-          "odds_tansho": "66.7"
-        },
-        {
-          "waku": "1",
-          "umaban": "2",
-          "horse_name": "ラヴァブル",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "松若",
-          "stable": "栗東松下",
-          "horse_weight": "498(+2)",
-          "popularity": "11",
-          "odds_tansho": "193.9"
-        },
-        {
-          "waku": "2",
-          "umaban": "3",
-          "horse_name": "モーニングマジック",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "三浦",
-          "stable": "美浦武藤",
-          "horse_weight": "540(+12)",
-          "popularity": "1",
-          "odds_tansho": "24.3"
-        },
-        {
-          "waku": "2",
-          "umaban": "4",
-          "horse_name": "レディゴディヴァ",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "石橋脩",
-          "stable": "栗東小崎",
-          "horse_weight": "432(-10)",
-          "popularity": "15",
-          "odds_tansho": "4.4"
-        },
-        {
-          "waku": "3",
-          "umaban": "5",
-          "horse_name": "アルジェンタージョ",
-          "sex_age": "牝5",
-          "weight_carried": "53.0",
-          "jockey": "▲佐藤",
-          "stable": "美浦伊藤圭",
-          "horse_weight": "460(-2)",
-          "popularity": "8",
-          "odds_tansho": "274.7"
-        },
-        {
-          "waku": "3",
-          "umaban": "6",
-          "horse_name": "クインズポラリス",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "田辺",
-          "stable": "美浦上原博",
-          "horse_weight": "504(+2)",
-          "popularity": "9",
-          "odds_tansho": "187.1"
-        },
-        {
-          "waku": "4",
-          "umaban": "7",
-          "horse_name": "ヴィンブルレー",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "横山武",
-          "stable": "美浦矢野",
-          "horse_weight": "468(+2)",
-          "popularity": "3",
-          "odds_tansho": "18.1"
-        },
-        {
-          "waku": "4",
-          "umaban": "8",
-          "horse_name": "ホウショウマリス",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "武豊",
-          "stable": "栗東井上",
-          "horse_weight": "448(-10)",
-          "popularity": "2",
-          "odds_tansho": "16.2"
-        },
-        {
-          "waku": "5",
-          "umaban": "9",
-          "horse_name": "ドナカルナバル",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "江田照",
-          "stable": "美浦高木",
-          "horse_weight": "484(-4)",
-          "popularity": "12",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "5",
-          "umaban": "10",
-          "horse_name": "オーロラアーク",
-          "sex_age": "牝7",
-          "weight_carried": "56.0",
-          "jockey": "柴田大",
-          "stable": "美浦石栗",
-          "horse_weight": "456(-11)",
-          "popularity": "16",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "11",
-          "horse_name": "フィドルファドル",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "戸崎圭",
-          "stable": "栗東矢作",
-          "horse_weight": "478(+10)",
-          "popularity": "5",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "12",
-          "horse_name": "ベルブリエ",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "岩田康",
-          "stable": "美浦尾関",
-          "horse_weight": "468(+2)",
-          "popularity": "14",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "13",
-          "horse_name": "オカメノコイ",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "大野",
-          "stable": "美浦小笠",
-          "horse_weight": "470(-2)",
-          "popularity": "10",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "14",
-          "horse_name": "ワイノナオミ",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "荻野極",
-          "stable": "栗東畑端",
-          "horse_weight": "468(-8)",
-          "popularity": "7",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "15",
-          "horse_name": "ヴァリオーサ",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "津村",
-          "stable": "栗東武幸",
-          "horse_weight": "478(+2)",
-          "popularity": "13",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "16",
-          "horse_name": "プチブール",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "丹内",
-          "stable": "美浦松尾",
-          "horse_weight": "452(+2)",
-          "popularity": "6",
-          "odds_tansho": ""
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020512",
-      "date": "20260509"
-    },
-    "202608030511": {
-      "race_id": "202608030511",
-      "race_name": "京都新聞杯",
-      "course_info": "15:30発走 / 芝2200m (右 外 C) / 天候:晴 / 馬場:良",
-      "venue_info": "3回 京都 5日目 サラ系３歳 オープン (国際)(指) 馬齢 16頭 本賞金:5400,2200,1400,810,540万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "アーレムアレス",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "菱田",
-          "stable": "栗東橋口",
-          "horse_weight": "484(-10)",
-          "popularity": "3",
-          "odds_tansho": "4.6"
-        },
-        {
-          "waku": "1",
-          "umaban": "2",
-          "horse_name": "エムズビギン",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "川田",
-          "stable": "栗東友道",
-          "horse_weight": "508(0)",
-          "popularity": "2",
-          "odds_tansho": "235.5"
-        },
-        {
-          "waku": "2",
-          "umaban": "3",
-          "horse_name": "メイショウテンク",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "団野",
-          "stable": "栗東荒川",
-          "horse_weight": "450(-2)",
-          "popularity": "12",
-          "odds_tansho": "31.6"
-        },
-        {
-          "waku": "2",
-          "umaban": "4",
-          "horse_name": "ティラーノ",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "田山",
-          "stable": "美浦小手川",
-          "horse_weight": "464(+2)",
-          "popularity": "15",
-          "odds_tansho": "15.2"
-        },
-        {
-          "waku": "3",
-          "umaban": "5",
-          "horse_name": "コンジェスタス",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "西村淳",
-          "stable": "栗東高野",
-          "horse_weight": "518(-6)",
-          "popularity": "6",
-          "odds_tansho": "9.7"
-        },
-        {
-          "waku": "3",
-          "umaban": "6",
-          "horse_name": "ラディアントスター",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "池添",
-          "stable": "美浦林",
-          "horse_weight": "514(-10)",
-          "popularity": "9",
-          "odds_tansho": "29.8"
-        },
-        {
-          "waku": "4",
-          "umaban": "7",
-          "horse_name": "カムアップローゼス",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "鮫島駿",
-          "stable": "栗東浜田",
-          "horse_weight": "466(+6)",
-          "popularity": "10",
-          "odds_tansho": "218.9"
-        },
-        {
-          "waku": "4",
-          "umaban": "8",
-          "horse_name": "バドリナート",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "坂井",
-          "stable": "栗東松永幹",
-          "horse_weight": "492(0)",
-          "popularity": "7",
-          "odds_tansho": "12.4"
-        },
-        {
-          "waku": "5",
-          "umaban": "9",
-          "horse_name": "カフジエメンタール",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "吉村",
-          "stable": "栗東矢作",
-          "horse_weight": "526(-2)",
-          "popularity": "11",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "5",
-          "umaban": "10",
-          "horse_name": "サヴォアフェール",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "松山",
-          "stable": "栗東杉山晴",
-          "horse_weight": "498(-4)",
-          "popularity": "4",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "11",
-          "horse_name": "ブリガンティン",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "原",
-          "stable": "美浦松山",
-          "horse_weight": "468(+8)",
-          "popularity": "16",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "6",
-          "umaban": "12",
-          "horse_name": "キンググローリー",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "幸",
-          "stable": "美浦古賀慎",
-          "horse_weight": "466(+4)",
-          "popularity": "8",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "13",
-          "horse_name": "ニホンピロロジャー",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "国分恭",
-          "stable": "栗東緒方",
-          "horse_weight": "438(+6)",
-          "popularity": "13",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "14",
-          "horse_name": "ステラスペース",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "武藤",
-          "stable": "美浦武藤",
-          "horse_weight": "466(-12)",
-          "popularity": "14",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "15",
-          "horse_name": "ベレシート",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "北村友",
-          "stable": "栗東斉藤崇",
-          "horse_weight": "480(-2)",
-          "popularity": "1",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "16",
-          "horse_name": "アクセス",
-          "sex_age": "牡3",
-          "weight_carried": "57.0",
-          "jockey": "岩田望",
-          "stable": "栗東上村",
-          "horse_weight": "476(-10)",
-          "popularity": "5",
-          "odds_tansho": ""
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608030511",
-      "date": "20260509"
-    },
-    "202608030512": {
-      "race_id": "202608030512",
-      "race_name": "4歳以上2勝クラス",
-      "course_info": "16:10発走 / ダ1800m (右) / 天候:晴 / 馬場:良",
-      "venue_info": "3回 京都 5日目 サラ系４歳以上 ２勝クラス (混)[指] 定量 13頭 本賞金:1190,480,300,180,119万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "クリノラピダス",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "幸",
-          "stable": "栗東谷",
-          "horse_weight": "472(0)",
-          "popularity": "13",
-          "odds_tansho": "192.5"
-        },
-        {
-          "waku": "2",
-          "umaban": "2",
-          "horse_name": "エリカヴェネチア",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "北村友",
-          "stable": "栗東吉岡",
-          "horse_weight": "500(+2)",
-          "popularity": "9",
-          "odds_tansho": "58.7"
-        },
-        {
-          "waku": "3",
-          "umaban": "3",
-          "horse_name": "メイショウヤシマ",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "松山",
-          "stable": "栗東高橋亮",
-          "horse_weight": "478(-6)",
-          "popularity": "3",
-          "odds_tansho": "7.8"
-        },
-        {
-          "waku": "4",
-          "umaban": "4",
-          "horse_name": "キングオブフジ",
-          "sex_age": "牡5",
-          "weight_carried": "58.0",
-          "jockey": "中井",
-          "stable": "栗東角田",
-          "horse_weight": "514(+12)",
-          "popularity": "10",
-          "odds_tansho": "93.2"
-        },
-        {
-          "waku": "4",
-          "umaban": "5",
-          "horse_name": "メイケイロゼッタ",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "酒井",
-          "stable": "栗東河嶋",
-          "horse_weight": "472(-4)",
-          "popularity": "11",
-          "odds_tansho": "2.0"
-        },
-        {
-          "waku": "5",
-          "umaban": "6",
-          "horse_name": "トゥルブレンシア",
-          "sex_age": "セ9",
-          "weight_carried": "56.0",
-          "jockey": "△田山",
-          "stable": "栗東東田",
-          "horse_weight": "468(0)",
-          "popularity": "7",
-          "odds_tansho": "15.8"
-        },
-        {
-          "waku": "5",
-          "umaban": "7",
-          "horse_name": "ニホンピロデヴィン",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "菱田",
-          "stable": "栗東緒方",
-          "horse_weight": "456(+2)",
-          "popularity": "1",
-          "odds_tansho": "16.6"
-        },
-        {
-          "waku": "6",
-          "umaban": "8",
-          "horse_name": "ロードヴォイジャー",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "西村淳",
-          "stable": "栗東坂口",
-          "horse_weight": "516(0)",
-          "popularity": "2",
-          "odds_tansho": "8.1"
-        },
-        {
-          "waku": "6",
-          "umaban": "9",
-          "horse_name": "メイショウオオコ",
-          "sex_age": "牡5",
-          "weight_carried": "58.0",
-          "jockey": "高杉",
-          "stable": "栗東荒川",
-          "horse_weight": "474(0)",
-          "popularity": "5",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "10",
-          "horse_name": "スマートシーカー",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "川又",
-          "stable": "栗東吉村",
-          "horse_weight": "476(0)",
-          "popularity": "8",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "7",
-          "umaban": "11",
-          "horse_name": "クリノフィガロ",
-          "sex_age": "牡5",
-          "weight_carried": "58.0",
-          "jockey": "団野",
-          "stable": "栗東荒川",
-          "horse_weight": "504(0)",
-          "popularity": "6",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "12",
-          "horse_name": "テーオーレガシー",
-          "sex_age": "牡6",
-          "weight_carried": "55.0",
-          "jockey": "▲川端",
-          "stable": "栗東宮",
-          "horse_weight": "526(-8)",
-          "popularity": "12",
-          "odds_tansho": ""
-        },
-        {
-          "waku": "8",
-          "umaban": "13",
-          "horse_name": "サイモンシュバリエ",
-          "sex_age": "牡4",
-          "weight_carried": "58.0",
-          "jockey": "吉村",
-          "stable": "栗東梅田",
-          "horse_weight": "496(+4)",
-          "popularity": "4",
-          "odds_tansho": ""
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608030512",
-      "date": "20260509"
-    },
     "202604010411": {
       "race_id": "202604010411",
       "race_name": "谷川岳S",
@@ -1713,7 +491,8 @@
           "jockey": "佐々木",
           "stable": "美浦上原佑",
           "horse_weight": "510(+2)",
-          "popularity": "18"
+          "popularity": "18",
+          "odds_tansho": "135.7"
         },
         {
           "waku": "1",
@@ -1724,7 +503,8 @@
           "jockey": "松若",
           "stable": "栗東森秀",
           "horse_weight": "486(-8)",
-          "popularity": "16"
+          "popularity": "16",
+          "odds_tansho": "9.3"
         },
         {
           "waku": "2",
@@ -1735,7 +515,8 @@
           "jockey": "津村",
           "stable": "美浦宮田",
           "horse_weight": "498(-6)",
-          "popularity": "15"
+          "popularity": "15",
+          "odds_tansho": "43.7"
         },
         {
           "waku": "2",
@@ -1746,7 +527,8 @@
           "jockey": "西村淳",
           "stable": "栗東吉岡",
           "horse_weight": "474(-8)",
-          "popularity": "5"
+          "popularity": "5",
+          "odds_tansho": "28.5"
         },
         {
           "waku": "3",
@@ -1757,7 +539,8 @@
           "jockey": "西塚",
           "stable": "美浦手塚久",
           "horse_weight": "422(+8)",
-          "popularity": "14"
+          "popularity": "14",
+          "odds_tansho": "4.9"
         },
         {
           "waku": "3",
@@ -1768,7 +551,8 @@
           "jockey": "斎藤",
           "stable": "美浦斎藤誠",
           "horse_weight": "490(-4)",
-          "popularity": "13"
+          "popularity": "13",
+          "odds_tansho": "19.7"
         },
         {
           "waku": "4",
@@ -1779,7 +563,8 @@
           "jockey": "川田",
           "stable": "栗東福永",
           "horse_weight": "480(+6)",
-          "popularity": "3"
+          "popularity": "3",
+          "odds_tansho": "37.3"
         },
         {
           "waku": "4",
@@ -1790,7 +575,8 @@
           "jockey": "松山",
           "stable": "栗東小林",
           "horse_weight": "484(0)",
-          "popularity": "10"
+          "popularity": "10",
+          "odds_tansho": "38.5"
         },
         {
           "waku": "5",
@@ -1801,7 +587,8 @@
           "jockey": "ルメール",
           "stable": "美浦木村",
           "horse_weight": "528(+10)",
-          "popularity": "7"
+          "popularity": "7",
+          "odds_tansho": ""
         },
         {
           "waku": "5",
@@ -1812,7 +599,8 @@
           "jockey": "横山和",
           "stable": "美浦田村",
           "horse_weight": "480(+6)",
-          "popularity": "2"
+          "popularity": "2",
+          "odds_tansho": ""
         },
         {
           "waku": "6",
@@ -1823,7 +611,8 @@
           "jockey": "坂井",
           "stable": "栗東友道",
           "horse_weight": "478(-4)",
-          "popularity": "6"
+          "popularity": "6",
+          "odds_tansho": ""
         },
         {
           "waku": "6",
@@ -1834,7 +623,8 @@
           "jockey": "岩田望",
           "stable": "栗東中内田",
           "horse_weight": "468(+6)",
-          "popularity": "8"
+          "popularity": "8",
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -1845,7 +635,8 @@
           "jockey": "三浦",
           "stable": "美浦武市",
           "horse_weight": "432(+4)",
-          "popularity": "17"
+          "popularity": "17",
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -1856,7 +647,8 @@
           "jockey": "北村友",
           "stable": "栗東松下",
           "horse_weight": "468(+8)",
-          "popularity": "9"
+          "popularity": "9",
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -1867,7 +659,8 @@
           "jockey": "原",
           "stable": "栗東松下",
           "horse_weight": "458(0)",
-          "popularity": "11"
+          "popularity": "11",
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -1878,7 +671,8 @@
           "jockey": "戸崎圭",
           "stable": "栗東藤原",
           "horse_weight": "488(-4)",
-          "popularity": "4"
+          "popularity": "4",
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -1889,7 +683,8 @@
           "jockey": "レーン",
           "stable": "美浦辻",
           "horse_weight": "476(0)",
-          "popularity": "1"
+          "popularity": "1",
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -1900,7 +695,8 @@
           "jockey": "横山武",
           "stable": "美浦加藤征",
           "horse_weight": "450(0)",
-          "popularity": "12"
+          "popularity": "12",
+          "odds_tansho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020611",
@@ -4176,7 +2972,7 @@
           "stable": "栗東橋田",
           "horse_weight": "480(+2)",
           "popularity": "14",
-          "odds_tansho": "97.8"
+          "odds_tansho": "158.5"
         },
         {
           "waku": "1",
@@ -4188,7 +2984,7 @@
           "stable": "美浦平岩",
           "horse_weight": "474(-8)",
           "popularity": "13",
-          "odds_tansho": "2.7"
+          "odds_tansho": "3.1"
         },
         {
           "waku": "2",
@@ -4200,7 +2996,7 @@
           "stable": "美浦鈴木伸",
           "horse_weight": "468(+6)",
           "popularity": "2",
-          "odds_tansho": "57.5"
+          "odds_tansho": "72.8"
         },
         {
           "waku": "2",
@@ -4212,7 +3008,7 @@
           "stable": "美浦中川",
           "horse_weight": "490(0)",
           "popularity": "1",
-          "odds_tansho": "34.4"
+          "odds_tansho": "46.4"
         },
         {
           "waku": "3",
@@ -4223,8 +3019,8 @@
           "jockey": "ディー",
           "stable": "美浦西田",
           "horse_weight": "524(+8)",
-          "popularity": "9",
-          "odds_tansho": "15.3"
+          "popularity": "8",
+          "odds_tansho": "16.2"
         },
         {
           "waku": "3",
@@ -4236,7 +3032,7 @@
           "stable": "栗東野中",
           "horse_weight": "452(-4)",
           "popularity": "10",
-          "odds_tansho": "97.4"
+          "odds_tansho": "155.8"
         },
         {
           "waku": "4",
@@ -4248,7 +3044,7 @@
           "stable": "美浦伊藤圭",
           "horse_weight": "492(-2)",
           "popularity": "15",
-          "odds_tansho": "9.7"
+          "odds_tansho": "6.9"
         },
         {
           "waku": "4",
@@ -4259,8 +3055,8 @@
           "jockey": "津村",
           "stable": "美浦手塚久",
           "horse_weight": "478(-2)",
-          "popularity": "8",
-          "odds_tansho": "75.6"
+          "popularity": "9",
+          "odds_tansho": "109.1"
         },
         {
           "waku": "5",
@@ -4331,7 +3127,7 @@
           "jockey": "荻野極",
           "stable": "栗東中内田",
           "horse_weight": "444(-4)",
-          "popularity": "5",
+          "popularity": "4",
           "odds_tansho": ""
         },
         {
@@ -4343,7 +3139,7 @@
           "jockey": "レーン",
           "stable": "美浦矢嶋",
           "horse_weight": "482(-2)",
-          "popularity": "4",
+          "popularity": "5",
           "odds_tansho": ""
         },
         {
@@ -4567,7 +3363,7 @@
     "202604010811": {
       "race_id": "202604010811",
       "race_name": "韋駄天S",
-      "course_info": "15:15発走 / 芝1000m (直線 B)",
+      "course_info": "15:15発走 / 芝1000m (直線 B) / 天候:小雨 / 馬場:稍",
       "venue_info": "1回 新潟 8日目 サラ系４歳以上 オープン (国際)(特指) ハンデ 16頭 本賞金:2300,920,580,350,230万円",
       "horses": [
         {
@@ -4579,9 +3375,8 @@
           "jockey": "横山琉",
           "stable": "美浦青木",
           "horse_weight": "",
-          "予想オッズ更新": "21.9",
           "popularity": "10",
-          "odds_tansho": "3.8"
+          "odds_tansho": "33.7"
         },
         {
           "waku": "1",
@@ -4592,9 +3387,8 @@
           "jockey": "丹内",
           "stable": "美浦矢野",
           "horse_weight": "",
-          "予想オッズ更新": "10.1",
-          "popularity": "4",
-          "odds_tansho": "5.9"
+          "popularity": "11",
+          "odds_tansho": "36.1"
         },
         {
           "waku": "2",
@@ -4605,9 +3399,8 @@
           "jockey": "川須",
           "stable": "栗東秋山",
           "horse_weight": "",
-          "予想オッズ更新": "12.4",
-          "popularity": "7",
-          "odds_tansho": "6.3"
+          "popularity": "12",
+          "odds_tansho": "12.2"
         },
         {
           "waku": "2",
@@ -4618,9 +3411,8 @@
           "jockey": "丸山",
           "stable": "栗東森秀",
           "horse_weight": "",
-          "予想オッズ更新": "43.3",
           "popularity": "13",
-          "odds_tansho": "10.1"
+          "odds_tansho": "10.2"
         },
         {
           "waku": "3",
@@ -4631,9 +3423,8 @@
           "jockey": "荻野極",
           "stable": "栗東小椋",
           "horse_weight": "",
-          "予想オッズ更新": "6.3",
-          "popularity": "3",
-          "odds_tansho": "11.2"
+          "popularity": "6",
+          "odds_tansho": "20.0"
         },
         {
           "waku": "3",
@@ -4644,9 +3435,8 @@
           "jockey": "ゴンサルベ",
           "stable": "栗東矢作",
           "horse_weight": "",
-          "予想オッズ更新": "11.7",
-          "popularity": "6",
-          "odds_tansho": "11.7"
+          "popularity": "8",
+          "odds_tansho": "5.5"
         },
         {
           "waku": "4",
@@ -4657,9 +3447,8 @@
           "jockey": "黛",
           "stable": "美浦千葉",
           "horse_weight": "",
-          "予想オッズ更新": "45.6",
-          "popularity": "14",
-          "odds_tansho": "12.4"
+          "popularity": "15",
+          "odds_tansho": "5.8"
         },
         {
           "waku": "4",
@@ -4670,9 +3459,8 @@
           "jockey": "嶋田",
           "stable": "美浦佐藤吉",
           "horse_weight": "",
-          "予想オッズ更新": "20.6",
-          "popularity": "9",
-          "odds_tansho": "14.3"
+          "popularity": "5",
+          "odds_tansho": "11.3"
         },
         {
           "waku": "5",
@@ -4683,9 +3471,8 @@
           "jockey": "菊沢",
           "stable": "美浦菊沢",
           "horse_weight": "",
-          "予想オッズ更新": "11.2",
-          "popularity": "5",
-          "odds_tansho": "20.6"
+          "popularity": "4",
+          "odds_tansho": ""
         },
         {
           "waku": "5",
@@ -4696,9 +3483,8 @@
           "jockey": "杉原",
           "stable": "美浦嘉藤",
           "horse_weight": "",
-          "予想オッズ更新": "14.3",
-          "popularity": "8",
-          "odds_tansho": "21.9"
+          "popularity": "9",
+          "odds_tansho": ""
         },
         {
           "waku": "6",
@@ -4709,9 +3495,8 @@
           "jockey": "丸田",
           "stable": "美浦的場",
           "horse_weight": "",
-          "予想オッズ更新": "123.5",
           "popularity": "16",
-          "odds_tansho": "30.6"
+          "odds_tansho": ""
         },
         {
           "waku": "6",
@@ -4722,9 +3507,8 @@
           "jockey": "江田照",
           "stable": "栗東森秀",
           "horse_weight": "",
-          "予想オッズ更新": "5.9",
-          "popularity": "2",
-          "odds_tansho": "32.6"
+          "popularity": "1",
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -4735,9 +3519,8 @@
           "jockey": "武藤",
           "stable": "美浦武藤",
           "horse_weight": "",
-          "予想オッズ更新": "30.6",
-          "popularity": "11",
-          "odds_tansho": "43.3"
+          "popularity": "14",
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -4748,9 +3531,8 @@
           "jockey": "富田",
           "stable": "栗東矢作",
           "horse_weight": "",
-          "予想オッズ更新": "3.8",
-          "popularity": "1",
-          "odds_tansho": "45.6"
+          "popularity": "2",
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -4761,9 +3543,8 @@
           "jockey": "小崎",
           "stable": "美浦武井",
           "horse_weight": "",
-          "予想オッズ更新": "32.6",
-          "popularity": "12",
-          "odds_tansho": "47.1"
+          "popularity": "3",
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -4774,9 +3555,8 @@
           "jockey": "石田",
           "stable": "美浦蛯名利",
           "horse_weight": "",
-          "予想オッズ更新": "47.1",
-          "popularity": "15",
-          "odds_tansho": "123.5"
+          "popularity": "7",
+          "odds_tansho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010811",
@@ -4785,7 +3565,7 @@
     "202605021011": {
       "race_id": "202605021011",
       "race_name": "オークス",
-      "course_info": "15:40発走 / 芝2400m (左 B)",
+      "course_info": "15:40発走 / 芝2400m (左 B) / 天候:曇 / 馬場:良",
       "venue_info": "2回 東京 10日目 サラ系３歳 オープン (国際) 牝(指) 馬齢 18頭 本賞金:15000,6000,3800,2300,1500万円",
       "horses": [
         {
@@ -4798,7 +3578,7 @@
           "stable": "美浦鈴木伸",
           "horse_weight": "",
           "popularity": "18",
-          "odds_tansho": "97.0"
+          "odds_tansho": "84.2"
         },
         {
           "waku": "1",
@@ -4809,8 +3589,8 @@
           "jockey": "ディー",
           "stable": "栗東新谷",
           "horse_weight": "",
-          "popularity": "12",
-          "odds_tansho": "146.1"
+          "popularity": "11",
+          "odds_tansho": "150.4"
         },
         {
           "waku": "2",
@@ -4822,7 +3602,7 @@
           "stable": "栗東斉藤崇",
           "horse_weight": "",
           "popularity": "6",
-          "odds_tansho": "184.2"
+          "odds_tansho": "211.3"
         },
         {
           "waku": "2",
@@ -4834,7 +3614,7 @@
           "stable": "栗東福永",
           "horse_weight": "",
           "popularity": "14",
-          "odds_tansho": "38.3"
+          "odds_tansho": "31.5"
         },
         {
           "waku": "3",
@@ -4845,8 +3625,8 @@
           "jockey": "津村",
           "stable": "栗東橋口",
           "horse_weight": "",
-          "popularity": "13",
-          "odds_tansho": "3.0"
+          "popularity": "12",
+          "odds_tansho": "3.1"
         },
         {
           "waku": "3",
@@ -4857,8 +3637,8 @@
           "jockey": "石橋脩",
           "stable": "美浦竹内",
           "horse_weight": "",
-          "popularity": "15",
-          "odds_tansho": "9.3"
+          "popularity": "16",
+          "odds_tansho": "7.0"
         },
         {
           "waku": "4",
@@ -4870,7 +3650,7 @@
           "stable": "美浦高木",
           "horse_weight": "",
           "popularity": "17",
-          "odds_tansho": "38.2"
+          "odds_tansho": "25.3"
         },
         {
           "waku": "4",
@@ -4917,7 +3697,7 @@
           "jockey": "横山武",
           "stable": "栗東牧浦",
           "horse_weight": "",
-          "popularity": "11",
+          "popularity": "13",
           "odds_tansho": ""
         },
         {
@@ -4929,7 +3709,7 @@
           "jockey": "ルメール",
           "stable": "美浦大竹",
           "horse_weight": "",
-          "popularity": "5",
+          "popularity": "4",
           "odds_tansho": ""
         },
         {
@@ -4953,7 +3733,7 @@
           "jockey": "浜中",
           "stable": "栗東四位",
           "horse_weight": "",
-          "popularity": "16",
+          "popularity": "15",
           "odds_tansho": ""
         },
         {
@@ -4977,7 +3757,7 @@
           "jockey": "今村",
           "stable": "栗東寺島",
           "horse_weight": "",
-          "popularity": "4",
+          "popularity": "5",
           "odds_tansho": ""
         },
         {
@@ -5011,7 +3791,7 @@
     "202608031008": {
       "race_id": "202608031008",
       "race_name": "4歳以上2勝クラス",
-      "course_info": "13:40発走 / ダ1800m (右)",
+      "course_info": "13:40発走 / ダ1800m (右) / 天候:晴 / 馬場:良",
       "venue_info": "3回 京都 10日目 サラ系４歳以上 ２勝クラス [指] 定量 12頭 本賞金:1190,480,300,180,119万円",
       "horses": [
         {
@@ -5023,9 +3803,8 @@
           "jockey": "菱田",
           "stable": "栗東宮",
           "horse_weight": "",
-          "予想オッズ更新": "2.7",
-          "popularity": "1",
-          "odds_tansho": "2.7"
+          "popularity": "2",
+          "odds_tansho": "4.3"
         },
         {
           "waku": "2",
@@ -5036,9 +3815,8 @@
           "jockey": "角田和",
           "stable": "栗東西村",
           "horse_weight": "",
-          "予想オッズ更新": "94.3",
-          "popularity": "12",
-          "odds_tansho": "2.7"
+          "popularity": "10",
+          "odds_tansho": "36.3"
         },
         {
           "waku": "3",
@@ -5049,9 +3827,8 @@
           "jockey": "秋山稔",
           "stable": "栗東羽月",
           "horse_weight": "",
-          "予想オッズ更新": "10.1",
           "popularity": "4",
-          "odds_tansho": "6.1"
+          "odds_tansho": "5.8"
         },
         {
           "waku": "4",
@@ -5062,9 +3839,8 @@
           "jockey": "団野",
           "stable": "栗東荒川",
           "horse_weight": "",
-          "予想オッズ更新": "6.1",
-          "popularity": "3",
-          "odds_tansho": "10.1"
+          "popularity": "6",
+          "odds_tansho": "13.8"
         },
         {
           "waku": "5",
@@ -5075,9 +3851,8 @@
           "jockey": "吉村",
           "stable": "栗東梅田",
           "horse_weight": "",
-          "予想オッズ更新": "2.7",
-          "popularity": "2",
-          "odds_tansho": "17.4"
+          "popularity": "1",
+          "odds_tansho": "5.7"
         },
         {
           "waku": "5",
@@ -5088,9 +3863,8 @@
           "jockey": "田口",
           "stable": "栗東大橋",
           "horse_weight": "",
-          "予想オッズ更新": "18.1",
-          "popularity": "6",
-          "odds_tansho": "18.1"
+          "popularity": "3",
+          "odds_tansho": "13.6"
         },
         {
           "waku": "6",
@@ -5101,9 +3875,8 @@
           "jockey": "鮫島良",
           "stable": "栗東牧浦",
           "horse_weight": "",
-          "予想オッズ更新": "27.4",
-          "popularity": "8",
-          "odds_tansho": "23.7"
+          "popularity": "11",
+          "odds_tansho": "45.6"
         },
         {
           "waku": "6",
@@ -5114,9 +3887,8 @@
           "jockey": "幸",
           "stable": "栗東荒川",
           "horse_weight": "",
-          "予想オッズ更新": "17.4",
           "popularity": "5",
-          "odds_tansho": "27.4"
+          "odds_tansho": "33.1"
         },
         {
           "waku": "7",
@@ -5127,9 +3899,8 @@
           "jockey": "酒井",
           "stable": "栗東河嶋",
           "horse_weight": "",
-          "予想オッズ更新": "68.0",
-          "popularity": "11",
-          "odds_tansho": "45.2"
+          "popularity": "8",
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -5140,9 +3911,8 @@
           "jockey": "△田山",
           "stable": "栗東東田",
           "horse_weight": "",
-          "予想オッズ更新": "45.2",
-          "popularity": "9",
-          "odds_tansho": "55.4"
+          "popularity": "12",
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -5153,9 +3923,8 @@
           "jockey": "Ｍデムーロ",
           "stable": "栗東井上",
           "horse_weight": "",
-          "予想オッズ更新": "23.7",
           "popularity": "7",
-          "odds_tansho": "68.0"
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -5166,9 +3935,8 @@
           "jockey": "国分優",
           "stable": "美浦畠山",
           "horse_weight": "",
-          "予想オッズ更新": "55.4",
-          "popularity": "10",
-          "odds_tansho": "94.3"
+          "popularity": "9",
+          "odds_tansho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031008",
@@ -5177,7 +3945,7 @@
     "202608031011": {
       "race_id": "202608031011",
       "race_name": "都大路S",
-      "course_info": "15:25発走 / 芝1800m (右 外 D)",
+      "course_info": "15:25発走 / 芝1800m (右 外 D) / 天候:晴 / 馬場:良",
       "venue_info": "3回 京都 10日目 サラ系４歳以上 オープン (国際)(特指) ハンデ 13頭 本賞金:2800,1100,700,420,280万円",
       "horses": [
         {
@@ -5189,9 +3957,8 @@
           "jockey": "池添",
           "stable": "栗東松下",
           "horse_weight": "",
-          "予想オッズ更新": "25.8",
-          "popularity": "8",
-          "odds_tansho": "2.4"
+          "popularity": "10",
+          "odds_tansho": "24.0"
         },
         {
           "waku": "2",
@@ -5202,9 +3969,8 @@
           "jockey": "団野",
           "stable": "栗東須貝",
           "horse_weight": "",
-          "予想オッズ更新": "5.9",
           "popularity": "3",
-          "odds_tansho": "4.7"
+          "odds_tansho": "7.0"
         },
         {
           "waku": "3",
@@ -5215,9 +3981,8 @@
           "jockey": "松若",
           "stable": "栗東西村",
           "horse_weight": "",
-          "予想オッズ更新": "51.3",
-          "popularity": "11",
-          "odds_tansho": "5.9"
+          "popularity": "7",
+          "odds_tansho": "12.7"
         },
         {
           "waku": "4",
@@ -5228,9 +3993,8 @@
           "jockey": "田口",
           "stable": "栗東茶木",
           "horse_weight": "",
-          "予想オッズ更新": "45.8",
-          "popularity": "10",
-          "odds_tansho": "9.8"
+          "popularity": "9",
+          "odds_tansho": "32.0"
         },
         {
           "waku": "4",
@@ -5241,9 +4005,8 @@
           "jockey": "田山",
           "stable": "美浦金成",
           "horse_weight": "",
-          "予想オッズ更新": "66.4",
           "popularity": "12",
-          "odds_tansho": "11.5"
+          "odds_tansho": "9.0"
         },
         {
           "waku": "5",
@@ -5254,9 +4017,8 @@
           "jockey": "幸",
           "stable": "栗東長谷川",
           "horse_weight": "",
-          "予想オッズ更新": "9.8",
           "popularity": "4",
-          "odds_tansho": "12.6"
+          "odds_tansho": "51.1"
         },
         {
           "waku": "5",
@@ -5267,9 +4029,8 @@
           "jockey": "吉村",
           "stable": "栗東杉山晴",
           "horse_weight": "",
-          "予想オッズ更新": "11.5",
           "popularity": "5",
-          "odds_tansho": "19.1"
+          "odds_tansho": "27.0"
         },
         {
           "waku": "6",
@@ -5280,9 +4041,8 @@
           "jockey": "鮫島駿",
           "stable": "栗東友道",
           "horse_weight": "",
-          "予想オッズ更新": "12.6",
           "popularity": "6",
-          "odds_tansho": "25.8"
+          "odds_tansho": "15.7"
         },
         {
           "waku": "6",
@@ -5293,9 +4053,8 @@
           "jockey": "藤懸",
           "stable": "栗東梅田",
           "horse_weight": "",
-          "予想オッズ更新": "94.0",
           "popularity": "13",
-          "odds_tansho": "30.5"
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -5306,9 +4065,8 @@
           "jockey": "北村友",
           "stable": "栗東高野",
           "horse_weight": "",
-          "予想オッズ更新": "4.7",
           "popularity": "2",
-          "odds_tansho": "45.8"
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -5319,9 +4077,8 @@
           "jockey": "Ｍデムーロ",
           "stable": "美浦尾関",
           "horse_weight": "",
-          "予想オッズ更新": "30.5",
-          "popularity": "9",
-          "odds_tansho": "51.3"
+          "popularity": "11",
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -5332,9 +4089,8 @@
           "jockey": "川田",
           "stable": "栗東上村",
           "horse_weight": "",
-          "予想オッズ更新": "2.4",
           "popularity": "1",
-          "odds_tansho": "66.4"
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -5345,9 +4101,8 @@
           "jockey": "菱田",
           "stable": "美浦堀",
           "horse_weight": "",
-          "予想オッズ更新": "19.1",
-          "popularity": "7",
-          "odds_tansho": "94.0"
+          "popularity": "8",
+          "odds_tansho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031011",
@@ -5368,7 +4123,7 @@
           "jockey": "レーン",
           "stable": "美浦手塚久",
           "horse_weight": "",
-          "予想オッズ更新": "13.7",
+          "予想オッズ更新": "13.6",
           "popularity": "7",
           "odds_tansho": ""
         },
@@ -5381,7 +4136,7 @@
           "jockey": "岩田康",
           "stable": "栗東福永",
           "horse_weight": "",
-          "予想オッズ更新": "28.9",
+          "予想オッズ更新": "28.6",
           "popularity": "11",
           "odds_tansho": ""
         },
@@ -5394,7 +4149,7 @@
           "jockey": "横山武",
           "stable": "栗東野中",
           "horse_weight": "",
-          "予想オッズ更新": "81.7",
+          "予想オッズ更新": "80.8",
           "popularity": "18",
           "odds_tansho": ""
         },
@@ -5407,8 +4162,8 @@
           "jockey": "ゴンサルベ",
           "stable": "栗東友道",
           "horse_weight": "",
-          "予想オッズ更新": "39.8",
-          "popularity": "15",
+          "予想オッズ更新": "39.3",
+          "popularity": "14",
           "odds_tansho": ""
         },
         {
@@ -5420,7 +4175,7 @@
           "jockey": "○○",
           "stable": "栗東矢作",
           "horse_weight": "",
-          "予想オッズ更新": "78.6",
+          "予想オッズ更新": "77.8",
           "popularity": "17",
           "odds_tansho": ""
         },
@@ -5433,8 +4188,8 @@
           "jockey": "戸崎圭",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "10.2",
-          "popularity": "3",
+          "予想オッズ更新": "10.4",
+          "popularity": "4",
           "odds_tansho": ""
         },
         {
@@ -5446,7 +4201,7 @@
           "jockey": "丹内",
           "stable": "美浦田島",
           "horse_weight": "",
-          "予想オッズ更新": "192.7",
+          "予想オッズ更新": "190.7",
           "popularity": "19",
           "odds_tansho": ""
         },
@@ -5459,7 +4214,7 @@
           "jockey": "西村淳",
           "stable": "栗東高野",
           "horse_weight": "",
-          "予想オッズ更新": "16.5",
+          "予想オッズ更新": "16.4",
           "popularity": "8",
           "odds_tansho": ""
         },
@@ -5472,7 +4227,7 @@
           "jockey": "武豊",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "13.6",
+          "予想オッズ更新": "13.5",
           "popularity": "6",
           "odds_tansho": ""
         },
@@ -5485,8 +4240,8 @@
           "jockey": "坂井",
           "stable": "栗東吉岡",
           "horse_weight": "",
-          "予想オッズ更新": "33.5",
-          "popularity": "14",
+          "予想オッズ更新": "33.2",
+          "popularity": "13",
           "odds_tansho": ""
         },
         {
@@ -5498,7 +4253,7 @@
           "jockey": "浜中",
           "stable": "栗東須貝",
           "horse_weight": "",
-          "予想オッズ更新": "234.0",
+          "予想オッズ更新": "231.5",
           "popularity": "20",
           "odds_tansho": ""
         },
@@ -5511,7 +4266,7 @@
           "jockey": "川田",
           "stable": "栗東斉藤崇",
           "horse_weight": "",
-          "予想オッズ更新": "21.8",
+          "予想オッズ更新": "21.5",
           "popularity": "9",
           "odds_tansho": ""
         },
@@ -5524,7 +4279,7 @@
           "jockey": "ルメール",
           "stable": "美浦木村",
           "horse_weight": "",
-          "予想オッズ更新": "31.4",
+          "予想オッズ更新": "31.1",
           "popularity": "12",
           "odds_tansho": ""
         },
@@ -5537,7 +4292,7 @@
           "jockey": "荻野極",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "23.9",
+          "予想オッズ更新": "23.6",
           "popularity": "10",
           "odds_tansho": ""
         },
@@ -5550,8 +4305,8 @@
           "jockey": "北村友",
           "stable": "栗東斉藤崇",
           "horse_weight": "",
-          "予想オッズ更新": "10.3",
-          "popularity": "4",
+          "予想オッズ更新": "10.2",
+          "popularity": "3",
           "odds_tansho": ""
         },
         {
@@ -5563,8 +4318,8 @@
           "jockey": "横山和",
           "stable": "栗東野中",
           "horse_weight": "",
-          "予想オッズ更新": "31.7",
-          "popularity": "13",
+          "予想オッズ更新": "45.9",
+          "popularity": "15",
           "odds_tansho": ""
         },
         {
@@ -5576,7 +4331,7 @@
           "jockey": "ディー",
           "stable": "栗東牧浦",
           "horse_weight": "",
-          "予想オッズ更新": "69.8",
+          "予想オッズ更新": "69.1",
           "popularity": "16",
           "odds_tansho": ""
         },
@@ -5589,7 +4344,7 @@
           "jockey": "佐々木",
           "stable": "美浦上原佑",
           "horse_weight": "",
-          "予想オッズ更新": "13.6",
+          "予想オッズ更新": "13.5",
           "popularity": "5",
           "odds_tansho": ""
         },
@@ -5602,7 +4357,7 @@
           "jockey": "津村",
           "stable": "美浦手塚久",
           "horse_weight": "",
-          "予想オッズ更新": "5.5",
+          "予想オッズ更新": "5.4",
           "popularity": "2",
           "odds_tansho": ""
         },
