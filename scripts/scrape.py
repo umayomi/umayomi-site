@@ -60,7 +60,7 @@ def create_driver():
 def get_target_dates():
     today = datetime.now()
     dates = []
-    for d in range(-14, 15):
+    for d in range(-7, 8):
         dd = today + timedelta(days=d)
         if dd.weekday() in [5, 6]:
             dates.append(dd.strftime("%Y%m%d"))
