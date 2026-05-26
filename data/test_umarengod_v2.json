@@ -1,0 +1,22 @@
+{
+  "updated_at": "2026-05-26T10:19:50.038042",
+  "total_races": 3,
+  "races": {},
+  "errors": [
+    {
+      "race_id": "202605021111",
+      "race_name": "アハルテケS",
+      "reason": "データ取得失敗"
+    },
+    {
+      "race_id": "202608031109",
+      "race_name": "鳳雛S",
+      "reason": "データ取得失敗"
+    },
+    {
+      "race_id": "202608031111",
+      "race_name": "葵S",
+      "reason": "データ取得失敗"
+    }
+  ]
+}
