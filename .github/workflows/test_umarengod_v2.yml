@@ -1,0 +1,38 @@
+name: test_umarengod_v2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: コードを取得
+        uses: actions/checkout@v4
+      
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: 必要なライブラリをインストール
+        run: |
+          pip install selenium beautifulsoup4 webdriver-manager
+      
+      - name: Chrome をセットアップ
+        uses: browser-actions/setup-chrome@v1
+      
+      - name: 実験v2スクリプト実行
+        run: python scripts/test_umarengod_v2.py
+      
+      - name: 結果をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/test_umarengod_v2.json data/test_screenshots_v2/ || true
+          git diff --staged --quiet || git commit -m "test_umarengod v2 実験結果"
+          git push || true
