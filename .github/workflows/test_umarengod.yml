@@ -1,0 +1,39 @@
+name: test_umarengod
+
+# 手動実行のみ（既存のscrape.ymlには影響なし）
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: コードを取得
+        uses: actions/checkout@v4
+      
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: 必要なライブラリをインストール
+        run: |
+          pip install selenium beautifulsoup4 webdriver-manager
+      
+      - name: Chrome をセットアップ
+        uses: browser-actions/setup-chrome@v1
+      
+      - name: 実験スクリプト実行
+        run: python scripts/test_umarengod.py
+      
+      - name: 結果をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/test_umarengod.json data/test_screenshots/ || true
+          git diff --staged --quiet || git commit -m "test_umarengod 実験結果"
+          git push || true
