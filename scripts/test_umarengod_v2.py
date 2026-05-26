@@ -314,23 +314,56 @@ def process_one_race(driver, race):
     race_links = find_available_links(driver, "race")
     print(f"    利用可能なレース: {race_links}")
     
-    if race_name not in race_links:
-        # 部分一致を試す
-        matched = None
-        for rl in race_links:
-            if race_name in rl or rl in race_name:
-                matched = rl
+    # レース名の表記揺れに対応（「S」⇔「ステークス」など）
+    def normalize_race_candidates(name):
+        candidates = [name]
+        # 「アハルテケS」→「アハルテケステークス」
+        if name.endswith("S"):
+            candidates.append(name[:-1] + "ステークス")
+            candidates.append(name[:-1] + "Ｓ")
+        # 「アハルテケステークス」→「アハルテケS」
+        if name.endswith("ステークス"):
+            candidates.append(name[:-5] + "S")
+        # 全角S対応
+        if name.endswith("Ｓ"):
+            candidates.append(name[:-1] + "S")
+            candidates.append(name[:-1] + "ステークス")
+        # 共通の接頭辞を作成（最後の特殊文字を除去）
+        base = re.sub(r'[SＳ]$|ステークス$|杯$', '', name)
+        if base and base != name:
+            candidates.append(base)
+        return candidates
+    
+    target_candidates = normalize_race_candidates(race_name)
+    print(f"    レース名候補: {target_candidates}")
+    
+    matched_link = None
+    # 完全一致を優先
+    for cand in target_candidates:
+        if cand in race_links:
+            matched_link = cand
+            print(f"    ✅ 完全一致: {cand}")
+            break
+    
+    # 部分一致でフォールバック
+    if not matched_link:
+        for cand in target_candidates:
+            if not cand:
+                continue
+            for rl in race_links:
+                if cand in rl or rl in cand:
+                    matched_link = rl
+                    print(f"    部分一致: {cand} ⇔ {rl}")
+                    break
+            if matched_link:
                 break
-        if matched:
-            print(f"    部分一致で代替: {race_name} → {matched}")
-            if not click_link_by_text(driver, matched, "レース"):
-                return None
-        else:
-            print(f"    ❌ レース名「{race_name}」が見つかりません")
-            return None
-    else:
-        if not click_link_by_text(driver, race_name, "レース"):
-            return None
+    
+    if not matched_link:
+        print(f"    ❌ レース名「{race_name}」が見つかりません（候補: {race_links}）")
+        return None
+    
+    if not click_link_by_text(driver, matched_link, "レース"):
+        return None
     
     # 5. データ抽出
     save_screenshot(driver, f"race_{race_id}")
