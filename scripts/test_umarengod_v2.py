@@ -112,16 +112,40 @@ def date_to_tab_text(date_str):
 
 
 def click_link_by_text(driver, text, what="リンク"):
-    """テキスト一致でリンククリック"""
-    try:
-        link = driver.find_element(By.LINK_TEXT, text)
-        link.click()
-        time.sleep(3)
-        print(f"    ✅ {what}クリック成功: {text}")
-        return True
-    except Exception as e:
-        print(f"    ❌ {what}クリック失敗 ({text}): {type(e).__name__}")
-        return False
+    """テキスト一致でリンククリック（空白の違いを許容）"""
+    # 試行順: 1)完全一致 2)PARTIAL_LINK_TEXT 3)XPath正規化
+    methods = []
+    
+    # 1. 完全一致
+    methods.append(("LINK_TEXT", By.LINK_TEXT, text))
+    
+    # 2. 部分一致（空白除去後で最も特徴的な部分）
+    text_no_space = text.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
+    if text_no_space != text and len(text_no_space) >= 2:
+        # 「東京」「京都」など、空白を除いた純粋なテキストで部分検索
+        methods.append(("PARTIAL_LINK_TEXT(no_space)", By.PARTIAL_LINK_TEXT, text_no_space))
+    
+    # 3. XPathで「テキストを正規化して比較」
+    # normalize-space() は連続空白を1つに、前後の空白を除去するが、\xa0は対象外
+    # translate() で \xa0 を通常スペースに変換してから比較
+    methods.append((
+        "XPath(translate)",
+        By.XPATH,
+        f"//a[translate(normalize-space(text()), '\u00a0\u3000', '  ') = '{text_no_space[0]}{text_no_space[1] if len(text_no_space)>1 else ''}' or contains(translate(text(), '\u00a0\u3000', '  '), '{text_no_space}')]"
+    ))
+    
+    for method_name, by, selector in methods:
+        try:
+            link = driver.find_element(by, selector)
+            link.click()
+            time.sleep(3)
+            print(f"    ✅ {what}クリック成功: {text} (method: {method_name})")
+            return True
+        except Exception as e:
+            continue
+    
+    print(f"    ❌ {what}クリック失敗 ({text}): 全方法で見つからず")
+    return False
 
 
 def find_available_links(driver, link_type="all"):
