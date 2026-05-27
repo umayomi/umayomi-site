@@ -135,9 +135,10 @@ def find_available_links(driver, link_type="all"):
         
         if link_type == "date" and "月" in text and "日" in text and "(" in text:
             links.append(text)
-        elif link_type == "venue" and text in ["札幌", "函館", "福島", "新潟", "東京", "中山", "中京", "京都", "阪神", "小倉", 
-                                                "札 幌", "函 館", "福 島", "新 潟", "東 京", "中 山", "中 京", "京 都", "阪 神", "小 倉"]:
-            links.append(text)
+        elif link_type == "venue":
+            text_normalized = text.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
+            if text_normalized in ["札幌", "函館", "福島", "新潟", "東京", "中山", "中京", "京都", "阪神", "小倉"]:
+                links.append(text)
         elif link_type == "race" and "srch6_post_sel" in href:
             links.append(text)
         elif link_type == "all":
@@ -299,16 +300,16 @@ def process_one_race(driver, race):
     print(f"    利用可能な競馬場タブ: {venue_links}")
     
     if venue and venue_links:
-        # 「東京」「東 京」両方のパターンに対応
-        target_venue_candidates = [venue, f"{venue[0]} {venue[1]}" if len(venue) == 2 else venue]
+        # スペース正規化して照合
         clicked = False
-        for cand in target_venue_candidates:
-            if cand in venue_links:
-                if click_link_by_text(driver, cand, "競馬場タブ"):
+        for vl in venue_links:
+            vl_normalized = vl.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
+            if vl_normalized == venue:
+                if click_link_by_text(driver, vl, "競馬場タブ"):
                     clicked = True
                     break
         if not clicked:
-            print(f"    ⚠️ 競馬場タブ「{venue}」が見つからない（タブなしor異なる開催）")
+            print(f"    ⚠️ 競馬場タブ「{venue}」が見つからない（検出: {venue_links}）")
     
     # 4. レース名リンクをクリック
     race_links = find_available_links(driver, "race")
