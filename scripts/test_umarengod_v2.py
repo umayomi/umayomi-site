@@ -332,34 +332,60 @@ def process_one_race(driver, race):
         print(f"    ❌ トップアクセス失敗: {e}")
         return None
     
-    # 2. 日付タブをクリック
+    # 2-3. 日付+競馬場を JavaScript 関数で直接切り替え
+    # umarengodのタブは javascript:srch6_post_tab(0,0,"YYYY-MM-DD","競馬場名",2021) で動く
     if not date_tab_text:
         print(f"    ❌ 日付変換失敗")
         return None
     
-    date_links = find_available_links(driver, "date")
-    if date_tab_text not in date_links:
-        print(f"    ⚠️ 日付タブにない: {date_tab_text} (利用可能: {date_links})")
-        # デフォルト日付で動くかもしれないので続行
+    # 日付を YYYY-MM-DD 形式に変換
+    try:
+        d = datetime.strptime(date_str, "%Y%m%d")
+        date_iso = d.strftime("%Y-%m-%d")
+    except Exception:
+        print(f"    ❌ 日付ISO変換失敗")
+        return None
+    
+    # まず日付タブのhrefから正しい関数引数を取得（年度部分などを正確にするため）
+    soup = BeautifulSoup(driver.page_source, "html.parser")
+    tab_func_template = None
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if "srch6_post_tab" in href and date_iso in href:
+            tab_func_template = href
+            break
+    
+    if venue:
+        # 関数を直接実行（競馬場名を差し替え）
+        if tab_func_template:
+            # 例: javascript:srch6_post_tab(0,0,"2026-05-30","東京",2021)
+            # 競馬場名部分を venue に置換
+            func_call = tab_func_template.replace("javascript:", "")
+            # "東京" → "京都" のように競馬場名を差し替え
+            func_call = re.sub(r'"[^"]*"(\s*,\s*2021)', f'"{venue}"\\1', func_call)
+            print(f"    JS実行: {func_call}")
+            try:
+                driver.execute_script(func_call)
+                time.sleep(4)
+                print(f"    ✅ タブ切り替え（JS関数）: {venue}")
+            except Exception as e:
+                print(f"    ❌ JS実行失敗: {e}")
+                return None
+        else:
+            # テンプレートが見つからない場合、引数を組み立てて実行
+            func_call = f'srch6_post_tab(0,0,"{date_iso}","{venue}",2021)'
+            print(f"    JS実行(組立): {func_call}")
+            try:
+                driver.execute_script(func_call)
+                time.sleep(4)
+                print(f"    ✅ タブ切り替え（JS組立）: {venue}")
+            except Exception as e:
+                print(f"    ❌ JS実行失敗: {e}")
+                return None
     else:
-        if not click_link_by_text(driver, date_tab_text, "日付タブ"):
-            return None
-    
-    # 3. 競馬場タブをクリック（存在すれば）
-    venue_links = find_available_links(driver, "venue")
-    print(f"    利用可能な競馬場タブ: {venue_links}")
-    
-    if venue and venue_links:
-        # スペース正規化して照合
-        clicked = False
-        for vl in venue_links:
-            vl_normalized = vl.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
-            if vl_normalized == venue:
-                if click_link_by_text(driver, vl, "競馬場タブ"):
-                    clicked = True
-                    break
-        if not clicked:
-            print(f"    ⚠️ 競馬場タブ「{venue}」が見つからない（検出: {venue_links}）")
+        print(f"    ⚠️ 競馬場不明、日付タブのみクリック")
+        if date_tab_text:
+            click_link_by_text(driver, date_tab_text, "日付タブ")
     
     # 4. レース名リンクをクリック
     race_links = find_available_links(driver, "race")
