@@ -112,39 +112,65 @@ def date_to_tab_text(date_str):
 
 
 def click_link_by_text(driver, text, what="リンク"):
-    """テキスト一致でリンククリック（空白の違いを許容）"""
-    # 試行順: 1)完全一致 2)PARTIAL_LINK_TEXT 3)XPath正規化
-    methods = []
+    """テキスト一致でリンククリック（複数戦略で試す）"""
     
-    # 1. 完全一致
-    methods.append(("LINK_TEXT", By.LINK_TEXT, text))
+    # 戦略1: LINK_TEXT 完全一致
+    try:
+        link = driver.find_element(By.LINK_TEXT, text)
+        link.click()
+        time.sleep(3)
+        print(f"    ✅ {what}クリック成功: {text} (method: LINK_TEXT)")
+        return True
+    except Exception:
+        pass
     
-    # 2. 部分一致（空白除去後で最も特徴的な部分）
-    text_no_space = text.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
-    if text_no_space != text and len(text_no_space) >= 2:
-        # 「東京」「京都」など、空白を除いた純粋なテキストで部分検索
-        methods.append(("PARTIAL_LINK_TEXT(no_space)", By.PARTIAL_LINK_TEXT, text_no_space))
-    
-    # 3. XPathで「テキストを正規化して比較」
-    # normalize-space() は連続空白を1つに、前後の空白を除去するが、\xa0は対象外
-    # translate() で \xa0 を通常スペースに変換してから比較
-    methods.append((
-        "XPath(translate)",
-        By.XPATH,
-        f"//a[translate(normalize-space(text()), '\u00a0\u3000', '  ') = '{text_no_space[0]}{text_no_space[1] if len(text_no_space)>1 else ''}' or contains(translate(text(), '\u00a0\u3000', '  '), '{text_no_space}')]"
-    ))
-    
-    for method_name, by, selector in methods:
+    # 戦略2: PARTIAL_LINK_TEXT（空白除去版）
+    text_clean = text.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
+    if text_clean and text_clean != text:
         try:
-            link = driver.find_element(by, selector)
+            link = driver.find_element(By.PARTIAL_LINK_TEXT, text_clean)
             link.click()
             time.sleep(3)
-            print(f"    ✅ {what}クリック成功: {text} (method: {method_name})")
+            print(f"    ✅ {what}クリック成功: {text} (method: PARTIAL_LINK_TEXT)")
             return True
-        except Exception as e:
-            continue
+        except Exception:
+            pass
     
-    print(f"    ❌ {what}クリック失敗 ({text}): 全方法で見つからず")
+    # 戦略3: XPath - <a>以外も含めて全要素から検索
+    try:
+        # text-contentに目的の文字列が含まれる任意の要素
+        xpath = f"//*[contains(normalize-space(.), '{text}') and (@onclick or @href or self::a or self::td)]"
+        elements = driver.find_elements(By.XPATH, xpath)
+        for el in elements:
+            try:
+                el.click()
+                time.sleep(3)
+                print(f"    ✅ {what}クリック成功: {text} (method: XPath any)")
+                return True
+            except Exception:
+                continue
+    except Exception:
+        pass
+    
+    # 戦略4: 空白を含まないバージョンでXPath検索
+    if text_clean and len(text_clean) >= 2:
+        try:
+            xpath = f"//*[contains(., '{text_clean[0]}') and contains(., '{text_clean[1]}') and (@onclick or @href or self::a or self::td)]"
+            elements = driver.find_elements(By.XPATH, xpath)
+            for el in elements:
+                el_text = el.text.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
+                if text_clean in el_text:
+                    try:
+                        el.click()
+                        time.sleep(3)
+                        print(f"    ✅ {what}クリック成功: {text} (method: XPath no-space)")
+                        return True
+                    except Exception:
+                        continue
+        except Exception:
+            pass
+    
+    print(f"    ❌ {what}クリック失敗 ({text}): 全戦略失敗")
     return False
 
 
