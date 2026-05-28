@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-28T11:10:26.528541",
+  "updated_at": "2026-05-28T22:53:58.847237",
   "total_races": 3,
   "races": {
     "202605021111": {
@@ -168,19 +168,274 @@
         }
       ],
       "horse_count": 16,
-      "extracted_at": "2026-05-28T11:10:52.685608"
-    }
-  },
-  "errors": [
-    {
+      "extracted_at": "2026-05-28T22:54:23.565502"
+    },
+    "202608031109": {
       "race_id": "202608031109",
       "race_name": "鳳雛S",
-      "reason": "データ取得失敗"
+      "horses": [
+        {
+          "umaban": "1",
+          "horse_name": "イッテラッシャイ",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中5週",
+          "jockey": "斎藤新",
+          "trainer": "斎藤誠",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "2",
+          "horse_name": "ケンタッキーホーム",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中5週",
+          "jockey": "田口貫太",
+          "trainer": "松下武士",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "3",
+          "horse_name": "ケンフィールド",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中1週",
+          "jockey": "高杉吏麒",
+          "trainer": "大根田裕之",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "4",
+          "horse_name": "サイモンゼスト",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中4週",
+          "jockey": "酒井学",
+          "trainer": "谷潔",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "5",
+          "horse_name": "スターシップ",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中2週",
+          "jockey": "松若風馬",
+          "trainer": "高柳大輔",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "6",
+          "horse_name": "ソルチェリア",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中4週",
+          "jockey": "幸英明",
+          "trainer": "大根田裕之",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "7",
+          "horse_name": "タガノアバンドーネ",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中20週",
+          "jockey": "川田将雅",
+          "trainer": "角田晃一",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "8",
+          "horse_name": "ビズロード",
+          "sex_age": "せ3",
+          "weight_carried": "57.0",
+          "interval": "連闘",
+          "jockey": "菱田裕二",
+          "trainer": "小崎憲",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "9",
+          "horse_name": "ビービークローサー",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中5週",
+          "jockey": "坂井瑠星",
+          "trainer": "野中賢二",
+          "stats_raw": ""
+        }
+      ],
+      "horse_count": 9,
+      "extracted_at": "2026-05-28T22:54:39.980776"
     },
-    {
+    "202608031111": {
       "race_id": "202608031111",
       "race_name": "葵S",
-      "reason": "データ取得失敗"
+      "horses": [
+        {
+          "umaban": "1",
+          "horse_name": "アンジュプロミス",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中14週",
+          "jockey": "古川奈穂",
+          "trainer": "矢作芳人",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "2",
+          "horse_name": "ウチュウノセカイ",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中36週",
+          "jockey": "原優介",
+          "trainer": "青木孝文",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "3",
+          "horse_name": "エイシンディード",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中10週",
+          "jockey": "川又賢治",
+          "trainer": "大久保龍志",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "4",
+          "horse_name": "ガラベイヤ",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中7週",
+          "jockey": "丸山元気",
+          "trainer": "加藤士津八",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "5",
+          "horse_name": "クリエープキー",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中12週",
+          "jockey": "幸英明",
+          "trainer": "牧光二",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "6",
+          "horse_name": "コックピットサイト",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中8週",
+          "jockey": "浜中俊",
+          "trainer": "鹿戸雄一",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "7",
+          "horse_name": "ショウナンカリス",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中6週",
+          "jockey": "池添謙一",
+          "trainer": "加藤士津八",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "8",
+          "horse_name": "シラヌイ",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中9週",
+          "jockey": "吉村誠之助",
+          "trainer": "高橋亮",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "9",
+          "horse_name": "タガノアラリア",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中2週",
+          "jockey": "鮫島克駿",
+          "trainer": "西園翔太",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "10",
+          "horse_name": "タマモイカロス",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中10週",
+          "jockey": "高杉吏麒",
+          "trainer": "藤岡健一",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "11",
+          "horse_name": "デアヴェローチェ",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中7週",
+          "jockey": "北村友一",
+          "trainer": "上村洋行",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "12",
+          "horse_name": "トップアタック",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中3週",
+          "jockey": "小沢大仁",
+          "trainer": "小椋研介",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "13",
+          "horse_name": "ヒシアイラ",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中13週",
+          "jockey": "荻野極",
+          "trainer": "池江泰寿",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "14",
+          "horse_name": "フォーゲル",
+          "sex_age": "牡3",
+          "weight_carried": "57.0",
+          "interval": "中2週",
+          "jockey": "坂井瑠星",
+          "trainer": "斉藤崇史",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "15",
+          "horse_name": "メランコリニスタ",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中9週",
+          "jockey": "団野大成",
+          "trainer": "吉村圭司",
+          "stats_raw": ""
+        },
+        {
+          "umaban": "16",
+          "horse_name": "ルージュサウダージ",
+          "sex_age": "牝3",
+          "weight_carried": "55.0",
+          "interval": "中12週",
+          "jockey": "斎藤新",
+          "trainer": "松永幹夫",
+          "stats_raw": ""
+        }
+      ],
+      "horse_count": 16,
+      "extracted_at": "2026-05-28T22:54:56.200637"
     }
-  ]
+  },
+  "errors": []
 }
