@@ -247,7 +247,16 @@ def extract_race_data(driver, race_id, race_name):
         }
     
     print(f"    ✅ ヘッダー行: {header_row_idx}行目")
-    
+
+      # デバッグ: 最初の数行のセル構造を確認
+    print(f"\n    [DEBUG] テーブル構造調査")
+    print(f"    総行数: {len(rows)}")
+    print(f"    ヘッダー行: {header_row_idx}")
+    for i, row in enumerate(rows[header_row_idx:header_row_idx+3]):
+        cells = row.find_all("td")
+        cell_texts = [c.get_text(strip=True) for c in cells]
+        print(f"    行{header_row_idx+i}: セル数={len(cells)}, 内容(先頭10個)={cell_texts[:10]}")
+    print(f"    [DEBUG] 終わり\n")
     # 馬データ行をパース
     # umarengodのデータ行は「枠・馬番・馬名・性齢・斤量・出走間隔・騎手・調教師」が並ぶ
     current_horse = None
