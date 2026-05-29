@@ -1,5 +1,3 @@
-bash
-cat > /home/claude/test_umarengod_v2.py << 'PYEOF'
 #!/usr/bin/env python3
 """
 umarengod.com スクレイピング v2
