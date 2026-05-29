@@ -1,3 +1,5 @@
+bash
+cat > /home/claude/test_umarengod_v2.py << 'PYEOF'
 #!/usr/bin/env python3
 """
 umarengod.com スクレイピング v2
@@ -7,7 +9,7 @@ umarengod.com スクレイピング v2
 - 日付タブ・競馬場タブ・レースリンクを順番にクリック
 - 取得データを構造化して保存
 - エラー耐性とログ強化
-- 馬番区切り方式で全データ抽出
+- 全データ部16等分方式で過去実績を各馬に割り当て
 """
 
 import json
@@ -39,13 +41,11 @@ SCREENSHOT_DIR = Path("data/test_screenshots_v2")
 SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# 競馬場コード → 名前
 VENUE_CODE_MAP = {
     "01": "札幌", "02": "函館", "03": "福島", "04": "新潟", "05": "東京",
     "06": "中山", "07": "中京", "08": "京都", "09": "阪神", "10": "小倉",
 }
 
-# 曜日マップ
 WEEKDAY_MAP = {0: "月", 1: "火", 2: "水", 3: "木", 4: "金", 5: "土", 6: "日"}
 
 
@@ -188,7 +188,17 @@ def find_available_links(driver, link_type="all"):
 
 
 def extract_race_data(driver, race_id, race_name):
-    """出馬表テーブルからデータを抽出（馬番区切り方式）"""
+    """
+    出馬表テーブルからデータを抽出
+    
+    umarengodの構造:
+    1. 基本情報セクション: 各馬の[馬番,馬名,性齢,斤量,間隔,騎手,調教師]が連続
+    2. 統計データセクション: 各馬の過去実績データが順番に並ぶ
+    
+    アプローチ:
+    1. 基本情報セクションから N頭分を取得
+    2. 統計セクションを N等分して各馬に割り当て
+    """
     soup = BeautifulSoup(driver.page_source, "html.parser")
     tables = soup.find_all("table")
     
@@ -211,32 +221,8 @@ def extract_race_data(driver, race_id, race_name):
         return None
     
     rows = best_table.find_all("tr")
-    horses = []
     
-    header_row_idx = None
-    for i, row in enumerate(rows):
-        cells = row.find_all(["th", "td"])
-        cell_texts = [c.get_text(strip=True) for c in cells]
-        if "馬名" in cell_texts or "馬\u3000名" in cell_texts or any("馬\xa0名" in t for t in cell_texts):
-            header_row_idx = i
-            break
-    
-    if header_row_idx is None:
-        print(f"    ⚠️ ヘッダー行が見つかりません")
-        return {
-            "race_id": race_id,
-            "race_name": race_name,
-            "raw_text": best_table.get_text("|", strip=True)[:5000],
-            "horses": [],
-            "extracted_at": datetime.now().isoformat(),
-            "note": "ヘッダー検出失敗",
-        }
-    
-    print(f"    ✅ ヘッダー行: {header_row_idx}行目")
-    
-    # umarengodのテーブルは「全データが行0に押し込まれている」異常構造のため、
-    # 全セルを1次元の配列として扱い、「馬番(1〜28)が登場するごとに馬データを区切る」方式でパース
-    
+    # 全セルを順序通り取得
     all_cells = []
     for row in rows:
         for cell in row.find_all("td"):
@@ -245,67 +231,105 @@ def extract_race_data(driver, race_id, race_name):
     
     print(f"    [DEBUG] 全セル数: {len(all_cells)}")
     
-    # 馬番の出現位置: 1〜28の整数で、後続に馬名+性齢が続くもの
-    umaban_positions = []
-    for i, cell in enumerate(all_cells):
-        if cell.isdigit() and 1 <= int(cell) <= 28:
-            found_name = False
-            found_sex_age = False
-            for j in range(i+1, min(i+10, len(all_cells))):
-                next_cell = all_cells[j]
-                if not next_cell:
-                    continue
-                if not found_name and re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', next_cell):
-                    found_name = True
-                    continue
-                if found_name and re.match(r'^[牡牝せ騙セ]\d+$', next_cell):
-                    found_sex_age = True
-                    break
-            if found_name and found_sex_age:
-                umaban_positions.append(i)
+    # 基本情報セクション内の馬番位置を見つける
+    # 馬番1から始まり、連続する整数（1,2,3...）として登場するもの
+    basic_info_horses = []  # [(umaban, name, sex_age, weight, interval, jockey, trainer), ...]
     
-    print(f"    [DEBUG] 馬番出現位置: {len(umaban_positions)}個")
+    i = 0
+    expected_umaban = 1
+    while i < len(all_cells):
+        cell = all_cells[i]
+        if cell == str(expected_umaban):
+            # 後続セルに馬名+性齢があるか確認
+            non_empty_after = []
+            j = i + 1
+            while j < len(all_cells) and len(non_empty_after) < 10:
+                if all_cells[j]:
+                    non_empty_after.append((j, all_cells[j]))
+                j += 1
+            
+            if len(non_empty_after) >= 6:
+                name_idx, name = non_empty_after[0]
+                sex_age = non_empty_after[1][1] if len(non_empty_after) > 1 else ""
+                weight = non_empty_after[2][1] if len(non_empty_after) > 2 else ""
+                interval = non_empty_after[3][1] if len(non_empty_after) > 3 else ""
+                jockey = non_empty_after[4][1] if len(non_empty_after) > 4 else ""
+                trainer = non_empty_after[5][1] if len(non_empty_after) > 5 else ""
+                
+                # 馬名チェック+性齢チェック
+                if re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', name) and re.match(r'^[牡牝せ騙セ]\d+$', sex_age):
+                    basic_info_horses.append({
+                        "umaban": cell,
+                        "horse_name": name,
+                        "sex_age": sex_age,
+                        "weight_carried": weight,
+                        "interval": interval,
+                        "jockey": jockey,
+                        "trainer": trainer,
+                        "_basic_end_idx": non_empty_after[5][0],  # 調教師のインデックス
+                    })
+                    expected_umaban += 1
+                    i = non_empty_after[5][0] + 1
+                    continue
+        i += 1
     
-    # 馬番位置で区切って馬データを作成
-    for idx, pos in enumerate(umaban_positions):
-        end_pos = umaban_positions[idx + 1] if idx + 1 < len(umaban_positions) else len(all_cells)
-        horse_cells = all_cells[pos:end_pos]
-        
-        non_empty = [c for c in horse_cells if c]
-        if len(non_empty) < 7:
-            continue
-        
-        umaban = non_empty[0]
-        horse_name = non_empty[1] if len(non_empty) > 1 else ""
-        sex_age = non_empty[2] if len(non_empty) > 2 else ""
-        weight = non_empty[3] if len(non_empty) > 3 else ""
-        interval = non_empty[4] if len(non_empty) > 4 else ""
-        jockey = non_empty[5] if len(non_empty) > 5 else ""
-        trainer = non_empty[6] if len(non_empty) > 6 else ""
-        
-        if not re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', horse_name):
-            continue
-        
-        stats_raw = " | ".join(non_empty[7:]) if len(non_empty) > 7 else ""
-        
-        horse = {
-            "umaban": umaban,
-            "horse_name": horse_name,
-            "sex_age": sex_age,
-            "weight_carried": weight,
-            "interval": interval,
-            "jockey": jockey,
-            "trainer": trainer,
-            "stats_raw": stats_raw,
+    num_horses = len(basic_info_horses)
+    print(f"    [DEBUG] 基本情報から検出した馬数: {num_horses}")
+    
+    if num_horses == 0:
+        return {
+            "race_id": race_id,
+            "race_name": race_name,
+            "horses": [],
+            "horse_count": 0,
+            "extracted_at": datetime.now().isoformat(),
+            "note": "馬データ検出失敗",
         }
+    
+    # 基本情報セクションの終了位置
+    basic_section_end = basic_info_horses[-1]["_basic_end_idx"] + 1
+    
+    # 統計データセクション
+    stats_section = all_cells[basic_section_end:]
+    
+    # 統計データ部から「ヘッダー文言」を除外する
+    # 例: "馬の東京・ダート成績成績・連対率・3着内率" のような長い文字列はヘッダー
+    # それから「コース」「上り」「着」「人」も列ヘッダー
+    
+    # ヘッダー部の終わりを見つける: 最初の純粋な数値データ（X-X-X-X形式）が登場する位置
+    data_start_idx = 0
+    for idx, cell in enumerate(stats_section):
+        # X-X-X-X 形式（例: 2-0-1-0）または「初」を見つけたらデータ開始
+        if cell == "初" or re.match(r'^\d+-\s*\d+-\s*\d+-\s*\d+$', cell.strip()):
+            data_start_idx = idx
+            break
+    
+    print(f"    [DEBUG] 統計セクション全体: {len(stats_section)}個")
+    print(f"    [DEBUG] 統計データ開始位置: {data_start_idx}")
+    
+    actual_stats = stats_section[data_start_idx:]
+    
+    # 統計データを馬数で等分
+    if num_horses > 0 and len(actual_stats) > 0:
+        # 各馬のデータには末尾に「馬番」が付くようなので、それで区切れるか試す
+        # まず単純に等分
+        per_horse = len(actual_stats) // num_horses
+        print(f"    [DEBUG] 1馬あたりの統計セル数: {per_horse}")
         
-        horses.append(horse)
+        for idx, horse in enumerate(basic_info_horses):
+            start = idx * per_horse
+            end = start + per_horse if idx < num_horses - 1 else len(actual_stats)
+            stats_cells = actual_stats[start:end]
+            # 空セルを除外
+            non_empty_stats = [c for c in stats_cells if c]
+            horse["stats_raw"] = " | ".join(non_empty_stats)
+            del horse["_basic_end_idx"]
     
     return {
         "race_id": race_id,
         "race_name": race_name,
-        "horses": horses,
-        "horse_count": len(horses),
+        "horses": basic_info_horses,
+        "horse_count": len(basic_info_horses),
         "extracted_at": datetime.now().isoformat(),
     }
 
@@ -504,3 +528,10 @@ def main():
 
 
 main()
+PYEOF
+cp /home/claude/test_umarengod_v2.py /mnt/user-data/outputs/test_umarengod_v2.py
+echo "Done"
+wc -l /mnt/user-data/outputs/test_umarengod_v2.py
+出力
+Done
+528 /mnt/user-data/outputs/test_umarengod_v2.py
