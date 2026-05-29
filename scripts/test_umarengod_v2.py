@@ -526,10 +526,3 @@ def main():
 
 
 main()
-PYEOF
-cp /home/claude/test_umarengod_v2.py /mnt/user-data/outputs/test_umarengod_v2.py
-echo "Done"
-wc -l /mnt/user-data/outputs/test_umarengod_v2.py
-出力
-Done
-528 /mnt/user-data/outputs/test_umarengod_v2.py
