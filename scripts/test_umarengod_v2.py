@@ -7,6 +7,7 @@ umarengod.com スクレイピング v2
 - 日付タブ・競馬場タブ・レースリンクを順番にクリック
 - 取得データを構造化して保存
 - エラー耐性とログ強化
+- 馬番区切り方式で全データ抽出
 """
 
 import json
@@ -76,7 +77,6 @@ def save_screenshot(driver, name):
 
 
 def load_races():
-    """races.json から未来レースを読み込む"""
     races_file = OUTPUT_DIR / "races.json"
     if not races_file.exists():
         print(f"❌ races.json が見つかりません")
@@ -94,7 +94,6 @@ def load_races():
 
 
 def race_id_to_venue(race_id):
-    """race_id (12桁) から競馬場名を取得"""
     if len(race_id) < 4:
         return None
     venue_code = race_id[4:6]
@@ -102,7 +101,6 @@ def race_id_to_venue(race_id):
 
 
 def date_to_tab_text(date_str):
-    """20260531 → 5月31日(日)"""
     try:
         d = datetime.strptime(date_str, "%Y%m%d")
         weekday = WEEKDAY_MAP[d.weekday()]
@@ -112,9 +110,6 @@ def date_to_tab_text(date_str):
 
 
 def click_link_by_text(driver, text, what="リンク"):
-    """テキスト一致でリンククリック（複数戦略で試す）"""
-    
-    # 戦略1: LINK_TEXT 完全一致
     try:
         link = driver.find_element(By.LINK_TEXT, text)
         link.click()
@@ -124,7 +119,6 @@ def click_link_by_text(driver, text, what="リンク"):
     except Exception:
         pass
     
-    # 戦略2: PARTIAL_LINK_TEXT（空白除去版）
     text_clean = text.replace(" ", "").replace("\u3000", "").replace("\xa0", "")
     if text_clean and text_clean != text:
         try:
@@ -136,9 +130,7 @@ def click_link_by_text(driver, text, what="リンク"):
         except Exception:
             pass
     
-    # 戦略3: XPath - <a>以外も含めて全要素から検索
     try:
-        # text-contentに目的の文字列が含まれる任意の要素
         xpath = f"//*[contains(normalize-space(.), '{text}') and (@onclick or @href or self::a or self::td)]"
         elements = driver.find_elements(By.XPATH, xpath)
         for el in elements:
@@ -152,7 +144,6 @@ def click_link_by_text(driver, text, what="リンク"):
     except Exception:
         pass
     
-    # 戦略4: 空白を含まないバージョンでXPath検索
     if text_clean and len(text_clean) >= 2:
         try:
             xpath = f"//*[contains(., '{text_clean[0]}') and contains(., '{text_clean[1]}') and (@onclick or @href or self::a or self::td)]"
@@ -175,7 +166,6 @@ def click_link_by_text(driver, text, what="リンク"):
 
 
 def find_available_links(driver, link_type="all"):
-    """ページ内の特定種類のリンクを探す"""
     soup = BeautifulSoup(driver.page_source, "html.parser")
     links = []
     
@@ -198,11 +188,10 @@ def find_available_links(driver, link_type="all"):
 
 
 def extract_race_data(driver, race_id, race_name):
-    """出馬表テーブルからデータを抽出"""
+    """出馬表テーブルからデータを抽出（馬番区切り方式）"""
     soup = BeautifulSoup(driver.page_source, "html.parser")
     tables = soup.find_all("table")
     
-    # 出馬表らしいテーブルを探す
     best_table = None
     best_score = 0
     
@@ -221,11 +210,9 @@ def extract_race_data(driver, race_id, race_name):
     if not best_table:
         return None
     
-    # 行ごとに馬データを抽出
     rows = best_table.find_all("tr")
     horses = []
     
-    # ヘッダー行
     header_row_idx = None
     for i, row in enumerate(rows):
         cells = row.find_all(["th", "td"])
@@ -236,79 +223,81 @@ def extract_race_data(driver, race_id, race_name):
     
     if header_row_idx is None:
         print(f"    ⚠️ ヘッダー行が見つかりません")
-        # フォールバック: テーブル全体を生テキストで保存
         return {
             "race_id": race_id,
             "race_name": race_name,
-            "raw_text": best_table.get_text("|", strip=True)[:5000],  # 5000文字制限
+            "raw_text": best_table.get_text("|", strip=True)[:5000],
             "horses": [],
             "extracted_at": datetime.now().isoformat(),
-            "note": "ヘッダー検出失敗。raw_textから後処理が必要",
+            "note": "ヘッダー検出失敗",
         }
     
     print(f"    ✅ ヘッダー行: {header_row_idx}行目")
-
-      # デバッグ: 最初の数行のセル構造を確認
-    print(f"\n    [DEBUG] テーブル構造調査")
-    print(f"    総行数: {len(rows)}")
-    print(f"    ヘッダー行: {header_row_idx}")
-    for i, row in enumerate(rows[header_row_idx:header_row_idx+3]):
-        cells = row.find_all("td")
-        cell_texts = [c.get_text(strip=True) for c in cells]
-        print(f"    行{header_row_idx+i}: セル数={len(cells)}, 内容(先頭10個)={cell_texts[:10]}")
-    print(f"    [DEBUG] 終わり\n")
-    # 馬データ行をパース
-    # umarengodのデータ行は「枠・馬番・馬名・性齢・斤量・出走間隔・騎手・調教師」が並ぶ
-    current_horse = None
     
-    for row in rows[header_row_idx + 1:]:
-        cells = row.find_all("td")
-        if not cells:
+    # umarengodのテーブルは「全データが行0に押し込まれている」異常構造のため、
+    # 全セルを1次元の配列として扱い、「馬番(1〜28)が登場するごとに馬データを区切る」方式でパース
+    
+    all_cells = []
+    for row in rows:
+        for cell in row.find_all("td"):
+            text = cell.get_text(strip=True)
+            all_cells.append(text)
+    
+    print(f"    [DEBUG] 全セル数: {len(all_cells)}")
+    
+    # 馬番の出現位置: 1〜28の整数で、後続に馬名+性齢が続くもの
+    umaban_positions = []
+    for i, cell in enumerate(all_cells):
+        if cell.isdigit() and 1 <= int(cell) <= 28:
+            found_name = False
+            found_sex_age = False
+            for j in range(i+1, min(i+10, len(all_cells))):
+                next_cell = all_cells[j]
+                if not next_cell:
+                    continue
+                if not found_name and re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', next_cell):
+                    found_name = True
+                    continue
+                if found_name and re.match(r'^[牡牝せ騙セ]\d+$', next_cell):
+                    found_sex_age = True
+                    break
+            if found_name and found_sex_age:
+                umaban_positions.append(i)
+    
+    print(f"    [DEBUG] 馬番出現位置: {len(umaban_positions)}個")
+    
+    # 馬番位置で区切って馬データを作成
+    for idx, pos in enumerate(umaban_positions):
+        end_pos = umaban_positions[idx + 1] if idx + 1 < len(umaban_positions) else len(all_cells)
+        horse_cells = all_cells[pos:end_pos]
+        
+        non_empty = [c for c in horse_cells if c]
+        if len(non_empty) < 7:
             continue
         
-        cell_texts = [c.get_text(strip=True) for c in cells]
+        umaban = non_empty[0]
+        horse_name = non_empty[1] if len(non_empty) > 1 else ""
+        sex_age = non_empty[2] if len(non_empty) > 2 else ""
+        weight = non_empty[3] if len(non_empty) > 3 else ""
+        interval = non_empty[4] if len(non_empty) > 4 else ""
+        jockey = non_empty[5] if len(non_empty) > 5 else ""
+        trainer = non_empty[6] if len(non_empty) > 6 else ""
         
-        # 馬番（数字のみのセル）が先頭にあるか確認
-        # 通常 ['', '1', '馬名', '牡4', '58.0', '中1週', '騎手', '調教師', ...] のような構造
-        # 空セルをスキップしながら馬番を探す
-        non_empty = [t for t in cell_texts if t]
-        if not non_empty:
+        if not re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', horse_name):
             continue
         
-        # 最初の数字が馬番の可能性
-        first_num = None
-        first_num_idx = -1
-        for i, t in enumerate(cell_texts):
-            if t and t.isdigit():
-                first_num = t
-                first_num_idx = i
-                break
-        
-        if first_num is None:
-            continue
-        
-        # 馬番後の項目を取得
-        after = cell_texts[first_num_idx + 1:]
-        after_non_empty = [t for t in after if t]
-        
-        if len(after_non_empty) < 5:
-            continue
+        stats_raw = " | ".join(non_empty[7:]) if len(non_empty) > 7 else ""
         
         horse = {
-            "umaban": first_num,
-            "horse_name": after_non_empty[0] if len(after_non_empty) > 0 else "",
-            "sex_age": after_non_empty[1] if len(after_non_empty) > 1 else "",
-            "weight_carried": after_non_empty[2] if len(after_non_empty) > 2 else "",
-            "interval": after_non_empty[3] if len(after_non_empty) > 3 else "",
-            "jockey": after_non_empty[4] if len(after_non_empty) > 4 else "",
-            "trainer": after_non_empty[5] if len(after_non_empty) > 5 else "",
-            # 残りの統計データ全部
-            "stats_raw": "|".join(after_non_empty[6:]) if len(after_non_empty) > 6 else "",
+            "umaban": umaban,
+            "horse_name": horse_name,
+            "sex_age": sex_age,
+            "weight_carried": weight,
+            "interval": interval,
+            "jockey": jockey,
+            "trainer": trainer,
+            "stats_raw": stats_raw,
         }
-        
-        # 馬名がそれっぽいか確認（漢字・カタカナを含む）
-        if not re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', horse["horse_name"]):
-            continue
         
         horses.append(horse)
     
@@ -322,7 +311,6 @@ def extract_race_data(driver, race_id, race_name):
 
 
 def process_one_race(driver, race):
-    """1レース分の処理"""
     race_id = race["race_id"]
     race_name = race.get("race_name", "")
     date_str = race.get("date", "")
@@ -333,7 +321,6 @@ def process_one_race(driver, race):
     print(f"    日付: {date_str} → タブ「{date_tab_text}」")
     print(f"    競馬場: {venue}")
     
-    # 1. トップページに戻る
     try:
         driver.get("https://umarengod.com/srch6.php")
         time.sleep(4)
@@ -341,13 +328,10 @@ def process_one_race(driver, race):
         print(f"    ❌ トップアクセス失敗: {e}")
         return None
     
-    # 2-3. 日付+競馬場を JavaScript 関数で直接切り替え
-    # umarengodのタブは javascript:srch6_post_tab(0,0,"YYYY-MM-DD","競馬場名",2021) で動く
     if not date_tab_text:
         print(f"    ❌ 日付変換失敗")
         return None
     
-    # 日付を YYYY-MM-DD 形式に変換
     try:
         d = datetime.strptime(date_str, "%Y%m%d")
         date_iso = d.strftime("%Y-%m-%d")
@@ -355,7 +339,6 @@ def process_one_race(driver, race):
         print(f"    ❌ 日付ISO変換失敗")
         return None
     
-    # まず日付タブのhrefから正しい関数引数を取得（年度部分などを正確にするため）
     soup = BeautifulSoup(driver.page_source, "html.parser")
     tab_func_template = None
     for a in soup.find_all("a", href=True):
@@ -365,12 +348,8 @@ def process_one_race(driver, race):
             break
     
     if venue:
-        # 関数を直接実行（競馬場名を差し替え）
         if tab_func_template:
-            # 例: javascript:srch6_post_tab(0,0,"2026-05-30","東京",2021)
-            # 競馬場名部分を venue に置換
             func_call = tab_func_template.replace("javascript:", "")
-            # "東京" → "京都" のように競馬場名を差し替え
             func_call = re.sub(r'"[^"]*"(\s*,\s*2021)', f'"{venue}"\\1', func_call)
             print(f"    JS実行: {func_call}")
             try:
@@ -381,7 +360,6 @@ def process_one_race(driver, race):
                 print(f"    ❌ JS実行失敗: {e}")
                 return None
         else:
-            # テンプレートが見つからない場合、引数を組み立てて実行
             func_call = f'srch6_post_tab(0,0,"{date_iso}","{venue}",2021)'
             print(f"    JS実行(組立): {func_call}")
             try:
@@ -396,25 +374,19 @@ def process_one_race(driver, race):
         if date_tab_text:
             click_link_by_text(driver, date_tab_text, "日付タブ")
     
-    # 4. レース名リンクをクリック
     race_links = find_available_links(driver, "race")
     print(f"    利用可能なレース: {race_links}")
     
-    # レース名の表記揺れに対応（「S」⇔「ステークス」など）
     def normalize_race_candidates(name):
         candidates = [name]
-        # 「アハルテケS」→「アハルテケステークス」
         if name.endswith("S"):
             candidates.append(name[:-1] + "ステークス")
             candidates.append(name[:-1] + "Ｓ")
-        # 「アハルテケステークス」→「アハルテケS」
         if name.endswith("ステークス"):
             candidates.append(name[:-5] + "S")
-        # 全角S対応
         if name.endswith("Ｓ"):
             candidates.append(name[:-1] + "S")
             candidates.append(name[:-1] + "ステークス")
-        # 共通の接頭辞を作成（最後の特殊文字を除去）
         base = re.sub(r'[SＳ]$|ステークス$|杯$', '', name)
         if base and base != name:
             candidates.append(base)
@@ -424,14 +396,12 @@ def process_one_race(driver, race):
     print(f"    レース名候補: {target_candidates}")
     
     matched_link = None
-    # 完全一致を優先
     for cand in target_candidates:
         if cand in race_links:
             matched_link = cand
             print(f"    ✅ 完全一致: {cand}")
             break
     
-    # 部分一致でフォールバック
     if not matched_link:
         for cand in target_candidates:
             if not cand:
@@ -451,7 +421,6 @@ def process_one_race(driver, race):
     if not click_link_by_text(driver, matched_link, "レース"):
         return None
     
-    # 5. データ抽出
     save_screenshot(driver, f"race_{race_id}")
     
     data = extract_race_data(driver, race_id, race_name)
@@ -468,7 +437,6 @@ def main():
     print(f"umarengod v2 - {datetime.now()}")
     print("=" * 60)
     
-    # races.json から未来レース取得
     future_races = load_races()
     print(f"\n未来レース数: {len(future_races)}")
     
@@ -476,7 +444,6 @@ def main():
         print("❌ 未来レースなし。終了")
         return
     
-    # 確認用：最初の3レースだけテスト
     test_races = future_races[:3]
     print(f"テスト対象（最初の3レース）: {[r.get('race_name') for r in test_races]}")
     
@@ -511,9 +478,8 @@ def main():
                     "reason": str(e),
                 })
             
-            time.sleep(3)  # マナー
+            time.sleep(3)
         
-        # 結果保存
         output_file = OUTPUT_DIR / "test_umarengod_v2.json"
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(all_results, f, ensure_ascii=False, indent=2)
