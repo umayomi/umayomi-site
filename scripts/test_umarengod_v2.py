@@ -585,8 +585,3 @@ def main():
 
 
 main()
-PYEOF
-rm -f /mnt/user-data/outputs/test_umarengod_v2.py
-cp /home/claude/test_umarengod_v2.py /mnt/user-data/outputs/test_umarengod_v2.py
-wc -l /mnt/user-data/outputs/test_umarengod_v2.py
-echo "Done"
