@@ -1,844 +1,7 @@
 {
-  "updated_at": "2026-05-30T07:54:37.060903",
-  "race_count": 20,
+  "updated_at": "2026-05-31T08:43:18.475217",
+  "race_count": 18,
   "races": {
-    "202604010704": {
-      "race_id": "202604010704",
-      "race_name": "4歳以上障害OP",
-      "course_info": "11:20発走 / 障3290m (芝 外-内) / 天候:晴 / 馬場:稍",
-      "venue_info": "1回 新潟 7日目 障害４歳以上 オープン (混) 別定 13頭 本賞金:1430,570,360,210,143万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "トモジャシック",
-          "sex_age": "牡4",
-          "weight_carried": "59.0",
-          "jockey": "難波",
-          "stable": "栗東大根田",
-          "horse_weight": "480(-4)",
-          "popularity": "8",
-          "horse_id": "2022104293",
-          "odds_tansho": "42.6"
-        },
-        {
-          "waku": "2",
-          "umaban": "2",
-          "horse_name": "サルサロッサ",
-          "sex_age": "牝7",
-          "weight_carried": "57.0",
-          "jockey": "▲土田",
-          "stable": "美浦高柳瑞",
-          "horse_weight": "460(0)",
-          "popularity": "13",
-          "horse_id": "2019103100",
-          "odds_tansho": "135.5"
-        },
-        {
-          "waku": "3",
-          "umaban": "3",
-          "horse_name": "サトノエピック",
-          "sex_age": "牡5",
-          "weight_carried": "60.0",
-          "jockey": "上野",
-          "stable": "美浦奥村武",
-          "horse_weight": "536(0)",
-          "popularity": "3",
-          "horse_id": "2021105271",
-          "odds_tansho": "6.8"
-        },
-        {
-          "waku": "4",
-          "umaban": "4",
-          "horse_name": "コレペティトール",
-          "sex_age": "セ6",
-          "weight_carried": "57.0",
-          "jockey": "▲井上",
-          "stable": "栗東中竹",
-          "horse_weight": "476(0)",
-          "popularity": "1",
-          "horse_id": "2020103043",
-          "odds_tansho": "1.4"
-        },
-        {
-          "waku": "4",
-          "umaban": "5",
-          "horse_name": "トゥラッタッタ",
-          "sex_age": "牡5",
-          "weight_carried": "60.0",
-          "jockey": "五十嵐",
-          "stable": "美浦新開",
-          "horse_weight": "474(0)",
-          "popularity": "2",
-          "horse_id": "2021102973",
-          "odds_tansho": "6.5"
-        },
-        {
-          "waku": "5",
-          "umaban": "6",
-          "horse_name": "グアラニア",
-          "sex_age": "牡5",
-          "weight_carried": "60.0",
-          "jockey": "伴",
-          "stable": "美浦矢野",
-          "horse_weight": "510(-4)",
-          "popularity": "4",
-          "horse_id": "2021103051",
-          "odds_tansho": "13.0"
-        },
-        {
-          "waku": "5",
-          "umaban": "7",
-          "horse_name": "ゲインサポート",
-          "sex_age": "セ5",
-          "weight_carried": "60.0",
-          "jockey": "中村",
-          "stable": "栗東秋山",
-          "horse_weight": "454(0)",
-          "popularity": "11",
-          "horse_id": "2021104590",
-          "odds_tansho": "92.2"
-        },
-        {
-          "waku": "6",
-          "umaban": "8",
-          "horse_name": "ジーククローネ",
-          "sex_age": "セ6",
-          "weight_carried": "61.0",
-          "jockey": "草野",
-          "stable": "美浦宮田",
-          "horse_weight": "456(-2)",
-          "popularity": "7",
-          "horse_id": "2020103537",
-          "odds_tansho": "37.5"
-        },
-        {
-          "waku": "6",
-          "umaban": "9",
-          "horse_name": "ジオフロント",
-          "sex_age": "牡8",
-          "weight_carried": "58.0",
-          "jockey": "▲鷲頭",
-          "stable": "栗東清水久",
-          "horse_weight": "482(+8)",
-          "popularity": "6",
-          "horse_id": "2018104881",
-          "odds_tansho": "29.2"
-        },
-        {
-          "waku": "7",
-          "umaban": "10",
-          "horse_name": "ケイテンアイジン",
-          "sex_age": "牡4",
-          "weight_carried": "59.0",
-          "jockey": "小坂",
-          "stable": "栗東谷",
-          "horse_weight": "500(-10)",
-          "popularity": "12",
-          "horse_id": "2022109119",
-          "odds_tansho": "94.4"
-        },
-        {
-          "waku": "7",
-          "umaban": "11",
-          "horse_name": "ダイスアローリング",
-          "sex_age": "牡5",
-          "weight_carried": "60.0",
-          "jockey": "小牧加",
-          "stable": "美浦古賀慎",
-          "horse_weight": "516(-2)",
-          "popularity": "9",
-          "horse_id": "2021104861",
-          "odds_tansho": "50.1"
-        },
-        {
-          "waku": "8",
-          "umaban": "12",
-          "horse_name": "パープルアドミラル",
-          "sex_age": "牡6",
-          "weight_carried": "61.0",
-          "jockey": "金子",
-          "stable": "美浦堀内",
-          "horse_weight": "452(+2)",
-          "popularity": "5",
-          "horse_id": "2020104328",
-          "odds_tansho": "28.5"
-        },
-        {
-          "waku": "8",
-          "umaban": "13",
-          "horse_name": "ウイングランブルー",
-          "sex_age": "牡6",
-          "weight_carried": "60.0",
-          "jockey": "大江圭",
-          "stable": "美浦深山",
-          "horse_weight": "472(-2)",
-          "popularity": "10",
-          "horse_id": "2020105211",
-          "odds_tansho": "57.8"
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202604010704",
-      "date": "20260523",
-      "is_past": true
-    },
-    "202605020911": {
-      "race_id": "202605020911",
-      "race_name": "欅S",
-      "course_info": "15:30発走 / ダ1400m (左) / 天候:曇 / 馬場:稍",
-      "venue_info": "2回 東京 9日目 サラ系４歳以上 オープン (国際)(特指) 別定 16頭 本賞金:2200,880,550,330,220万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "ストレングス",
-          "sex_age": "牡5",
-          "weight_carried": "57.0",
-          "jockey": "佐々木",
-          "stable": "栗東寺島",
-          "horse_weight": "470(+8)",
-          "popularity": "6",
-          "horse_id": "2021106658",
-          "odds_tansho": "13.1"
-        },
-        {
-          "waku": "1",
-          "umaban": "2",
-          "horse_name": "フェルヴェンテ",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "秋山稔",
-          "stable": "栗東宮",
-          "horse_weight": "474(-10)",
-          "popularity": "13",
-          "horse_id": "2020102045",
-          "odds_tansho": "108.0"
-        },
-        {
-          "waku": "2",
-          "umaban": "3",
-          "horse_name": "ドンインザムード",
-          "sex_age": "牡4",
-          "weight_carried": "59.0",
-          "jockey": "荻野極",
-          "stable": "栗東今野",
-          "horse_weight": "538(+2)",
-          "popularity": "1",
-          "horse_id": "2022106942",
-          "odds_tansho": "1.9"
-        },
-        {
-          "waku": "2",
-          "umaban": "4",
-          "horse_name": "ハチメンロッピ",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "原",
-          "stable": "美浦矢野",
-          "horse_weight": "512(-4)",
-          "popularity": "11",
-          "horse_id": "2020106756",
-          "odds_tansho": "71.0"
-        },
-        {
-          "waku": "3",
-          "umaban": "5",
-          "horse_name": "ニシキギミッチー",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "横山武",
-          "stable": "美浦鈴木伸",
-          "horse_weight": "502(+6)",
-          "popularity": "7",
-          "horse_id": "2020105144",
-          "odds_tansho": "16.7"
-        },
-        {
-          "waku": "3",
-          "umaban": "6",
-          "horse_name": "シンバーシア",
-          "sex_age": "牝5",
-          "weight_carried": "55.0",
-          "jockey": "木幡巧",
-          "stable": "美浦大竹",
-          "horse_weight": "458(0)",
-          "popularity": "9",
-          "horse_id": "2021105599",
-          "odds_tansho": "49.1"
-        },
-        {
-          "waku": "4",
-          "umaban": "7",
-          "horse_name": "スカイロケット",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "ディー",
-          "stable": "栗東須貝",
-          "horse_weight": "436(-4)",
-          "popularity": "12",
-          "horse_id": "2020103482",
-          "odds_tansho": "76.1"
-        },
-        {
-          "waku": "4",
-          "umaban": "8",
-          "horse_name": "ダノンザボルケーノ",
-          "sex_age": "牡5",
-          "weight_carried": "57.0",
-          "jockey": "大野",
-          "stable": "美浦菊沢",
-          "horse_weight": "480(0)",
-          "popularity": "10",
-          "horse_id": "2021101478",
-          "odds_tansho": "57.3"
-        },
-        {
-          "waku": "5",
-          "umaban": "9",
-          "horse_name": "ノーブルロジャー",
-          "sex_age": "牡5",
-          "weight_carried": "59.0",
-          "jockey": "石川",
-          "stable": "栗東吉岡",
-          "horse_weight": "502(+2)",
-          "popularity": "4",
-          "horse_id": "2021110148",
-          "odds_tansho": "11.2"
-        },
-        {
-          "waku": "5",
-          "umaban": "10",
-          "horse_name": "ジャスパーゴールド",
-          "sex_age": "セ8",
-          "weight_carried": "58.0",
-          "jockey": "江田照",
-          "stable": "栗東森秀",
-          "horse_weight": "470(0)",
-          "popularity": "15",
-          "horse_id": "2018110126",
-          "odds_tansho": "171.1"
-        },
-        {
-          "waku": "6",
-          "umaban": "11",
-          "horse_name": "タイセイブレイズ",
-          "sex_age": "牡8",
-          "weight_carried": "57.0",
-          "jockey": "松岡",
-          "stable": "栗東牧浦",
-          "horse_weight": "470(0)",
-          "popularity": "8",
-          "horse_id": "2018102969",
-          "odds_tansho": "47.4"
-        },
-        {
-          "waku": "6",
-          "umaban": "12",
-          "horse_name": "アスクドゥラメンテ",
-          "sex_age": "牡7",
-          "weight_carried": "57.0",
-          "jockey": "石橋脩",
-          "stable": "栗東藤原",
-          "horse_weight": "544(+6)",
-          "popularity": "16",
-          "horse_id": "2019105400",
-          "odds_tansho": "225.1"
-        },
-        {
-          "waku": "7",
-          "umaban": "13",
-          "horse_name": "カンパニョーラ",
-          "sex_age": "牝7",
-          "weight_carried": "55.0",
-          "jockey": "吉田豊",
-          "stable": "美浦伊坂",
-          "horse_weight": "476(+6)",
-          "popularity": "14",
-          "horse_id": "2019104385",
-          "odds_tansho": "141.9"
-        },
-        {
-          "waku": "7",
-          "umaban": "14",
-          "horse_name": "ペイシャケイプ",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "横山典",
-          "stable": "栗東高橋康",
-          "horse_weight": "540(-2)",
-          "popularity": "2",
-          "horse_id": "2022104219",
-          "odds_tansho": "5.2"
-        },
-        {
-          "waku": "8",
-          "umaban": "15",
-          "horse_name": "スマートサニー",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "国分優",
-          "stable": "栗東石橋",
-          "horse_weight": "470(-8)",
-          "popularity": "5",
-          "horse_id": "2020104304",
-          "odds_tansho": "13.0"
-        },
-        {
-          "waku": "8",
-          "umaban": "16",
-          "horse_name": "ワイワイレジェンド",
-          "sex_age": "牡5",
-          "weight_carried": "57.0",
-          "jockey": "津村",
-          "stable": "栗東前川",
-          "horse_weight": "490(-4)",
-          "popularity": "3",
-          "horse_id": "2021103812",
-          "odds_tansho": "7.6"
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020911",
-      "date": "20260523",
-      "is_past": true
-    },
-    "202605020912": {
-      "race_id": "202605020912",
-      "race_name": "4歳以上2勝クラス",
-      "course_info": "16:10発走 / ダ1600m (左) / 天候:曇 / 馬場:稍",
-      "venue_info": "2回 東京 9日目 サラ系４歳以上 ２勝クラス 牝[指] 定量 16頭 本賞金:1190,480,300,180,119万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "レーヴドレフォン",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "吉田豊",
-          "stable": "栗東橋田",
-          "horse_weight": "480(+2)",
-          "popularity": "14",
-          "horse_id": "2021105895",
-          "odds_tansho": "165.5"
-        },
-        {
-          "waku": "1",
-          "umaban": "2",
-          "horse_name": "ルトゥール",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "佐々木",
-          "stable": "美浦平岩",
-          "horse_weight": "474(-8)",
-          "popularity": "13",
-          "horse_id": "2021104929",
-          "odds_tansho": "158.5"
-        },
-        {
-          "waku": "2",
-          "umaban": "3",
-          "horse_name": "パイシャオピン",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "横山武",
-          "stable": "美浦鈴木伸",
-          "horse_weight": "468(+6)",
-          "popularity": "2",
-          "horse_id": "2022103371",
-          "odds_tansho": "3.5"
-        },
-        {
-          "waku": "2",
-          "umaban": "4",
-          "horse_name": "キョウエイフロイデ",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "原",
-          "stable": "美浦中川",
-          "horse_weight": "490(0)",
-          "popularity": "1",
-          "horse_id": "2021101053",
-          "odds_tansho": "3.1"
-        },
-        {
-          "waku": "3",
-          "umaban": "5",
-          "horse_name": "エーリアル",
-          "sex_age": "牝5",
-          "weight_carried": "56.0",
-          "jockey": "ディー",
-          "stable": "美浦西田",
-          "horse_weight": "524(+8)",
-          "popularity": "8",
-          "horse_id": "2021104856",
-          "odds_tansho": "24.9"
-        },
-        {
-          "waku": "3",
-          "umaban": "6",
-          "horse_name": "スカイビート",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "石橋脩",
-          "stable": "栗東野中",
-          "horse_weight": "452(-4)",
-          "popularity": "10",
-          "horse_id": "2022101490",
-          "odds_tansho": "72.8"
-        },
-        {
-          "waku": "4",
-          "umaban": "7",
-          "horse_name": "ネクストダンサー",
-          "sex_age": "牝4",
-          "weight_carried": "53.0",
-          "jockey": "▲佐藤",
-          "stable": "美浦伊藤圭",
-          "horse_weight": "492(-2)",
-          "popularity": "15",
-          "horse_id": "2022103753",
-          "odds_tansho": "224.4"
-        },
-        {
-          "waku": "4",
-          "umaban": "8",
-          "horse_name": "ゴーソーファー",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "津村",
-          "stable": "美浦手塚久",
-          "horse_weight": "478(-2)",
-          "popularity": "9",
-          "horse_id": "2022104781",
-          "odds_tansho": "46.4"
-        },
-        {
-          "waku": "5",
-          "umaban": "9",
-          "horse_name": "フィールオーサム",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "ルメール",
-          "stable": "美浦岩戸",
-          "horse_weight": "448(+2)",
-          "popularity": "3",
-          "horse_id": "2022105925",
-          "odds_tansho": "6.2"
-        },
-        {
-          "waku": "5",
-          "umaban": "10",
-          "horse_name": "タマモカンパネラ",
-          "sex_age": "牝4",
-          "weight_carried": "52.0",
-          "jockey": "★谷原",
-          "stable": "美浦伊藤圭",
-          "horse_weight": "516(-4)",
-          "popularity": "6",
-          "horse_id": "2022104512",
-          "odds_tansho": "16.2"
-        },
-        {
-          "waku": "6",
-          "umaban": "11",
-          "horse_name": "オーケアニス",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "石川",
-          "stable": "栗東松永幹",
-          "horse_weight": "470(-10)",
-          "popularity": "7",
-          "horse_id": "2022104883",
-          "odds_tansho": "22.5"
-        },
-        {
-          "waku": "6",
-          "umaban": "12",
-          "horse_name": "エターナルプロミス",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "国分優",
-          "stable": "栗東茶木",
-          "horse_weight": "478(+10)",
-          "popularity": "12",
-          "horse_id": "2022104917",
-          "odds_tansho": "155.8"
-        },
-        {
-          "waku": "7",
-          "umaban": "13",
-          "horse_name": "エンプレスフレーム",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "原田和",
-          "stable": "美浦上原博",
-          "horse_weight": "456(-2)",
-          "popularity": "16",
-          "horse_id": "2022107254",
-          "odds_tansho": "297.7"
-        },
-        {
-          "waku": "7",
-          "umaban": "14",
-          "horse_name": "マジックローズ",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "荻野極",
-          "stable": "栗東中内田",
-          "horse_weight": "444(-4)",
-          "popularity": "4",
-          "horse_id": "2022100622",
-          "odds_tansho": "6.9"
-        },
-        {
-          "waku": "8",
-          "umaban": "15",
-          "horse_name": "カーラデマドレ",
-          "sex_age": "牝4",
-          "weight_carried": "56.0",
-          "jockey": "レーン",
-          "stable": "美浦矢嶋",
-          "horse_weight": "482(-2)",
-          "popularity": "5",
-          "horse_id": "2022104912",
-          "odds_tansho": "7.6"
-        },
-        {
-          "waku": "8",
-          "umaban": "16",
-          "horse_name": "マフィン",
-          "sex_age": "牝5",
-          "weight_carried": "55.0",
-          "jockey": "☆長浜",
-          "stable": "美浦大和田",
-          "horse_weight": "426(+14)",
-          "popularity": "11",
-          "horse_id": "2021101219",
-          "odds_tansho": "109.1"
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605020912",
-      "date": "20260523",
-      "is_past": true
-    },
-    "202608030911": {
-      "race_id": "202608030911",
-      "race_name": "平安S",
-      "course_info": "15:45発走 / ダ1900m (右) / 天候:曇 / 馬場:稍",
-      "venue_info": "3回 京都 9日目 サラ系４歳以上 オープン (国際)(指) 別定 16頭 本賞金:4000,1600,1000,600,400万円",
-      "horses": [
-        {
-          "waku": "1",
-          "umaban": "1",
-          "horse_name": "ポッドロゴ",
-          "sex_age": "牡5",
-          "weight_carried": "57.0",
-          "jockey": "岩田望",
-          "stable": "栗東西園翔",
-          "horse_weight": "480(0)",
-          "popularity": "13",
-          "horse_id": "2021104873",
-          "odds_tansho": "43.4"
-        },
-        {
-          "waku": "1",
-          "umaban": "2",
-          "horse_name": "キョウキランブ",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "菅原明",
-          "stable": "美浦古賀慎",
-          "horse_weight": "514(-10)",
-          "popularity": "16",
-          "horse_id": "2022103115",
-          "odds_tansho": "128.7"
-        },
-        {
-          "waku": "2",
-          "umaban": "3",
-          "horse_name": "リアライズカミオン",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "坂井",
-          "stable": "美浦堀",
-          "horse_weight": "518(-4)",
-          "popularity": "3",
-          "horse_id": "2022105702",
-          "odds_tansho": "6.2"
-        },
-        {
-          "waku": "2",
-          "umaban": "4",
-          "horse_name": "ジューンアヲニヨシ",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "浜中",
-          "stable": "栗東松下",
-          "horse_weight": "490(-2)",
-          "popularity": "7",
-          "horse_id": "2020100912",
-          "odds_tansho": "24.7"
-        },
-        {
-          "waku": "3",
-          "umaban": "5",
-          "horse_name": "ヴァルツァーシャル",
-          "sex_age": "牡7",
-          "weight_carried": "57.0",
-          "jockey": "斎藤",
-          "stable": "美浦高木",
-          "horse_weight": "508(-2)",
-          "popularity": "8",
-          "horse_id": "2019102437",
-          "odds_tansho": "25.9"
-        },
-        {
-          "waku": "3",
-          "umaban": "6",
-          "horse_name": "ハグ",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "高杉",
-          "stable": "栗東藤岡健",
-          "horse_weight": "514(-4)",
-          "popularity": "9",
-          "horse_id": "2022106925",
-          "odds_tansho": "26.2"
-        },
-        {
-          "waku": "4",
-          "umaban": "7",
-          "horse_name": "ゼットリアン",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "団野",
-          "stable": "栗東吉田",
-          "horse_weight": "448(0)",
-          "popularity": "5",
-          "horse_id": "2020104760",
-          "odds_tansho": "17.5"
-        },
-        {
-          "waku": "4",
-          "umaban": "8",
-          "horse_name": "ヴァンヤール",
-          "sex_age": "牡8",
-          "weight_carried": "57.0",
-          "jockey": "角田和",
-          "stable": "栗東庄野",
-          "horse_weight": "534(0)",
-          "popularity": "14",
-          "horse_id": "2018101087",
-          "odds_tansho": "50.2"
-        },
-        {
-          "waku": "5",
-          "umaban": "9",
-          "horse_name": "メリークリスマス",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "三浦",
-          "stable": "美浦小手川",
-          "horse_weight": "504(+6)",
-          "popularity": "10",
-          "horse_id": "2022100394",
-          "odds_tansho": "32.4"
-        },
-        {
-          "waku": "5",
-          "umaban": "10",
-          "horse_name": "シュラザック",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "幸",
-          "stable": "栗東大根田",
-          "horse_weight": "494(-4)",
-          "popularity": "11",
-          "horse_id": "2022102117",
-          "odds_tansho": "33.8"
-        },
-        {
-          "waku": "6",
-          "umaban": "11",
-          "horse_name": "タイトニット",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "川田",
-          "stable": "栗東今野",
-          "horse_weight": "548(-4)",
-          "popularity": "4",
-          "horse_id": "2020102750",
-          "odds_tansho": "11.3"
-        },
-        {
-          "waku": "6",
-          "umaban": "12",
-          "horse_name": "サイモンザナドゥ",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "池添",
-          "stable": "栗東小林",
-          "horse_weight": "474(-8)",
-          "popularity": "12",
-          "horse_id": "2020104497",
-          "odds_tansho": "34.1"
-        },
-        {
-          "waku": "7",
-          "umaban": "13",
-          "horse_name": "チュウワクリスエス",
-          "sex_age": "牡4",
-          "weight_carried": "57.0",
-          "jockey": "武豊",
-          "stable": "美浦栗田",
-          "horse_weight": "500(-2)",
-          "popularity": "15",
-          "horse_id": "2022102280",
-          "odds_tansho": "52.5"
-        },
-        {
-          "waku": "7",
-          "umaban": "14",
-          "horse_name": "ロードクロンヌ",
-          "sex_age": "牡5",
-          "weight_carried": "58.0",
-          "jockey": "横山和",
-          "stable": "栗東四位",
-          "horse_weight": "500(0)",
-          "popularity": "1",
-          "horse_id": "2021100169",
-          "odds_tansho": "2.5"
-        },
-        {
-          "waku": "8",
-          "umaban": "15",
-          "horse_name": "ナルカミ",
-          "sex_age": "牡4",
-          "weight_carried": "59.0",
-          "jockey": "戸崎圭",
-          "stable": "美浦田中博",
-          "horse_weight": "504(-3)",
-          "popularity": "2",
-          "horse_id": "2022101638",
-          "odds_tansho": "4.4"
-        },
-        {
-          "waku": "8",
-          "umaban": "16",
-          "horse_name": "アクションプラン",
-          "sex_age": "牡6",
-          "weight_carried": "57.0",
-          "jockey": "松山",
-          "stable": "美浦池上",
-          "horse_weight": "512(-2)",
-          "popularity": "6",
-          "horse_id": "2020100116",
-          "odds_tansho": "20.1"
-        }
-      ],
-      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608030911",
-      "date": "20260523",
-      "is_past": true
-    },
     "202604010811": {
       "race_id": "202604010811",
       "race_name": "韋駄天S",
@@ -1666,8 +829,7 @@
           "stable": "栗東杉山晴",
           "horse_weight": "472(-12)",
           "popularity": "15",
-          "horse_id": "2021105926",
-          "odds_tansho": "26.4"
+          "horse_id": "2021105926"
         },
         {
           "waku": "1",
@@ -1679,8 +841,7 @@
           "stable": "栗東野中",
           "horse_weight": "478(+14)",
           "popularity": "8",
-          "horse_id": "2021103987",
-          "odds_tansho": "34.2"
+          "horse_id": "2021103987"
         },
         {
           "waku": "2",
@@ -1692,8 +853,7 @@
           "stable": "美浦大竹",
           "horse_weight": "502(+2)",
           "popularity": "14",
-          "horse_id": "2020103148",
-          "odds_tansho": "7.6"
+          "horse_id": "2020103148"
         },
         {
           "waku": "2",
@@ -1705,8 +865,7 @@
           "stable": "栗東庄野",
           "horse_weight": "522(0)",
           "popularity": "10",
-          "horse_id": "2021104646",
-          "odds_tansho": "16.4"
+          "horse_id": "2021104646"
         },
         {
           "waku": "3",
@@ -1718,8 +877,7 @@
           "stable": "栗東友道",
           "horse_weight": "518(-2)",
           "popularity": "12",
-          "horse_id": "2021105775",
-          "odds_tansho": "275.3"
+          "horse_id": "2021105775"
         },
         {
           "waku": "3",
@@ -1731,8 +889,7 @@
           "stable": "美浦宮田",
           "horse_weight": "546(+4)",
           "popularity": "3",
-          "horse_id": "2021105824",
-          "odds_tansho": "4.4"
+          "horse_id": "2021105824"
         },
         {
           "waku": "4",
@@ -1744,8 +901,7 @@
           "stable": "栗東茶木",
           "horse_weight": "518(-10)",
           "popularity": "13",
-          "horse_id": "2020100960",
-          "odds_tansho": "13.7"
+          "horse_id": "2020100960"
         },
         {
           "waku": "4",
@@ -1757,8 +913,7 @@
           "stable": "栗東杉山佳",
           "horse_weight": "494(-2)",
           "popularity": "5",
-          "horse_id": "2020103005",
-          "odds_tansho": "2.0"
+          "horse_id": "2020103005"
         },
         {
           "waku": "5",
@@ -1770,8 +925,7 @@
           "stable": "美浦田中勝",
           "horse_weight": "518(+2)",
           "popularity": "9",
-          "horse_id": "2022102399",
-          "odds_tansho": ""
+          "horse_id": "2022102399"
         },
         {
           "waku": "5",
@@ -1783,8 +937,7 @@
           "stable": "栗東平田",
           "horse_weight": "474(-4)",
           "popularity": "16",
-          "horse_id": "2018101739",
-          "odds_tansho": ""
+          "horse_id": "2018101739"
         },
         {
           "waku": "6",
@@ -1796,8 +949,7 @@
           "stable": "美浦稲垣",
           "horse_weight": "502(-4)",
           "popularity": "6",
-          "horse_id": "2021105360",
-          "odds_tansho": ""
+          "horse_id": "2021105360"
         },
         {
           "waku": "6",
@@ -1809,8 +961,7 @@
           "stable": "美浦堀",
           "horse_weight": "516(+4)",
           "popularity": "2",
-          "horse_id": "2020103331",
-          "odds_tansho": ""
+          "horse_id": "2020103331"
         },
         {
           "waku": "7",
@@ -1822,8 +973,7 @@
           "stable": "美浦武井",
           "horse_weight": "520(0)",
           "popularity": "7",
-          "horse_id": "2021100561",
-          "odds_tansho": ""
+          "horse_id": "2021100561"
         },
         {
           "waku": "7",
@@ -1835,8 +985,7 @@
           "stable": "栗東畑端",
           "horse_weight": "546(-4)",
           "popularity": "4",
-          "horse_id": "2021100505",
-          "odds_tansho": ""
+          "horse_id": "2021100505"
         },
         {
           "waku": "8",
@@ -1848,8 +997,7 @@
           "stable": "栗東新谷",
           "horse_weight": "486(-12)",
           "popularity": "11",
-          "horse_id": "2020103464",
-          "odds_tansho": ""
+          "horse_id": "2020103464"
         },
         {
           "waku": "8",
@@ -1861,13 +1009,12 @@
           "stable": "栗東高柳大",
           "horse_weight": "492(0)",
           "popularity": "1",
-          "horse_id": "2021102236",
-          "odds_tansho": ""
+          "horse_id": "2021102236"
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605021111",
       "date": "20260530",
-      "is_past": false
+      "is_past": true
     },
     "202605021112": {
       "race_id": "202605021112",
@@ -1885,8 +1032,7 @@
           "stable": "美浦辻",
           "horse_weight": "448(-4)",
           "popularity": "10",
-          "horse_id": "2021105085",
-          "odds_tansho": "39.8"
+          "horse_id": "2021105085"
         },
         {
           "waku": "1",
@@ -1898,8 +1044,7 @@
           "stable": "美浦田島",
           "horse_weight": "484(0)",
           "popularity": "9",
-          "horse_id": "2021104889",
-          "odds_tansho": "23.4"
+          "horse_id": "2021104889"
         },
         {
           "waku": "2",
@@ -1911,8 +1056,7 @@
           "stable": "美浦鈴木慎",
           "horse_weight": "476(+4)",
           "popularity": "5",
-          "horse_id": "2022100526",
-          "odds_tansho": "18.7"
+          "horse_id": "2022100526"
         },
         {
           "waku": "2",
@@ -1924,8 +1068,7 @@
           "stable": "美浦小笠",
           "horse_weight": "508(+6)",
           "popularity": "8",
-          "horse_id": "2022100306",
-          "odds_tansho": "9.4"
+          "horse_id": "2022100306"
         },
         {
           "waku": "3",
@@ -1937,8 +1080,7 @@
           "stable": "美浦池上",
           "horse_weight": "524(+4)",
           "popularity": "7",
-          "horse_id": "2020103119",
-          "odds_tansho": "89.0"
+          "horse_id": "2020103119"
         },
         {
           "waku": "3",
@@ -1950,8 +1092,7 @@
           "stable": "栗東高橋一",
           "horse_weight": "448(-2)",
           "popularity": "6",
-          "horse_id": "2021101419",
-          "odds_tansho": "11.2"
+          "horse_id": "2021101419"
         },
         {
           "waku": "4",
@@ -1963,8 +1104,7 @@
           "stable": "美浦松尾",
           "horse_weight": "550(+6)",
           "popularity": "14",
-          "horse_id": "2021100606",
-          "odds_tansho": "8.1"
+          "horse_id": "2021100606"
         },
         {
           "waku": "4",
@@ -1976,8 +1116,7 @@
           "stable": "美浦中舘",
           "horse_weight": "486(0)",
           "popularity": "3",
-          "horse_id": "2022105258",
-          "odds_tansho": "238.6"
+          "horse_id": "2022105258"
         },
         {
           "waku": "5",
@@ -1989,8 +1128,7 @@
           "stable": "美浦嘉藤",
           "horse_weight": "482(0)",
           "popularity": "12",
-          "horse_id": "2021106707",
-          "odds_tansho": ""
+          "horse_id": "2021106707"
         },
         {
           "waku": "5",
@@ -2002,8 +1140,7 @@
           "stable": "美浦菊川",
           "horse_weight": "484(+10)",
           "popularity": "13",
-          "horse_id": "2020100060",
-          "odds_tansho": ""
+          "horse_id": "2020100060"
         },
         {
           "waku": "6",
@@ -2015,8 +1152,7 @@
           "stable": "美浦松永康",
           "horse_weight": "464(0)",
           "popularity": "11",
-          "horse_id": "2019103827",
-          "odds_tansho": ""
+          "horse_id": "2019103827"
         },
         {
           "waku": "6",
@@ -2028,8 +1164,7 @@
           "stable": "美浦松山",
           "horse_weight": "518(0)",
           "popularity": "4",
-          "horse_id": "2020102077",
-          "odds_tansho": ""
+          "horse_id": "2020102077"
         },
         {
           "waku": "7",
@@ -2041,8 +1176,7 @@
           "stable": "栗東奥村豊",
           "horse_weight": "498(0)",
           "popularity": "1",
-          "horse_id": "2022102882",
-          "odds_tansho": ""
+          "horse_id": "2022102882"
         },
         {
           "waku": "7",
@@ -2054,8 +1188,7 @@
           "stable": "栗東庄野",
           "horse_weight": "460(+2)",
           "popularity": "2",
-          "horse_id": "2021102436",
-          "odds_tansho": ""
+          "horse_id": "2021102436"
         },
         {
           "waku": "8",
@@ -2067,8 +1200,7 @@
           "stable": "美浦小島",
           "horse_weight": "494(-6)",
           "popularity": "15",
-          "horse_id": "2020102793",
-          "odds_tansho": ""
+          "horse_id": "2020102793"
         },
         {
           "waku": "8",
@@ -2080,13 +1212,12 @@
           "stable": "美浦勢司",
           "horse_weight": "508(-4)",
           "popularity": "16",
-          "horse_id": "2018100976",
-          "odds_tansho": ""
+          "horse_id": "2018100976"
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605021112",
       "date": "20260530",
-      "is_past": false
+      "is_past": true
     },
     "202608031108": {
       "race_id": "202608031108",
@@ -2104,8 +1235,7 @@
           "stable": "栗東宮地",
           "horse_weight": "506(+8)",
           "popularity": "8",
-          "horse_id": "2021105659",
-          "odds_tansho": "38.3"
+          "horse_id": "2021105659"
         },
         {
           "waku": "2",
@@ -2117,8 +1247,7 @@
           "stable": "栗東千田",
           "horse_weight": "516(0)",
           "popularity": "6",
-          "horse_id": "2022101676",
-          "odds_tansho": "9.5"
+          "horse_id": "2022101676"
         },
         {
           "waku": "3",
@@ -2130,8 +1259,7 @@
           "stable": "栗東梅田",
           "horse_weight": "472(+4)",
           "popularity": "7",
-          "horse_id": "2022104879",
-          "odds_tansho": "14.9"
+          "horse_id": "2022104879"
         },
         {
           "waku": "4",
@@ -2143,8 +1271,7 @@
           "stable": "美浦水野",
           "horse_weight": "462(0)",
           "popularity": "11",
-          "horse_id": "2020105803",
-          "odds_tansho": "85.8"
+          "horse_id": "2020105803"
         },
         {
           "waku": "5",
@@ -2156,8 +1283,7 @@
           "stable": "栗東石坂",
           "horse_weight": "476(0)",
           "popularity": "3",
-          "horse_id": "2022101241",
-          "odds_tansho": "2.8"
+          "horse_id": "2022101241"
         },
         {
           "waku": "5",
@@ -2169,8 +1295,7 @@
           "stable": "栗東吉岡",
           "horse_weight": "472(-2)",
           "popularity": "1",
-          "horse_id": "2022103525",
-          "odds_tansho": "48.3"
+          "horse_id": "2022103525"
         },
         {
           "waku": "6",
@@ -2182,8 +1307,7 @@
           "stable": "栗東藤原",
           "horse_weight": "464(+2)",
           "popularity": "5",
-          "horse_id": "2022104988",
-          "odds_tansho": "4.8"
+          "horse_id": "2022104988"
         },
         {
           "waku": "6",
@@ -2195,8 +1319,7 @@
           "stable": "栗東高橋康",
           "horse_weight": "450(0)",
           "popularity": "9",
-          "horse_id": "2022109145",
-          "odds_tansho": "120.5"
+          "horse_id": "2022109145"
         },
         {
           "waku": "7",
@@ -2208,8 +1331,7 @@
           "stable": "栗東寺島",
           "horse_weight": "442(+4)",
           "popularity": "10",
-          "horse_id": "2022102729",
-          "odds_tansho": ""
+          "horse_id": "2022102729"
         },
         {
           "waku": "7",
@@ -2221,8 +1343,7 @@
           "stable": "栗東田中克",
           "horse_weight": "446(+2)",
           "popularity": "2",
-          "horse_id": "2022104647",
-          "odds_tansho": ""
+          "horse_id": "2022104647"
         },
         {
           "waku": "8",
@@ -2234,8 +1355,7 @@
           "stable": "栗東荒川",
           "horse_weight": "478(+2)",
           "popularity": "4",
-          "horse_id": "2018103368",
-          "odds_tansho": ""
+          "horse_id": "2018103368"
         },
         {
           "waku": "8",
@@ -2247,13 +1367,12 @@
           "stable": "栗東畑端",
           "horse_weight": "458(-2)",
           "popularity": "12",
-          "horse_id": "2021103862",
-          "odds_tansho": ""
+          "horse_id": "2021103862"
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031108",
       "date": "20260530",
-      "is_past": false
+      "is_past": true
     },
     "202608031109": {
       "race_id": "202608031109",
@@ -2271,8 +1390,7 @@
           "stable": "栗東高柳大",
           "horse_weight": "530(-6)",
           "popularity": "6",
-          "horse_id": "2023100704",
-          "odds_tansho": "61.2"
+          "horse_id": "2023100704"
         },
         {
           "waku": "2",
@@ -2284,8 +1402,7 @@
           "stable": "栗東松下",
           "horse_weight": "512(-2)",
           "popularity": "5",
-          "horse_id": "2023107181",
-          "odds_tansho": "10.1"
+          "horse_id": "2023107181"
         },
         {
           "waku": "3",
@@ -2297,8 +1414,7 @@
           "stable": "栗東大根田",
           "horse_weight": "476(+2)",
           "popularity": "8",
-          "horse_id": "2023101694",
-          "odds_tansho": "132.0"
+          "horse_id": "2023101694"
         },
         {
           "waku": "4",
@@ -2310,8 +1426,7 @@
           "stable": "栗東野中",
           "horse_weight": "458(0)",
           "popularity": "2",
-          "horse_id": "2023100547",
-          "odds_tansho": "4.3"
+          "horse_id": "2023100547"
         },
         {
           "waku": "5",
@@ -2323,8 +1438,7 @@
           "stable": "栗東角田",
           "horse_weight": "482(-4)",
           "popularity": "3",
-          "horse_id": "2023104733",
-          "odds_tansho": "5.9"
+          "horse_id": "2023104733"
         },
         {
           "waku": "6",
@@ -2336,8 +1450,7 @@
           "stable": "栗東小崎",
           "horse_weight": "466(+2)",
           "popularity": "9",
-          "horse_id": "2023100235",
-          "odds_tansho": "143.1"
+          "horse_id": "2023100235"
         },
         {
           "waku": "7",
@@ -2349,8 +1462,7 @@
           "stable": "栗東大根田",
           "horse_weight": "506(+6)",
           "popularity": "4",
-          "horse_id": "2023102075",
-          "odds_tansho": "6.3"
+          "horse_id": "2023102075"
         },
         {
           "waku": "8",
@@ -2362,8 +1474,7 @@
           "stable": "美浦斎藤誠",
           "horse_weight": "498(+2)",
           "popularity": "1",
-          "horse_id": "2023103142",
-          "odds_tansho": "103.6"
+          "horse_id": "2023103142"
         },
         {
           "waku": "8",
@@ -2375,13 +1486,12 @@
           "stable": "栗東谷",
           "horse_weight": "502(+4)",
           "popularity": "7",
-          "horse_id": "2023102919",
-          "odds_tansho": ""
+          "horse_id": "2023102919"
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031109",
       "date": "20260530",
-      "is_past": false
+      "is_past": true
     },
     "202608031111": {
       "race_id": "202608031111",
@@ -2399,8 +1509,7 @@
           "stable": "栗東小椋",
           "horse_weight": "468(+4)",
           "popularity": "15",
-          "horse_id": "2023104528",
-          "odds_tansho": "8.7"
+          "horse_id": "2023104528"
         },
         {
           "waku": "1",
@@ -2412,8 +1521,7 @@
           "stable": "栗東上村",
           "horse_weight": "458(+4)",
           "popularity": "5",
-          "horse_id": "2023107264",
-          "odds_tansho": "7.7"
+          "horse_id": "2023107264"
         },
         {
           "waku": "2",
@@ -2425,8 +1533,7 @@
           "stable": "美浦加藤士",
           "horse_weight": "434(+2)",
           "popularity": "10",
-          "horse_id": "2023107279",
-          "odds_tansho": "75.9"
+          "horse_id": "2023107279"
         },
         {
           "waku": "2",
@@ -2438,8 +1545,7 @@
           "stable": "栗東斉藤崇",
           "horse_weight": "528(+4)",
           "popularity": "4",
-          "horse_id": "2023105273",
-          "odds_tansho": "53.2"
+          "horse_id": "2023105273"
         },
         {
           "waku": "3",
@@ -2451,8 +1557,7 @@
           "stable": "栗東大久保",
           "horse_weight": "450(-4)",
           "popularity": "2",
-          "horse_id": "2023105505",
-          "odds_tansho": "44.1"
+          "horse_id": "2023105505"
         },
         {
           "waku": "3",
@@ -2464,8 +1569,7 @@
           "stable": "美浦鹿戸",
           "horse_weight": "484(+10)",
           "popularity": "14",
-          "horse_id": "2023103717",
-          "odds_tansho": "8.8"
+          "horse_id": "2023103717"
         },
         {
           "waku": "4",
@@ -2477,8 +1581,7 @@
           "stable": "栗東吉村",
           "horse_weight": "450(0)",
           "popularity": "8",
-          "horse_id": "2023105210",
-          "odds_tansho": "137.4"
+          "horse_id": "2023105210"
         },
         {
           "waku": "4",
@@ -2490,8 +1593,7 @@
           "stable": "美浦青木",
           "horse_weight": "500(+8)",
           "popularity": "13",
-          "horse_id": "2023106665",
-          "odds_tansho": "22.1"
+          "horse_id": "2023106665"
         },
         {
           "waku": "5",
@@ -2503,8 +1605,7 @@
           "stable": "栗東矢作",
           "horse_weight": "448(+4)",
           "popularity": "7",
-          "horse_id": "2023102577",
-          "odds_tansho": ""
+          "horse_id": "2023102577"
         },
         {
           "waku": "5",
@@ -2516,8 +1617,7 @@
           "stable": "栗東高橋亮",
           "horse_weight": "448(+4)",
           "popularity": "11",
-          "horse_id": "2023105668",
-          "odds_tansho": ""
+          "horse_id": "2023105668"
         },
         {
           "waku": "6",
@@ -2529,8 +1629,7 @@
           "stable": "栗東西園翔",
           "horse_weight": "452(0)",
           "popularity": "1",
-          "horse_id": "2023104313",
-          "odds_tansho": ""
+          "horse_id": "2023104313"
         },
         {
           "waku": "6",
@@ -2542,8 +1641,7 @@
           "stable": "栗東池江",
           "horse_weight": "466(+6)",
           "popularity": "6",
-          "horse_id": "2023100545",
-          "odds_tansho": ""
+          "horse_id": "2023100545"
         },
         {
           "waku": "7",
@@ -2555,8 +1653,7 @@
           "stable": "栗東藤岡健",
           "horse_weight": "524(0)",
           "popularity": "3",
-          "horse_id": "2023103162",
-          "odds_tansho": ""
+          "horse_id": "2023103162"
         },
         {
           "waku": "7",
@@ -2568,8 +1665,7 @@
           "stable": "美浦牧",
           "horse_weight": "434(0)",
           "popularity": "16",
-          "horse_id": "2023103355",
-          "odds_tansho": ""
+          "horse_id": "2023103355"
         },
         {
           "waku": "8",
@@ -2581,8 +1677,7 @@
           "stable": "栗東松永幹",
           "horse_weight": "470(-4)",
           "popularity": "12",
-          "horse_id": "2023103721",
-          "odds_tansho": ""
+          "horse_id": "2023103721"
         },
         {
           "waku": "8",
@@ -2594,13 +1689,12 @@
           "stable": "美浦加藤士",
           "horse_weight": "420(0)",
           "popularity": "9",
-          "horse_id": "2023105347",
-          "odds_tansho": ""
+          "horse_id": "2023105347"
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031111",
       "date": "20260530",
-      "is_past": false
+      "is_past": true
     },
     "202608031112": {
       "race_id": "202608031112",
@@ -2618,8 +1712,7 @@
           "stable": "栗東畑端",
           "horse_weight": "464(-4)",
           "popularity": "12",
-          "horse_id": "2021105973",
-          "odds_tansho": "51.3"
+          "horse_id": "2021105973"
         },
         {
           "waku": "1",
@@ -2631,8 +1724,7 @@
           "stable": "美浦新開",
           "horse_weight": "492(-8)",
           "popularity": "11",
-          "horse_id": "2022103859",
-          "odds_tansho": "6.4"
+          "horse_id": "2022103859"
         },
         {
           "waku": "2",
@@ -2644,8 +1736,7 @@
           "stable": "栗東吉村",
           "horse_weight": "486(+4)",
           "popularity": "14",
-          "horse_id": "2021100739",
-          "odds_tansho": "7.7"
+          "horse_id": "2021100739"
         },
         {
           "waku": "2",
@@ -2657,8 +1748,7 @@
           "stable": "栗東斉藤崇",
           "horse_weight": "516(+2)",
           "popularity": "3",
-          "horse_id": "2022105965",
-          "odds_tansho": "30.3"
+          "horse_id": "2022105965"
         },
         {
           "waku": "3",
@@ -2670,8 +1760,7 @@
           "stable": "栗東大橋",
           "horse_weight": "486(-2)",
           "popularity": "4",
-          "horse_id": "2022103630",
-          "odds_tansho": "125.0"
+          "horse_id": "2022103630"
         },
         {
           "waku": "3",
@@ -2683,8 +1772,7 @@
           "stable": "栗東鈴木孝",
           "horse_weight": "450(0)",
           "popularity": "5",
-          "horse_id": "2022102574",
-          "odds_tansho": "61.4"
+          "horse_id": "2022102574"
         },
         {
           "waku": "4",
@@ -2696,8 +1784,7 @@
           "stable": "栗東中竹",
           "horse_weight": "448(+4)",
           "popularity": "2",
-          "horse_id": "2022101557",
-          "odds_tansho": "38.8"
+          "horse_id": "2022101557"
         },
         {
           "waku": "4",
@@ -2709,8 +1796,7 @@
           "stable": "栗東北出",
           "horse_weight": "466(+6)",
           "popularity": "7",
-          "horse_id": "2021101057",
-          "odds_tansho": "30.6"
+          "horse_id": "2021101057"
         },
         {
           "waku": "5",
@@ -2722,8 +1808,7 @@
           "stable": "栗東奥村豊",
           "horse_weight": "490(+2)",
           "popularity": "1",
-          "horse_id": "2021102754",
-          "odds_tansho": ""
+          "horse_id": "2021102754"
         },
         {
           "waku": "5",
@@ -2735,8 +1820,7 @@
           "stable": "栗東中竹",
           "horse_weight": "460(+12)",
           "popularity": "15",
-          "horse_id": "2021106936",
-          "odds_tansho": ""
+          "horse_id": "2021106936"
         },
         {
           "waku": "6",
@@ -2748,8 +1832,7 @@
           "stable": "栗東友道",
           "horse_weight": "494(+2)",
           "popularity": "16",
-          "horse_id": "2021105591",
-          "odds_tansho": ""
+          "horse_id": "2021105591"
         },
         {
           "waku": "6",
@@ -2761,8 +1844,7 @@
           "stable": "栗東矢作",
           "horse_weight": "472(-8)",
           "popularity": "13",
-          "horse_id": "2022101536",
-          "odds_tansho": ""
+          "horse_id": "2022101536"
         },
         {
           "waku": "7",
@@ -2774,8 +1856,7 @@
           "stable": "美浦鈴木伸",
           "horse_weight": "480(0)",
           "popularity": "9",
-          "horse_id": "2022106261",
-          "odds_tansho": ""
+          "horse_id": "2022106261"
         },
         {
           "waku": "7",
@@ -2787,8 +1868,7 @@
           "stable": "美浦千葉",
           "horse_weight": "478(-4)",
           "popularity": "10",
-          "horse_id": "2022107359",
-          "odds_tansho": ""
+          "horse_id": "2022107359"
         },
         {
           "waku": "8",
@@ -2800,8 +1880,7 @@
           "stable": "栗東牧浦",
           "horse_weight": "482(0)",
           "popularity": "6",
-          "horse_id": "2021101077",
-          "odds_tansho": ""
+          "horse_id": "2021101077"
         },
         {
           "waku": "8",
@@ -2813,18 +1892,17 @@
           "stable": "栗東杉山佳",
           "horse_weight": "418(-4)",
           "popularity": "8",
-          "horse_id": "2022106169",
-          "odds_tansho": ""
+          "horse_id": "2022106169"
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031112",
       "date": "20260530",
-      "is_past": false
+      "is_past": true
     },
     "202605021211": {
       "race_id": "202605021211",
       "race_name": "日本ダービー",
-      "course_info": "15:40発走 / 芝2400m (左 C)",
+      "course_info": "15:40発走 / 芝2400m (左 C) / 天候:晴 / 馬場:良",
       "venue_info": "2回 東京 12日目 サラ系３歳 オープン (国際) 牡・牝(指) 馬齢 18頭 本賞金:30000,12000,7500,4500,3000万円",
       "horses": [
         {
@@ -2835,10 +1913,10 @@
           "weight_carried": "57.0",
           "jockey": "佐々木",
           "stable": "美浦上原佑",
-          "horse_weight": "",
-          "popularity": "6",
+          "horse_weight": "514(+4)",
+          "popularity": "5",
           "horse_id": "2023103687",
-          "odds_tansho": "51.5"
+          "odds_tansho": "42.8"
         },
         {
           "waku": "1",
@@ -2848,10 +1926,10 @@
           "weight_carried": "57.0",
           "jockey": "横山和",
           "stable": "栗東野中",
-          "horse_weight": "",
-          "popularity": "13",
+          "horse_weight": "496(+2)",
+          "popularity": "12",
           "horse_id": "2023100946",
-          "odds_tansho": "165.9"
+          "odds_tansho": "249.9"
         },
         {
           "waku": "2",
@@ -2861,10 +1939,10 @@
           "weight_carried": "57.0",
           "jockey": "丹内",
           "stable": "美浦田島",
-          "horse_weight": "",
+          "horse_weight": "496(+2)",
           "popularity": "18",
           "horse_id": "2023103824",
-          "odds_tansho": "10.6"
+          "odds_tansho": "13.2"
         },
         {
           "waku": "2",
@@ -2874,10 +1952,10 @@
           "weight_carried": "57.0",
           "jockey": "横山武",
           "stable": "栗東野中",
-          "horse_weight": "",
+          "horse_weight": "474(+6)",
           "popularity": "16",
           "horse_id": "2023103480",
-          "odds_tansho": "166.1"
+          "odds_tansho": "281.8"
         },
         {
           "waku": "3",
@@ -2887,10 +1965,10 @@
           "weight_carried": "57.0",
           "jockey": "川田",
           "stable": "栗東斉藤崇",
-          "horse_weight": "",
+          "horse_weight": "464(+4)",
           "popularity": "11",
           "horse_id": "2023107247",
-          "odds_tansho": "69.8"
+          "odds_tansho": "89.2"
         },
         {
           "waku": "3",
@@ -2900,10 +1978,10 @@
           "weight_carried": "57.0",
           "jockey": "西村淳",
           "stable": "栗東高野",
-          "horse_weight": "",
-          "popularity": "5",
+          "horse_weight": "508(-10)",
+          "popularity": "6",
           "horse_id": "2023106963",
-          "odds_tansho": "16.5"
+          "odds_tansho": "22.3"
         },
         {
           "waku": "4",
@@ -2913,10 +1991,10 @@
           "weight_carried": "57.0",
           "jockey": "ディー",
           "stable": "栗東牧浦",
-          "horse_weight": "",
-          "popularity": "12",
+          "horse_weight": "512(+2)",
+          "popularity": "13",
           "horse_id": "2023102039",
-          "odds_tansho": "18.2"
+          "odds_tansho": "18.9"
         },
         {
           "waku": "4",
@@ -2926,10 +2004,10 @@
           "weight_carried": "57.0",
           "jockey": "浜中",
           "stable": "栗東須貝",
-          "horse_weight": "",
+          "horse_weight": "486(+6)",
           "popularity": "17",
           "horse_id": "2023105332",
-          "odds_tansho": "117.5"
+          "odds_tansho": "188.7"
         },
         {
           "waku": "5",
@@ -2939,7 +2017,7 @@
           "weight_carried": "57.0",
           "jockey": "レーン",
           "stable": "美浦手塚久",
-          "horse_weight": "",
+          "horse_weight": "500(0)",
           "popularity": "7",
           "horse_id": "2023107321",
           "odds_tansho": ""
@@ -2952,7 +2030,7 @@
           "weight_carried": "57.0",
           "jockey": "坂井",
           "stable": "栗東吉岡",
-          "horse_weight": "",
+          "horse_weight": "526(+10)",
           "popularity": "14",
           "horse_id": "2023102807",
           "odds_tansho": ""
@@ -2965,7 +2043,7 @@
           "weight_carried": "57.0",
           "jockey": "津村",
           "stable": "美浦手塚久",
-          "horse_weight": "",
+          "horse_weight": "528(0)",
           "popularity": "2",
           "horse_id": "2023103604",
           "odds_tansho": ""
@@ -2978,8 +2056,8 @@
           "weight_carried": "57.0",
           "jockey": "岩田康",
           "stable": "栗東福永",
-          "horse_weight": "",
-          "popularity": "8",
+          "horse_weight": "466(+8)",
+          "popularity": "9",
           "horse_id": "2023106400",
           "odds_tansho": ""
         },
@@ -2991,7 +2069,7 @@
           "weight_carried": "57.0",
           "jockey": "ルメール",
           "stable": "美浦木村",
-          "horse_weight": "",
+          "horse_weight": "514(+4)",
           "popularity": "4",
           "horse_id": "2023107377",
           "odds_tansho": ""
@@ -3004,7 +2082,7 @@
           "weight_carried": "57.0",
           "jockey": "武豊",
           "stable": "美浦上原佑",
-          "horse_weight": "",
+          "horse_weight": "498(-6)",
           "popularity": "3",
           "horse_id": "2023105378",
           "odds_tansho": ""
@@ -3017,8 +2095,8 @@
           "weight_carried": "57.0",
           "jockey": "荻野極",
           "stable": "美浦上原佑",
-          "horse_weight": "",
-          "popularity": "9",
+          "horse_weight": "448(-2)",
+          "popularity": "8",
           "horse_id": "2023107345",
           "odds_tansho": ""
         },
@@ -3030,7 +2108,7 @@
           "weight_carried": "57.0",
           "jockey": "戸崎圭",
           "stable": "美浦上原佑",
-          "horse_weight": "",
+          "horse_weight": "482(-8)",
           "popularity": "10",
           "horse_id": "2023105456",
           "odds_tansho": ""
@@ -3043,7 +2121,7 @@
           "weight_carried": "57.0",
           "jockey": "松山",
           "stable": "栗東杉山晴",
-          "horse_weight": "",
+          "horse_weight": "522(+2)",
           "popularity": "1",
           "horse_id": "2023107089",
           "odds_tansho": ""
@@ -3056,7 +2134,7 @@
           "weight_carried": "57.0",
           "jockey": "ゴンサルベ",
           "stable": "栗東友道",
-          "horse_weight": "",
+          "horse_weight": "508(0)",
           "popularity": "15",
           "horse_id": "2023107127",
           "odds_tansho": ""
@@ -3069,7 +2147,7 @@
     "202605021212": {
       "race_id": "202605021212",
       "race_name": "目黒記念",
-      "course_info": "17:00発走 / 芝2500m (左 C)",
+      "course_info": "17:00発走 / 芝2500m (左 C) / 天候:晴 / 馬場:良",
       "venue_info": "2回 東京 12日目 サラ系４歳以上 オープン (国際)(特指) ハンデ 14頭 本賞金:5700,2300,1400,860,570万円",
       "horses": [
         {
@@ -3080,10 +2158,10 @@
           "weight_carried": "56.0",
           "jockey": "武豊",
           "stable": "栗東橋田",
-          "horse_weight": "",
-          "popularity": "7",
+          "horse_weight": "506(+8)",
+          "popularity": "6",
           "horse_id": "2022104615",
-          "odds_tansho": "10.6"
+          "odds_tansho": "14.4"
         },
         {
           "waku": "2",
@@ -3093,10 +2171,10 @@
           "weight_carried": "57.0",
           "jockey": "浜中",
           "stable": "栗東須貝",
-          "horse_weight": "",
+          "horse_weight": "494(0)",
           "popularity": "14",
           "horse_id": "2020103333",
-          "odds_tansho": "95.5"
+          "odds_tansho": "191.0"
         },
         {
           "waku": "3",
@@ -3106,10 +2184,10 @@
           "weight_carried": "57.0",
           "jockey": "松山",
           "stable": "美浦牧",
-          "horse_weight": "",
+          "horse_weight": "496(0)",
           "popularity": "13",
           "horse_id": "2019104658",
-          "odds_tansho": "5.6"
+          "odds_tansho": "4.6"
         },
         {
           "waku": "3",
@@ -3119,10 +2197,10 @@
           "weight_carried": "56.0",
           "jockey": "レーン",
           "stable": "美浦堀",
-          "horse_weight": "",
+          "horse_weight": "476(+6)",
           "popularity": "3",
           "horse_id": "2022104720",
-          "odds_tansho": "3.6"
+          "odds_tansho": "3.0"
         },
         {
           "waku": "4",
@@ -3132,10 +2210,10 @@
           "weight_carried": "55.0",
           "jockey": "幸",
           "stable": "栗東大久保",
-          "horse_weight": "",
+          "horse_weight": "506(+2)",
           "popularity": "8",
           "horse_id": "2021105559",
-          "odds_tansho": "9.9"
+          "odds_tansho": "9.7"
         },
         {
           "waku": "4",
@@ -3145,10 +2223,10 @@
           "weight_carried": "57.0",
           "jockey": "ルメール",
           "stable": "美浦宮田",
-          "horse_weight": "",
+          "horse_weight": "512(+2)",
           "popularity": "1",
           "horse_id": "2022104655",
-          "odds_tansho": "47.3"
+          "odds_tansho": "49.0"
         },
         {
           "waku": "5",
@@ -3158,10 +2236,10 @@
           "weight_carried": "55.0",
           "jockey": "北村友",
           "stable": "栗東福永",
-          "horse_weight": "",
+          "horse_weight": "480(0)",
           "popularity": "9",
           "horse_id": "2022105202",
-          "odds_tansho": "36.5"
+          "odds_tansho": "71.0"
         },
         {
           "waku": "5",
@@ -3171,10 +2249,10 @@
           "weight_carried": "56.0",
           "jockey": "西村淳",
           "stable": "栗東辻野",
-          "horse_weight": "",
-          "popularity": "5",
+          "horse_weight": "498(-6)",
+          "popularity": "4",
           "horse_id": "2022105109",
-          "odds_tansho": "9.9"
+          "odds_tansho": "17.2"
         },
         {
           "waku": "6",
@@ -3184,8 +2262,8 @@
           "weight_carried": "54.0",
           "jockey": "横山武",
           "stable": "美浦武井",
-          "horse_weight": "",
-          "popularity": "4",
+          "horse_weight": "514(-2)",
+          "popularity": "5",
           "horse_id": "2020105681",
           "odds_tansho": ""
         },
@@ -3197,8 +2275,8 @@
           "weight_carried": "55.0",
           "jockey": "丹内",
           "stable": "美浦奥村武",
-          "horse_weight": "",
-          "popularity": "12",
+          "horse_weight": "434(-4)",
+          "popularity": "10",
           "horse_id": "2020105781",
           "odds_tansho": ""
         },
@@ -3210,7 +2288,7 @@
           "weight_carried": "57.5",
           "jockey": "川田",
           "stable": "栗東中内田",
-          "horse_weight": "",
+          "horse_weight": "488(-4)",
           "popularity": "2",
           "horse_id": "2022104645",
           "odds_tansho": ""
@@ -3223,7 +2301,7 @@
           "weight_carried": "57.0",
           "jockey": "松岡",
           "stable": "美浦戸田",
-          "horse_weight": "",
+          "horse_weight": "498(-6)",
           "popularity": "11",
           "horse_id": "2019104828",
           "odds_tansho": ""
@@ -3236,8 +2314,8 @@
           "weight_carried": "54.0",
           "jockey": "ゴンサルベ",
           "stable": "栗東吉村",
-          "horse_weight": "",
-          "popularity": "10",
+          "horse_weight": "472(+2)",
+          "popularity": "12",
           "horse_id": "2020103945",
           "odds_tansho": ""
         },
@@ -3249,8 +2327,8 @@
           "weight_carried": "55.0",
           "jockey": "坂井",
           "stable": "栗東矢作",
-          "horse_weight": "",
-          "popularity": "6",
+          "horse_weight": "492(+2)",
+          "popularity": "7",
           "horse_id": "2022104207",
           "odds_tansho": ""
         }
@@ -3262,7 +2340,7 @@
     "202608031204": {
       "race_id": "202608031204",
       "race_name": "4歳以上障害OP",
-      "course_info": "11:25発走 / 障3170m (芝 ダート)",
+      "course_info": "11:25発走 / 障3170m (芝 ダート) / 天候:晴 / 馬場:良 / 馬場:良",
       "venue_info": "3回 京都 12日目 障害４歳以上 オープン (混) 別定 10頭 本賞金:1430,570,360,210,143万円",
       "horses": [
         {
@@ -3273,11 +2351,10 @@
           "weight_carried": "58.0",
           "jockey": "中村",
           "stable": "栗東宮本",
-          "horse_weight": "",
-          "予想オッズ更新": "2.3",
+          "horse_weight": "502(+6)",
           "popularity": "1",
           "horse_id": "2021106621",
-          "odds_tansho": "2.3"
+          "odds_tansho": "2.9"
         },
         {
           "waku": "2",
@@ -3287,11 +2364,10 @@
           "weight_carried": "60.0",
           "jockey": "小牧加",
           "stable": "栗東斉藤崇",
-          "horse_weight": "",
-          "予想オッズ更新": "5.1",
-          "popularity": "2",
+          "horse_weight": "504(-6)",
+          "popularity": "3",
           "horse_id": "2021105455",
-          "odds_tansho": "5.1"
+          "odds_tansho": "3.8"
         },
         {
           "waku": "3",
@@ -3301,11 +2377,10 @@
           "weight_carried": "58.0",
           "jockey": "▲井上",
           "stable": "栗東中竹",
-          "horse_weight": "",
-          "予想オッズ更新": "6.1",
-          "popularity": "3",
+          "horse_weight": "494(+2)",
+          "popularity": "2",
           "horse_id": "2021104924",
-          "odds_tansho": "6.1"
+          "odds_tansho": "3.5"
         },
         {
           "waku": "4",
@@ -3315,11 +2390,10 @@
           "weight_carried": "60.0",
           "jockey": "草野",
           "stable": "美浦和田郎",
-          "horse_weight": "",
-          "予想オッズ更新": "26.8",
-          "popularity": "8",
+          "horse_weight": "516(+2)",
+          "popularity": "7",
           "horse_id": "2020105732",
-          "odds_tansho": "8.0"
+          "odds_tansho": "20.5"
         },
         {
           "waku": "5",
@@ -3329,11 +2403,10 @@
           "weight_carried": "57.0",
           "jockey": "▲坂口",
           "stable": "美浦武藤",
-          "horse_weight": "",
-          "予想オッズ更新": "9.0",
+          "horse_weight": "526(-8)",
           "popularity": "5",
           "horse_id": "2019100641",
-          "odds_tansho": "9.0"
+          "odds_tansho": "9.5"
         },
         {
           "waku": "6",
@@ -3343,11 +2416,10 @@
           "weight_carried": "60.0",
           "jockey": "上野",
           "stable": "美浦水野",
-          "horse_weight": "",
-          "予想オッズ更新": "27.1",
-          "popularity": "9",
+          "horse_weight": "526(-8)",
+          "popularity": "6",
           "horse_id": "2017104238",
-          "odds_tansho": "13.1"
+          "odds_tansho": "18.2"
         },
         {
           "waku": "7",
@@ -3357,11 +2429,10 @@
           "weight_carried": "59.0",
           "jockey": "五十嵐",
           "stable": "美浦大和田",
-          "horse_weight": "",
-          "予想オッズ更新": "13.1",
-          "popularity": "6",
+          "horse_weight": "494(0)",
+          "popularity": "8",
           "horse_id": "2022102728",
-          "odds_tansho": "19.0"
+          "odds_tansho": "85.6"
         },
         {
           "waku": "7",
@@ -3371,11 +2442,10 @@
           "weight_carried": "60.0",
           "jockey": "難波",
           "stable": "栗東小栗",
-          "horse_weight": "",
-          "予想オッズ更新": "69.5",
-          "popularity": "10",
+          "horse_weight": "476(+14)",
+          "popularity": "9",
           "horse_id": "2021104667",
-          "odds_tansho": "26.8"
+          "odds_tansho": "9.1"
         },
         {
           "waku": "8",
@@ -3385,11 +2455,10 @@
           "weight_carried": "57.0",
           "jockey": "▲水沼",
           "stable": "美浦深山",
-          "horse_weight": "",
-          "予想オッズ更新": "8.0",
+          "horse_weight": "468(+8)",
           "popularity": "4",
           "horse_id": "2021103504",
-          "odds_tansho": "27.1"
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -3397,13 +2466,12 @@
           "horse_name": "エンデュミオン",
           "sex_age": "牡9",
           "weight_carried": "59.0",
-          "jockey": "▲鷲頭",
+          "jockey": "鷲頭",
           "stable": "栗東清水久",
-          "horse_weight": "",
-          "予想オッズ更新": "19.0",
-          "popularity": "7",
+          "horse_weight": "--",
+          "popularity": "--",
           "horse_id": "2017106153",
-          "odds_tansho": "69.5"
+          "odds_tansho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031204",
@@ -3413,7 +2481,7 @@
     "202608031208": {
       "race_id": "202608031208",
       "race_name": "4歳以上2勝クラス",
-      "course_info": "14:00発走 / 芝2000m (右 D)",
+      "course_info": "14:00発走 / 芝2000m (右 D) / 天候:晴 / 馬場:良",
       "venue_info": "3回 京都 12日目 サラ系４歳以上 ２勝クラス 牝[指] 定量 8頭 本賞金:1190,480,300,180,119万円",
       "horses": [
         {
@@ -3424,11 +2492,10 @@
           "weight_carried": "56.0",
           "jockey": "松若",
           "stable": "栗東杉山晴",
-          "horse_weight": "",
-          "予想オッズ更新": "9.4",
+          "horse_weight": "468(+12)",
           "popularity": "4",
           "horse_id": "2022100626",
-          "odds_tansho": "2.3"
+          "odds_tansho": "5.7"
         },
         {
           "waku": "2",
@@ -3438,11 +2505,10 @@
           "weight_carried": "56.0",
           "jockey": "団野",
           "stable": "栗東上村",
-          "horse_weight": "",
-          "予想オッズ更新": "3.2",
+          "horse_weight": "504(+4)",
           "popularity": "2",
           "horse_id": "2021101454",
-          "odds_tansho": "3.2"
+          "odds_tansho": "3.5"
         },
         {
           "waku": "3",
@@ -3452,11 +2518,10 @@
           "weight_carried": "56.0",
           "jockey": "藤懸",
           "stable": "栗東石橋",
-          "horse_weight": "",
-          "予想オッズ更新": "13.7",
+          "horse_weight": "510(+2)",
           "popularity": "6",
           "horse_id": "2021101116",
-          "odds_tansho": "6.4"
+          "odds_tansho": "14.9"
         },
         {
           "waku": "4",
@@ -3466,11 +2531,10 @@
           "weight_carried": "54.0",
           "jockey": "△田山",
           "stable": "栗東須貝",
-          "horse_weight": "",
-          "予想オッズ更新": "6.4",
+          "horse_weight": "498(+4)",
           "popularity": "3",
           "horse_id": "2022103278",
-          "odds_tansho": "9.4"
+          "odds_tansho": "5.4"
         },
         {
           "waku": "5",
@@ -3480,11 +2544,10 @@
           "weight_carried": "56.0",
           "jockey": "角田和",
           "stable": "栗東田中克",
-          "horse_weight": "",
-          "予想オッズ更新": "20.1",
+          "horse_weight": "448(+6)",
           "popularity": "7",
           "horse_id": "2022106667",
-          "odds_tansho": "10.5"
+          "odds_tansho": "33.4"
         },
         {
           "waku": "6",
@@ -3494,11 +2557,10 @@
           "weight_carried": "52.0",
           "jockey": "★河原田",
           "stable": "栗東池添",
-          "horse_weight": "",
-          "予想オッズ更新": "36.2",
+          "horse_weight": "478(+6)",
           "popularity": "8",
           "horse_id": "2021105984",
-          "odds_tansho": "13.7"
+          "odds_tansho": "60.1"
         },
         {
           "waku": "7",
@@ -3508,11 +2570,10 @@
           "weight_carried": "56.0",
           "jockey": "菱田",
           "stable": "栗東松永幹",
-          "horse_weight": "",
-          "予想オッズ更新": "10.5",
+          "horse_weight": "458(+4)",
           "popularity": "5",
           "horse_id": "2021105102",
-          "odds_tansho": "20.1"
+          "odds_tansho": "14.2"
         },
         {
           "waku": "8",
@@ -3522,11 +2583,10 @@
           "weight_carried": "56.0",
           "jockey": "池添",
           "stable": "栗東斉藤崇",
-          "horse_weight": "",
-          "予想オッズ更新": "2.3",
+          "horse_weight": "458(+8)",
           "popularity": "1",
           "horse_id": "2021106100",
-          "odds_tansho": "36.2"
+          "odds_tansho": "2.3"
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031208",
@@ -3536,7 +2596,7 @@
     "202608031210": {
       "race_id": "202608031210",
       "race_name": "安土城S",
-      "course_info": "15:15発走 / 芝1400m (右 外 D)",
+      "course_info": "15:15発走 / 芝1400m (右 外 D) / 天候:晴 / 馬場:良",
       "venue_info": "3回 京都 12日目 サラ系４歳以上 オープン (国際)(特指) ハンデ 17頭 本賞金:2700,1100,680,410,270万円",
       "horses": [
         {
@@ -3547,11 +2607,10 @@
           "weight_carried": "57.0",
           "jockey": "高杉",
           "stable": "栗東石橋",
-          "horse_weight": "",
-          "予想オッズ更新": "3.7",
+          "horse_weight": "496(+4)",
           "popularity": "1",
           "horse_id": "2021103116",
-          "odds_tansho": "3.7"
+          "odds_tansho": "42.3"
         },
         {
           "waku": "1",
@@ -3561,11 +2620,10 @@
           "weight_carried": "55.0",
           "jockey": "鮫島駿",
           "stable": "栗東千田",
-          "horse_weight": "",
-          "予想オッズ更新": "24.2",
-          "popularity": "9",
+          "horse_weight": "492(+8)",
+          "popularity": "13",
           "horse_id": "2018106318",
-          "odds_tansho": "5.3"
+          "odds_tansho": "72.3"
         },
         {
           "waku": "2",
@@ -3575,11 +2633,10 @@
           "weight_carried": "55.0",
           "jockey": "酒井",
           "stable": "栗東四位",
-          "horse_weight": "",
-          "予想オッズ更新": "24.5",
-          "popularity": "10",
+          "horse_weight": "446(+10)",
+          "popularity": "4",
           "horse_id": "2021104556",
-          "odds_tansho": "6.1"
+          "odds_tansho": "32.4"
         },
         {
           "waku": "2",
@@ -3589,11 +2646,10 @@
           "weight_carried": "56.0",
           "jockey": "Ｍデムーロ",
           "stable": "栗東斉藤崇",
-          "horse_weight": "",
-          "予想オッズ更新": "56.9",
+          "horse_weight": "534(-12)",
           "popularity": "16",
           "horse_id": "2019105459",
-          "odds_tansho": "10.3"
+          "odds_tansho": "21.8"
         },
         {
           "waku": "3",
@@ -3603,11 +2659,10 @@
           "weight_carried": "54.0",
           "jockey": "団野",
           "stable": "栗東斉藤崇",
-          "horse_weight": "",
-          "予想オッズ更新": "5.3",
+          "horse_weight": "480(-6)",
           "popularity": "2",
           "horse_id": "2021106550",
-          "odds_tansho": "12.6"
+          "odds_tansho": "55.6"
         },
         {
           "waku": "3",
@@ -3617,11 +2672,10 @@
           "weight_carried": "53.0",
           "jockey": "川又",
           "stable": "栗東笹田",
-          "horse_weight": "",
-          "予想オッズ更新": "30.2",
-          "popularity": "14",
+          "horse_weight": "468(+2)",
+          "popularity": "12",
           "horse_id": "2022102408",
-          "odds_tansho": "14.6"
+          "odds_tansho": "6.2"
         },
         {
           "waku": "4",
@@ -3631,11 +2685,10 @@
           "weight_carried": "53.0",
           "jockey": "永島",
           "stable": "栗東高橋康",
-          "horse_weight": "",
-          "予想オッズ更新": "14.6",
-          "popularity": "6",
+          "horse_weight": "460(+2)",
+          "popularity": "11",
           "horse_id": "2022105755",
-          "odds_tansho": "18.0"
+          "odds_tansho": "25.0"
         },
         {
           "waku": "4",
@@ -3645,11 +2698,10 @@
           "weight_carried": "57.0",
           "jockey": "田山",
           "stable": "栗東須貝",
-          "horse_weight": "",
-          "予想オッズ更新": "18.0",
-          "popularity": "7",
+          "horse_weight": "452(-2)",
+          "popularity": "9",
           "horse_id": "2022104751",
-          "odds_tansho": "22.2"
+          "odds_tansho": "15.4"
         },
         {
           "waku": "5",
@@ -3659,11 +2711,10 @@
           "weight_carried": "55.0",
           "jockey": "西村太",
           "stable": "美浦堀内",
-          "horse_weight": "",
-          "予想オッズ更新": "151.8",
+          "horse_weight": "478(+4)",
           "popularity": "17",
           "horse_id": "2019101348",
-          "odds_tansho": "24.2"
+          "odds_tansho": ""
         },
         {
           "waku": "5",
@@ -3673,11 +2724,10 @@
           "weight_carried": "56.0",
           "jockey": "松若",
           "stable": "栗東森秀",
-          "horse_weight": "",
-          "予想オッズ更新": "35.5",
+          "horse_weight": "510(-2)",
           "popularity": "15",
           "horse_id": "2022110114",
-          "odds_tansho": "24.5"
+          "odds_tansho": ""
         },
         {
           "waku": "6",
@@ -3687,11 +2737,10 @@
           "weight_carried": "57.5",
           "jockey": "斎藤",
           "stable": "美浦斎藤誠",
-          "horse_weight": "",
-          "予想オッズ更新": "6.1",
-          "popularity": "3",
+          "horse_weight": "536(+6)",
+          "popularity": "8",
           "horse_id": "2020105154",
-          "odds_tansho": "26.1"
+          "odds_tansho": ""
         },
         {
           "waku": "6",
@@ -3701,11 +2750,10 @@
           "weight_carried": "58.0",
           "jockey": "田辺",
           "stable": "栗東中尾",
-          "horse_weight": "",
-          "予想オッズ更新": "12.6",
-          "popularity": "5",
+          "horse_weight": "496(+4)",
+          "popularity": "3",
           "horse_id": "2018106055",
-          "odds_tansho": "26.5"
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -3715,11 +2763,10 @@
           "weight_carried": "55.0",
           "jockey": "西塚",
           "stable": "栗東矢作",
-          "horse_weight": "",
-          "予想オッズ更新": "29.1",
-          "popularity": "13",
+          "horse_weight": "446(-6)",
+          "popularity": "6",
           "horse_id": "2020103061",
-          "odds_tansho": "29.1"
+          "odds_tansho": ""
         },
         {
           "waku": "7",
@@ -3729,11 +2776,10 @@
           "weight_carried": "57.0",
           "jockey": "吉村",
           "stable": "栗東池江",
-          "horse_weight": "",
-          "予想オッズ更新": "26.1",
-          "popularity": "11",
+          "horse_weight": "506(+10)",
+          "popularity": "10",
           "horse_id": "2018105454",
-          "odds_tansho": "30.2"
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -3743,11 +2789,10 @@
           "weight_carried": "57.5",
           "jockey": "国分恭",
           "stable": "美浦鹿戸",
-          "horse_weight": "",
-          "予想オッズ更新": "26.5",
-          "popularity": "12",
+          "horse_weight": "486(0)",
+          "popularity": "14",
           "horse_id": "2020110155",
-          "odds_tansho": "35.5"
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -3757,11 +2802,10 @@
           "weight_carried": "56.0",
           "jockey": "川須",
           "stable": "栗東梅田",
-          "horse_weight": "",
-          "予想オッズ更新": "22.2",
-          "popularity": "8",
+          "horse_weight": "458(+2)",
+          "popularity": "5",
           "horse_id": "2021102315",
-          "odds_tansho": "56.9"
+          "odds_tansho": ""
         },
         {
           "waku": "8",
@@ -3771,11 +2815,10 @@
           "weight_carried": "57.5",
           "jockey": "菱田",
           "stable": "美浦加藤征",
-          "horse_weight": "",
-          "予想オッズ更新": "10.3",
-          "popularity": "4",
+          "horse_weight": "472(+6)",
+          "popularity": "7",
           "horse_id": "2021105565",
-          "odds_tansho": "151.8"
+          "odds_tansho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031210",
@@ -3785,7 +2828,7 @@
     "202608031211": {
       "race_id": "202608031211",
       "race_name": "白百合S",
-      "course_info": "16:05発走 / 芝1800m (右 外 D)",
+      "course_info": "16:05発走 / 芝1800m (右 外 D) / 天候:晴 / 馬場:良",
       "venue_info": "3回 京都 12日目 サラ系３歳 オープン (国際)(特指) 別定 9頭 本賞金:2100,840,530,320,210万円",
       "horses": [
         {
@@ -3796,11 +2839,10 @@
           "weight_carried": "57.0",
           "jockey": "池添",
           "stable": "栗東斉藤崇",
-          "horse_weight": "",
-          "予想オッズ更新": "5.2",
+          "horse_weight": "486(+4)",
           "popularity": "4",
           "horse_id": "2023105971",
-          "odds_tansho": "2.9"
+          "odds_tansho": "4.2"
         },
         {
           "waku": "2",
@@ -3810,11 +2852,10 @@
           "weight_carried": "57.0",
           "jockey": "高杉",
           "stable": "栗東寺島",
-          "horse_weight": "",
-          "予想オッズ更新": "4.2",
+          "horse_weight": "478(-6)",
           "popularity": "3",
           "horse_id": "2023103532",
-          "odds_tansho": "3.8"
+          "odds_tansho": "4.0"
         },
         {
           "waku": "3",
@@ -3824,11 +2865,10 @@
           "weight_carried": "57.0",
           "jockey": "小崎",
           "stable": "栗東佐藤悠",
-          "horse_weight": "",
-          "予想オッズ更新": "238.5",
+          "horse_weight": "452(-4)",
           "popularity": "9",
           "horse_id": "2023103388",
-          "odds_tansho": "4.2"
+          "odds_tansho": "236.2"
         },
         {
           "waku": "4",
@@ -3838,11 +2878,10 @@
           "weight_carried": "57.0",
           "jockey": "団野",
           "stable": "栗東奥村豊",
-          "horse_weight": "",
-          "予想オッズ更新": "2.9",
-          "popularity": "1",
+          "horse_weight": "474(-8)",
+          "popularity": "2",
           "horse_id": "2023105241",
-          "odds_tansho": "5.2"
+          "odds_tansho": "3.8"
         },
         {
           "waku": "5",
@@ -3852,11 +2891,10 @@
           "weight_carried": "57.0",
           "jockey": "藤懸",
           "stable": "栗東牧田",
-          "horse_weight": "",
-          "予想オッズ更新": "36.2",
+          "horse_weight": "458(0)",
           "popularity": "8",
           "horse_id": "2023100967",
-          "odds_tansho": "11.8"
+          "odds_tansho": "31.3"
         },
         {
           "waku": "6",
@@ -3866,11 +2904,10 @@
           "weight_carried": "57.0",
           "jockey": "鮫島駿",
           "stable": "栗東安田",
-          "horse_weight": "",
-          "予想オッズ更新": "35.5",
+          "horse_weight": "468(-4)",
           "popularity": "7",
           "horse_id": "2023104402",
-          "odds_tansho": "15.3"
+          "odds_tansho": "27.4"
         },
         {
           "waku": "7",
@@ -3880,11 +2917,10 @@
           "weight_carried": "55.0",
           "jockey": "高倉",
           "stable": "栗東畑端",
-          "horse_weight": "",
-          "予想オッズ更新": "11.8",
-          "popularity": "5",
+          "horse_weight": "426(-6)",
+          "popularity": "6",
           "horse_id": "2023109106",
-          "odds_tansho": "35.5"
+          "odds_tansho": "16.9"
         },
         {
           "waku": "8",
@@ -3894,11 +2930,10 @@
           "weight_carried": "57.0",
           "jockey": "斎藤",
           "stable": "美浦斎藤誠",
-          "horse_weight": "",
-          "予想オッズ更新": "3.8",
-          "popularity": "2",
+          "horse_weight": "490(-2)",
+          "popularity": "1",
           "horse_id": "2023105642",
-          "odds_tansho": "36.2"
+          "odds_tansho": "16.9"
         },
         {
           "waku": "8",
@@ -3908,15 +2943,694 @@
           "weight_carried": "55.0",
           "jockey": "田口",
           "stable": "栗東新谷",
-          "horse_weight": "",
-          "予想オッズ更新": "15.3",
-          "popularity": "6",
+          "horse_weight": "450(+2)",
+          "popularity": "5",
           "horse_id": "2023102906",
-          "odds_tansho": "238.5"
+          "odds_tansho": ""
         }
       ],
       "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202608031211",
       "date": "20260531",
+      "is_past": false
+    },
+    "202605030211": {
+      "race_id": "202605030211",
+      "race_name": "安田記念",
+      "course_info": "15:40発走 / 芝1600m (左 C)",
+      "venue_info": "3回 東京 2日目 サラ系３歳以上 オープン (国際)(指) 定量 20頭 本賞金:18000,7200,4500,2700,1800万円",
+      "horses": [
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "アスクイキゴミ",
+          "sex_age": "牡3",
+          "weight_carried": "54.0",
+          "jockey": "○○",
+          "stable": "栗東藤原",
+          "horse_weight": "",
+          "予想オッズ更新": "8.1",
+          "popularity": "4",
+          "horse_id": "2023105267",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "アドマイヤズーム",
+          "sex_age": "牡4",
+          "weight_carried": "58.0",
+          "jockey": "武豊",
+          "stable": "栗東友道",
+          "horse_weight": "",
+          "予想オッズ更新": "4.3",
+          "popularity": "1",
+          "horse_id": "2022105396",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ウォーターリヒト",
+          "sex_age": "牡5",
+          "weight_carried": "58.0",
+          "jockey": "高杉",
+          "stable": "栗東石橋",
+          "horse_weight": "",
+          "予想オッズ更新": "30.4",
+          "popularity": "12",
+          "horse_id": "2021100953",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "オフトレイル",
+          "sex_age": "牡5",
+          "weight_carried": "58.0",
+          "jockey": "菅原明",
+          "stable": "栗東吉村",
+          "horse_weight": "",
+          "予想オッズ更新": "31.5",
+          "popularity": "13",
+          "horse_id": "2021110031",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ガイアフォース",
+          "sex_age": "牡7",
+          "weight_carried": "58.0",
+          "jockey": "横山武",
+          "stable": "栗東杉山晴",
+          "horse_weight": "",
+          "予想オッズ更新": "8.1",
+          "popularity": "5",
+          "horse_id": "2019104476",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "サクラトゥジュール",
+          "sex_age": "セ9",
+          "weight_carried": "58.0",
+          "jockey": "佐々木",
+          "stable": "美浦堀",
+          "horse_weight": "",
+          "予想オッズ更新": "100.9",
+          "popularity": "18",
+          "horse_id": "2017103751",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "シックスペンス",
+          "sex_age": "牡5",
+          "weight_carried": "58.0",
+          "jockey": "○○",
+          "stable": "美浦田中博",
+          "horse_weight": "",
+          "予想オッズ更新": "23.8",
+          "popularity": "9",
+          "horse_id": "2021105724",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "シャンパンカラー",
+          "sex_age": "牡6",
+          "weight_carried": "58.0",
+          "jockey": "岩田康",
+          "stable": "美浦田中剛",
+          "horse_weight": "",
+          "予想オッズ更新": "41.0",
+          "popularity": "15",
+          "horse_id": "2020103075",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "シリウスコルト",
+          "sex_age": "牡5",
+          "weight_carried": "58.0",
+          "jockey": "○○",
+          "stable": "美浦田中勝",
+          "horse_weight": "",
+          "予想オッズ更新": "102.2",
+          "popularity": "19",
+          "horse_id": "2021104094",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "スズハローム",
+          "sex_age": "牡6",
+          "weight_carried": "58.0",
+          "jockey": "藤懸",
+          "stable": "栗東牧田",
+          "horse_weight": "",
+          "予想オッズ更新": "46.6",
+          "popularity": "17",
+          "horse_id": "2020105018",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ステレンボッシュ",
+          "sex_age": "牝5",
+          "weight_carried": "56.0",
+          "jockey": "レーン",
+          "stable": "美浦宮田",
+          "horse_weight": "",
+          "予想オッズ更新": "18.5",
+          "popularity": "8",
+          "horse_id": "2021105743",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "セイウンハーデス",
+          "sex_age": "牡7",
+          "weight_carried": "58.0",
+          "jockey": "幸",
+          "stable": "栗東橋口",
+          "horse_weight": "",
+          "予想オッズ更新": "26.0",
+          "popularity": "10",
+          "horse_id": "2019102632",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "セフィロ",
+          "sex_age": "牝6",
+          "weight_carried": "56.0",
+          "jockey": "三浦",
+          "stable": "美浦菊沢",
+          "horse_weight": "",
+          "予想オッズ更新": "35.7",
+          "popularity": "14",
+          "horse_id": "2020102836",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ドラゴンブースト",
+          "sex_age": "牡4",
+          "weight_carried": "58.0",
+          "jockey": "丹内",
+          "stable": "栗東藤野",
+          "horse_weight": "",
+          "予想オッズ更新": "27.7",
+          "popularity": "11",
+          "horse_id": "2022105891",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "トロヴァトーレ",
+          "sex_age": "牡5",
+          "weight_carried": "58.0",
+          "jockey": "ルメール",
+          "stable": "美浦鹿戸",
+          "horse_weight": "",
+          "予想オッズ更新": "6.6",
+          "popularity": "2",
+          "horse_id": "2021105557",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "パンジャタワー",
+          "sex_age": "牡4",
+          "weight_carried": "58.0",
+          "jockey": "松山",
+          "stable": "栗東橋口",
+          "horse_weight": "",
+          "予想オッズ更新": "6.8",
+          "popularity": "3",
+          "horse_id": "2022101732",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ルクソールカフェ",
+          "sex_age": "牡4",
+          "weight_carried": "58.0",
+          "jockey": "岩田望",
+          "stable": "美浦堀",
+          "horse_weight": "",
+          "予想オッズ更新": "43.0",
+          "popularity": "16",
+          "horse_id": "2022110083",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "レーベンスティール",
+          "sex_age": "牡6",
+          "weight_carried": "58.0",
+          "jockey": "戸崎圭",
+          "stable": "美浦田中博",
+          "horse_weight": "",
+          "予想オッズ更新": "16.0",
+          "popularity": "6",
+          "horse_id": "2020102078",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ロングラン",
+          "sex_age": "セ8",
+          "weight_carried": "58.0",
+          "jockey": "ゴンサルベ",
+          "stable": "美浦和田勇",
+          "horse_weight": "",
+          "予想オッズ更新": "253.2",
+          "popularity": "20",
+          "horse_id": "2018104708",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ワールズエンド",
+          "sex_age": "牡5",
+          "weight_carried": "58.0",
+          "jockey": "津村",
+          "stable": "栗東池添",
+          "horse_weight": "",
+          "予想オッズ更新": "18.1",
+          "popularity": "7",
+          "horse_id": "2021105864",
+          "odds_tansho": ""
+        }
+      ],
+      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202605030211",
+      "date": "20260607",
+      "is_past": false
+    },
+    "202609030211": {
+      "race_id": "202609030211",
+      "race_name": "水無月ステークス",
+      "course_info": "ダ1200m (右)",
+      "venue_info": "3回 阪神 2日目 サラ系３歳以上 オープン (国際)(特指) ハンデ 27頭 本賞金:0,0,0,0,0万円",
+      "horses": [
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "アガシ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "4.3",
+          "popularity": "2",
+          "horse_id": "2021100653",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "アンズアメ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "8.1",
+          "popularity": "6",
+          "horse_id": "2022106689",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "エティエンヌ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "17.5",
+          "popularity": "8",
+          "horse_id": "2019105761",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "カンパニョーラ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "25",
+          "horse_id": "2019104385",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "クロジシジョー",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "4.7",
+          "popularity": "3",
+          "horse_id": "2019102238",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ケイアイアニラ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "23",
+          "horse_id": "2020104228",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ケイアイドリー",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "22",
+          "horse_id": "2017101560",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "コンクイスタ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "19",
+          "horse_id": "2020106557",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "サンライズアムール",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "3.6",
+          "popularity": "1",
+          "horse_id": "2019101633",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ジュンウィンダム",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "20",
+          "horse_id": "2020106062",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ショウナンアビアス",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "11",
+          "horse_id": "2020104597",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ジョーローリット",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "16",
+          "horse_id": "2021100768",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "スマートフォルス",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "17.5",
+          "popularity": "9",
+          "horse_id": "2020101707",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "バグラダス",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "21",
+          "horse_id": "2020106015",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ヒルノドゴール",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "12",
+          "horse_id": "2021103786",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ファムエレガンテ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "17",
+          "horse_id": "2022110142",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "フリームファクシ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "6.0",
+          "popularity": "4",
+          "horse_id": "2020103661",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "プレゼンティーア",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "14",
+          "horse_id": "2021102153",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ペプチドヤマト",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "26",
+          "horse_id": "2019103605",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ポールセン",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "8.1",
+          "popularity": "7",
+          "horse_id": "2022110140",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "マルモリスペシャル",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "27",
+          "horse_id": "2019100252",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ムーヴ",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "17.5",
+          "popularity": "10",
+          "horse_id": "2019101759",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "メイショウホウレン",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "13",
+          "horse_id": "2021103716",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "モンドプリューム",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "24",
+          "horse_id": "2020103876",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "リジル",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "15",
+          "horse_id": "2021101457",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ロードフロンティア",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "76.8",
+          "popularity": "18",
+          "horse_id": "2021100161",
+          "odds_tansho": ""
+        },
+        {
+          "waku": "",
+          "umaban": "",
+          "horse_name": "ロードラディウス",
+          "sex_age": "",
+          "weight_carried": "未定",
+          "jockey": "",
+          "stable": "不明",
+          "horse_weight": "",
+          "予想オッズ更新": "8.1",
+          "popularity": "5",
+          "horse_id": "2020100168",
+          "odds_tansho": ""
+        }
+      ],
+      "url": "https://race.netkeiba.com/race/shutuba.html?race_id=202609030211",
+      "date": "20260607",
       "is_past": false
     }
   }
