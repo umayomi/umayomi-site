@@ -8,6 +8,8 @@ umarengod.com スクレイピング v2
 - 取得データを構造化して保存
 - エラー耐性とログ強化
 - 馬番マーカー方式（強化版）で過去実績を正確に各馬に割り当て
+- 登録馬一覧(仮データ)レースには is_provisional フラグを付与
+- 基本情報セクションは「ヘッダー文言」マーカーで終端を判定
 """
 
 import json
@@ -45,6 +47,9 @@ VENUE_CODE_MAP = {
 }
 
 WEEKDAY_MAP = {0: "月", 1: "火", 2: "水", 3: "木", 4: "金", 5: "土", 6: "日"}
+
+# 統計セクションの開始を示すヘッダー文言
+STATS_HEADER_KEYWORDS = ["馬の", "成績", "産駒", "母父", "騎手", "調教師", "前走", "前３走"]
 
 
 def create_driver():
@@ -185,11 +190,62 @@ def find_available_links(driver, link_type="all"):
     return links
 
 
+def detect_provisional(page_source):
+    """登録馬一覧（騎手・馬番が仮）かどうかを判定"""
+    # 「登録馬一覧」や「騎手は前走の騎手を仮」が含まれていれば仮データ
+    if "登録馬一覧" in page_source:
+        return True
+    if "騎手は前走の騎手を仮" in page_source:
+        return True
+    if "騎手を仮" in page_source:
+        return True
+    return False
+
+
+def is_header_cell(cell):
+    """ヘッダー行のセルかどうか判定"""
+    if not cell:
+        return False
+    header_keywords = [
+        "馬の", "成績・連対率", "産駒の同コース", "父名", "母父名",
+        "馬＋騎手", "騎手・", "調教師・", "前走", "前３走", "前3走",
+        "コース上り着人", "コース 上り 着 人", "（過去3年）", "(過去3年)",
+        "成績を詳細に見る",
+    ]
+    for kw in header_keywords:
+        if kw in cell:
+            return True
+    return False
+
+
+def find_stats_data_start(all_cells, basic_section_end):
+    """
+    統計データの開始位置を見つける
+    基本情報の後にあるヘッダー行をすべてスキップして、実データの先頭を返す
+    """
+    # 基本情報の終了後から、最後のヘッダー文言の位置を探す
+    last_header_idx = basic_section_end - 1
+    
+    for idx in range(basic_section_end, min(basic_section_end + 150, len(all_cells))):
+        cell = all_cells[idx]
+        if not cell:
+            continue
+        if is_header_cell(cell):
+            last_header_idx = idx
+    
+    return last_header_idx + 1
+
+
 def extract_race_data(driver, race_id, race_name):
     """
-    出馬表テーブルからデータを抽出（馬番マーカー方式・強化版）
+    出馬表テーブルからデータを抽出（馬番マーカー方式・改善版）
     """
-    soup = BeautifulSoup(driver.page_source, "html.parser")
+    page_source = driver.page_source
+    is_provisional = detect_provisional(page_source)
+    if is_provisional:
+        print(f"    ℹ️ 登録馬一覧（仮データ）として処理")
+    
+    soup = BeautifulSoup(page_source, "html.parser")
     tables = soup.find_all("table")
     
     best_table = None
@@ -221,7 +277,7 @@ def extract_race_data(driver, race_id, race_name):
     
     print(f"    [DEBUG] 全セル数: {len(all_cells)}")
     
-    # 基本情報セクションの馬データ抽出
+    # 基本情報セクションの馬データ抽出（柔軟パース版）
     basic_info_horses = []
     
     i = 0
@@ -229,34 +285,75 @@ def extract_race_data(driver, race_id, race_name):
     while i < len(all_cells):
         cell = all_cells[i]
         if cell == str(expected_umaban):
+            # 馬番の後に続く非空セルを順番に拾う
             non_empty_after = []
             j = i + 1
-            while j < len(all_cells) and len(non_empty_after) < 10:
+            while j < len(all_cells) and len(non_empty_after) < 12:
                 if all_cells[j]:
                     non_empty_after.append((j, all_cells[j]))
                 j += 1
             
-            if len(non_empty_after) >= 6:
+            if len(non_empty_after) >= 4:
+                # [0] 馬名（漢字/カナ）
                 name_idx, name = non_empty_after[0]
+                # [1] 性齢（牡/牝/せ + 数字）
                 sex_age = non_empty_after[1][1] if len(non_empty_after) > 1 else ""
-                weight = non_empty_after[2][1] if len(non_empty_after) > 2 else ""
-                interval = non_empty_after[3][1] if len(non_empty_after) > 3 else ""
-                jockey = non_empty_after[4][1] if len(non_empty_after) > 4 else ""
-                trainer = non_empty_after[5][1] if len(non_empty_after) > 5 else ""
                 
-                if re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', name) and re.match(r'^[牡牝せ騙セ]\d+$', sex_age):
+                if (re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', name) and 
+                    re.match(r'^[牡牝せ騙セ]\d+$', sex_age)):
+                    
+                    # offset=2 から斤量・出走間隔・騎手・調教師を柔軟検出
+                    offset = 2
+                    weight_carried = ""
+                    interval = ""
+                    jockey = ""
+                    trainer = ""
+                    last_idx = non_empty_after[1][0]
+                    
+                    # 斤量パターン: 数字または数字.数字
+                    if offset < len(non_empty_after):
+                        candidate_idx, candidate = non_empty_after[offset]
+                        if re.match(r'^\d+(\.\d+)?$', candidate):
+                            weight_carried = candidate
+                            last_idx = candidate_idx
+                            offset += 1
+                    
+                    # 出走間隔パターン: 中XX週、連闘、休XX週、初
+                    if offset < len(non_empty_after):
+                        candidate_idx, candidate = non_empty_after[offset]
+                        if re.match(r'^(中\d+週|連闘|休\d+週|初)$', candidate):
+                            interval = candidate
+                            last_idx = candidate_idx
+                            offset += 1
+                    
+                    # 騎手（任意の名前文字列、ただし単独数字は除外）
+                    if offset < len(non_empty_after):
+                        candidate_idx, candidate = non_empty_after[offset]
+                        if not re.match(r'^\d+$', candidate):
+                            jockey = candidate
+                            last_idx = candidate_idx
+                            offset += 1
+                    
+                    # 調教師（任意の名前文字列、ただし単独数字は除外）
+                    if offset < len(non_empty_after):
+                        candidate_idx, candidate = non_empty_after[offset]
+                        if not re.match(r'^\d+$', candidate):
+                            trainer = candidate
+                            last_idx = candidate_idx
+                            offset += 1
+                    
                     basic_info_horses.append({
                         "umaban": cell,
                         "horse_name": name,
                         "sex_age": sex_age,
-                        "weight_carried": weight,
+                        "weight_carried": weight_carried,
                         "interval": interval,
                         "jockey": jockey,
                         "trainer": trainer,
-                        "_basic_end_idx": non_empty_after[5][0],
+                        "_basic_end_idx": last_idx,
                     })
                     expected_umaban += 1
-                    i = non_empty_after[5][0] + 1
+                    i = last_idx + 1
                     continue
         i += 1
     
@@ -269,23 +366,25 @@ def extract_race_data(driver, race_id, race_name):
             "race_name": race_name,
             "horses": [],
             "horse_count": 0,
+            "is_provisional": is_provisional,
             "extracted_at": datetime.now().isoformat(),
             "note": "馬データ検出失敗",
         }
     
-    # 統計セクションは基本情報の終了後
-    basic_section_end = basic_info_horses[-1]["_basic_end_idx"] + 1
-    stats_section_full = all_cells[basic_section_end:]
+    # 統計データセクションの開始位置（ヘッダー行をすべてスキップ）
+    basic_section_end_initial = basic_info_horses[-1]["_basic_end_idx"] + 1
+    stats_start = find_stats_data_start(all_cells, basic_section_end_initial)
     
+    print(f"    [DEBUG] 基本情報終端(初期): {basic_section_end_initial}, 統計開始: {stats_start}")
+    
+    stats_section_full = all_cells[stats_start:]
     print(f"    [DEBUG] 統計セクション(全): {len(stats_section_full)}個")
     
     # 統計セクション内で「基本情報の重複出現位置」を検出して、そこで切り捨てる
-    # 重複は「馬番1 → 馬名 → 性齢」のパターンで始まる
     stats_section = stats_section_full
     for idx in range(len(stats_section_full)):
         cell = stats_section_full[idx]
-        if cell == "1":  # 馬番1の可能性
-            # 後続セルに「馬名+性齢」のパターン
+        if cell == "1":
             non_empty_after = []
             j = idx + 1
             while j < len(stats_section_full) and len(non_empty_after) < 5:
@@ -296,18 +395,14 @@ def extract_race_data(driver, race_id, race_name):
             if len(non_empty_after) >= 3:
                 name = non_empty_after[0]
                 sex_age = non_empty_after[1]
-                # 馬名（漢字・カナ）+ 性齢パターン
                 if (re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', name) and 
                     re.match(r'^[牡牝せ騙セ]\d+$', sex_age)):
-                    # この位置で重複が始まる → ここで切り捨て
                     stats_section = stats_section_full[:idx]
                     print(f"    [DEBUG] 末尾重複検出: idx={idx} で切り捨て（{len(stats_section_full)}→{len(stats_section)}）")
                     break
     
-    # 馬番マーカー位置を見つける（各馬データの末尾の馬番）
-    # 統計セクション内で「N」(N=1〜num_horses)が出現する位置を、Nの増加順に探す
+    # 馬番マーカー位置を見つける
     def is_stats_data(text):
-        """統計データらしいセル内容か判定（緩めに）"""
         if not text:
             return False
         if text == "初":
@@ -322,43 +417,33 @@ def extract_race_data(driver, race_id, race_name):
             return True
         if re.match(r'^\d+人$', text):
             return True
-        # 「X.X(X)」形式（上り3F）
         if re.match(r'^\d+\.\d+\(\d+\)$', text):
             return True
-        # 「N-N-N」3要素もOK（産駒成績で出現する）
         if re.match(r'^\d+-\s*\d+-\s*\d+$', text.strip()):
             return True
-        # コース文言
         if re.search(r'(ダ|芝)\d{3,4}', text):
             return True
-        # ステークス・賞・クラス
         if "ステークス" in text or "賞" in text or "クラス" in text or "Ｓ" in text:
             return True
-        # 「無」「取」も統計記号
-        if text in ("無", "取"):
+        if text in ("無", "取", "除"):
             return True
-        # 漢字・カナ馬名（血統名）
         if re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', text) and len(text) >= 2:
             return True
-        # 英字血統名（半角スペース・コンマ含む）
         if re.match(r'^[A-Za-z\' .\-]+$', text) and len(text) >= 3:
             return True
         return False
     
-    # 馬番マーカーを順番に検索（前回より緩い判定で）
-    horse_boundaries = [0]  # 馬1のデータ開始位置
+    horse_boundaries = [0]
     
     for target_umaban in range(1, num_horses):
         target_str = str(target_umaban)
         search_start = horse_boundaries[-1]
         found = False
         
-        # 最低 10セル以降から探す（馬データには十分なセル数があるはず）
         min_offset = 10 if target_umaban == 1 else 5
         
         for idx in range(search_start + min_offset, len(stats_section)):
             if stats_section[idx] == target_str:
-                # 直前に統計データがあるか（過去5セル以内）
                 prev_ok = False
                 for back in range(1, 8):
                     if idx - back < search_start:
@@ -367,12 +452,10 @@ def extract_race_data(driver, race_id, race_name):
                     if is_stats_data(prev_cell):
                         prev_ok = True
                         break
-                    if not prev_cell:  # 空セルはスキップ
+                    if not prev_cell:
                         continue
-                    # 統計データじゃない非空セルが出てきたら判定継続せず終了
                     break
                 
-                # 直後に統計データがあるか（次5セル以内）
                 next_ok = False
                 for fwd in range(1, 8):
                     if idx + fwd >= len(stats_section):
@@ -407,12 +490,17 @@ def extract_race_data(driver, race_id, race_name):
         non_empty_stats = [c for c in horse_stats if c]
         horse["stats_raw"] = " | ".join(non_empty_stats)
         del horse["_basic_end_idx"]
+        
+        # 仮データレースの場合、騎手フラグを付与
+        if is_provisional:
+            horse["jockey_provisional"] = True
     
     return {
         "race_id": race_id,
         "race_name": race_name,
         "horses": basic_info_horses,
         "horse_count": len(basic_info_horses),
+        "is_provisional": is_provisional,
         "extracted_at": datetime.now().isoformat(),
     }
 
@@ -532,7 +620,8 @@ def process_one_race(driver, race):
     
     data = extract_race_data(driver, race_id, race_name)
     if data:
-        print(f"    ✅ {data.get('horse_count', 0)}頭分のデータ取得")
+        prov_mark = "[仮]" if data.get("is_provisional") else ""
+        print(f"    ✅ {data.get('horse_count', 0)}頭分のデータ取得 {prov_mark}")
     else:
         print(f"    ❌ データ抽出失敗")
     
@@ -558,8 +647,8 @@ def main():
                      "賞" in r.get("race_name", "") or
                      "特別" in r.get("race_name", "") or
                      "杯" in r.get("race_name", "")]
-    test_races = special_races[:3]
-    print(f"テスト対象（最初の特別レース3つ）: {[r.get('race_name') for r in test_races]}")
+    test_races = special_races  # 全特別レース対象
+    print(f"対象レース: {len(test_races)}件 → {[r.get('race_name') for r in test_races]}")
     
     driver = None
     all_results = {
@@ -605,7 +694,8 @@ def main():
         print(f"成功: {len(all_results['races'])}/{len(test_races)} レース")
         print(f"エラー: {len(all_results['errors'])}")
         for race_id, data in all_results["races"].items():
-            print(f"  {race_id} {data.get('race_name')}: {data.get('horse_count', 0)}頭")
+            prov = " [仮]" if data.get("is_provisional") else ""
+            print(f"  {race_id} {data.get('race_name')}: {data.get('horse_count', 0)}頭{prov}")
         
     except Exception as e:
         print(f"\n❌ FATAL: {e}")
