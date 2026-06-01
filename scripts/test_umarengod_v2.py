@@ -7,7 +7,7 @@ umarengod.com スクレイピング v2
 - 日付タブ・競馬場タブ・レースリンクを順番にクリック
 - 取得データを構造化して保存
 - エラー耐性とログ強化
-- 馬番マーカー方式で過去実績を正確に各馬に割り当て
+- 馬番マーカー方式（強化版）で過去実績を正確に各馬に割り当て
 """
 
 import json
@@ -187,12 +187,7 @@ def find_available_links(driver, link_type="all"):
 
 def extract_race_data(driver, race_id, race_name):
     """
-    出馬表テーブルからデータを抽出（馬番マーカー方式）
-    
-    構造:
-    1. 基本情報セクション: 各馬の[馬番,馬名,性齢,斤量,間隔,騎手,調教師]が連続
-    2. 統計データセクション: 馬1のデータ...馬番1 | 馬2のデータ...馬番2 | ...
-       各馬の統計データブロックの末尾に「自分の馬番」が出現する
+    出馬表テーブルからデータを抽出（馬番マーカー方式・強化版）
     """
     soup = BeautifulSoup(driver.page_source, "html.parser")
     tables = soup.find_all("table")
@@ -280,96 +275,135 @@ def extract_race_data(driver, race_id, race_name):
     
     # 統計セクションは基本情報の終了後
     basic_section_end = basic_info_horses[-1]["_basic_end_idx"] + 1
-    stats_section = all_cells[basic_section_end:]
+    stats_section_full = all_cells[basic_section_end:]
     
-    print(f"    [DEBUG] 統計セクション全体: {len(stats_section)}個")
+    print(f"    [DEBUG] 統計セクション(全): {len(stats_section_full)}個")
     
-    # 統計セクション内で「馬番N」が単独で出現する位置を探す（区切りマーカー）
-    # 馬番マーカーの特徴:
-    #   - セル内容が単独の整数（1〜num_horses）
-    #   - 前後に統計データ的な文字列がある（X-X-X-X、X.XXX、X位、X着など）
+    # 統計セクション内で「基本情報の重複出現位置」を検出して、そこで切り捨てる
+    # 重複は「馬番1 → 馬名 → 性齢」のパターンで始まる
+    stats_section = stats_section_full
+    for idx in range(len(stats_section_full)):
+        cell = stats_section_full[idx]
+        if cell == "1":  # 馬番1の可能性
+            # 後続セルに「馬名+性齢」のパターン
+            non_empty_after = []
+            j = idx + 1
+            while j < len(stats_section_full) and len(non_empty_after) < 5:
+                if stats_section_full[j]:
+                    non_empty_after.append(stats_section_full[j])
+                j += 1
+            
+            if len(non_empty_after) >= 3:
+                name = non_empty_after[0]
+                sex_age = non_empty_after[1]
+                # 馬名（漢字・カナ）+ 性齢パターン
+                if (re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', name) and 
+                    re.match(r'^[牡牝せ騙セ]\d+$', sex_age)):
+                    # この位置で重複が始まる → ここで切り捨て
+                    stats_section = stats_section_full[:idx]
+                    print(f"    [DEBUG] 末尾重複検出: idx={idx} で切り捨て（{len(stats_section_full)}→{len(stats_section)}）")
+                    break
     
-    def is_stats_cell(text):
-        """統計データらしいセル内容か判定"""
+    # 馬番マーカー位置を見つける（各馬データの末尾の馬番）
+    # 統計セクション内で「N」(N=1〜num_horses)が出現する位置を、Nの増加順に探す
+    def is_stats_data(text):
+        """統計データらしいセル内容か判定（緩めに）"""
         if not text:
             return False
-        if re.match(r'^\d+-\s*\d+-\s*\d+-\s*\d+$', text.strip()):  # 着度数
-            return True
-        if re.match(r'^\d+\.\d+$', text):  # 連対率など
-            return True
-        if re.match(r'^\d+位$', text):  # 順位
-            return True
-        if re.match(r'^\d+着$', text):  # 着順
-            return True
-        if re.match(r'^\d+人$', text):  # 人気
-            return True
-        if "ステークス" in text or "賞" in text or "クラス" in text or "Ｓ" in text:
-            return True
         if text == "初":
             return True
-        if re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', text) and len(text) >= 2:  # 馬名・血統名
+        if re.match(r'^\d+-\s*\d+-\s*\d+-\s*\d+$', text.strip()):
+            return True
+        if re.match(r'^\d+\.\d+$', text):
+            return True
+        if re.match(r'^\d+位$', text):
+            return True
+        if re.match(r'^\d+着$', text):
+            return True
+        if re.match(r'^\d+人$', text):
+            return True
+        # 「X.X(X)」形式（上り3F）
+        if re.match(r'^\d+\.\d+\(\d+\)$', text):
+            return True
+        # 「N-N-N」3要素もOK（産駒成績で出現する）
+        if re.match(r'^\d+-\s*\d+-\s*\d+$', text.strip()):
+            return True
+        # コース文言
+        if re.search(r'(ダ|芝)\d{3,4}', text):
+            return True
+        # ステークス・賞・クラス
+        if "ステークス" in text or "賞" in text or "クラス" in text or "Ｓ" in text:
+            return True
+        # 「無」「取」も統計記号
+        if text in ("無", "取"):
+            return True
+        # 漢字・カナ馬名（血統名）
+        if re.search(r'[\u30a0-\u30ff\u4e00-\u9faf]', text) and len(text) >= 2:
+            return True
+        # 英字血統名（半角スペース・コンマ含む）
+        if re.match(r'^[A-Za-z\' .\-]+$', text) and len(text) >= 3:
             return True
         return False
     
-    # 各馬の境界（次の馬データの開始位置）を見つける
-    # 統計セクション内で「次の馬番」が単独セルで現れる位置を探す
-    horse_boundaries = [0]  # 馬1の開始位置
+    # 馬番マーカーを順番に検索（前回より緩い判定で）
+    horse_boundaries = [0]  # 馬1のデータ開始位置
     
     for target_umaban in range(1, num_horses):
-        # 「target_umaban」（馬1の終了マーカー）を horse_boundaries[-1] 以降で探す
         target_str = str(target_umaban)
-        next_target_str = str(target_umaban + 1)
-        
         search_start = horse_boundaries[-1]
         found = False
         
-        for idx in range(search_start + 5, len(stats_section)):  # 最低5セルは間を空ける
+        # 最低 10セル以降から探す（馬データには十分なセル数があるはず）
+        min_offset = 10 if target_umaban == 1 else 5
+        
+        for idx in range(search_start + min_offset, len(stats_section)):
             if stats_section[idx] == target_str:
-                # 前後に統計データ的なセルがあるか確認
-                # 直前: 統計データ的（着順、人気、レース名等）
+                # 直前に統計データがあるか（過去5セル以内）
                 prev_ok = False
-                for back in range(1, 6):
+                for back in range(1, 8):
                     if idx - back < search_start:
                         break
                     prev_cell = stats_section[idx - back]
-                    if is_stats_cell(prev_cell):
+                    if is_stats_data(prev_cell):
                         prev_ok = True
                         break
+                    if not prev_cell:  # 空セルはスキップ
+                        continue
+                    # 統計データじゃない非空セルが出てきたら判定継続せず終了
+                    break
                 
-                # 直後: 統計データ的(次の馬のデータ開始)、または「初」など
+                # 直後に統計データがあるか（次5セル以内）
                 next_ok = False
-                for fwd in range(1, 6):
+                for fwd in range(1, 8):
                     if idx + fwd >= len(stats_section):
                         break
                     next_cell = stats_section[idx + fwd]
-                    if is_stats_cell(next_cell):
+                    if is_stats_data(next_cell):
                         next_ok = True
                         break
+                    if not next_cell:
+                        continue
+                    break
                 
                 if prev_ok and next_ok:
-                    # この位置が馬{target_umaban}の終了マーカー
-                    # 次の馬データは idx+1 から始まる
                     horse_boundaries.append(idx + 1)
                     found = True
                     break
         
         if not found:
-            print(f"    [DEBUG] 馬番{target_umaban}の終了マーカーが見つからない")
-            # フォールバック: 等分
+            print(f"    [DEBUG] 馬番{target_umaban}の終了マーカーが見つからない（フォールバック）")
             per_horse = len(stats_section) // num_horses
             horse_boundaries.append(target_umaban * per_horse)
     
-    # 末尾を追加
     horse_boundaries.append(len(stats_section))
     
-    print(f"    [DEBUG] 馬データ境界: {horse_boundaries[:5]}... (合計{len(horse_boundaries)}個)")
+    print(f"    [DEBUG] 馬データ境界: {horse_boundaries[:5]}...{horse_boundaries[-3:]} (合計{len(horse_boundaries)}個)")
     
     # 各馬に統計データを割り当て
     for idx, horse in enumerate(basic_info_horses):
         start = horse_boundaries[idx]
         end = horse_boundaries[idx + 1]
         horse_stats = stats_section[start:end]
-        # 空セルを除外
         non_empty_stats = [c for c in horse_stats if c]
         horse["stats_raw"] = " | ".join(non_empty_stats)
         del horse["_basic_end_idx"]
@@ -517,7 +551,6 @@ def main():
         print("❌ 未来レースなし。終了")
         return
     
-    # 特別レース名（ステークス・賞）を含むレースだけテスト対象に
     special_races = [r for r in future_races if 
                      "S" in r.get("race_name", "") or 
                      "Ｓ" in r.get("race_name", "") or
