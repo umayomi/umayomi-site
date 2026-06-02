@@ -640,13 +640,10 @@ def main():
         print("❌ 未来レースなし。終了")
         return
     
+    SPECIAL_KEYWORDS = ["S", "Ｓ", "ステークス", "賞", "特別", "杯", 
+                        "記念", "カップ", "Cup", "ＣＴ", "CT", "ＣＰ", "CP"]
     special_races = [r for r in future_races if 
-                     "S" in r.get("race_name", "") or 
-                     "Ｓ" in r.get("race_name", "") or
-                     "ステークス" in r.get("race_name", "") or
-                     "賞" in r.get("race_name", "") or
-                     "特別" in r.get("race_name", "") or
-                     "杯" in r.get("race_name", "")]
+                     any(kw in r.get("race_name", "") for kw in SPECIAL_KEYWORDS)]
     test_races = special_races  # 全特別レース対象
     print(f"対象レース: {len(test_races)}件 → {[r.get('race_name') for r in test_races]}")
     
