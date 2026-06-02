@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ウマヨミ - Selenium版 v8 (v6ベース + 過去レースオッズ修正)"""
+"""ウマヨミ - Selenium版 v9 (フィルタ修正：特別レース全取得 + 平場2勝以上)"""
 
 import json
 import time
@@ -36,7 +36,22 @@ COL_MAP = {
     "オッズ": "odds", "人気": "popularity",
 }
 
-TARGET_CLASSES = ["2勝", "3勝", "オープン", "OP", "G1", "G2", "G3", "Ｇ１", "Ｇ２", "Ｇ３", "GⅠ", "GⅡ", "GⅢ", "G", "L"]
+# 特別レース系のキーワード（レース名で判定）
+SPECIAL_RACE_KEYWORDS = [
+    "特別", "ステークス", "Ｓ", "記念", "賞", "杯", "カップ",
+    "ハンデ", "オープン", "オーフン",
+]
+
+# 平場の2勝以上系キーワード（venue_infoで判定）
+HIGH_CLASS_KEYWORDS = [
+    "2勝", "3勝", "２勝", "３勝",
+    "オープン", "OP", "リステッド",
+    "G1", "G2", "G3", "Ｇ１", "Ｇ２", "Ｇ３",
+    "GⅠ", "GⅡ", "GⅢ", "(L)", "（Ｌ）",
+]
+
+# 除外キーワード（これらが含まれていたら絶対除外）
+EXCLUDE_KEYWORDS = ["未勝利", "新馬", "1勝", "１勝"]
 
 
 def create_driver():
@@ -99,12 +114,37 @@ def get_race_ids(driver, date_str):
 
 
 def is_target_class(venue_info, race_name):
-    text = (venue_info or "") + " " + (race_name or "")
+    """対象レースか判定
     
-    if any(kw in text for kw in ["未勝利", "新馬", "1勝", "１勝"]):
-        return False
+    ルール:
+    1. 「未勝利・新馬・1勝クラス」は問答無用で除外
+    2. レース名に「特別/ステークス/Ｓ/S/記念/賞/杯/カップ」→ 特別レース → 採用
+    3. venue_info に「2勝/3勝/オープン/リステッド/G/L」→ 平場の2勝以上 → 採用
+    """
+    venue_info = venue_info or ""
+    race_name = race_name or ""
+    combined = venue_info + " " + race_name
     
-    return any(kw in text for kw in TARGET_CLASSES)
+    # ステップ1: 除外キーワードチェック
+    for kw in EXCLUDE_KEYWORDS:
+        if kw in combined:
+            return False
+    
+    # ステップ2: 特別レース判定（レース名で）
+    for kw in SPECIAL_RACE_KEYWORDS:
+        if kw in race_name:
+            return True
+    
+    # 「○○S」のような大文字Sで終わるパターン
+    if re.search(r'[A-Za-z]?S\s*$|[A-Za-z]?S\s*\(', race_name):
+        return True
+    
+    # ステップ3: 平場の高クラス判定（venue_infoで）
+    for kw in HIGH_CLASS_KEYWORDS:
+        if kw in venue_info:
+            return True
+    
+    return False
 
 
 def get_race_detail(driver, race_id):
@@ -136,7 +176,7 @@ def get_race_detail(driver, race_id):
         venue_info = re.sub(r"\s+", " ", el.text.strip())
     
     if not is_target_class(venue_info, race_name):
-        print(f"    SKIP: not target class - {race_name}")
+        print(f"    SKIP: not target class - {race_name} (venue: {venue_info[:50]})")
         return None
     
     print(f"    TARGET: {race_name}")
@@ -255,24 +295,20 @@ def get_odds_past(driver, race_id):
     print(f"    GET result (past): {url}")
     
     try:
-        # まず race.netkeiba を Referer に設定するため一度アクセス
         driver.get(f'https://race.netkeiba.com/race/result.html?race_id={race_id}')
         time.sleep(3)
         
-        # 次にdbページへ
         driver.get(url)
         time.sleep(5)
         
         html = driver.page_source
         soup = BeautifulSoup(html, "html.parser")
         
-        # 結果テーブルを探す
         table = soup.select_one("table.race_table_01, table.nk_tb_common")
         if not table:
             print(f"    no result table")
             return {}
         
-        # ヘッダーから「単勝」列のインデックスを探す
         rows = table.find_all("tr")
         if len(rows) < 2:
             return {}
@@ -304,7 +340,6 @@ def get_odds_past(driver, race_id):
             if not umaban_text.isdigit():
                 continue
             
-            # オッズが数字+小数点のパターン
             if re.match(r"^\d+\.\d+$", odds_text):
                 odds_data[umaban_text] = {"tansho": odds_text}
         
@@ -332,7 +367,7 @@ def merge_odds(race_data, odds_data):
 
 def main():
     print("=" * 60)
-    print(f"umayomi Selenium v8 (past odds fix) - {datetime.now()}")
+    print(f"umayomi Selenium v9 (filter fix) - {datetime.now()}")
     print("=" * 60)
     
     driver = None
@@ -370,7 +405,6 @@ def main():
                         skipped_count += 1
                         continue
                     
-                    # 過去か未来かでオッズ取得方法を切り替え
                     if is_past:
                         odds = get_odds_past(driver, rid)
                     else:
