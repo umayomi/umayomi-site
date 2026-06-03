@@ -1086,7 +1086,7 @@ function renderCards(){
         <span class="hc-rs-badge ${rsClass(h.rs)}">${h.rs}</span>
       </div>
       <div class="hc-r3">
-        <div class="hc-stat"><div class="hc-stat-l">オッズ</div><div class="hc-stat-v ${ldOdds}">${h.odds.toFixed(1)}</div></div>
+        <div class="hc-stat"><div class="hc-stat-l">オッズ</div><div class="hc-stat-v ${ldOdds}">${h.odds!=null?h.odds.toFixed(1):'-'}</div></div>
         <div class="hc-stat"><div class="hc-stat-l">人気</div><div class="hc-stat-v">${h.pop}番</div></div>
         <div class="hc-stat"><div class="hc-stat-l">追切</div><div class="hc-oi-dots">${oi}</div></div>
         <div class="hc-stat"><div class="hc-stat-l">前走</div><div class="hc-stat-v" style="color:${h.prev<=3?'var(--green)':'var(--mut2)'}">${h.prev}着</div></div>
@@ -1105,7 +1105,7 @@ function renderPrediction(){
       <span class="pick-mk ${mc[i]}">${marks[i]}</span>
       <div class="pick-info">
         <div class="pick-n">${h.name}</div>
-        <div class="pick-d">${h.idx}pt · ${h.odds.toFixed(1)}倍</div>
+        <div class="pick-d">${h.idx}pt · ${h.odds!=null?h.odds.toFixed(1):'-'}倍</div>
       </div>
     </div>`).join('');
   document.getElementById('predComment').innerHTML=`<b>${top4[0].name}</b>は指数${top4[0].idx}でAIシミュ勝率<b>${top4[0].sim_win}%</b>と最有力。<b>${top4[1].name}</b>が対抗、末脚に注目。穴は<b>${top4[2].name}</b>（${top4[2].odds}倍）—市場評価に対し指数${top4[2].idx}は割安で一発の可能性。`;
@@ -1274,7 +1274,7 @@ function drawPace(){
 function openHorse(num){
   const h=HORSES.find(x=>x.num===num);
   if(!h)return;
-  alert(`【${h.name}】\n騎手: ${h.jockey}\n厩舎: ${h.trainer}\n脚質: ${h.rs}\n馬体重: ${h.weight}kg\n総合指数: ${h.idx}pt\nオッズ: ${h.odds.toFixed(1)}倍 (${h.pop}番人気)\nAI勝率: ${h.sim_win}%\nAIシミュ予測着順: ${h.sim_rank}着`);
+  alert(`【${h.name}】\n騎手: ${h.jockey}\n厩舎: ${h.trainer}\n脚質: ${h.rs}\n馬体重: ${h.weight}kg\n総合指数: ${h.idx}pt\nオッズ: ${h.odds!=null?h.odds.toFixed(1):'-'}倍 (${h.pop}番人気)\nAI勝率: ${h.sim_win}%\nAIシミュ予測着順: ${h.sim_rank}着`);
 }
 
 // ============================================================
