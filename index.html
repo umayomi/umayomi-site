@@ -2202,10 +2202,19 @@ function integrateRealData(data){
         weight_carried: h.weight_carried || '',
       }));
       
-      // sim_winを計算（オッズベース）
-      horses.forEach(h => {
-        const baseWin = h.odds > 0 ? Math.max(0, 100 - h.odds * 1.5) : 5;
-        h.sim_win = Math.round(Math.min(50, baseWin));
+      // sim_winを計算（フル版：馬・騎手・調教師・指数の総合スコア）
+      const _scores = horses.map(h => {
+        const sec = parseStatsRaw(h.stats_raw);
+        const hv = sec && sec.horseVenue ? (sec.horseVenue.placeRate || 0) : 0;
+        const hd = sec && sec.horseDistance ? (sec.horseDistance.placeRate || 0) : 0;
+        const jk = sec && sec.jockey ? (sec.jockey.placeRate || 0) : 0;
+        const tr = sec && sec.trainer ? (sec.trainer.placeRate || 0) : 0;
+        const idx = h.idx || 60;
+        return hv*0.30 + hd*0.25 + jk*0.20 + tr*0.10 + idx*0.15;
+      });
+      const _sumScore = _scores.reduce((a,b)=>a+b,0);
+      horses.forEach((h,i) => {
+        h.sim_win = _sumScore > 0 ? Math.round(_scores[i]/_sumScore * 100) : 0;
       });
       
       // sim_rank割り当て
