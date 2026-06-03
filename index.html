@@ -2023,22 +2023,54 @@ function getJockeyStats(jockeyName, venue, surface, horse){
 }
 
 function renderJockeyList(){
+  function renderJockeyList(){
   if(!CURRENT_RACE_DATA){return;}
   const venue = CURRENT_RACE_DATA.venue;
-  const surface = CURRENT_RACE_DATA.distance.charAt(0); // 芝 or ダ
-  // 騎手ごとの成績を計算
+  const surface = CURRENT_RACE_DATA.distance.charAt(0);
+
   const data = HORSES.map(h => {
-    const stats = getJockeyStats(h.jockey, venue, surface);
+    const stats = getJockeyStats(h.jockey, venue, surface, h);
     return {
       ...h,
       stats,
-      score: parseFloat(stats.placeRate) + parseFloat(stats.winRate)*0.5,
+      score: stats.isReal ? (parseFloat(stats.placeRate) + parseFloat(stats.winRate)*0.5) : -1,
     };
-  }).sort((a,b)=>b.score-a.score);
+  });
 
-  const maxScore = Math.max(...data.map(d=>d.score));
-  document.getElementById('jockeyList').innerHTML = data.slice(0,10).map((d,i)=>{
+  const withData = data.filter(d => d.stats.isReal && d.stats.runs > 0).sort((a,b)=>b.score-a.score);
+  const noRide = data.filter(d => d.stats.isReal && d.stats.runs === 0);
+  const noData = data.filter(d => !d.stats.isReal);
+  const sorted = [...withData, ...noRide, ...noData];
+
+  if(withData.length === 0 && noRide.length === 0){
+    document.getElementById('jockeyList').innerHTML =
+      '<div style="text-align:center;color:var(--mut);padding:24px;font-size:12px;">騎手成績データがありません</div>';
+    return;
+  }
+
+  const maxScore = Math.max(...withData.map(d=>d.score), 1);
+  document.getElementById('jockeyList').innerHTML = sorted.slice(0,12).map((d,i)=>{
     const rankCls = i===0?'r1':i===1?'r2':i===2?'r3':'rx';
+    if(!d.stats.isReal){
+      return `<div class="jockey-row" style="opacity:0.5">
+        <div class="jockey-rank rx">-</div>
+        <div>
+          <div class="jockey-info-name">${d.jockey}</div>
+          <div class="jockey-info-horse">${d.num}. ${d.name}</div>
+        </div>
+        <div class="jockey-stats"><div class="jockey-stat-block"><div class="jockey-rec" style="color:var(--mut)">データなし</div></div></div>
+      </div>`;
+    }
+    if(d.stats.runs === 0){
+      return `<div class="jockey-row" style="opacity:0.6">
+        <div class="jockey-rank rx">-</div>
+        <div>
+          <div class="jockey-info-name">${d.jockey}</div>
+          <div class="jockey-info-horse">${d.num}. ${d.name}</div>
+        </div>
+        <div class="jockey-stats"><div class="jockey-stat-block"><div class="jockey-rec" style="color:var(--mut)">当該条件で騎乗実績なし</div></div></div>
+      </div>`;
+    }
     const pct = Math.round(d.score/maxScore*100);
     const barCol = i===0?'var(--gold)':i===1?'var(--teal)':i===2?'var(--blue)':'var(--mut)';
     return `<div class="jockey-row" onclick="openHorse(${d.num})">
@@ -2049,8 +2081,8 @@ function renderJockeyList(){
       </div>
       <div class="jockey-stats">
         <div class="jockey-stat-block">
-          <div class="jockey-rec">${d.stats.wins}-${d.stats.seconds}-${d.stats.thirds}-${d.stats.outs}</div>
-          <div class="jockey-rate">勝率${d.stats.winRate}% 連対${d.stats.placeRate}%</div>
+          <div class="jockey-rec">${d.stats.wins}-${d.stats.seconds}-${d.stats.thirds}-${d.stats.outs} <span style="color:var(--mut);font-size:9px;">(${d.stats.runs}走)</span></div>
+          <div class="jockey-rate">勝${d.stats.winRate}% 連${d.stats.rentaiRate}% 複${d.stats.placeRate}%</div>
         </div>
         <div class="jockey-score-bar"><div class="jockey-score-fill" style="width:${pct}%;background:${barCol};"></div></div>
       </div>
