@@ -1041,7 +1041,7 @@ function updateStats(){
   const sum = r.summary;
   document.getElementById('s-num').textContent = HORSES.length;
   const topPop = HORSES.find(h=>h.pop===1);
-  document.getElementById('s-pop1').textContent = topPop.odds.toFixed(1)+'倍';
+  document.getElementById('s-pop1').textContent = (topPop.odds!=null?topPop.odds.toFixed(1):'-')+'倍';
   document.getElementById('s-pop1-name').textContent = topPop.name;
   const topIdx = [...HORSES].sort((a,b)=>b.idx-a.idx)[0];
   document.getElementById('s-idx').textContent = topIdx.idx;
