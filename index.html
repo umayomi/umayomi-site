@@ -2151,7 +2151,7 @@ function integrateRealData(data){
         pop: parseInt(h.popularity) || idx+1,
         oi: Math.floor(Math.random()*3)+2,
         prev: Math.floor(Math.random()*8)+1,
-        rs: ['逃げ','先行','差し','追込'][Math.floor(Math.random()*4)],
+        rs: '-',
         weight: parseInt((h.horse_weight||'470').split('(')[0]) || 470,
         trainer: h.stable || '厩舎未定',
         sim_win: 0,
