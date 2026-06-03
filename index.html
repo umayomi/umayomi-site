@@ -2193,7 +2193,14 @@ function integrateRealData(data){
         num: parseInt(h.umaban) || idx+1,
         name: h.horse_name || `馬${idx+1}`,
         jockey: h.jockey || '騎手未定',
-        idx: 60 + Math.floor(Math.random()*32), // 仮の指数
+        idx: (function(){
+          const s = parseStatsRaw(h.stats_raw) || {};
+          const hv = (s.horseVenue && s.horseVenue.placeRate) || 0;
+          const hd = (s.horseDistance && s.horseDistance.placeRate) || 0;
+          const sf = (s.sireStats && s.sireStats.placeRate) || 0;
+          const df = (s.damSireStats && s.damSireStats.placeRate) || 0;
+          return Math.round(40 + (hv*0.40 + hd*0.30 + sf*0.15 + df*0.15) * 0.6);
+        })(),
         odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || null,
         pop: parseInt(h.popularity) || idx+1,
         oi: Math.floor(Math.random()*3)+2,
