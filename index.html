@@ -2292,17 +2292,8 @@ function integrateRealData(data){
     });
   });
   
-console.log('✅ 実データ統合完了:', RACE_CALENDAR.length, '日付');
-  
-  // デバッグ用：1馬目の stats_raw を確認（確認後 Revert）
-  const _firstRace = Object.values(data.races)[0];
-  if(_firstRace && _firstRace.horses && _firstRace.horses[0]){
-    const _h = _firstRace.horses[0];
-    alert('Race: ' + _firstRace.race_name + '\n' +
-          'Horse: ' + _h.name + '\n' +
-          'stats_raw length: ' + (_h.stats_raw||'').length + '\n' +
-          'First 200: ' + (_h.stats_raw||'EMPTY').substring(0,200));
-  }
+  console.log('✅ 実データ統合完了:', RACE_CALENDAR.length, '日付');
+}
 
 // 初期化
 document.addEventListener('DOMContentLoaded', checkAuthOnLoad);
