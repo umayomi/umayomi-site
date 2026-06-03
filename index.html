@@ -955,8 +955,6 @@ function idxColor(v){
 }
 function oiColor(v){return['#e3e6ec','#7a7e93','#2563eb','#d4a017','#0d9488','#16a34a'][v]||'#e3e6ec';}
 function rsClass(rs){return{逃げ:'rs-h',先行:'rs-s',差し:'rs-m',追込:'rs-o'}[rs]||'rs-m';}
-function fmtOdds(v){ return (v && isFinite(v)) ? v.toFixed(1) : '-'; }
-function rsClassSafe(rs){ return rs && rs !== '-' ? rsClass(rs) : 'rs-m'; }
 function rankColor(r){if(r===1)return'r1';if(r===2)return'r2';if(r===3)return'r3';return'rx';}
 
 // ========== レースカレンダー ==========
@@ -1043,7 +1041,7 @@ function updateStats(){
   const sum = r.summary;
   document.getElementById('s-num').textContent = HORSES.length;
   const topPop = HORSES.find(h=>h.pop===1);
-  document.getElementById('s-pop1').textContent = fmtOdds(topPop.odds)+'倍';
+  document.getElementById('s-pop1').textContent = topPop.odds.toFixed(1)+'倍';
   document.getElementById('s-pop1-name').textContent = topPop.name;
   const topIdx = [...HORSES].sort((a,b)=>b.idx-a.idx)[0];
   document.getElementById('s-idx').textContent = topIdx.idx;
@@ -1085,13 +1083,13 @@ function renderCards(){
           <div class="hc-bar-bg"><div class="hc-bar-fill" style="width:${pct}%;background:${idxColor(h.idx)}"></div></div>
           <div class="hc-bar-lbls"><span>${pct}%</span><span>勝率 ${h.sim_win}%</span></div>
         </div>
-        <span class="hc-rs-badge ${rsClassSafe(h.rs)}" style="${h.rs==='-'?'opacity:0.4':''}">${h.rs}</span>
+        <span class="hc-rs-badge ${rsClass(h.rs)}">${h.rs}</span>
       </div>
       <div class="hc-r3">
-        <div class="hc-stat"><div class="hc-stat-l">オッズ</div><div class="hc-stat-v ${ldOdds}">${fmtOdds(h.odds)}</div></div>
+        <div class="hc-stat"><div class="hc-stat-l">オッズ</div><div class="hc-stat-v ${ldOdds}">${h.odds.toFixed(1)}</div></div>
         <div class="hc-stat"><div class="hc-stat-l">人気</div><div class="hc-stat-v">${h.pop}番</div></div>
         <div class="hc-stat"><div class="hc-stat-l">追切</div><div class="hc-oi-dots">${oi}</div></div>
-        <div class="hc-stat"><div class="hc-stat-l">前走</div><div class="hc-stat-v" style="color:var(--mut2)">${h.prev ? h.prev+'着' : '-'}</div></div>
+        <div class="hc-stat"><div class="hc-stat-l">前走</div><div class="hc-stat-v" style="color:${h.prev<=3?'var(--green)':'var(--mut2)'}">${h.prev}着</div></div>
       </div>
     </div>`;
   }).join('');
@@ -1107,10 +1105,10 @@ function renderPrediction(){
       <span class="pick-mk ${mc[i]}">${marks[i]}</span>
       <div class="pick-info">
         <div class="pick-n">${h.name}</div>
-        <div class="pick-d">${h.idx}pt · ${fmtOdds(h.odds)}倍</div>
+        <div class="pick-d">${h.idx}pt · ${h.odds.toFixed(1)}倍</div>
       </div>
     </div>`).join('');
-  document.getElementById('predComment').innerHTML=`<b>${top4[0].name}</b>は指数${top4[0].idx}でAIシミュ勝率<b>${top4[0].sim_win}%</b>と最有力。<b>${top4[1].name}</b>が対抗、末脚に注目。穴は<b>${top4[2].name}</b>（${fmtOdds(top4[2].odds)}倍）—市場評価に対し指数${top4[2].idx}は割安で一発の可能性。`;
+  document.getElementById('predComment').innerHTML=`<b>${top4[0].name}</b>は指数${top4[0].idx}でAIシミュ勝率<b>${top4[0].sim_win}%</b>と最有力。<b>${top4[1].name}</b>が対抗、末脚に注目。穴は<b>${top4[2].name}</b>（${top4[2].odds}倍）—市場評価に対し指数${top4[2].idx}は割安で一発の可能性。`;
   const top8=[...HORSES].sort((a,b)=>b.sim_win-a.sim_win).slice(0,8);
   const maxW=Math.max(1,...top8.map(h=>h.sim_win));
   document.getElementById('simBars').innerHTML=top8.map((h,i)=>{
@@ -1276,7 +1274,7 @@ function drawPace(){
 function openHorse(num){
   const h=HORSES.find(x=>x.num===num);
   if(!h)return;
-  alert(`【${h.name}】\n騎手: ${h.jockey}\n厩舎: ${h.trainer}\n脚質: ${h.rs}\n馬体重: ${h.weight}kg\n総合指数: ${h.idx}pt\nオッズ: ${fmtOdds(h.odds)}倍 (${h.pop}番人気)\nAI勝率: ${h.sim_win}%\nAIシミュ予測着順: ${h.sim_rank}着`);
+  alert(`【${h.name}】\n騎手: ${h.jockey}\n厩舎: ${h.trainer}\n脚質: ${h.rs}\n馬体重: ${h.weight}kg\n総合指数: ${h.idx}pt\nオッズ: ${h.odds.toFixed(1)}倍 (${h.pop}番人気)\nAI勝率: ${h.sim_win}%\nAIシミュ予測着順: ${h.sim_rank}着`);
 }
 
 // ============================================================
@@ -1944,135 +1942,37 @@ function calculatePayout(){
 // ============================================================
 // 騎手成績はモックデータ（実装時はnetkeibaの騎手ページから取得）
 function getJockeyStats(jockeyName, venue, surface){
-  // stats_raw を順次状態機械でパース
-// セクション順序: 馬×場 / 馬×距離 / 父名+父成績 / 母父名+母父成績 / 馬+騎手 / 騎手×場×距離 / 調教師
-function parseStatsRaw(raw){
-  if(!raw) return null;
-  const parts = raw.split('|').map(s => s.trim());
-  let i = 0;
-  const sections = {};
-
-  const readStats = (name) => {
-    if(i >= parts.length){ sections[name] = {empty:true}; return; }
-    const p = parts[i];
-    if(/^(初|無|-|—|―)$/.test(p)){
-      sections[name] = {empty:true};
-      i++; return;
-    }
-    const m = p.match(/^(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)$/);
-    if(m && i+4 < parts.length){
-      const wins=+m[1], seconds=+m[2], thirds=+m[3], outs=+m[4];
-      const runs = wins+seconds+thirds+outs;
-      const rentai = parseFloat(parts[i+1]);
-      const fuku = parseFloat(parts[i+3]);
-      sections[name] = {
-        wins, seconds, thirds, outs, runs,
-        winRate: runs ? (wins/runs*100) : 0,
-        rentaiRate: isFinite(rentai) ? rentai*100 : 0,
-        placeRate: isFinite(fuku) ? fuku*100 : 0,
-        empty: runs === 0,
-      };
-      i += 5;
-      return;
-    }
-    sections[name] = {empty:true, raw:p};
-    i++;
-  };
-
-  const readName = (name) => {
-    if(i < parts.length){ sections[name] = parts[i]; i++; }
-  };
-
-  readStats('horseVenue');
-  readStats('horseDistance');
-  readName('sireName');
-  readStats('sireStats');
-  readName('damSireName');
-  readStats('damSireStats');
-  readStats('horseJockey');
-  readStats('jockey');        // ← 騎手×場×距離（過去3年）
-  readStats('trainer');
-
-  return sections;
-}
-
-function getJockeyStats(jockeyName, venue, surface, horse){
-  if(horse && horse.stats_raw){
-    const sec = parseStatsRaw(horse.stats_raw);
-    if(sec && sec.jockey && !sec.jockey.empty){
-      const s = sec.jockey;
-      return {
-        runs: s.runs, wins: s.wins, seconds: s.seconds, thirds: s.thirds, outs: s.outs,
-        winRate: s.winRate.toFixed(1),
-        rentaiRate: s.rentaiRate.toFixed(1),
-        placeRate: s.placeRate.toFixed(1),
-        isReal: true,
-      };
-    }
-    if(sec && sec.jockey && sec.jockey.empty){
-      return {
-        runs: 0, wins: 0, seconds: 0, thirds: 0, outs: 0,
-        winRate: '0.0', rentaiRate: '0.0', placeRate: '0.0',
-        isReal: true,
-      };
-    }
-  }
-  return {
-    runs: 0, wins: 0, seconds: 0, thirds: 0, outs: 0,
-    winRate: '-', rentaiRate: '-', placeRate: '-',
-    isReal: false,
-  };
+  // 一貫したseed-basedで生成（同じ騎手は同じ成績になる）
+  let s = 0;
+  for(const c of jockeyName + venue + surface) s = (s*31 + c.charCodeAt(0)) >>> 0;
+  const rand = () => { s = (s*9301+49297) % 233280; return s/233280; };
+  const runs = Math.floor(rand()*40) + 20;
+  const wins = Math.floor(rand() * (runs * 0.35));
+  const seconds = Math.floor(rand() * ((runs-wins) * 0.4));
+  const thirds = Math.floor(rand() * ((runs-wins-seconds) * 0.5));
+  const outs = runs - wins - seconds - thirds;
+  const winRate = (wins/runs*100).toFixed(1);
+  const placeRate = ((wins+seconds+thirds)/runs*100).toFixed(1);
+  return {runs, wins, seconds, thirds, outs, winRate, placeRate};
 }
 
 function renderJockeyList(){
-  function renderJockeyList(){
   if(!CURRENT_RACE_DATA){return;}
   const venue = CURRENT_RACE_DATA.venue;
-  const surface = CURRENT_RACE_DATA.distance.charAt(0);
-
+  const surface = CURRENT_RACE_DATA.distance.charAt(0); // 芝 or ダ
+  // 騎手ごとの成績を計算
   const data = HORSES.map(h => {
-    const stats = getJockeyStats(h.jockey, venue, surface, h);
+    const stats = getJockeyStats(h.jockey, venue, surface);
     return {
       ...h,
       stats,
-      score: stats.isReal ? (parseFloat(stats.placeRate) + parseFloat(stats.winRate)*0.5) : -1,
+      score: parseFloat(stats.placeRate) + parseFloat(stats.winRate)*0.5,
     };
-  });
+  }).sort((a,b)=>b.score-a.score);
 
-  const withData = data.filter(d => d.stats.isReal && d.stats.runs > 0).sort((a,b)=>b.score-a.score);
-  const noRide = data.filter(d => d.stats.isReal && d.stats.runs === 0);
-  const noData = data.filter(d => !d.stats.isReal);
-  const sorted = [...withData, ...noRide, ...noData];
-
-  if(withData.length === 0 && noRide.length === 0){
-    document.getElementById('jockeyList').innerHTML =
-      '<div style="text-align:center;color:var(--mut);padding:24px;font-size:12px;">騎手成績データがありません</div>';
-    return;
-  }
-
-  const maxScore = Math.max(...withData.map(d=>d.score), 1);
-  document.getElementById('jockeyList').innerHTML = sorted.slice(0,12).map((d,i)=>{
+  const maxScore = Math.max(...data.map(d=>d.score));
+  document.getElementById('jockeyList').innerHTML = data.slice(0,10).map((d,i)=>{
     const rankCls = i===0?'r1':i===1?'r2':i===2?'r3':'rx';
-    if(!d.stats.isReal){
-      return `<div class="jockey-row" style="opacity:0.5">
-        <div class="jockey-rank rx">-</div>
-        <div>
-          <div class="jockey-info-name">${d.jockey}</div>
-          <div class="jockey-info-horse">${d.num}. ${d.name}</div>
-        </div>
-        <div class="jockey-stats"><div class="jockey-stat-block"><div class="jockey-rec" style="color:var(--mut)">データなし</div></div></div>
-      </div>`;
-    }
-    if(d.stats.runs === 0){
-      return `<div class="jockey-row" style="opacity:0.6">
-        <div class="jockey-rank rx">-</div>
-        <div>
-          <div class="jockey-info-name">${d.jockey}</div>
-          <div class="jockey-info-horse">${d.num}. ${d.name}</div>
-        </div>
-        <div class="jockey-stats"><div class="jockey-stat-block"><div class="jockey-rec" style="color:var(--mut)">当該条件で騎乗実績なし</div></div></div>
-      </div>`;
-    }
     const pct = Math.round(d.score/maxScore*100);
     const barCol = i===0?'var(--gold)':i===1?'var(--teal)':i===2?'var(--blue)':'var(--mut)';
     return `<div class="jockey-row" onclick="openHorse(${d.num})">
@@ -2083,8 +1983,8 @@ function renderJockeyList(){
       </div>
       <div class="jockey-stats">
         <div class="jockey-stat-block">
-          <div class="jockey-rec">${d.stats.wins}-${d.stats.seconds}-${d.stats.thirds}-${d.stats.outs} <span style="color:var(--mut);font-size:9px;">(${d.stats.runs}走)</span></div>
-          <div class="jockey-rate">勝${d.stats.winRate}% 連${d.stats.rentaiRate}% 複${d.stats.placeRate}%</div>
+          <div class="jockey-rec">${d.stats.wins}-${d.stats.seconds}-${d.stats.thirds}-${d.stats.outs}</div>
+          <div class="jockey-rate">勝率${d.stats.winRate}% 連対${d.stats.placeRate}%</div>
         </div>
         <div class="jockey-score-bar"><div class="jockey-score-fill" style="width:${pct}%;background:${barCol};"></div></div>
       </div>
