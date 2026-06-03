@@ -1088,7 +1088,7 @@ function renderCards(){
       <div class="hc-r3">
         <div class="hc-stat"><div class="hc-stat-l">オッズ</div><div class="hc-stat-v ${ldOdds}">${h.odds!=null?h.odds.toFixed(1):'-'}</div></div>
         <div class="hc-stat"><div class="hc-stat-l">人気</div><div class="hc-stat-v">${h.pop}番</div></div>
-        <div class="hc-stat"><div class="hc-stat-l">追切</div><div class="hc-oi-dots">${oi}</div></div>
+        <div class="hc-stat"><div class="hc-stat-l">総合</div><div class="hc-stat-v">${h.idxTotal||'-'}</div></div>
         <div class="hc-stat"><div class="hc-stat-l">前走</div><div class="hc-stat-v" style="color:${h.prev<=3?'var(--green)':'var(--mut2)'}">${h.prev}着</div></div>
       </div>
     </div>`;
