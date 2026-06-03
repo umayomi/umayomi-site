@@ -1940,6 +1940,48 @@ function calculatePayout(){
 // ============================================================
 // ========== 騎手×コース相性 ==========
 // ============================================================
+
+// stats_raw を順次状態機械でパース
+// セクション順序: 馬×場 / 馬×距離 / 父名+父成績 / 母父名+母父成績 / 馬+騎手 / 騎手×条件 / 調教師×条件
+function parseStatsRaw(raw){
+  if(!raw) return null;
+  const parts = raw.split('|').map(s => s.trim());
+  let i = 0;
+  const sections = {};
+  const readStats = (name) => {
+    if(i >= parts.length){ sections[name] = {empty:true}; return; }
+    const p = parts[i];
+    if(/^(初|無|-|—|―)$/.test(p)){ sections[name] = {empty:true}; i++; return; }
+    const m = p.match(/^(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)$/);
+    if(m && i+4 < parts.length){
+      const wins=+m[1], seconds=+m[2], thirds=+m[3], outs=+m[4];
+      const runs = wins+seconds+thirds+outs;
+      const rentai = parseFloat(parts[i+1]);
+      const fuku = parseFloat(parts[i+3]);
+      sections[name] = {
+        wins, seconds, thirds, outs, runs,
+        winRate: runs ? (wins/runs*100) : 0,
+        rentaiRate: isFinite(rentai) ? rentai*100 : 0,
+        placeRate: isFinite(fuku) ? fuku*100 : 0,
+        empty: runs === 0,
+      };
+      i += 5; return;
+    }
+    sections[name] = {empty:true}; i++;
+  };
+  const readName = (name) => { if(i < parts.length){ sections[name] = parts[i]; i++; } };
+  readStats('horseVenue');
+  readStats('horseDistance');
+  readName('sireName');
+  readStats('sireStats');
+  readName('damSireName');
+  readStats('damSireStats');
+  readStats('horseJockey');
+  readStats('jockey');
+  readStats('trainer');
+  return sections;
+}
+
 // 騎手成績はモックデータ（実装時はnetkeibaの騎手ページから取得）
 function getJockeyStats(jockeyName, venue, surface){
   // 一貫したseed-basedで生成（同じ騎手は同じ成績になる）
