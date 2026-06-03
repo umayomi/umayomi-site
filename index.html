@@ -2147,7 +2147,7 @@ function integrateRealData(data){
         name: h.horse_name || `馬${idx+1}`,
         jockey: h.jockey || '騎手未定',
         idx: 60 + Math.floor(Math.random()*32), // 仮の指数
-        odds: parseFloat(h.odds_tansho) || 99.9,
+        odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || null,
         pop: parseInt(h.popularity) || idx+1,
         oi: Math.floor(Math.random()*3)+2,
         prev: Math.floor(Math.random()*8)+1,
