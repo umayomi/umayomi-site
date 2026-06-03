@@ -2157,6 +2157,11 @@ async function loadRealData(){
 function integrateRealData(data){
   if(!data || !data.races) return;
   
+  // 実データがある場合はサンプル日付を全部削除
+  if(Object.values(data.races).length > 0){
+    RACE_CALENDAR.length = 0;
+  }
+  
   // 実データのレースを日付ごとにグループ化
   const racesByDate = {};
   Object.values(data.races).forEach(race => {
