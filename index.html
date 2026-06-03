@@ -1043,7 +1043,7 @@ function updateStats(){
   const sum = r.summary;
   document.getElementById('s-num').textContent = HORSES.length;
   const topPop = HORSES.find(h=>h.pop===1);
-  document.getElementById('s-pop1').textContent = topPop.odds.toFixed(1)+'倍';
+  document.getElementById('s-pop1').textContent = fmtOdds(topPop.odds)+'倍';
   document.getElementById('s-pop1-name').textContent = topPop.name;
   const topIdx = [...HORSES].sort((a,b)=>b.idx-a.idx)[0];
   document.getElementById('s-idx').textContent = topIdx.idx;
@@ -1085,13 +1085,13 @@ function renderCards(){
           <div class="hc-bar-bg"><div class="hc-bar-fill" style="width:${pct}%;background:${idxColor(h.idx)}"></div></div>
           <div class="hc-bar-lbls"><span>${pct}%</span><span>勝率 ${h.sim_win}%</span></div>
         </div>
-        <span class="hc-rs-badge ${rsClass(h.rs)}">${h.rs}</span>
+        <span class="hc-rs-badge ${rsClassSafe(h.rs)}" style="${h.rs==='-'?'opacity:0.4':''}">${h.rs}</span>
       </div>
       <div class="hc-r3">
         <div class="hc-stat"><div class="hc-stat-l">オッズ</div><div class="hc-stat-v ${ldOdds}">${fmtOdds(h.odds)}</div></div>
         <div class="hc-stat"><div class="hc-stat-l">人気</div><div class="hc-stat-v">${h.pop}番</div></div>
         <div class="hc-stat"><div class="hc-stat-l">追切</div><div class="hc-oi-dots">${oi}</div></div>
-        <div class="hc-stat"><div class="hc-stat-l">前走</div><div class="hc-stat-v" style="color:${h.prev<=3?'var(--green)':'var(--mut2)'}">${h.prev}着</div></div>
+        <div class="hc-stat"><div class="hc-stat-l">前走</div><div class="hc-stat-v" style="color:var(--mut2)">${h.prev ? h.prev+'着' : '-'}</div></div>
       </div>
     </div>`;
   }).join('');
@@ -1110,7 +1110,7 @@ function renderPrediction(){
         <div class="pick-d">${h.idx}pt · ${fmtOdds(h.odds)}倍</div>
       </div>
     </div>`).join('');
-  document.getElementById('predComment').innerHTML=`<b>${top4[0].name}</b>は指数${top4[0].idx}でAIシミュ勝率<b>${top4[0].sim_win}%</b>と最有力。<b>${top4[1].name}</b>が対抗、末脚に注目。穴は<b>${top4[2].name}</b>（${top4[2].odds}倍）—市場評価に対し指数${top4[2].idx}は割安で一発の可能性。`;
+  document.getElementById('predComment').innerHTML=`<b>${top4[0].name}</b>は指数${top4[0].idx}でAIシミュ勝率<b>${top4[0].sim_win}%</b>と最有力。<b>${top4[1].name}</b>が対抗、末脚に注目。穴は<b>${top4[2].name}</b>（${fmtOdds(top4[2].odds)}倍）—市場評価に対し指数${top4[2].idx}は割安で一発の可能性。`;
   const top8=[...HORSES].sort((a,b)=>b.sim_win-a.sim_win).slice(0,8);
   const maxW=Math.max(1,...top8.map(h=>h.sim_win));
   document.getElementById('simBars').innerHTML=top8.map((h,i)=>{
