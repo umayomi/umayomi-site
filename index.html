@@ -2218,7 +2218,7 @@ function integrateRealData(data){
         jockey: h.jockey || '騎手未定',
         idx: (function(){
           const s = parseStatsRaw(h.stats_raw) || {};
-          const adj = (sec) => sec ? (sec.placeRate||0) * Math.min(1,(sec.runs||0)/5) : 0;
+          const adj = (sec) => sec && sec.runs ? (sec.placeRate||0) * Math.min(1,(sec.runs||0)/2) : 40;
           const hv = adj(s.horseVenue);
           const hd = adj(s.horseDistance);
           const sf = adj(s.sireStats);
@@ -2227,7 +2227,7 @@ function integrateRealData(data){
         })(),
         idxTotal: (function(){
           const s = parseStatsRaw(h.stats_raw) || {};
-          const adj = (sec) => sec ? (sec.placeRate||0) * Math.min(1,(sec.runs||0)/5) : 0;
+          const adj = (sec) => sec && sec.runs ? (sec.placeRate||0) * Math.min(1,(sec.runs||0)/2) : 40;
           const hv = adj(s.horseVenue);
           const hd = adj(s.horseDistance);
           const hj = adj(s.horseJockey);
