@@ -2152,10 +2152,10 @@ async function loadRealData(){
           const statsRace = statsData.races && statsData.races[race.race_id];
           if(statsRace && statsRace.horses){
             const statsMap = {};
-            statsRace.horses.forEach(sh => { statsMap[sh.umaban] = sh.stats_raw; });
+            statsRace.horses.forEach(sh => { statsMap[sh.horse_name] = sh.stats_raw; });
             (race.horses || []).forEach(h => {
-              if(!h.stats_raw && statsMap[h.umaban]){
-                h.stats_raw = statsMap[h.umaban];
+              if(!h.stats_raw && statsMap[h.horse_name]){
+            h.stats_raw = statsMap[h.horse_name];
               }
             });
           }
