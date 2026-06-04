@@ -2218,21 +2218,23 @@ function integrateRealData(data){
         jockey: h.jockey || '騎手未定',
         idx: (function(){
           const s = parseStatsRaw(h.stats_raw) || {};
-          const hv = (s.horseVenue && s.horseVenue.placeRate) || 0;
-          const hd = (s.horseDistance && s.horseDistance.placeRate) || 0;
-          const sf = (s.sireStats && s.sireStats.placeRate) || 0;
-          const df = (s.damSireStats && s.damSireStats.placeRate) || 0;
+          const adj = (sec) => sec ? (sec.placeRate||0) * Math.min(1,(sec.runs||0)/5) : 0;
+          const hv = adj(s.horseVenue);
+          const hd = adj(s.horseDistance);
+          const sf = adj(s.sireStats);
+          const df = adj(s.damSireStats);
           return Math.round(40 + (hv*0.40 + hd*0.30 + sf*0.15 + df*0.15) * 0.6);
         })(),
         idxTotal: (function(){
           const s = parseStatsRaw(h.stats_raw) || {};
-          const hv = (s.horseVenue && s.horseVenue.placeRate) || 0;
-          const hd = (s.horseDistance && s.horseDistance.placeRate) || 0;
-          const hj = (s.horseJockey && s.horseJockey.placeRate) || 0;
-          const jk = (s.jockey && s.jockey.placeRate) || 0;
-          const tr = (s.trainer && s.trainer.placeRate) || 0;
-          const sf = (s.sireStats && s.sireStats.placeRate) || 0;
-          const df = (s.damSireStats && s.damSireStats.placeRate) || 0;
+          const adj = (sec) => sec ? (sec.placeRate||0) * Math.min(1,(sec.runs||0)/5) : 0;
+          const hv = adj(s.horseVenue);
+          const hd = adj(s.horseDistance);
+          const hj = adj(s.horseJockey);
+          const jk = adj(s.jockey);
+          const tr = adj(s.trainer);
+          const sf = adj(s.sireStats);
+          const df = adj(s.damSireStats);
           return Math.round(40 + (hv*0.25 + hd*0.20 + hj*0.15 + jk*0.15 + tr*0.10 + sf*0.08 + df*0.07) * 0.6);
         })(),
         odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || null,
