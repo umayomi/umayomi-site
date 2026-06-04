@@ -2143,6 +2143,29 @@ async function loadRealData(){
     REAL_DATA_LOADED = data;
     console.log('✅ 実データ取得成功:', data.race_count, 'レース');
     
+    // umarengod_stats.json から stats_raw を取得して merge
+    try {
+      const statsRes = await fetch('./data/umarengod_stats.json?t=' + Date.now());
+      if(statsRes.ok){
+        const statsData = await statsRes.json();
+        Object.values(data.races || {}).forEach(race => {
+          const statsRace = statsData.races && statsData.races[race.race_id];
+          if(statsRace && statsRace.horses){
+            const statsMap = {};
+            statsRace.horses.forEach(sh => { statsMap[sh.umaban] = sh.stats_raw; });
+            (race.horses || []).forEach(h => {
+              if(!h.stats_raw && statsMap[h.umaban]){
+                h.stats_raw = statsMap[h.umaban];
+              }
+            });
+          }
+        });
+        console.log('✅ stats_raw 統合完了');
+      }
+    } catch(e) {
+      console.warn('umarengod_stats 読み込みスキップ:', e);
+    }
+    
     // 実データを RACE_CALENDAR と RACE_HORSES に統合
     integrateRealData(data);
     
