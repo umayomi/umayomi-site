@@ -289,78 +289,163 @@ def get_odds_future(driver, race_id):
         return {}
 
 
-def get_odds_past(driver, race_id):
-    """過去レース: 結果ページから単勝オッズ取得"""
-    url = f'https://db.netkeiba.com/race/{race_id}/'
-    print(f"    GET result (past): {url}")
-    
+# ============================================================
+# scrape.py 差し替え関数（get_odds_future + merge_odds）
+# ============================================================
+# 既存の get_odds_future() と merge_odds() を以下で丸ごと置換してください。
+# 依存: requests, BeautifulSoup4 (bs4)
+
+def get_odds_future(race_id):
+    """
+    netkeibaオッズページから 馬番・馬名・単勝オッズ・人気 を取得。
+    ヘッダーから列番号を特定して紐づけるので、列順がズレても安全。
+
+    Returns:
+        list of dict: [{umaban, horse_name, odds_tansho, popularity}, ...]
+    """
+    url = f"https://race.netkeiba.com/odds/index.html?type=b1&race_id={race_id}"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+                      "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 "
+                      "Mobile/15E148 Safari/604.1"
+    }
     try:
-        driver.get(f'https://race.netkeiba.com/race/result.html?race_id={race_id}')
-        time.sleep(3)
-        
-        driver.get(url)
-        time.sleep(5)
-        
-        html = driver.page_source
-        soup = BeautifulSoup(html, "html.parser")
-        
-        table = soup.select_one("table.race_table_01, table.nk_tb_common")
-        if not table:
-            print(f"    no result table")
-            return {}
-        
-        rows = table.find_all("tr")
-        if len(rows) < 2:
-            return {}
-        
-        header_cells = rows[0].find_all(["th", "td"])
-        odds_col_idx = -1
-        umaban_col_idx = -1
-        
-        for i, cell in enumerate(header_cells):
-            text = cell.get_text(strip=True)
-            if text == "単勝":
-                odds_col_idx = i
-            if text == "馬番":
-                umaban_col_idx = i
-        
-        if odds_col_idx == -1 or umaban_col_idx == -1:
-            print(f"    odds/umaban column not found (odds_idx={odds_col_idx}, umaban_idx={umaban_col_idx})")
-            return {}
-        
-        odds_data = {}
-        for row in rows[1:]:
-            cols = row.find_all("td")
-            if len(cols) <= max(odds_col_idx, umaban_col_idx):
-                continue
-            
-            umaban_text = cols[umaban_col_idx].get_text(strip=True)
-            odds_text = cols[odds_col_idx].get_text(strip=True)
-            
-            if not umaban_text.isdigit():
-                continue
-            
-            if re.match(r"^\d+\.\d+$", odds_text):
-                odds_data[umaban_text] = {"tansho": odds_text}
-        
-        print(f"    got past odds for {len(odds_data)} horses")
-        return odds_data
-        
+        res = requests.get(url, headers=headers, timeout=15)
+        res.encoding = "EUC-JP"
+        soup = BeautifulSoup(res.text, "html.parser")
     except Exception as e:
-        print(f"    past odds error: {e}")
-        return {}
+        print(f"[ERROR] {race_id} オッズ取得失敗: {e}")
+        return []
+
+    # 単勝オッズテーブルを特定（複数のIDを試す）
+    table = (
+        soup.find("table", {"id": "odds_tan_block"})
+        or soup.find("table", class_="RaceOdds_HorseList_Table")
+        or soup.find("table", class_="Odds_Table")
+    )
+    if not table:
+        print(f"[WARN] {race_id} オッズテーブルが見つからない")
+        return []
+
+    # ヘッダー行から列インデックスを特定
+    rows = table.find_all("tr")
+    if len(rows) < 2:
+        return []
+
+    header_cells = rows[0].find_all(["th", "td"])
+    headers_text = [c.get_text(strip=True) for c in header_cells]
+
+    col_map = {}
+    for i, h in enumerate(headers_text):
+        if "馬番" in h and "umaban" not in col_map:
+            col_map["umaban"] = i
+        elif "馬名" in h and "horse_name" not in col_map:
+            col_map["horse_name"] = i
+        elif ("単勝" in h or "オッズ" in h) and "odds" not in col_map:
+            col_map["odds"] = i
+        elif "人気" in h and "popularity" not in col_map:
+            col_map["popularity"] = i
+
+    # 必須列チェック
+    required = ["umaban", "horse_name", "odds"]
+    missing = [k for k in required if k not in col_map]
+    if missing:
+        print(f"[WARN] {race_id} 必要な列が見つからない: {missing} / headers={headers_text}")
+        return []
+
+    results = []
+    max_col = max(col_map.values())
+    for row in rows[1:]:
+        cells = row.find_all(["td", "th"])
+        if len(cells) <= max_col:
+            continue
+        try:
+            umaban_txt = cells[col_map["umaban"]].get_text(strip=True)
+            horse_name = cells[col_map["horse_name"]].get_text(strip=True)
+            odds_txt = cells[col_map["odds"]].get_text(strip=True)
+            pop_txt = (
+                cells[col_map["popularity"]].get_text(strip=True)
+                if "popularity" in col_map else ""
+            )
+
+            # 馬番は数値のみ（取消馬や見出し行を除外）
+            if not umaban_txt.isdigit():
+                continue
+            if not horse_name:
+                continue
+
+            # オッズ正規化（"--" や空文字を除外）
+            odds_clean = odds_txt.replace(",", "")
+            try:
+                float(odds_clean)
+            except ValueError:
+                odds_clean = ""
+
+            results.append({
+                "umaban": umaban_txt,
+                "horse_name": horse_name,
+                "odds_tansho": odds_clean,
+                "popularity": pop_txt,
+            })
+        except Exception as e:
+            print(f"[WARN] {race_id} 行パース失敗: {e}")
+            continue
+
+    # 検証ログ：1番人気の馬が最小オッズかチェック
+    if results:
+        valid_odds = [
+            (r, float(r["odds_tansho"]))
+            for r in results
+            if r["odds_tansho"]
+        ]
+        if valid_odds:
+            min_horse, min_odds = min(valid_odds, key=lambda x: x[1])
+            top_pop = next((r for r in results if r["popularity"] == "1"), None)
+            if top_pop:
+                top_odds = float(top_pop["odds_tansho"]) if top_pop["odds_tansho"] else None
+                if top_odds and abs(top_odds - min_odds) < 0.05:
+                    print(f"[OK]   {race_id}: 1番人気={top_pop['horse_name']} {top_odds}倍 ({len(results)}頭)")
+                else:
+                    print(f"[WARN] {race_id}: 1番人気={top_pop['horse_name']}({top_odds}倍) ≠ 最小オッズ={min_horse['horse_name']}({min_odds}倍)")
+            else:
+                print(f"[WARN] {race_id}: 1番人気の馬が見つからない")
+
+    return results
 
 
-def merge_odds(race_data, odds_data):
-    if not odds_data:
-        return race_data
-    
+def merge_odds(race_data, odds_list):
+    """
+    レースデータの horses[] にオッズ情報をマージ。
+    horse_name で照合（umaban が空のケースに対応）。
+    odds_tansho と popularity を両方上書き。
+    """
+    if not odds_list or not race_data.get("horses"):
+        return
+
+    # horse_name -> オッズ情報 のマップ
+    odds_map = {o["horse_name"]: o for o in odds_list if o.get("horse_name")}
+
+    matched = 0
+    unmatched = []
     for horse in race_data["horses"]:
-        umaban = horse.get("umaban", "")
-        if umaban in odds_data:
-            horse["odds_tansho"] = odds_data[umaban].get("tansho", "")
+        name = (horse.get("horse_name") or "").strip()
+        if not name:
+            continue
+        if name in odds_map:
+            o = odds_map[name]
+            horse["odds_tansho"] = o["odds_tansho"]
+            horse["popularity"] = o["popularity"]
+            # umaban が空なら埋める
+            if not horse.get("umaban") and o.get("umaban"):
+                horse["umaban"] = o["umaban"]
+            matched += 1
         else:
-            horse["odds_tansho"] = ""
+            unmatched.append(name)
+
+    rid = race_data.get("race_id", "?")
+    print(f"[MERGE] {rid}: {matched}/{len(race_data['horses'])}頭 マージ成功")
+    if unmatched:
+        print(f"        未マッチ: {unmatched}")
     
     return race_data
 
