@@ -239,7 +239,7 @@ def get_race_detail(driver, race_id):
 
 
 def get_odds_future(driver, race_id):
-    """未来レース: 単勝オッズページから取得"""
+    """未来レース: 単勝オッズページから取得（ヘッダー特定版）"""
     url = f'https://race.netkeiba.com/odds/index.html?race_id={race_id}&type=b1'
     print(f"    GET odds (future): {url}")
     
@@ -255,31 +255,58 @@ def get_odds_future(driver, race_id):
             print(f"    no odds table")
             return {}
         
-        odds_data = {}
         rows = table.find_all("tr")
+        if len(rows) < 2:
+            return {}
+        
+        # ヘッダーから列インデックスを特定
+        header_cells = rows[0].find_all(["th", "td"])
+        headers_text = [c.get_text(strip=True) for c in header_cells]
+        
+        umaban_idx = -1
+        odds_idx = -1
+        pop_idx = -1
+        for i, h in enumerate(headers_text):
+            if "馬番" in h and umaban_idx == -1:
+                umaban_idx = i
+            elif ("単勝" in h or "オッズ" in h) and odds_idx == -1:
+                odds_idx = i
+            elif "人気" in h and pop_idx == -1:
+                pop_idx = i
+        
+        if umaban_idx == -1 or odds_idx == -1:
+            print(f"    columns not found (umaban={umaban_idx}, odds={odds_idx}) headers={headers_text}")
+            return {}
+        
+        odds_data = {}
         for row in rows[1:]:
             cols = row.find_all("td")
-            if len(cols) < 4:
+            if len(cols) <= max(umaban_idx, odds_idx):
                 continue
             
-            umaban_text = ""
-            for col in cols[:3]:
-                text = col.get_text(strip=True)
-                if text.isdigit():
-                    umaban_text = text
-                    break
+            umaban_text = cols[umaban_idx].get_text(strip=True)
+            odds_text = cols[odds_idx].get_text(strip=True)
+            pop_text = cols[pop_idx].get_text(strip=True) if 0 <= pop_idx < len(cols) else ""
             
-            if not umaban_text:
+            if not umaban_text.isdigit():
                 continue
             
-            odds_values = []
-            for col in cols:
-                text = col.get_text(strip=True)
-                if re.match(r"^\d+\.\d+$", text):
-                    odds_values.append(text)
-            
-            if odds_values:
-                odds_data[umaban_text] = {"tansho": odds_values[0]}
+            if re.match(r"^\d+\.\d+$", odds_text):
+                odds_data[umaban_text] = {"tansho": odds_text, "popularity": pop_text}
+        
+        # 検証ログ：1番人気が最小オッズか
+        if odds_data:
+            valid = [(u, float(d["tansho"])) for u, d in odds_data.items()]
+            if valid:
+                min_u, min_o = min(valid, key=lambda x: x[1])
+                top = [(u, d) for u, d in odds_data.items() if d.get("popularity") == "1"]
+                if top:
+                    tu, td = top[0]
+                    to = float(td["tansho"])
+                    if abs(to - min_o) < 0.05:
+                        print(f"    [OK] 1番人気=馬番{tu} {to}倍 ({len(odds_data)}頭)")
+                    else:
+                        print(f"    [WARN] 1番人気=馬番{tu}({to}倍) ≠ 最小=馬番{min_u}({min_o}倍)")
         
         print(f"    got odds for {len(odds_data)} horses")
         return odds_data
