@@ -1973,29 +1973,44 @@ function parseStatsRaw(raw){
   readStats('horseVenue');
   readStats('horseDistance');
   readName('sireName');
-  readStats('sireStats');
   readName('damSireName');
-  readStats('damSireStats');
   readStats('horseJockey');
   readStats('jockey');
   readStats('trainer');
+  // 前4走（4要素ずつ：コース・タイム・着順・人気）
+  const lastRuns = [];
+  while(i + 3 < parts.length){
+    const place = parts[i];
+    const result = parts[i+2];
+    if(!/着/.test(result)) break;
+    lastRuns.push({
+      place: place,
+      time: parts[i+1],
+      result: result,
+      popularity: parts[i+3]
+    });
+    i += 4;
+  }
+  sections.lastRuns = lastRuns;
   return sections;
 }
 
-// 騎手成績はモックデータ（実装時はnetkeibaの騎手ページから取得）
-function getJockeyStats(jockeyName, venue, surface){
-  // 一貫したseed-basedで生成（同じ騎手は同じ成績になる）
-  let s = 0;
-  for(const c of jockeyName + venue + surface) s = (s*31 + c.charCodeAt(0)) >>> 0;
-  const rand = () => { s = (s*9301+49297) % 233280; return s/233280; };
-  const runs = Math.floor(rand()*40) + 20;
-  const wins = Math.floor(rand() * (runs * 0.35));
-  const seconds = Math.floor(rand() * ((runs-wins) * 0.4));
-  const thirds = Math.floor(rand() * ((runs-wins-seconds) * 0.5));
-  const outs = runs - wins - seconds - thirds;
-  const winRate = (wins/runs*100).toFixed(1);
-  const placeRate = ((wins+seconds+thirds)/runs*100).toFixed(1);
-  return {runs, wins, seconds, thirds, outs, winRate, placeRate};
+// 騎手成績：stats_raw の jockey セクション（騎手・場×距離 過去3年）から取得
+function getJockeyStats(jockeyName, venue, surface, horse){
+  if(horse && horse.stats_raw){
+    const s = parseStatsRaw(horse.stats_raw);
+    if(s && s.jockey && !s.jockey.empty){
+      const wins = s.jockey.wins || 0;
+      const seconds = s.jockey.seconds || 0;
+      const thirds = s.jockey.thirds || 0;
+      const outs = s.jockey.outs || 0;
+      const runs = s.jockey.runs || 0;
+      const winRate = runs ? (wins/runs*100).toFixed(1) : '0.0';
+      const placeRate = runs ? ((wins+seconds+thirds)/runs*100).toFixed(1) : '0.0';
+      return {runs, wins, seconds, thirds, outs, winRate, placeRate};
+    }
+  }
+  return {runs: 0, wins: 0, seconds: 0, thirds: 0, outs: 0, winRate: '0.0', placeRate: '0.0'};
 }
 
 function renderJockeyList(){
@@ -2004,7 +2019,7 @@ function renderJockeyList(){
   const surface = CURRENT_RACE_DATA.distance.charAt(0); // 芝 or ダ
   // 騎手ごとの成績を計算
   const data = HORSES.map(h => {
-    const stats = getJockeyStats(h.jockey, venue, surface);
+    const stats = getJockeyStats(h.jockey, venue, surface, h);
     return {
       ...h,
       stats,
@@ -2221,9 +2236,19 @@ function integrateRealData(data){
           const adj = (sec) => sec && sec.runs ? (sec.placeRate||0) * Math.min(1,(sec.runs||0)/2) : 40;
           const hv = adj(s.horseVenue);
           const hd = adj(s.horseDistance);
-          const sf = adj(s.sireStats);
-          const df = adj(s.damSireStats);
-          return Math.round(70 + (hv*0.40 + hd*0.30 + sf*0.15 + df*0.15) * 0.25)
+          const hj = adj(s.horseJockey);
+          const jk = adj(s.jockey);
+          // 前1走クラス補正
+          let classBonus = 0;
+          const prev = s.lastRuns && s.lastRuns[0];
+          if(prev){
+            const pl = prev.place || '';
+            const win = /1着/.test(prev.result || '');
+            if(/[（(][ＧG][ⅠI][)）]/.test(pl)) classBonus = win ? 10 : 5;
+            else if(/[（(][ＧG][ⅡI][I][)）]/.test(pl)) classBonus = win ? 6 : 3;
+            else if(/[（(][ＧG][ⅢI][I][I][)）]/.test(pl)) classBonus = win ? 4 : 2;
+          }
+          return Math.min(99, Math.round(70 + (hv*0.35 + hd*0.25 + hj*0.20 + jk*0.20) * 0.25) + classBonus);
         })(),
         idxTotal: (function(){
           const s = parseStatsRaw(h.stats_raw) || {};
@@ -2233,9 +2258,16 @@ function integrateRealData(data){
           const hj = adj(s.horseJockey);
           const jk = adj(s.jockey);
           const tr = adj(s.trainer);
-          const sf = adj(s.sireStats);
-          const df = adj(s.damSireStats);
-          return Math.round(70 + (hv*0.25 + hd*0.20 + hj*0.15 + jk*0.15 + tr*0.10 + sf*0.08 + df*0.07) * 0.25)
+          let classBonus = 0;
+          const prev = s.lastRuns && s.lastRuns[0];
+          if(prev){
+            const pl = prev.place || '';
+            const win = /1着/.test(prev.result || '');
+            if(/[（(][ＧG][ⅠI][)）]/.test(pl)) classBonus = win ? 10 : 5;
+            else if(/[（(][ＧG][ⅡI][I][)）]/.test(pl)) classBonus = win ? 6 : 3;
+            else if(/[（(][ＧG][ⅢI][I][I][)）]/.test(pl)) classBonus = win ? 4 : 2;
+          }
+          return Math.min(99, Math.round(70 + (hv*0.25 + hd*0.20 + hj*0.20 + jk*0.20 + tr*0.15) * 0.25) + classBonus);
         })(),
         odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || null,
         pop: parseInt(h.popularity) || idx+1,
@@ -2248,6 +2280,7 @@ function integrateRealData(data){
         sim_rank: 0,
         sex_age: h.sex_age || '',
         weight_carried: h.weight_carried || '',
+        stats_raw: h.stats_raw || '',
       }));
       
       // sim_winを計算（フル版：馬・騎手・調教師・指数の総合スコア）
