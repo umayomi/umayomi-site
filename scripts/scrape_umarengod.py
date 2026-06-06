@@ -90,8 +90,7 @@ def load_races():
     
     future_races = []
     for race_id, race in data.get("races", {}).items():
-        if not race.get("is_past", False):
-            future_races.append(race)
+        future_races.append(race)
     
     return future_races
 
