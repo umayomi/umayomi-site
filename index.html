@@ -2269,7 +2269,7 @@ function integrateRealData(data){
           }
           return Math.min(99, Math.round(70 + (hv*0.25 + hd*0.20 + hj*0.20 + jk*0.20 + tr*0.15) * 0.25) + classBonus);
         })(),
-        odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || null,
+        odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || parseFloat(h.odds) || null,
         pop: parseInt(h.popularity) || idx+1,
         oi: Math.floor(Math.random()*3)+2,
         prev: Math.floor(Math.random()*8)+1,
