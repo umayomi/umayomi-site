@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-06T03:46:46.267163",
-  "total_races": 23,
+  "updated_at": "2026-06-06T05:19:32.155537",
+  "total_races": 24,
   "races": {
     "202605021109": {
       "race_id": "202605021109",
@@ -169,7 +169,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:47:06.983265"
+      "extracted_at": "2026-06-06T05:19:48.476856"
     },
     "202605021110": {
       "race_id": "202605021110",
@@ -288,7 +288,7 @@
       ],
       "horse_count": 11,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:47:24.226391"
+      "extracted_at": "2026-06-06T05:20:04.640992"
     },
     "202605021111": {
       "race_id": "202605021111",
@@ -457,7 +457,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:47:43.455696"
+      "extracted_at": "2026-06-06T05:20:20.728905"
     },
     "202608031109": {
       "race_id": "202608031109",
@@ -556,7 +556,7 @@
       ],
       "horse_count": 9,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:48:03.890562"
+      "extracted_at": "2026-06-06T05:20:37.273072"
     },
     "202608031110": {
       "race_id": "202608031110",
@@ -725,7 +725,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:48:22.574581"
+      "extracted_at": "2026-06-06T05:20:53.786943"
     },
     "202608031111": {
       "race_id": "202608031111",
@@ -894,7 +894,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:48:42.235354"
+      "extracted_at": "2026-06-06T05:21:09.765669"
     },
     "202605021208": {
       "race_id": "202605021208",
@@ -1043,7 +1043,7 @@
       ],
       "horse_count": 14,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:48:58.229319"
+      "extracted_at": "2026-06-06T05:21:25.870613"
     },
     "202605021209": {
       "race_id": "202605021209",
@@ -1202,7 +1202,7 @@
       ],
       "horse_count": 15,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:49:16.158110"
+      "extracted_at": "2026-06-06T05:21:41.941334"
     },
     "202605021210": {
       "race_id": "202605021210",
@@ -1391,7 +1391,7 @@
       ],
       "horse_count": 18,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:49:33.433683"
+      "extracted_at": "2026-06-06T05:21:58.711131"
     },
     "202605021212": {
       "race_id": "202605021212",
@@ -1540,7 +1540,7 @@
       ],
       "horse_count": 14,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:49:50.640638"
+      "extracted_at": "2026-06-06T05:22:27.906145"
     },
     "202608031209": {
       "race_id": "202608031209",
@@ -1659,7 +1659,7 @@
       ],
       "horse_count": 11,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:50:07.538675"
+      "extracted_at": "2026-06-06T05:22:43.934780"
     },
     "202608031211": {
       "race_id": "202608031211",
@@ -1758,7 +1758,7 @@
       ],
       "horse_count": 9,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:50:23.952448"
+      "extracted_at": "2026-06-06T05:22:59.845352"
     },
     "202608031212": {
       "race_id": "202608031212",
@@ -1947,7 +1947,7 @@
       ],
       "horse_count": 18,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:50:44.299449"
+      "extracted_at": "2026-06-06T05:23:15.666456"
     },
     "202605030110": {
       "race_id": "202605030110",
@@ -2126,7 +2126,7 @@
       ],
       "horse_count": 17,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:51:01.234428"
+      "extracted_at": "2026-06-06T05:23:31.640390"
     },
     "202605030111": {
       "race_id": "202605030111",
@@ -2295,7 +2295,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:51:17.126018"
+      "extracted_at": "2026-06-06T05:23:47.878097"
     },
     "202609030110": {
       "race_id": "202609030110",
@@ -2424,7 +2424,7 @@
       ],
       "horse_count": 12,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:51:33.195993"
+      "extracted_at": "2026-06-06T05:24:04.378944"
     },
     "202609030111": {
       "race_id": "202609030111",
@@ -2543,7 +2543,7 @@
       ],
       "horse_count": 11,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:51:50.035380"
+      "extracted_at": "2026-06-06T05:24:20.313595"
     },
     "202605030210": {
       "race_id": "202605030210",
@@ -2712,7 +2712,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:52:07.127198"
+      "extracted_at": "2026-06-06T05:24:36.112840"
     },
     "202605030211": {
       "race_id": "202605030211",
@@ -2891,7 +2891,7 @@
       ],
       "horse_count": 17,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:52:24.180498"
+      "extracted_at": "2026-06-06T05:24:55.163847"
     },
     "202605030212": {
       "race_id": "202605030212",
@@ -3060,7 +3060,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:52:40.321872"
+      "extracted_at": "2026-06-06T05:25:11.244102"
     },
     "202609030209": {
       "race_id": "202609030209",
@@ -3229,7 +3229,7 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:52:56.458741"
+      "extracted_at": "2026-06-06T05:25:26.722381"
     },
     "202609030210": {
       "race_id": "202609030210",
@@ -3328,7 +3328,7 @@
       ],
       "horse_count": 9,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:53:12.561145"
+      "extracted_at": "2026-06-06T05:25:42.139026"
     },
     "202609030211": {
       "race_id": "202609030211",
@@ -3497,8 +3497,14 @@
       ],
       "horse_count": 16,
       "is_provisional": false,
-      "extracted_at": "2026-06-06T03:53:29.405419"
+      "extracted_at": "2026-06-06T05:25:57.870063"
     }
   },
-  "errors": []
+  "errors": [
+    {
+      "race_id": "202605021211",
+      "race_name": "日本ダービー",
+      "reason": "データ取得失敗"
+    }
+  ]
 }
