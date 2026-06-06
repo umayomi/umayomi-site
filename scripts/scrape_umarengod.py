@@ -640,7 +640,8 @@ def main():
         return
     
     SPECIAL_KEYWORDS = ["S", "Ｓ", "ステークス", "賞", "特別", "杯", 
-                        "記念", "カップ", "Cup", "ＣＴ", "CT", "ＣＰ", "CP"]
+                        "記念", "カップ", "Cup", "ＣＴ", "CT", "ＣＰ", "CP",
+                        "ダービー", "オークス"]
     special_races = [r for r in future_races if 
                      any(kw in r.get("race_name", "") for kw in SPECIAL_KEYWORDS)]
     test_races = special_races  # 全特別レース対象
