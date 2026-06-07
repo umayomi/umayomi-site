@@ -2244,9 +2244,13 @@ function integrateRealData(data){
           if(prev){
             const pl = prev.place || '';
             const win = /1着/.test(prev.result || '');
-            if(/[（(][ＧG][ⅠI][)）]/.test(pl)) classBonus = win ? 10 : 5;
-            else if(/[（(][ＧG][ⅡI][I][)）]/.test(pl)) classBonus = win ? 6 : 3;
-            else if(/[（(][ＧG][ⅢI][I][I][)）]/.test(pl)) classBonus = win ? 4 : 2;
+            const gm = pl.match(/[（(][ＧG]([ⅠⅡⅢIＩ]+)[)）]/);
+            if(gm){
+              const r = gm[1];
+              if(r==='Ⅰ'||r==='Ｉ'||r==='I') classBonus = win ? 10 : 5;
+              else if(r==='Ⅱ'||r==='ＩＩ'||r==='II') classBonus = win ? 6 : 3;
+              else if(r==='Ⅲ'||r==='ＩＩＩ'||r==='III') classBonus = win ? 4 : 2;
+            }
           }
           return Math.min(99, Math.round(70 + (hv*0.35 + hd*0.25 + hj*0.20 + jk*0.20) * 0.25) + classBonus);
         })(),
@@ -2263,9 +2267,13 @@ function integrateRealData(data){
           if(prev){
             const pl = prev.place || '';
             const win = /1着/.test(prev.result || '');
-            if(/[（(][ＧG][ⅠI][)）]/.test(pl)) classBonus = win ? 10 : 5;
-            else if(/[（(][ＧG][ⅡI][I][)）]/.test(pl)) classBonus = win ? 6 : 3;
-            else if(/[（(][ＧG][ⅢI][I][I][)）]/.test(pl)) classBonus = win ? 4 : 2;
+            const gm = pl.match(/[（(][ＧG]([ⅠⅡⅢIＩ]+)[)）]/);
+            if(gm){
+              const r = gm[1];
+              if(r==='Ⅰ'||r==='Ｉ'||r==='I') classBonus = win ? 10 : 5;
+              else if(r==='Ⅱ'||r==='ＩＩ'||r==='II') classBonus = win ? 6 : 3;
+              else if(r==='Ⅲ'||r==='ＩＩＩ'||r==='III') classBonus = win ? 4 : 2;
+            }
           }
           return Math.min(99, Math.round(70 + (hv*0.25 + hd*0.20 + hj*0.20 + jk*0.20 + tr*0.15) * 0.25) + classBonus);
         })(),
