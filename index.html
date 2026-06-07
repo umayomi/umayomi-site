@@ -2251,6 +2251,17 @@ function integrateRealData(data){
               else if(r==='Ⅱ'||r==='ＩＩ'||r==='II') classBonus = win ? 6 : 3;
               else if(r==='Ⅲ'||r==='ＩＩＩ'||r==='III') classBonus = win ? 4 : 2;
             }
+            const pm = (prev.result || '').match(/^(\d+)着/);
+            if(pm){
+              const p = +pm[1];
+              if(p === 1) classBonus += 3;
+              else if(p === 2) classBonus += 2;
+              else if(p === 3) classBonus += 1;
+            }
+          }
+          if(s.lastRuns && s.lastRuns.length){
+            const inMoney = s.lastRuns.filter(r => /^[123]着/.test(r.result || '')).length;
+            classBonus += inMoney;
           }
           return Math.min(99, Math.round(70 + (hv*0.35 + hd*0.25 + hj*0.20 + jk*0.20) * 0.25) + classBonus);
         })(),
@@ -2274,6 +2285,17 @@ function integrateRealData(data){
               else if(r==='Ⅱ'||r==='ＩＩ'||r==='II') classBonus = win ? 6 : 3;
               else if(r==='Ⅲ'||r==='ＩＩＩ'||r==='III') classBonus = win ? 4 : 2;
             }
+            const pm = (prev.result || '').match(/^(\d+)着/);
+            if(pm){
+              const p = +pm[1];
+              if(p === 1) classBonus += 3;
+              else if(p === 2) classBonus += 2;
+              else if(p === 3) classBonus += 1;
+            }
+          }
+          if(s.lastRuns && s.lastRuns.length){
+            const inMoney = s.lastRuns.filter(r => /^[123]着/.test(r.result || '')).length;
+            classBonus += inMoney;
           }
           return Math.min(99, Math.round(70 + (hv*0.25 + hd*0.20 + hj*0.20 + jk*0.20 + tr*0.15) * 0.25) + classBonus);
         })(),
