@@ -317,66 +317,76 @@ def get_odds_future(driver, race_id):
 
 
 def get_odds_past(driver, race_id):
-    """過去レース: 結果ページから単勝オッズ取得"""
+    """過去レース: 結果ページから単勝オッズ取得（リトライ付き）"""
     url = f'https://db.netkeiba.com/race/{race_id}/'
     print(f"    GET result (past): {url}")
     
-    try:
-        driver.get(f'https://race.netkeiba.com/race/result.html?race_id={race_id}')
-        time.sleep(3)
-        
-        driver.get(url)
-        time.sleep(5)
-        
-        html = driver.page_source
-        soup = BeautifulSoup(html, "html.parser")
-        
-        table = soup.select_one("table.race_table_01, table.nk_tb_common")
-        if not table:
-            print(f"    no result table")
-            return {}
-        
-        rows = table.find_all("tr")
-        if len(rows) < 2:
-            return {}
-        
-        header_cells = rows[0].find_all(["th", "td"])
-        odds_col_idx = -1
-        umaban_col_idx = -1
-        
-        for i, cell in enumerate(header_cells):
-            text = cell.get_text(strip=True)
-            if text == "単勝":
-                odds_col_idx = i
-            if text == "馬番":
-                umaban_col_idx = i
-        
-        if odds_col_idx == -1 or umaban_col_idx == -1:
-            print(f"    odds/umaban column not found (odds_idx={odds_col_idx}, umaban_idx={umaban_col_idx})")
-            return {}
-        
-        odds_data = {}
-        for row in rows[1:]:
-            cols = row.find_all("td")
-            if len(cols) <= max(odds_col_idx, umaban_col_idx):
+    for attempt in range(2):
+        try:
+            if attempt > 0:
+                print(f"    retry {attempt}/1")
+                time.sleep(10)
+            
+            driver.get(f'https://race.netkeiba.com/race/result.html?race_id={race_id}')
+            time.sleep(3)
+            
+            driver.get(url)
+            time.sleep(5)
+            
+            html = driver.page_source
+            soup = BeautifulSoup(html, "html.parser")
+            
+            table = soup.select_one("table.race_table_01, table.nk_tb_common")
+            if not table:
+                print(f"    no result table (attempt {attempt+1})")
+                if attempt == 0:
+                    continue
+                return {}
+            
+            rows = table.find_all("tr")
+            if len(rows) < 2:
+                return {}
+            
+            header_cells = rows[0].find_all(["th", "td"])
+            odds_col_idx = -1
+            umaban_col_idx = -1
+            
+            for i, cell in enumerate(header_cells):
+                text = cell.get_text(strip=True)
+                if text == "単勝":
+                    odds_col_idx = i
+                if text == "馬番":
+                    umaban_col_idx = i
+            
+            if odds_col_idx == -1 or umaban_col_idx == -1:
+                print(f"    odds/umaban column not found (odds_idx={odds_col_idx}, umaban_idx={umaban_col_idx})")
+                return {}
+            
+            odds_data = {}
+            for row in rows[1:]:
+                cols = row.find_all("td")
+                if len(cols) <= max(odds_col_idx, umaban_col_idx):
+                    continue
+                
+                umaban_text = cols[umaban_col_idx].get_text(strip=True)
+                odds_text = cols[odds_col_idx].get_text(strip=True)
+                
+                if not umaban_text.isdigit():
+                    continue
+                
+                if re.match(r"^\d+\.\d+$", odds_text):
+                    odds_data[umaban_text] = {"tansho": odds_text}
+            
+            print(f"    got past odds for {len(odds_data)} horses")
+            return odds_data
+            
+        except Exception as e:
+            print(f"    past odds error (attempt {attempt+1}): {e}")
+            if attempt == 0:
                 continue
-            
-            umaban_text = cols[umaban_col_idx].get_text(strip=True)
-            odds_text = cols[odds_col_idx].get_text(strip=True)
-            
-            if not umaban_text.isdigit():
-                continue
-            
-            if re.match(r"^\d+\.\d+$", odds_text):
-                odds_data[umaban_text] = {"tansho": odds_text}
-        
-        print(f"    got past odds for {len(odds_data)} horses")
-        return odds_data
-        
-    except Exception as e:
-        print(f"    past odds error: {e}")
-        return {}
-
+            return {}
+    
+    return {}
 
 def merge_odds(race_data, odds_data):
     if not odds_data:
