@@ -2302,7 +2302,14 @@ function integrateRealData(data){
         odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || parseFloat(h.odds) || null,
         pop: parseInt(h.popularity) || idx+1,
         oi: Math.floor(Math.random()*3)+2,
-        prev: Math.floor(Math.random()*8)+1,
+        prev: (function(){
+          const s = parseStatsRaw(h.stats_raw);
+          if(s && s.lastRuns && s.lastRuns[0]){
+            const m = (s.lastRuns[0].result || '').match(/^(\d+)着/);
+            if(m) return +m[1];
+          }
+          return null;
+        })(),
         rs: '-',
         weight: parseInt((h.horse_weight||'470').split('(')[0]) || 470,
         trainer: h.stable || '厩舎未定',
