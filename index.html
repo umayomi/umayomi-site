@@ -2324,19 +2324,27 @@ function integrateRealData(data){
         stats_raw: h.stats_raw || '',
       }));
       
-      // sim_winを計算（フル版：馬・騎手・調教師・指数の総合スコア）
-      const _scores = horses.map(h => {
+      // sim_win：1000回モンテカルロシミュレーション
+      const _weights = horses.map(h => {
         const sec = parseStatsRaw(h.stats_raw);
-        const hv = sec && sec.horseVenue ? (sec.horseVenue.placeRate || 0) : 0;
-        const hd = sec && sec.horseDistance ? (sec.horseDistance.placeRate || 0) : 0;
-        const jk = sec && sec.jockey ? (sec.jockey.placeRate || 0) : 0;
-        const tr = sec && sec.trainer ? (sec.trainer.placeRate || 0) : 0;
+        const hv = sec && sec.horseVenue ? (sec.horseVenue.placeRate || 0) : 30;
+        const hd = sec && sec.horseDistance ? (sec.horseDistance.placeRate || 0) : 30;
+        const jk = sec && sec.jockey ? (sec.jockey.placeRate || 0) : 20;
         const idx = h.idx || 60;
-        return hv*0.30 + hd*0.25 + jk*0.20 + tr*0.10 + idx*0.15;
+        return Math.max(1, hv*0.25 + hd*0.20 + jk*0.15 + idx*0.40);
       });
-      const _sumScore = _scores.reduce((a,b)=>a+b,0);
+      const _winCounts = horses.map(() => 0);
+      const TRIALS = 1000;
+      for(let t=0; t<TRIALS; t++){
+        const _runScores = _weights.map(w => w + (Math.random() - 0.5) * w * 0.7);
+        let maxI = 0;
+        for(let i=1; i<_runScores.length; i++){
+          if(_runScores[i] > _runScores[maxI]) maxI = i;
+        }
+        _winCounts[maxI]++;
+      }
       horses.forEach((h,i) => {
-        h.sim_win = _sumScore > 0 ? Math.round(_scores[i]/_sumScore * 100) : 0;
+        h.sim_win = Math.round(_winCounts[i] / TRIALS * 100);
       });
       
       // sim_rank割り当て
