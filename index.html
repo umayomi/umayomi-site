@@ -1862,7 +1862,11 @@ window.addEventListener('load',()=>{
       const tg = t.getAttribute('data-tg');
       if(tg){
         const el = document.querySelector(tg);
-        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        if(el){
+          const offset = 80; // ヘッダー高さ分
+          const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({top: top, behavior: 'smooth'});
+        }
       }
     });
   });
