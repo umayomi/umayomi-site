@@ -1859,6 +1859,11 @@ window.addEventListener('load',()=>{
     t.addEventListener('click',()=>{
       document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('on'));
       t.classList.add('on');
+      const tg = t.getAttribute('data-tg');
+      if(tg){
+        const el = document.querySelector(tg);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      }
     });
   });
 });
