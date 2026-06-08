@@ -2371,7 +2371,18 @@ function integrateRealData(data){
         venue: venue,
         raceNum: raceNum,
         name: realRace.race_name || `${venue}${raceNum}R`,
-        grade: 'OP',
+        grade: (function(){
+          const vi = realRace.venue_info || '';
+          const pm = vi.match(/本賞金:(\d+),/);
+          const prize = pm ? parseInt(pm[1]) : 0;
+          if(prize >= 18000) return 'G1';
+          if(prize >= 5500) return 'G2';
+          if(prize >= 2300) return 'G3';
+          if(/3勝|３勝/.test(vi)) return '3勝';
+          if(/2勝|２勝/.test(vi)) return '2勝';
+          if(/1勝|１勝/.test(vi)) return '1勝';
+          return 'OP';
+        })(),
         distance: distance,
         age: '3歳上',
         going: '良',
