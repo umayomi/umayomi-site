@@ -1977,24 +1977,28 @@ function parseStatsRaw(raw){
   readStats('horseJockey');
   readStats('jockey');
   readStats('trainer');
-  // 前4走（4要素ずつ：コース・タイム・着順・人気）
+  // 前4走を末尾から4要素ずつ抽出（馬番末尾スキップ）
   const lastRuns = [];
-  while(i + 3 < parts.length){
-    const place = parts[i];
-    const result = parts[i+2];
-    if(!/着/.test(result)) break;
-    lastRuns.push({
-      place: place,
-      time: parts[i+1],
-      result: result,
-      popularity: parts[i+3]
-    });
-    i += 4;
+  let end = parts.length;
+  if(end > 0 && /^\d+$/.test(parts[end-1])) end--;  // 末尾の馬番をスキップ
+  let j = end - 4;
+  while(j >= 0 && lastRuns.length < 4){
+    const r = parts[j+2] || '';
+    if(/着/.test(r)){
+      lastRuns.unshift({
+        place: parts[j],
+        time: parts[j+1],
+        result: r,
+        popularity: parts[j+3]
+      });
+      j -= 4;
+    } else {
+      break;
+    }
   }
   sections.lastRuns = lastRuns;
   return sections;
 }
-
 // 騎手成績：stats_raw の jockey セクション（騎手・場×距離 過去3年）から取得
 function getJockeyStats(jockeyName, venue, surface, horse){
   if(horse && horse.stats_raw){
