@@ -2420,6 +2420,16 @@ function integrateRealData(data){
   });
   
   console.log('✅ 実データ統合完了:', RACE_CALENDAR.length, '日付');
+  
+  // 最も近い未来の日付（なければ最新の過去）を自動選択
+  if(RACE_CALENDAR.length > 0){
+    const today = new Date().toISOString().slice(0,10);
+    const items = RACE_CALENDAR.map((d,i) => ({i, date: d.date}));
+    const future = items.filter(x => x.date >= today).sort((a,b) => a.date.localeCompare(b.date));
+    const past = [...items].sort((a,b) => b.date.localeCompare(a.date));
+    const target = future[0] || past[0];
+    if(target) selectDate(target.i);
+  }
 }
 
 // 初期化
