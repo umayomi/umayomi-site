@@ -1072,6 +1072,7 @@ function renderCards(){
         <div class="hc-name-wrap">
           <div class="hc-name">${h.name}</div>
           <div class="hc-jockey">${h.jockey} / ${h.trainer}</div>
+          ${(h.sireName || h.damSireName) ? `<div style="font-size:11px;color:var(--mut2);margin-top:2px">父: ${h.sireName||'-'} / 母父: ${h.damSireName||'-'}</div>` : ''}
         </div>
       </div>
       <div class="hc-r2">
