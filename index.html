@@ -2331,6 +2331,8 @@ function integrateRealData(data){
         sex_age: h.sex_age || '',
         weight_carried: h.weight_carried || '',
         stats_raw: h.stats_raw || '',
+        sireName: (function(){ const s = parseStatsRaw(h.stats_raw); return (s && s.sireName) || ''; })(),
+        damSireName: (function(){ const s = parseStatsRaw(h.stats_raw); return (s && s.damSireName) || ''; })(),
       }));
       
       // sim_win：1000回モンテカルロシミュレーション
