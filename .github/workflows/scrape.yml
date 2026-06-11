@@ -36,4 +36,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add data/
           git diff --cached --quiet || git commit -m "Auto-update race data $(date +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
           git push
