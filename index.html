@@ -2314,7 +2314,12 @@ function integrateRealData(data){
           }
           return Math.min(99, Math.round(70 + (hv*0.25 + hd*0.20 + hj*0.20 + jk*0.20 + tr*0.15) * 0.25) + classBonus);
         })(),
-        odds: parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || parseFloat(h.odds) || null,
+        odds: (function(){
+          const r = parseFloat(h.odds_tansho) || parseFloat(h['予想オッズ更新']) || parseFloat(h.odds);
+          if(isFinite(r) && r>0) return r;
+          const p = parseInt(h.popularity) || idx+1;
+          return Math.round((1.8 + (p-1)*1.9)*10)/10; // オッズ未確定時は人気から推定
+        })(),
         pop: parseInt(h.popularity) || idx+1,
         oi: Math.floor(Math.random()*3)+2,
         prev: (function(){
