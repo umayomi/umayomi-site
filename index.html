@@ -142,6 +142,8 @@ footer{padding:8px 16px 24px;font-family:var(--f-mono);font-size:10px;color:var(
 <script>
 'use strict';
 let TL = {};
+let LIVE_URL = null;
+let LIVE_ON = false;
 let CUR_VENUE = null;
 let CUR_RACE = null;
 let IS_DEMO = false;
@@ -221,7 +223,7 @@ function render(){
   const hits = detectAll();
   renderTicker(hits);
   $('status').classList.add('live');
-  $('statusTxt').textContent = IS_DEMO ? 'デモ表示' : '観測データ';
+  $('statusTxt').textContent = IS_DEMO ? 'デモ表示' : (LIVE_ON ? 'LIVE' : '観測データ');
 
   const byVenue = {};
   rids.forEach(rid=>{
@@ -341,6 +343,28 @@ function loadDemo(){
   render();
 }
 
+async function pollLive(){
+  if(!LIVE_URL) return;
+  try{
+    const res = await fetch(LIVE_URL + '?t=' + Date.now());
+    if(!res.ok) return;
+    const j = await res.json();
+    if(!j || !j.races) return;
+    let touched = false;
+    for(const [rid, rec] of Object.entries(j.races)){
+      const cur = TL[rid] || {label:rec.label, post_time:rec.post_time, snapshots:[]};
+      const seen = new Set(cur.snapshots.map(s=>s.t));
+      rec.snapshots.forEach(s=>{ if(!seen.has(s.t)){ cur.snapshots.push(s); touched = true; } });
+      cur.snapshots.sort((a,b)=>new Date(a.t)-new Date(b.t));
+      TL[rid] = cur;
+    }
+    if(touched && !IS_DEMO){
+      LIVE_ON = true;
+      $('statusTxt').textContent = 'LIVE';
+      render();
+    }
+  }catch(e){}
+}
 async function boot(){
   try{
     const res = await fetch('./data/odds_timeline.json?t='+Date.now());
@@ -351,6 +375,17 @@ async function boot(){
   }catch(e){}
   renderEmpty(); renderTicker([]);
 }
+(async ()=>{
+  try{
+    const r = await fetch('./data/gist_url.txt?t=' + Date.now());
+    if(r.ok){
+      const txt = (await r.text()).trim();
+      const parts = txt.split('|');
+      if(parts[1]) LIVE_URL = parts[1];
+    }
+  }catch(e){}
+  if(LIVE_URL) setInterval(pollLive, 60000);
+})();
 boot();
 </script>
 </body>
