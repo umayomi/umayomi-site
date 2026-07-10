@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
-オッズ常駐監視 v2（Discord通知メイン）
+オッズ常駐監視 v3（Discord通知 + Gistライブ配信 + 30分毎コミット）
 - 発走まで動的間隔でオッズ記録
   90分超:60分 / 30-90分:15分 / 15-30分:3分 / 15分以内:1分
-- 🔥急落を即時Discord通知
-- 📋発走5分前に急落/高騰サマリーをDiscord通知
-- odds_timeline.json は終了時に1回だけコミット（Vercelデプロイ節約）
+- 🔥急落を即時Discord通知 / 📋発走5分前サマリー
+- 毎サイクル(約60秒毎)Gistへ最新データPATCH → サイトがポーリングしてライブ表示
+- 30分毎に odds_timeline.json をリポジトリへコミット（永続記録）
 
-必要環境変数: DISCORD_WEBHOOK_URL
+必要環境変数:
+  DISCORD_WEBHOOK_URL … Discord通知先（未設定なら通知スキップ）
+  GIST_TOKEN          … gist権限のPAT（未設定ならライブ配信スキップ）
 """
 
 import json
@@ -33,13 +35,19 @@ except ImportError:
 JST = timezone(timedelta(hours=9))
 OUTPUT_DIR = Path("data")
 TIMELINE_FILE = OUTPUT_DIR / "odds_timeline.json"
+GIST_URL_FILE = OUTPUT_DIR / "gist_url.txt"
 END_OF_DAY = "16:40"
 MAX_RUN_SEC = 5 * 3600 + 40 * 60
+COMMIT_INTERVAL_SEC = 1800   # 30分毎にリポジトリコミット
+LIVE_PUSH_MIN_SEC = 55       # Gist更新の最短間隔
+LIVE_SNAPSHOT_KEEP = 25      # ライブ配信に含める直近スナップショット数
 
-DETECT_WINDOW_MIN = 25    # 急落判定の比較窓
-DROP_THRESHOLD = 0.15     # 単勝15%以上の下落で即時通知
-MIN_POPULARITY = 5        # 5番人気以下のみ即時通知対象
-SUMMARY_BEFORE_MIN = 5    # 発走何分前にサマリー送信するか
+DETECT_WINDOW_MIN = 25
+DROP_THRESHOLD = 0.15
+MIN_POPULARITY = 5
+SUMMARY_BEFORE_MIN = 5
+
+GIST_FILENAME = "umayomi_live.json"
 
 
 def now_jst():
@@ -155,13 +163,12 @@ def notify_discord(msg):
         return
     try:
         requests.post(url, json={"content": msg}, timeout=10)
-        print(f"[Discord通知済]")
+        print("[Discord通知済]")
     except Exception as e:
         print(f"Discord送信失敗: {e}")
 
 
 def snapshot_near(entries, target_minutes_ago, latest_t):
-    """latest からおよそ target_minutes_ago 前に最も近いスナップショットを返す"""
     best, best_diff = None, None
     for e in entries:
         et = datetime.fromisoformat(e["t"])
@@ -241,13 +248,90 @@ def send_summary(race, timeline):
     notify_discord("\n".join(lines))
 
 
-def git_commit():
+# ============ Gist ライブ配信 ============
+class GistLive:
+    def __init__(self):
+        self.token = os.environ.get("GIST_TOKEN", "").strip()
+        self.gist_id = None
+        self.raw_url = None
+        self.last_push = 0
+        self.pending_commit_urlfile = False
+        if not self.token:
+            print("GIST_TOKEN 未設定 → ライブ配信スキップ")
+            return
+        self._ensure_gist()
+
+    def _headers(self):
+        return {"Authorization": f"Bearer {self.token}",
+                "Accept": "application/vnd.github+json"}
+
+    def _ensure_gist(self):
+        if GIST_URL_FILE.exists():
+            try:
+                gid, raw = GIST_URL_FILE.read_text().strip().split("|", 1)
+                self.gist_id, self.raw_url = gid, raw
+                print(f"Gist再利用: {gid}")
+                return
+            except Exception:
+                pass
+        try:
+            r = requests.post("https://api.github.com/gists", headers=self._headers(),
+                              json={"description": "umayomi live odds",
+                                    "public": False,
+                                    "files": {GIST_FILENAME: {"content": "{}"}}},
+                              timeout=15)
+            r.raise_for_status()
+            j = r.json()
+            self.gist_id = j["id"]
+            owner = j["owner"]["login"]
+            self.raw_url = f"https://gist.githubusercontent.com/{owner}/{self.gist_id}/raw/{GIST_FILENAME}"
+            GIST_URL_FILE.write_text(f"{self.gist_id}|{self.raw_url}")
+            self.pending_commit_urlfile = True
+            print(f"Gist新規作成: {self.gist_id}")
+        except Exception as e:
+            print(f"Gist作成失敗（ライブ配信なしで続行）: {e}")
+            self.token = ""
+
+    def push(self, timeline, races):
+        if not self.token or not self.gist_id:
+            return
+        if time.time() - self.last_push < LIVE_PUSH_MIN_SEC:
+            return
+        live = {}
+        for race in races:
+            rid = race["race_id"]
+            rec = timeline.get(rid)
+            if not rec:
+                continue
+            mins = (race["post_time"] - now_jst()).total_seconds() / 60
+            if mins < -3 or mins > 45:   # 発走45分前〜発走後3分だけ配信
+                continue
+            live[rid] = {
+                "label": rec["label"],
+                "post_time": rec["post_time"],
+                "snapshots": rec["snapshots"][-LIVE_SNAPSHOT_KEEP:],
+            }
+        payload = {"updated": now_jst().isoformat(), "races": live}
+        try:
+            requests.patch(f"https://api.github.com/gists/{self.gist_id}",
+                           headers=self._headers(),
+                           json={"files": {GIST_FILENAME: {
+                               "content": json.dumps(payload, ensure_ascii=False)}}},
+                           timeout=15)
+            self.last_push = time.time()
+            print(f"  [live] Gist更新 {len(live)}レース")
+        except Exception as e:
+            print(f"  [live] Gist更新失敗: {e}")
+
+
+def git_commit(extra_paths=None):
     try:
-        subprocess.run(["git", "add", str(TIMELINE_FILE)], check=True)
+        paths = [str(TIMELINE_FILE)] + (extra_paths or [])
+        subprocess.run(["git", "add"] + paths, check=True)
         r = subprocess.run(["git", "diff", "--cached", "--quiet"])
         if r.returncode == 0:
             return
-        subprocess.run(["git", "commit", "-m", "odds timeline (daily)"], check=True)
+        subprocess.run(["git", "commit", "-m", "odds timeline update"], check=True)
         subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
         subprocess.run(["git", "push"], check=True)
         print("✅ commit & push")
@@ -271,10 +355,16 @@ def main():
         except Exception:
             timeline = {}
 
+    gist = GistLive()
     driver = create_driver()
     notified = set()
     summarized = set()
     next_fetch = {r["race_id"]: now_jst() for r in races}
+    last_commit = time.time()
+
+    # gist_url.txt を初回だけコミット（サイトがURLを知るため）
+    if gist.pending_commit_urlfile:
+        git_commit(extra_paths=[str(GIST_URL_FILE)])
 
     try:
         while now_jst() < end_time and (time.time() - start) < MAX_RUN_SEC:
@@ -282,10 +372,10 @@ def main():
             if not active:
                 print("全レース発走済み。終了")
                 break
+            fetched_any = False
             for race in active:
                 rid = race["race_id"]
                 mins = (race["post_time"] - now_jst()).total_seconds() / 60
-                # サマリー送信タイミング（発走5分前を過ぎたら1回）
                 if rid not in summarized and mins <= SUMMARY_BEFORE_MIN + 1:
                     odds = fetch_odds(driver, rid)
                     if odds:
@@ -293,6 +383,7 @@ def main():
                                                   "post_time": race["post_time"].isoformat(),
                                                   "snapshots": []})["snapshots"].append(
                             {"t": now_jst().isoformat(), "odds": odds})
+                        fetched_any = True
                     send_summary(race, timeline)
                     summarized.add(rid)
                     next_fetch[rid] = now_jst() + timedelta(seconds=60)
@@ -306,15 +397,23 @@ def main():
                                                     "snapshots": []})
                     rec["snapshots"].append({"t": now_jst().isoformat(), "odds": odds})
                     detect_surge(race, timeline, notified)
+                    fetched_any = True
                 next_fetch[rid] = now_jst() + timedelta(seconds=interval_for(mins))
                 print(f"  {race['label']} 残{mins:.0f}分 次回{interval_for(mins)}秒後")
+            if fetched_any:
+                gist.push(timeline, races)
+            if time.time() - last_commit > COMMIT_INTERVAL_SEC:
+                TIMELINE_FILE.write_text(
+                    json.dumps(timeline, ensure_ascii=False, indent=1), encoding="utf-8")
+                git_commit()
+                last_commit = time.time()
             time.sleep(15)
     finally:
         driver.quit()
         TIMELINE_FILE.write_text(
             json.dumps(timeline, ensure_ascii=False, indent=1), encoding="utf-8")
         git_commit()
-        print("終了（コミットは1日1回）")
+        print("終了")
 
 
 main()
