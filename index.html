@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ウマヨミ — 電光オッズ板</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d12;
+  --panel:#12151d;
+  --panel2:#171b26;
+  --line:#232838;
+  --txt:#e8eaf2;
+  --mut:#8a91a6;
+  --dim:#565d73;
+  --amber:#ffb627;
+  --fire:#ff6b4a;
+  --ice:#38bdf8;
+  --ok:#4ade80;
+  --f-dot:'DotGothic16',monospace;
+  --f-mono:'IBM Plex Mono',monospace;
+  --f-body:'Zen Kaku Gothic New',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:var(--ink)}
+body{background:var(--ink);color:var(--txt);font-family:var(--f-body);min-height:100vh;
+  padding-bottom:60px;line-height:1.6}
+
+header{padding:calc(14px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:baseline;gap:10px}
+.logo{font-family:var(--f-dot);font-size:22px;color:var(--amber);letter-spacing:2px;
+  text-shadow:0 0 12px rgba(255,182,39,.45)}
+.logo-sub{font-family:var(--f-mono);font-size:10px;color:var(--dim);letter-spacing:3px}
+.status{margin-left:auto;font-family:var(--f-mono);font-size:10px;color:var(--mut);
+  display:flex;align-items:center;gap:5px}
+.status .dot{width:7px;height:7px;border-radius:50%;background:var(--dim)}
+.status.live .dot{background:var(--ok);box-shadow:0 0 8px var(--ok);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+
+.ticker{background:#05060a;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  overflow:hidden;height:34px;position:relative}
+.ticker-rail{position:absolute;white-space:nowrap;display:flex;gap:44px;align-items:center;height:100%;
+  animation:rail 30s linear infinite;will-change:transform}
+@keyframes rail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tk{font-family:var(--f-dot);font-size:14px;letter-spacing:1px;color:var(--amber);
+  text-shadow:0 0 8px rgba(255,182,39,.35)}
+.tk .f{color:var(--fire);text-shadow:0 0 8px rgba(255,107,74,.45)}
+.tk .q{color:var(--dim);text-shadow:none}
+@media(prefers-reduced-motion:reduce){.ticker-rail{animation:none}}
+
+.nav{padding:12px 16px 4px}
+.venues{display:flex;gap:8px;margin-bottom:8px}
+.vtab{font-family:var(--f-body);font-weight:700;font-size:13px;padding:7px 16px;border-radius:4px;
+  border:1px solid var(--line);background:transparent;color:var(--mut);cursor:pointer}
+.vtab.on{color:var(--ink);background:var(--amber);border-color:var(--amber);
+  box-shadow:0 0 14px rgba(255,182,39,.35)}
+.rchips{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:4px 0 10px;
+  scrollbar-width:none}
+.rchips::-webkit-scrollbar{display:none}
+.rchip{font-family:var(--f-mono);font-size:12px;padding:6px 11px;border-radius:4px;flex-shrink:0;
+  border:1px solid var(--line);background:var(--panel);color:var(--mut);cursor:pointer;position:relative}
+.rchip.on{color:var(--amber);border-color:var(--amber)}
+.rchip .flame{position:absolute;top:-6px;right:-4px;font-size:11px}
+
+.board{margin:4px 12px 18px;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  overflow:hidden}
+.board-h{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;
+  gap:6px 14px;align-items:baseline}
+.board-name{font-weight:700;font-size:15px}
+.board-meta{font-family:var(--f-mono);font-size:11px;color:var(--mut)}
+.board-meta em{font-style:normal;color:var(--amber)}
+.legend{padding:8px 14px 0;font-family:var(--f-mono);font-size:10px;color:var(--dim);
+  display:flex;gap:14px}
+.legend .lf::before{content:'▼';color:var(--fire);margin-right:3px}
+.legend .li::before{content:'▲';color:var(--ice);margin-right:3px}
+
+.hrow{display:grid;grid-template-columns:34px 1fr 92px 64px;gap:8px;align-items:center;
+  padding:10px 14px;border-bottom:1px solid var(--line)}
+.hrow:last-child{border-bottom:none}
+.hrow.hot{background:linear-gradient(90deg,rgba(255,107,74,.10),transparent 65%)}
+.uma{font-family:var(--f-dot);font-size:17px;color:var(--txt);width:34px;height:34px;
+  border:1px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;
+  background:var(--pan2, var(--panel2))}
+.hot .uma{border-color:var(--fire);color:var(--fire);text-shadow:0 0 8px rgba(255,107,74,.5)}
+.spark-wrap{min-width:0}
+.spark{width:100%;height:26px;display:block}
+.rankmove{font-family:var(--f-mono);font-size:9px;color:var(--dim);margin-top:1px}
+.rankmove b{color:var(--mut);font-weight:500}
+.odds-col{text-align:right;font-family:var(--f-mono)}
+.odds-now{font-size:16px;font-weight:600;color:var(--amber)}
+.hot .odds-now{color:var(--fire)}
+.odds-from{font-size:10px;color:var(--dim)}
+.delta{text-align:right;font-family:var(--f-mono);font-size:13px;font-weight:600}
+.delta.dn{color:var(--fire)}
+.delta.up{color:var(--ice)}
+.delta.fl{color:var(--dim)}
+
+.sec-t{font-family:var(--f-dot);font-size:14px;color:var(--amber);letter-spacing:2px;
+  padding:6px 16px;display:flex;align-items:center;gap:8px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--line)}
+.feed{margin:6px 12px 20px;display:flex;flex-direction:column;gap:6px}
+.fe{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--fire);
+  border-radius:0 6px 6px 0;padding:10px 12px;display:flex;gap:10px;align-items:baseline;cursor:pointer}
+.fe-t{font-family:var(--f-mono);font-size:10px;color:var(--dim);flex-shrink:0}
+.fe-b{font-size:13px}
+.fe-b b{color:var(--fire);font-weight:700}
+.fe-b .mono{font-family:var(--f-mono)}
+.empty-feed{margin:6px 16px 20px;font-size:12px;color:var(--dim)}
+
+.empty{margin:40px 20px;text-align:center}
+.empty-board{font-family:var(--f-dot);font-size:16px;color:var(--amber);letter-spacing:2px;
+  border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:34px 16px;
+  text-shadow:0 0 10px rgba(255,182,39,.4);line-height:2.2}
+.empty-note{font-size:12px;color:var(--mut);margin-top:14px}
+.demo-btn{margin-top:18px;font-family:var(--f-mono);font-size:12px;letter-spacing:1px;
+  padding:11px 22px;border-radius:4px;border:1px solid var(--amber);background:transparent;
+  color:var(--amber);cursor:pointer}
+.demo-btn:active{background:var(--amber);color:var(--ink)}
+.demo-tag{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom));right:12px;z-index:9;
+  font-family:var(--f-mono);font-size:10px;color:var(--ink);background:var(--amber);
+  padding:4px 10px;border-radius:3px;letter-spacing:1px;display:none}
+
+footer{padding:8px 16px 24px;font-family:var(--f-mono);font-size:10px;color:var(--dim);text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="logo">ウマヨミ</span>
+  <span class="logo-sub">ODDS BOARD</span>
+  <span class="status" id="status"><span class="dot"></span><span id="statusTxt">待機</span></span>
+</header>
+
+<div class="ticker"><div class="ticker-rail" id="tickerRail"></div></div>
+
+<div id="app"></div>
+<div class="demo-tag" id="demoTag">DEMO DATA</div>
+
+<footer>ウマヨミ — 直前オッズの動きを読む観測所</footer>
+
+<script>
+'use strict';
+let TL = {};
+let CUR_VENUE = null;
+let CUR_RACE = null;
+let IS_DEMO = false;
+const VENUES = {"01":"札幌","02":"函館","03":"福島","04":"新潟","05":"東京","06":"中山","07":"中京","08":"京都","09":"阪神","10":"小倉"};
+
+const $ = id => document.getElementById(id);
+const fmtT = iso => { const d=new Date(iso); return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0'); };
+function rankOf(odds, u){
+  const s = Object.entries(odds).map(([k,v])=>[k,v.tan]).sort((a,b)=>a[1]-b[1]);
+  return s.findIndex(x=>x[0]===u)+1;
+}
+function raceRows(rec){
+  const snaps = rec.snapshots||[];
+  if(!snaps.length) return [];
+  const first = snaps[0], last = snaps[snaps.length-1];
+  const rows = [];
+  for(const u of Object.keys(last.odds)){
+    const now = last.odds[u].tan, from = first.odds[u] ? first.odds[u].tan : now;
+    const chg = from ? (now-from)/from : 0;
+    const series = snaps.map(s => s.odds[u] ? s.odds[u].tan : null).filter(v=>v!=null);
+    rows.push({u, from, now, chg, series,
+      r0: first.odds[u] ? rankOf(first.odds,u) : null, r1: rankOf(last.odds,u)});
+  }
+  rows.sort((a,b)=>a.chg-b.chg);
+  return rows;
+}
+function detectAll(){
+  const hits = [];
+  for(const [rid, rec] of Object.entries(TL)){
+    const snaps = rec.snapshots||[];
+    for(let i=1;i<snaps.length;i++){
+      const cur = snaps[i], t = new Date(cur.t);
+      let base = null;
+      for(const s of snaps.slice(0,i)){
+        if((t - new Date(s.t)) <= 25*60*1000){ base = s; break; }
+      }
+      if(!base) continue;
+      for(const [u,v] of Object.entries(cur.odds)){
+        const p = base.odds[u];
+        if(!p||!p.tan||!v.tan) continue;
+        const drop = (p.tan - v.tan)/p.tan;
+        if(drop >= 0.15 && rankOf(cur.odds,u) >= 5){
+          const key = rid+'-'+u;
+          if(!hits.find(h=>h.key===key))
+            hits.push({key, rid, label:rec.label||rid, u,
+              from:p.tan, to:v.tan, drop, t:cur.t});
+        }
+      }
+    }
+  }
+  hits.sort((a,b)=>new Date(b.t)-new Date(a.t));
+  return hits;
+}
+
+function drawSpark(cv, series, hot){
+  const w = cv.clientWidth||160, h = 26;
+  cv.width = w*2; cv.height = h*2;
+  const c = cv.getContext('2d'); c.scale(2,2);
+  if(series.length<2){ c.fillStyle='#565d73'; c.fillRect(0,h/2,w,1); return; }
+  const mn=Math.min(...series), mx=Math.max(...series), rng=(mx-mn)||1;
+  const xs=i=>i/(series.length-1)*(w-4)+2;
+  const ys=v=>3+(v-mn)/rng*(h-6);
+  c.beginPath();
+  series.forEach((v,i)=>{ i?c.lineTo(xs(i),ys(v)):c.moveTo(xs(i),ys(v)); });
+  c.strokeStyle = hot ? '#ff6b4a' : '#8a91a6';
+  c.lineWidth = 1.5; c.stroke();
+  const lv=series[series.length-1];
+  c.beginPath(); c.arc(xs(series.length-1),ys(lv),2.5,0,Math.PI*2);
+  c.fillStyle = hot ? '#ff6b4a' : '#ffb627'; c.fill();
+}
+
+function render(){
+  const app = $('app');
+  const rids = Object.keys(TL);
+  if(!rids.length){ renderEmpty(); renderTicker([]); return; }
+
+  const hits = detectAll();
+  renderTicker(hits);
+  $('status').classList.add('live');
+  $('statusTxt').textContent = IS_DEMO ? 'デモ表示' : '観測データ';
+
+  const byVenue = {};
+  rids.forEach(rid=>{
+    const v = VENUES[rid.slice(4,6)]||'他';
+    (byVenue[v]=byVenue[v]||[]).push(rid);
+  });
+  if(!CUR_VENUE || !byVenue[CUR_VENUE]) CUR_VENUE = Object.keys(byVenue)[0];
+  const vraces = byVenue[CUR_VENUE].sort((a,b)=>+a.slice(10,12)-+b.slice(10,12));
+  if(!CUR_RACE || !vraces.includes(CUR_RACE)) CUR_RACE = vraces[0];
+
+  const rec = TL[CUR_RACE];
+  const rows = raceRows(rec);
+  const snaps = rec.snapshots||[];
+  const lastT = snaps.length ? fmtT(snaps[snaps.length-1].t) : '--:--';
+  const postT = rec.post_time ? fmtT(rec.post_time) : '';
+  const hotSet = new Set(hits.map(h=>h.key));
+
+  app.innerHTML =
+  '<div class="nav"><div class="venues">' +
+  Object.keys(byVenue).map(v=>'<button class="vtab '+(v===CUR_VENUE?'on':'')+'" onclick="setVenue(\''+v+'\')">'+v+'</button>').join('') +
+  '</div><div class="rchips">' +
+  vraces.map(rid=>{
+    const rn = +rid.slice(10,12);
+    const flame = hits.some(h=>h.rid===rid) ? '<span class="flame">🔥</span>' : '';
+    return '<button class="rchip '+(rid===CUR_RACE?'on':'')+'" onclick="setRace(\''+rid+'\')">'+rn+'R'+flame+'</button>';
+  }).join('') +
+  '</div></div>' +
+
+  '<div class="board"><div class="board-h">' +
+  '<span class="board-name">'+(rec.label||CUR_RACE)+'</span>' +
+  '<span class="board-meta">発走 <em>'+postT+'</em> ・ 更新 '+lastT+' ・ 記録'+snaps.length+'回</span>' +
+  '</div>' +
+  '<div class="legend"><span class="lf">買われた（オッズ下落）</span><span class="li">見放され（上昇）</span></div>' +
+  rows.map(r=>{
+    const hot = hotSet.has(CUR_RACE+'-'+r.u);
+    const cls = r.chg<=-0.03?'dn':r.chg>=0.03?'up':'fl';
+    const sign = r.chg>0?'+':'';
+    const rm = (r.r0&&r.r0!==r.r1)?(r.r0+'→<b>'+r.r1+'</b>人気'):(r.r1+'人気');
+    return '<div class="hrow '+(hot?'hot':'')+'">' +
+      '<div class="uma">'+r.u+'</div>' +
+      '<div class="spark-wrap"><canvas class="spark" data-u="'+r.u+'"></canvas>' +
+      '<div class="rankmove">'+rm+'</div></div>' +
+      '<div class="odds-col"><div class="odds-now">'+r.now.toFixed(1)+'</div>' +
+      '<div class="odds-from">← '+r.from.toFixed(1)+'</div></div>' +
+      '<div class="delta '+cls+'">'+sign+(r.chg*100).toFixed(0)+'%</div></div>';
+  }).join('') +
+  '</div>' +
+
+  '<div class="sec-t">検知ログ</div>' +
+  (hits.length ?
+    '<div class="feed">'+hits.map(h=>
+      '<div class="fe" onclick="jump(\''+h.rid+'\')">' +
+      '<span class="fe-t">'+fmtT(h.t)+'</span>' +
+      '<span class="fe-b">'+h.label+' <b>'+h.u+'番</b> ' +
+      '<span class="mono">'+h.from.toFixed(1)+'→'+h.to.toFixed(1)+'</span> ' +
+      '<b>-'+(h.drop*100).toFixed(0)+'%</b></span></div>').join('')+'</div>'
+    : '<div class="empty-feed">まだ急落は検知されていません。基準：25分内に単勝-15%（5番人気以下）。</div>');
+
+  requestAnimationFrame(()=>{
+    document.querySelectorAll('.spark').forEach(cv=>{
+      const r = rows.find(x=>x.u===cv.dataset.u);
+      if(r) drawSpark(cv, r.series, hotSet.has(CUR_RACE+'-'+r.u));
+    });
+  });
+}
+
+function renderTicker(hits){
+  const rail = $('tickerRail');
+  let items;
+  if(hits.length){
+    items = hits.slice(0,8).map(h=>
+      '<span class="tk"><span class="f">▼'+(h.drop*100).toFixed(0)+'%</span> '+h.label+' '+h.u+'番 <span class="q">'+h.from.toFixed(1)+'→'+h.to.toFixed(1)+'</span></span>');
+  } else {
+    items = ['<span class="tk"><span class="q">— 急落待機中 — 25分内 単勝-15%で点灯 —</span></span>'];
+  }
+  const half = items.join('');
+  rail.innerHTML = half + half;
+}
+
+function renderEmpty(){
+  $('app').innerHTML =
+  '<div class="empty"><div class="empty-board">観測は開催日<br>9:00に始まります</div>' +
+  '<div class="empty-note">土日、発走90分前から締切1分前まで<br>オッズの動きを自動記録・急落を検知します</div>' +
+  '<button class="demo-btn" onclick="loadDemo()">デモデータで盤面を見る</button></div>';
+}
+
+function setVenue(v){ CUR_VENUE=v; CUR_RACE=null; render(); }
+function setRace(rid){ CUR_RACE=rid; render(); }
+function jump(rid){ CUR_VENUE=VENUES[rid.slice(4,6)]||'他'; CUR_RACE=rid; render(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+function loadDemo(){
+  IS_DEMO = true; $('demoTag').style.display='block';
+  const now = Date.now();
+  const mk = (label,nH,surgeU)=>{
+    const snaps=[]; const base={};
+    for(let u=1;u<=nH;u++) base[u]= 1.5 + Math.pow(u,1.6)*1.8 + Math.random()*3;
+    for(let i=0;i<14;i++){
+      const t = new Date(now - (14-i)*5*60*1000).toISOString();
+      const odds={};
+      for(let u=1;u<=nH;u++){
+        let v = base[u]*(1+(Math.random()-.5)*.04);
+        if(u===surgeU && i>=9) v = base[u]*(1 - .05*(i-8));
+        if(u===2 && i>=10) v = base[u]*(1 + .06*(i-9));
+        odds[String(u)]={tan:Math.max(1.1,Math.round(v*10)/10),fuku:null};
+      }
+      snaps.push({t,odds});
+    }
+    return {label, post_time:new Date(now+6*60*1000).toISOString(), snapshots:snaps};
+  };
+  TL = {
+    '202602010105': mk('函館5R 2歳新馬',12,8),
+    '202602010107': mk('函館7R 3歳上1勝',14,11),
+    '202610010106': mk('小倉6R 2歳未勝利',10,7),
+    '202603010104': mk('福島4R 3歳未勝利',15,13),
+  };
+  CUR_VENUE=null; CUR_RACE=null;
+  render();
+}
+
+async function boot(){
+  try{
+    const res = await fetch('./data/odds_timeline.json?t='+Date.now());
+    if(res.ok){
+      const data = await res.json();
+      if(data && Object.keys(data).length){ TL = data; render(); return; }
+    }
+  }catch(e){}
+  renderEmpty(); renderTicker([]);
+}
+boot();
+</script>
+</body>
+</html>
