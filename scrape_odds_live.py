@@ -100,6 +100,7 @@ def load_today_races():
 
 
 def fetch_odds(driver, race_id):
+    """単勝・複勝オッズ取得（馬番はclass/ヘッダーで厳密特定。枠番誤検出対策）"""
     url = f'https://race.netkeiba.com/odds/index.html?race_id={race_id}&type=b1'
     try:
         driver.get(url)
@@ -108,30 +109,69 @@ def fetch_odds(driver, race_id):
         table = soup.select_one("table.RaceOdds_HorseList_Table, table.Odds_Table")
         if not table:
             return {}
+        rows = table.find_all("tr")
+        if len(rows) < 2:
+            return {}
+
+        # ヘッダーから列位置を特定（「枠」「枠番」は不一致、「馬番」のみ一致）
+        headers = [c.get_text(strip=True) for c in rows[0].find_all(["th", "td"])]
+        uma_idx = tan_idx = fuku_idx = -1
+        for i, h in enumerate(headers):
+            if "馬番" in h and uma_idx == -1:
+                uma_idx = i
+            elif ("単勝" in h or "オッズ" in h) and tan_idx == -1:
+                tan_idx = i
+            elif "複勝" in h and fuku_idx == -1:
+                fuku_idx = i
+
+        def dec(s):
+            return float(s) if re.match(r"^\d+\.\d+$", s) else None
+
         odds = {}
-        for row in table.find_all("tr")[1:]:
+        data_rows = 0
+        for row in rows[1:]:
             cols = row.find_all("td")
-            if len(cols) < 4:
+            if len(cols) < 3:
                 continue
+            data_rows += 1
             umaban = ""
-            for col in cols[:3]:
-                t = col.get_text(strip=True)
+            # 戦略1: class に Umaban を含むセル（netkeiba標準マークアップ）
+            uc = row.select_one('td[class*="Umaban"], td[class*="umaban"]')
+            if uc:
+                t = uc.get_text(strip=True)
                 if t.isdigit():
                     umaban = t
-                    break
+            # 戦略2: ヘッダー「馬番」列
+            if not umaban and 0 <= uma_idx < len(cols):
+                t = cols[uma_idx].get_text(strip=True)
+                if t.isdigit():
+                    umaban = t
             if not umaban:
                 continue
-            vals = []
-            for col in cols:
-                t = col.get_text(strip=True)
-                if re.match(r"^\d+\.\d+$", t):
-                    vals.append(float(t))
-                else:
-                    mm = re.match(r"^(\d+\.\d+)\s*-\s*(\d+\.\d+)$", t)
-                    if mm:
-                        vals.append(float(mm.group(1)))
-            if vals:
-                odds[umaban] = {"tan": vals[0], "fuku": vals[1] if len(vals) > 1 else None}
+            tan = None
+            fuku = None
+            if 0 <= tan_idx < len(cols):
+                tan = dec(cols[tan_idx].get_text(strip=True))
+            if 0 <= fuku_idx < len(cols):
+                m = re.match(r"^(\d+\.\d+)", cols[fuku_idx].get_text(strip=True))
+                if m:
+                    fuku = float(m.group(1))
+            if tan is None:
+                for col in cols:
+                    v = dec(col.get_text(strip=True))
+                    if v is not None:
+                        tan = v
+                        break
+            if tan is not None:
+                odds[umaban] = {"tan": tan, "fuku": fuku}
+
+        # 自己検証: 頭数に対して馬番が8以下しか無い＝枠番疑い → 破棄して警告
+        if odds and data_rows >= 9:
+            if max(int(u) for u in odds.keys()) <= 8:
+                print(f"    [WARN] 枠番誤検出の疑い（{data_rows}行中 max馬番{max(int(u) for u in odds.keys())}）→ このスナップショット破棄")
+                return {}
+        if odds and len(odds) < data_rows * 0.7:
+            print(f"    [WARN] 取得数不足 {len(odds)}/{data_rows}行")
         return odds
     except Exception as e:
         print(f"    odds error {race_id}: {e}")
@@ -354,6 +394,10 @@ def main():
             timeline = json.loads(TIMELINE_FILE.read_text(encoding="utf-8"))
         except Exception:
             timeline = {}
+    # 当日以外の記録を削除（盤面の鮮度維持・過去の誤データ排除）
+    today_prefix = now_jst().strftime("%Y-%m-%d")
+    timeline = {rid: rec for rid, rec in timeline.items()
+                if str(rec.get("post_time", "")).startswith(today_prefix)}
 
     gist = GistLive()
     driver = create_driver()
