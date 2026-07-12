@@ -219,6 +219,10 @@ def snapshot_near(entries, target_minutes_ago, latest_t):
 
 
 def detect_surge(race, timeline, notified):
+    # パドック時間帯（発走35分前以降）のみ通知対象
+    mins_left = (race["post_time"] - now_jst()).total_seconds() / 60
+    if mins_left > 35:
+        return
     entries = timeline.get(race["race_id"], {}).get("snapshots", [])
     if len(entries) < 2:
         return
@@ -258,8 +262,12 @@ def send_summary(race, timeline):
         return
     latest = entries[-1]
     latest_t = datetime.fromisoformat(latest["t"])
-    base = snapshot_near(entries[:-1], 30, latest_t)
+    base = snapshot_near(entries[:-1], DETECT_WINDOW_MIN, latest_t)
     if not base:
+        return
+    # 基準が古すぎる比較（35分超前）はノイズ源なので除外
+    base_age = (latest_t - datetime.fromisoformat(base["t"])).total_seconds() / 60
+    if base_age > DETECT_WINDOW_MIN + 10:
         return
     moves = []
     for umaban, cur in latest["odds"].items():
