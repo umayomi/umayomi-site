@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-16T21:55:39.007124",
+ "updated_at": "2026-07-17T21:41:34.189742",
  "race_count": 72,
  "races": {
   "202603020701": {
@@ -141,8 +141,8 @@
    "venue": "小倉",
    "race_no": 1,
    "start_time": "09:55",
-   "course": "芝2860m",
-   "course_info": "09:55発走 芝2860m",
+   "course": "障2860m",
+   "course_info": "09:55発走 障2860m",
    "is_past": false
   },
   "202610020702": {
