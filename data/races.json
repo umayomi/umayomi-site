@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-17T21:41:34.189742",
+ "updated_at": "2026-07-18T21:43:07.360107",
  "race_count": 72,
  "races": {
   "202603020701": {
@@ -63,9 +63,9 @@
    "race_name": "3歳未勝利",
    "venue": "福島",
    "race_no": 6,
-   "start_time": "13:00",
+   "start_time": "13:01",
    "course": "ダ1700m",
-   "course_info": "13:00発走 ダ1700m",
+   "course_info": "13:01発走 ダ1700m",
    "is_past": false
   },
   "202603020707": {
@@ -537,8 +537,8 @@
    "venue": "小倉",
    "race_no": 1,
    "start_time": "10:05",
-   "course": "芝2860m",
-   "course_info": "10:05発走 芝2860m",
+   "course": "障2860m",
+   "course_info": "10:05発走 障2860m",
    "is_past": false
   },
   "202610020802": {
