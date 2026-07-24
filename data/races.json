@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-23T21:58:37.145810",
+ "updated_at": "2026-07-24T21:55:30.621079",
  "race_count": 72,
  "races": {
   "202604020101": {
@@ -97,8 +97,8 @@
    "venue": "新潟",
    "race_no": 9,
    "start_time": "16:55",
-   "course": "芝2850m",
-   "course_info": "16:55発走 芝2850m",
+   "course": "障2850m",
+   "course_info": "16:55発走 障2850m",
    "is_past": false
   },
   "202604020110": {
