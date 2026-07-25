@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-24T21:55:30.621079",
+ "updated_at": "2026-07-25T21:44:11.605696",
  "race_count": 72,
  "races": {
   "202604020101": {
@@ -107,9 +107,9 @@
    "race_name": "3歳未勝利",
    "venue": "新潟",
    "race_no": 10,
-   "start_time": "17:30",
+   "start_time": "17:35",
    "course": "ダ1800m",
-   "course_info": "17:30発走 ダ1800m",
+   "course_info": "17:35発走 ダ1800m",
    "is_past": false
   },
   "202604020111": {
@@ -195,9 +195,9 @@
    "race_name": "四日市特別",
    "venue": "中京",
    "race_no": 6,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "ダ1400m",
-   "course_info": "15:00発走 ダ1400m",
+   "course_info": "15:01発走 ダ1400m",
    "is_past": false
   },
   "202607020107": {
@@ -393,9 +393,9 @@
    "race_name": "桑園特別",
    "venue": "札幌",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "ダ1700m",
-   "course_info": "16:00発走 ダ1700m",
+   "course_info": "16:01発走 ダ1700m",
    "is_past": false
   },
   "202604020201": {
@@ -493,8 +493,8 @@
    "venue": "新潟",
    "race_no": 9,
    "start_time": "16:55",
-   "course": "芝2850m",
-   "course_info": "16:55発走 芝2850m",
+   "course": "障2850m",
+   "course_info": "16:55発走 障2850m",
    "is_past": false
   },
   "202604020210": {
