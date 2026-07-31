@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-30T21:58:56.506982",
+ "updated_at": "2026-07-31T21:57:04.544377",
  "race_count": 72,
  "races": {
   "202604020301": {
@@ -229,8 +229,8 @@
    "venue": "中京",
    "race_no": 9,
    "start_time": "16:45",
-   "course": "芝3000m",
-   "course_info": "16:45発走 芝3000m",
+   "course": "障3000m",
+   "course_info": "16:45発走 障3000m",
    "is_past": false
   },
   "202607020310": {
