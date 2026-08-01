@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-31T21:57:04.544377",
+ "updated_at": "2026-08-01T21:46:50.633870",
  "race_count": 72,
  "races": {
   "202604020301": {
@@ -52,9 +52,9 @@
    "race_name": "3歳未勝利",
    "venue": "新潟",
    "race_no": 5,
-   "start_time": "11:50",
+   "start_time": "11:55",
    "course": "ダ1200m",
-   "course_info": "11:50発走 ダ1200m",
+   "course_info": "11:55発走 ダ1200m",
    "is_past": false
   },
   "202604020306": {
@@ -195,9 +195,9 @@
    "race_name": "桶狭間S",
    "venue": "中京",
    "race_no": 6,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "ダ1400m",
-   "course_info": "15:00発走 ダ1400m",
+   "course_info": "15:01発走 ダ1400m",
    "is_past": false
   },
   "202607020307": {
@@ -393,9 +393,9 @@
    "race_name": "大倉山特別",
    "venue": "札幌",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "ダ1700m",
-   "course_info": "16:00発走 ダ1700m",
+   "course_info": "16:01発走 ダ1700m",
    "is_past": false
   },
   "202604020401": {
@@ -625,8 +625,8 @@
    "venue": "中京",
    "race_no": 9,
    "start_time": "16:45",
-   "course": "芝3000m",
-   "course_info": "16:45発走 芝3000m",
+   "course": "障3000m",
+   "course_info": "16:45発走 障3000m",
    "is_past": false
   },
   "202607020410": {
