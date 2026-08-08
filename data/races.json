@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-07T21:28:17.643509",
+ "updated_at": "2026-08-08T21:19:42.508135",
  "race_count": 72,
  "races": {
   "202604020501": {
@@ -52,9 +52,9 @@
    "race_name": "3歳未勝利",
    "venue": "新潟",
    "race_no": 5,
-   "start_time": "11:40",
+   "start_time": "11:45",
    "course": "ダ1800m",
-   "course_info": "11:40発走 ダ1800m",
+   "course_info": "11:45発走 ダ1800m",
    "is_past": false
   },
   "202604020506": {
@@ -63,9 +63,9 @@
    "race_name": "三面川特別",
    "venue": "新潟",
    "race_no": 6,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "芝1800m",
-   "course_info": "15:00発走 芝1800m",
+   "course_info": "15:01発走 芝1800m",
    "is_past": false
   },
   "202604020507": {
@@ -349,9 +349,9 @@
    "race_name": "3歳未勝利",
    "venue": "札幌",
    "race_no": 8,
-   "start_time": "13:50",
+   "start_time": "13:55",
    "course": "芝1200m",
-   "course_info": "13:50発走 芝1200m",
+   "course_info": "13:55発走 芝1200m",
    "is_past": false
   },
   "202601010509": {
@@ -393,9 +393,9 @@
    "race_name": "摩周湖特別",
    "venue": "札幌",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "芝1500m",
-   "course_info": "16:00発走 芝1500m",
+   "course_info": "16:01発走 芝1500m",
    "is_past": false
   },
   "202604020601": {
@@ -625,8 +625,8 @@
    "venue": "中京",
    "race_no": 9,
    "start_time": "16:55",
-   "course": "芝3000m",
-   "course_info": "16:55発走 芝3000m",
+   "course": "障3000m",
+   "course_info": "16:55発走 障3000m",
    "is_past": false
   },
   "202607020610": {
