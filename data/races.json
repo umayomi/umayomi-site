@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-13T21:34:49.691519",
+ "updated_at": "2026-08-14T21:15:45.607912",
  "race_count": 72,
  "races": {
   "202604020701": {
@@ -151,9 +151,9 @@
    "race_name": "3歳未勝利",
    "venue": "中京",
    "race_no": 2,
-   "start_time": "11:20",
+   "start_time": "10:20",
    "course": "芝1400m",
-   "course_info": "11:20発走 芝1400m",
+   "course_info": "10:20発走 芝1400m",
    "is_past": false
   },
   "202607020703": {
