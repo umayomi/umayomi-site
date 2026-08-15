@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-14T21:15:45.607912",
+ "updated_at": "2026-08-15T21:11:47.423249",
  "race_count": 72,
  "races": {
   "202604020701": {
@@ -118,9 +118,9 @@
    "race_name": "3歳未勝利",
    "venue": "新潟",
    "race_no": 11,
-   "start_time": "17:45",
+   "start_time": "17:55",
    "course": "芝1000m",
-   "course_info": "17:45発走 芝1000m",
+   "course_info": "17:55発走 芝1000m",
    "is_past": false
   },
   "202604020712": {
@@ -371,9 +371,9 @@
    "race_name": "知床特別",
    "venue": "札幌",
    "race_no": 10,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "芝1200m",
-   "course_info": "15:00発走 芝1200m",
+   "course_info": "15:01発走 芝1200m",
    "is_past": false
   },
   "202601010711": {
@@ -493,8 +493,8 @@
    "venue": "新潟",
    "race_no": 9,
    "start_time": "16:40",
-   "course": "芝2850m",
-   "course_info": "16:40発走 芝2850m",
+   "course": "障2850m",
+   "course_info": "16:40発走 障2850m",
    "is_past": false
   },
   "202604020810": {
