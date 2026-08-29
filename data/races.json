@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-28T05:01:40.536556",
+ "updated_at": "2026-08-29T02:57:18.056733",
  "race_count": 72,
  "races": {
   "202604030301": {
@@ -195,9 +195,9 @@
    "race_name": "清洲特別",
    "venue": "中京",
    "race_no": 6,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "ダ1200m",
-   "course_info": "15:00発走 ダ1200m",
+   "course_info": "15:01発走 ダ1200m",
    "is_past": false
   },
   "202607030307": {
@@ -393,9 +393,9 @@
    "race_name": "千歳特別",
    "venue": "札幌",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "ダ1700m",
-   "course_info": "16:00発走 ダ1700m",
+   "course_info": "16:01発走 ダ1700m",
    "is_past": false
   },
   "202604030401": {
@@ -405,8 +405,8 @@
    "venue": "新潟",
    "race_no": 1,
    "start_time": "09:40",
-   "course": "芝2850m",
-   "course_info": "09:40発走 芝2850m",
+   "course": "障2850m",
+   "course_info": "09:40発走 障2850m",
    "is_past": false
   },
   "202604030402": {
