@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03T22:54:04.671855",
+ "updated_at": "2026-09-04T22:38:04.418378",
  "race_count": 72,
  "races": {
   "202606040101": {
@@ -9,8 +9,8 @@
    "venue": "中山",
    "race_no": 1,
    "start_time": "10:05",
-   "course": "ダ3200m",
-   "course_info": "10:05発走 ダ3200m",
+   "course": "障3200m",
+   "course_info": "10:05発走 障3200m",
    "is_past": false
   },
   "202606040102": {
