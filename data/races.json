@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-04T22:38:04.418378",
+ "updated_at": "2026-09-05T22:27:49.389963",
  "race_count": 72,
  "races": {
   "202606040101": {
@@ -85,9 +85,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "中山",
    "race_no": 8,
-   "start_time": "14:00",
+   "start_time": "14:01",
    "course": "ダ1200m",
-   "course_info": "14:00発走 ダ1200m",
+   "course_info": "14:01発走 ダ1200m",
    "is_past": false
   },
   "202606040109": {
@@ -96,9 +96,9 @@
    "race_name": "古作特別",
    "venue": "中山",
    "race_no": 9,
-   "start_time": "14:30",
+   "start_time": "14:31",
    "course": "芝1800m",
-   "course_info": "14:30発走 芝1800m",
+   "course_info": "14:31発走 芝1800m",
    "is_past": false
   },
   "202606040110": {
@@ -405,8 +405,8 @@
    "venue": "中山",
    "race_no": 1,
    "start_time": "10:05",
-   "course": "ダ2880m",
-   "course_info": "10:05発走 ダ2880m",
+   "course": "障2880m",
+   "course_info": "10:05発走 障2880m",
    "is_past": false
   },
   "202606040202": {
