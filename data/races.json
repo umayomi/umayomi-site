@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-10T22:51:46.372628",
+ "updated_at": "2026-09-11T22:52:41.998570",
  "race_count": 48,
  "races": {
   "202606040301": {
@@ -141,8 +141,8 @@
    "venue": "阪神",
    "race_no": 1,
    "start_time": "10:00",
-   "course": "ダ2970m",
-   "course_info": "10:00発走 ダ2970m",
+   "course": "障2970m",
+   "course_info": "10:00発走 障2970m",
    "is_past": false
   },
   "202609040302": {
