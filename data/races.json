@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-11T22:52:41.998570",
+ "updated_at": "2026-09-12T22:42:56.677547",
  "race_count": 48,
  "races": {
   "202606040301": {
@@ -140,9 +140,9 @@
    "race_name": "3歳以上障害未勝利",
    "venue": "阪神",
    "race_no": 1,
-   "start_time": "10:00",
+   "start_time": "10:01",
    "course": "障2970m",
-   "course_info": "10:00発走 障2970m",
+   "course_info": "10:01発走 障2970m",
    "is_past": false
   },
   "202609040302": {
@@ -273,8 +273,8 @@
    "venue": "中山",
    "race_no": 1,
    "start_time": "10:00",
-   "course": "ダ2880m",
-   "course_info": "10:00発走 ダ2880m",
+   "course": "障2880m",
+   "course_info": "10:00発走 障2880m",
    "is_past": false
   },
   "202606040402": {
