@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-24T23:38:58.648420",
+ "updated_at": "2026-09-25T23:42:01.919647",
  "race_count": 48,
  "races": {
   "202606040801": {
@@ -140,9 +140,9 @@
    "race_name": "2歳未勝利",
    "venue": "阪神",
    "race_no": 1,
-   "start_time": "10:00",
+   "start_time": "10:01",
    "course": "ダ1400m",
-   "course_info": "10:00発走 ダ1400m",
+   "course_info": "10:01発走 ダ1400m",
    "is_past": false
   },
   "202609040802": {
