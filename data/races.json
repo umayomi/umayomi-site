@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-03T00:04:31.203266",
+ "updated_at": "2026-10-03T23:26:47.690523",
  "race_count": 48,
  "races": {
   "202605040101": {
@@ -151,9 +151,9 @@
    "race_name": "2歳未勝利",
    "venue": "京都",
    "race_no": 2,
-   "start_time": "10:20",
+   "start_time": "10:30",
    "course": "芝1800m",
-   "course_info": "10:20発走 芝1800m",
+   "course_info": "10:30発走 芝1800m",
    "is_past": false
   },
   "202608040103": {
@@ -162,9 +162,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "京都",
    "race_no": 3,
-   "start_time": "10:50",
+   "start_time": "11:00",
    "course": "ダ1400m",
-   "course_info": "10:50発走 ダ1400m",
+   "course_info": "11:00発走 ダ1400m",
    "is_past": false
   },
   "202608040104": {
@@ -173,9 +173,9 @@
    "race_name": "2歳新馬",
    "venue": "京都",
    "race_no": 4,
-   "start_time": "11:20",
+   "start_time": "11:25",
    "course": "ダ1800m",
-   "course_info": "11:20発走 ダ1800m",
+   "course_info": "11:25発走 ダ1800m",
    "is_past": false
   },
   "202608040105": {
@@ -306,8 +306,8 @@
    "venue": "東京",
    "race_no": 4,
    "start_time": "11:35",
-   "course": "ダ3000m",
-   "course_info": "11:35発走 ダ3000m",
+   "course": "障3000m",
+   "course_info": "11:35発走 障3000m",
    "is_past": false
   },
   "202605040205": {
@@ -349,9 +349,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "東京",
    "race_no": 8,
-   "start_time": "14:00",
+   "start_time": "14:01",
    "course": "芝1800m",
-   "course_info": "14:00発走 芝1800m",
+   "course_info": "14:01発走 芝1800m",
    "is_past": false
   },
   "202605040209": {
