@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-09T00:48:16.632628",
+ "updated_at": "2026-10-10T00:23:45.460576",
  "race_count": 72,
  "races": {
   "202605040301": {
@@ -85,9 +85,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "東京",
    "race_no": 8,
-   "start_time": "14:00",
+   "start_time": "14:01",
    "course": "芝2000m",
-   "course_info": "14:00発走 芝2000m",
+   "course_info": "14:01発走 芝2000m",
    "is_past": false
   },
   "202605040309": {
@@ -174,8 +174,8 @@
    "venue": "京都",
    "race_no": 4,
    "start_time": "11:20",
-   "course": "ダ3170m",
-   "course_info": "11:20発走 ダ3170m",
+   "course": "障3170m",
+   "course_info": "11:20発走 障3170m",
    "is_past": false
   },
   "202608040305": {
