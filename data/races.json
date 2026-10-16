@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-15T23:24:27.303571",
+ "updated_at": "2026-10-16T23:06:54.256415",
  "race_count": 72,
  "races": {
   "202605040601": {
@@ -174,8 +174,8 @@
    "venue": "京都",
    "race_no": 4,
    "start_time": "11:25",
-   "course": "ダ2910m",
-   "course_info": "11:25発走 ダ2910m",
+   "course": "障2910m",
+   "course_info": "11:25発走 障2910m",
    "is_past": false
   },
   "202608040605": {
