@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-16T23:06:54.256415",
+ "updated_at": "2026-10-17T22:46:40.131619",
  "race_count": 72,
  "races": {
   "202605040601": {
@@ -107,9 +107,9 @@
    "race_name": "伊勢佐木S",
    "venue": "東京",
    "race_no": 10,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "ダ2100m",
-   "course_info": "15:00発走 ダ2100m",
+   "course_info": "15:01発走 ダ2100m",
    "is_past": false
   },
   "202605040611": {
@@ -393,9 +393,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "新潟",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "芝1000m",
-   "course_info": "16:00発走 芝1000m",
+   "course_info": "16:01発走 芝1000m",
    "is_past": false
   },
   "202605040701": {
