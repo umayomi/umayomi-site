@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-22T23:46:26.253278",
+ "updated_at": "2026-10-23T23:38:49.525720",
  "race_count": 72,
  "races": {
   "202605040801": {
@@ -107,9 +107,9 @@
    "race_name": "日本農業新聞",
    "venue": "東京",
    "race_no": 10,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "ダ1600m",
-   "course_info": "15:00発走 ダ1600m",
+   "course_info": "15:01発走 ダ1600m",
    "is_past": false
   },
   "202605040811": {
@@ -174,8 +174,8 @@
    "venue": "京都",
    "race_no": 4,
    "start_time": "11:25",
-   "course": "ダ3170m",
-   "course_info": "11:25発走 ダ3170m",
+   "course": "障3170m",
+   "course_info": "11:25発走 障3170m",
    "is_past": false
   },
   "202608040805": {
@@ -393,9 +393,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "新潟",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "芝1400m",
-   "course_info": "16:00発走 芝1400m",
+   "course_info": "16:01発走 芝1400m",
    "is_past": false
   },
   "202605040901": {
