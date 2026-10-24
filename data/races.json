@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-23T23:38:49.525720",
+ "updated_at": "2026-10-24T22:48:07.887321",
  "race_count": 72,
  "races": {
   "202605040801": {
@@ -438,8 +438,8 @@
    "venue": "東京",
    "race_no": 4,
    "start_time": "11:20",
-   "course": "ダ3000m",
-   "course_info": "11:20発走 ダ3000m",
+   "course": "障3000m",
+   "course_info": "11:20発走 障3000m",
    "is_past": false
   },
   "202605040905": {
