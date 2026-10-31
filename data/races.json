@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T00:14:32.885199",
+ "updated_at": "2026-10-31T23:51:43.423140",
  "race_count": 48,
  "races": {
   "202605041001": {
@@ -371,9 +371,9 @@
    "race_name": "秋嶺S",
    "venue": "東京",
    "race_no": 10,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "ダ1300m",
-   "course_info": "15:00発走 ダ1300m",
+   "course_info": "15:01発走 ダ1300m",
    "is_past": false
   },
   "202605041111": {
@@ -438,8 +438,8 @@
    "venue": "京都",
    "race_no": 4,
    "start_time": "11:15",
-   "course": "ダ2910m",
-   "course_info": "11:15発走 ダ2910m",
+   "course": "障2910m",
+   "course_info": "11:15発走 障2910m",
    "is_past": false
   },
   "202608041105": {
