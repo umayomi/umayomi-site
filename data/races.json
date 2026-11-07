@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T01:15:18.750105",
+ "updated_at": "2026-11-07T00:30:04.555512",
  "race_count": 72,
  "races": {
   "202605050101": {
@@ -107,9 +107,9 @@
    "race_name": "ノベンバーS",
    "venue": "東京",
    "race_no": 10,
-   "start_time": "15:00",
+   "start_time": "15:01",
    "course": "芝2000m",
-   "course_info": "15:00発走 芝2000m",
+   "course_info": "15:01発走 芝2000m",
    "is_past": false
   },
   "202605050111": {
@@ -217,9 +217,9 @@
    "race_name": "京都ジャンプ",
    "venue": "京都",
    "race_no": 8,
-   "start_time": "14:00",
+   "start_time": "14:01",
    "course": "障3170m",
-   "course_info": "14:00発走 障3170m",
+   "course_info": "14:01発走 障3170m",
    "is_past": false
   },
   "202608050109": {
@@ -393,9 +393,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "福島",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "ダ1700m",
-   "course_info": "16:00発走 ダ1700m",
+   "course_info": "16:01発走 ダ1700m",
    "is_past": false
   },
   "202605050201": {
