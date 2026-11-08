@@ -1,403 +1,7 @@
 {
- "updated_at": "2026-11-07T00:30:04.555512",
- "race_count": 72,
+ "updated_at": "2026-11-08T00:04:58.303214",
+ "race_count": 37,
  "races": {
-  "202605050101": {
-   "race_id": "202605050101",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "東京",
-   "race_no": 1,
-   "start_time": "09:55",
-   "course": "ダ1600m",
-   "course_info": "09:55発走 ダ1600m",
-   "is_past": false
-  },
-  "202605050102": {
-   "race_id": "202605050102",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "東京",
-   "race_no": 2,
-   "start_time": "10:25",
-   "course": "ダ1300m",
-   "course_info": "10:25発走 ダ1300m",
-   "is_past": false
-  },
-  "202605050103": {
-   "race_id": "202605050103",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "東京",
-   "race_no": 3,
-   "start_time": "10:55",
-   "course": "芝1400m",
-   "course_info": "10:55発走 芝1400m",
-   "is_past": false
-  },
-  "202605050104": {
-   "race_id": "202605050104",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "東京",
-   "race_no": 4,
-   "start_time": "11:25",
-   "course": "芝1800m",
-   "course_info": "11:25発走 芝1800m",
-   "is_past": false
-  },
-  "202605050105": {
-   "race_id": "202605050105",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "東京",
-   "race_no": 5,
-   "start_time": "12:15",
-   "course": "ダ1600m",
-   "course_info": "12:15発走 ダ1600m",
-   "is_past": false
-  },
-  "202605050106": {
-   "race_id": "202605050106",
-   "date": "20261107",
-   "race_name": "2歳新馬",
-   "venue": "東京",
-   "race_no": 6,
-   "start_time": "12:45",
-   "course": "ダ1300m",
-   "course_info": "12:45発走 ダ1300m",
-   "is_past": false
-  },
-  "202605050107": {
-   "race_id": "202605050107",
-   "date": "20261107",
-   "race_name": "2歳新馬",
-   "venue": "東京",
-   "race_no": 7,
-   "start_time": "13:15",
-   "course": "芝1400m",
-   "course_info": "13:15発走 芝1400m",
-   "is_past": false
-  },
-  "202605050108": {
-   "race_id": "202605050108",
-   "date": "20261107",
-   "race_name": "3歳以上2勝クラス",
-   "venue": "東京",
-   "race_no": 8,
-   "start_time": "13:50",
-   "course": "芝2000m",
-   "course_info": "13:50発走 芝2000m",
-   "is_past": false
-  },
-  "202605050109": {
-   "race_id": "202605050109",
-   "date": "20261107",
-   "race_name": "神奈川新聞杯",
-   "venue": "東京",
-   "race_no": 9,
-   "start_time": "14:25",
-   "course": "ダ2100m",
-   "course_info": "14:25発走 ダ2100m",
-   "is_past": false
-  },
-  "202605050110": {
-   "race_id": "202605050110",
-   "date": "20261107",
-   "race_name": "ノベンバーS",
-   "venue": "東京",
-   "race_no": 10,
-   "start_time": "15:01",
-   "course": "芝2000m",
-   "course_info": "15:01発走 芝2000m",
-   "is_past": false
-  },
-  "202605050111": {
-   "race_id": "202605050111",
-   "date": "20261107",
-   "race_name": "京王杯2歳S",
-   "venue": "東京",
-   "race_no": 11,
-   "start_time": "15:35",
-   "course": "芝1400m",
-   "course_info": "15:35発走 芝1400m",
-   "is_past": false
-  },
-  "202605050112": {
-   "race_id": "202605050112",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "東京",
-   "race_no": 12,
-   "start_time": "16:10",
-   "course": "芝1600m",
-   "course_info": "16:10発走 芝1600m",
-   "is_past": false
-  },
-  "202608050101": {
-   "race_id": "202608050101",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "京都",
-   "race_no": 1,
-   "start_time": "10:05",
-   "course": "ダ1800m",
-   "course_info": "10:05発走 ダ1800m",
-   "is_past": false
-  },
-  "202608050102": {
-   "race_id": "202608050102",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "京都",
-   "race_no": 2,
-   "start_time": "10:35",
-   "course": "芝1400m",
-   "course_info": "10:35発走 芝1400m",
-   "is_past": false
-  },
-  "202608050103": {
-   "race_id": "202608050103",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "京都",
-   "race_no": 3,
-   "start_time": "11:05",
-   "course": "ダ1800m",
-   "course_info": "11:05発走 ダ1800m",
-   "is_past": false
-  },
-  "202608050104": {
-   "race_id": "202608050104",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "京都",
-   "race_no": 4,
-   "start_time": "11:35",
-   "course": "芝1600m",
-   "course_info": "11:35発走 芝1600m",
-   "is_past": false
-  },
-  "202608050105": {
-   "race_id": "202608050105",
-   "date": "20261107",
-   "race_name": "2歳新馬",
-   "venue": "京都",
-   "race_no": 5,
-   "start_time": "12:25",
-   "course": "芝1800m",
-   "course_info": "12:25発走 芝1800m",
-   "is_past": false
-  },
-  "202608050106": {
-   "race_id": "202608050106",
-   "date": "20261107",
-   "race_name": "2歳新馬",
-   "venue": "京都",
-   "race_no": 6,
-   "start_time": "12:55",
-   "course": "ダ1800m",
-   "course_info": "12:55発走 ダ1800m",
-   "is_past": false
-  },
-  "202608050107": {
-   "race_id": "202608050107",
-   "date": "20261107",
-   "race_name": "3歳以上2勝クラス",
-   "venue": "京都",
-   "race_no": 7,
-   "start_time": "13:25",
-   "course": "ダ1400m",
-   "course_info": "13:25発走 ダ1400m",
-   "is_past": false
-  },
-  "202608050108": {
-   "race_id": "202608050108",
-   "date": "20261107",
-   "race_name": "京都ジャンプ",
-   "venue": "京都",
-   "race_no": 8,
-   "start_time": "14:01",
-   "course": "障3170m",
-   "course_info": "14:01発走 障3170m",
-   "is_past": false
-  },
-  "202608050109": {
-   "race_id": "202608050109",
-   "date": "20261107",
-   "race_name": "木津川特別",
-   "venue": "京都",
-   "race_no": 9,
-   "start_time": "14:35",
-   "course": "芝1600m",
-   "course_info": "14:35発走 芝1600m",
-   "is_past": false
-  },
-  "202608050110": {
-   "race_id": "202608050110",
-   "date": "20261107",
-   "race_name": "貴船S",
-   "venue": "京都",
-   "race_no": 10,
-   "start_time": "15:10",
-   "course": "ダ1200m",
-   "course_info": "15:10発走 ダ1200m",
-   "is_past": false
-  },
-  "202608050111": {
-   "race_id": "202608050111",
-   "date": "20261107",
-   "race_name": "室町S",
-   "venue": "京都",
-   "race_no": 11,
-   "start_time": "15:45",
-   "course": "ダ1200m",
-   "course_info": "15:45発走 ダ1200m",
-   "is_past": false
-  },
-  "202608050112": {
-   "race_id": "202608050112",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "京都",
-   "race_no": 12,
-   "start_time": "16:25",
-   "course": "芝2000m",
-   "course_info": "16:25発走 芝2000m",
-   "is_past": false
-  },
-  "202603030101": {
-   "race_id": "202603030101",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "福島",
-   "race_no": 1,
-   "start_time": "09:45",
-   "course": "ダ1700m",
-   "course_info": "09:45発走 ダ1700m",
-   "is_past": false
-  },
-  "202603030102": {
-   "race_id": "202603030102",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "福島",
-   "race_no": 2,
-   "start_time": "10:15",
-   "course": "芝2000m",
-   "course_info": "10:15発走 芝2000m",
-   "is_past": false
-  },
-  "202603030103": {
-   "race_id": "202603030103",
-   "date": "20261107",
-   "race_name": "2歳未勝利",
-   "venue": "福島",
-   "race_no": 3,
-   "start_time": "10:45",
-   "course": "ダ1700m",
-   "course_info": "10:45発走 ダ1700m",
-   "is_past": false
-  },
-  "202603030104": {
-   "race_id": "202603030104",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "福島",
-   "race_no": 4,
-   "start_time": "11:15",
-   "course": "ダ2400m",
-   "course_info": "11:15発走 ダ2400m",
-   "is_past": false
-  },
-  "202603030105": {
-   "race_id": "202603030105",
-   "date": "20261107",
-   "race_name": "2歳新馬",
-   "venue": "福島",
-   "race_no": 5,
-   "start_time": "12:05",
-   "course": "芝1200m",
-   "course_info": "12:05発走 芝1200m",
-   "is_past": false
-  },
-  "202603030106": {
-   "race_id": "202603030106",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "福島",
-   "race_no": 6,
-   "start_time": "12:35",
-   "course": "芝2600m",
-   "course_info": "12:35発走 芝2600m",
-   "is_past": false
-  },
-  "202603030107": {
-   "race_id": "202603030107",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "福島",
-   "race_no": 7,
-   "start_time": "13:05",
-   "course": "芝1200m",
-   "course_info": "13:05発走 芝1200m",
-   "is_past": false
-  },
-  "202603030108": {
-   "race_id": "202603030108",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "福島",
-   "race_no": 8,
-   "start_time": "13:35",
-   "course": "ダ1150m",
-   "course_info": "13:35発走 ダ1150m",
-   "is_past": false
-  },
-  "202603030109": {
-   "race_id": "202603030109",
-   "date": "20261107",
-   "race_name": "三春駒特別",
-   "venue": "福島",
-   "race_no": 9,
-   "start_time": "14:10",
-   "course": "芝2000m",
-   "course_info": "14:10発走 芝2000m",
-   "is_past": false
-  },
-  "202603030110": {
-   "race_id": "202603030110",
-   "date": "20261107",
-   "race_name": "飯坂温泉特別",
-   "venue": "福島",
-   "race_no": 10,
-   "start_time": "14:45",
-   "course": "芝1200m",
-   "course_info": "14:45発走 芝1200m",
-   "is_past": false
-  },
-  "202603030111": {
-   "race_id": "202603030111",
-   "date": "20261107",
-   "race_name": "キビタキS",
-   "venue": "福島",
-   "race_no": 11,
-   "start_time": "15:20",
-   "course": "芝1200m",
-   "course_info": "15:20発走 芝1200m",
-   "is_past": false
-  },
-  "202603030112": {
-   "race_id": "202603030112",
-   "date": "20261107",
-   "race_name": "3歳以上1勝クラス",
-   "venue": "福島",
-   "race_no": 12,
-   "start_time": "16:01",
-   "course": "ダ1700m",
-   "course_info": "16:01発走 ダ1700m",
-   "is_past": false
-  },
   "202605050201": {
    "race_id": "202605050201",
    "date": "20261108",
@@ -511,7 +115,7 @@
   "202605050211": {
    "race_id": "202605050211",
    "date": "20261108",
-   "race_name": "アルゼンチン",
+   "race_name": "AR共和国杯",
    "venue": "東京",
    "race_no": 11,
    "start_time": "15:30",
@@ -591,9 +195,9 @@
    "race_name": "2歳新馬",
    "venue": "京都",
    "race_no": 6,
-   "start_time": "13:00",
+   "start_time": "13:01",
    "course": "芝1400m",
-   "course_info": "13:00発走 芝1400m",
+   "course_info": "13:01発走 芝1400m",
    "is_past": false
   },
   "202608050207": {
@@ -613,9 +217,9 @@
    "race_name": "3歳以上2勝クラス",
    "venue": "京都",
    "race_no": 8,
-   "start_time": "14:00",
+   "start_time": "14:01",
    "course": "芝2400m",
-   "course_info": "14:00発走 芝2400m",
+   "course_info": "14:01発走 芝2400m",
    "is_past": false
   },
   "202608050209": {
@@ -702,8 +306,8 @@
    "venue": "福島",
    "race_no": 4,
    "start_time": "11:15",
-   "course": "芝2750m",
-   "course_info": "11:15発走 芝2750m",
+   "course": "障2750m",
+   "course_info": "11:15発走 障2750m",
    "is_past": false
   },
   "202603030205": {
@@ -713,8 +317,8 @@
    "venue": "福島",
    "race_no": 5,
    "start_time": "12:05",
-   "course": "芝2750m",
-   "course_info": "12:05発走 芝2750m",
+   "course": "障2750m",
+   "course_info": "12:05発走 障2750m",
    "is_past": false
   },
   "202603030206": {
@@ -789,9 +393,20 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "福島",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "芝1200m",
-   "course_info": "16:00発走 芝1200m",
+   "course_info": "16:01発走 芝1200m",
+   "is_past": false
+  },
+  "202608050411": {
+   "race_id": "202608050411",
+   "date": "20261115",
+   "race_name": "エリザベス杯",
+   "venue": "京都",
+   "race_no": 11,
+   "start_time": "15:40",
+   "course": "芝2200m",
+   "course_info": "15:40発走 芝2200m",
    "is_past": false
   }
  }
