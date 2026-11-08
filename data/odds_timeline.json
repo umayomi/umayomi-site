@@ -2397,6 +2397,201 @@
       "fuku": null
      }
     }
+   },
+   {
+    "t": "2026-11-08T10:42:35.829346+09:00",
+    "odds": {
+     "1": {
+      "tan": 40.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 4.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 43.4,
+      "fuku": null
+     },
+     "4": {
+      "tan": 14.1,
+      "fuku": null
+     },
+     "5": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "6": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 151.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.4,
+      "fuku": null
+     },
+     "9": {
+      "tan": 98.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 57.8,
+      "fuku": null
+     },
+     "11": {
+      "tan": 11.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 19.8,
+      "fuku": null
+     },
+     "13": {
+      "tan": 7.3,
+      "fuku": null
+     },
+     "14": {
+      "tan": 12.3,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.5,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:43:51.038985+09:00",
+    "odds": {
+     "1": {
+      "tan": 40.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 4.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 43.4,
+      "fuku": null
+     },
+     "4": {
+      "tan": 14.1,
+      "fuku": null
+     },
+     "5": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "6": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 151.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.4,
+      "fuku": null
+     },
+     "9": {
+      "tan": 98.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 57.8,
+      "fuku": null
+     },
+     "11": {
+      "tan": 11.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 19.8,
+      "fuku": null
+     },
+     "13": {
+      "tan": 7.3,
+      "fuku": null
+     },
+     "14": {
+      "tan": 12.3,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.5,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:45:00.715115+09:00",
+    "odds": {
+     "1": {
+      "tan": 40.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 4.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 43.4,
+      "fuku": null
+     },
+     "4": {
+      "tan": 14.1,
+      "fuku": null
+     },
+     "5": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "6": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 151.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.4,
+      "fuku": null
+     },
+     "9": {
+      "tan": 98.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 57.8,
+      "fuku": null
+     },
+     "11": {
+      "tan": 11.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 19.8,
+      "fuku": null
+     },
+     "13": {
+      "tan": 7.3,
+      "fuku": null
+     },
+     "14": {
+      "tan": 12.3,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.5,
+      "fuku": null
+     }
+    }
    }
   ]
  },
@@ -2858,6 +3053,721 @@
       "fuku": null
      }
     }
+   },
+   {
+    "t": "2026-11-08T10:42:40.592959+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:43:55.860600+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:45:05.447145+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:46:15.973305+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:47:21.803522+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:48:27.544724+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:49:22.948714+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:50:28.215590+09:00",
+    "odds": {
+     "1": {
+      "tan": 43.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 86.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 36.8,
+      "fuku": null
+     },
+     "4": {
+      "tan": 21.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.6,
+      "fuku": null
+     },
+     "6": {
+      "tan": 140.0,
+      "fuku": null
+     },
+     "7": {
+      "tan": 8.1,
+      "fuku": null
+     },
+     "8": {
+      "tan": 91.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 20.1,
+      "fuku": null
+     },
+     "10": {
+      "tan": 14.0,
+      "fuku": null
+     },
+     "11": {
+      "tan": 5.2,
+      "fuku": null
+     },
+     "12": {
+      "tan": 76.5,
+      "fuku": null
+     },
+     "13": {
+      "tan": 81.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.0,
+      "fuku": null
+     },
+     "15": {
+      "tan": 9.6,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:51:33.978935+09:00",
+    "odds": {
+     "1": {
+      "tan": 72.8,
+      "fuku": null
+     },
+     "2": {
+      "tan": 119.1,
+      "fuku": null
+     },
+     "3": {
+      "tan": 32.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 29.5,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.3,
+      "fuku": null
+     },
+     "6": {
+      "tan": 171.4,
+      "fuku": null
+     },
+     "7": {
+      "tan": 6.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 185.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "10": {
+      "tan": 13.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 4.9,
+      "fuku": null
+     },
+     "12": {
+      "tan": 126.0,
+      "fuku": null
+     },
+     "13": {
+      "tan": 161.7,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 11.0,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:52:44.750095+09:00",
+    "odds": {
+     "1": {
+      "tan": 72.8,
+      "fuku": null
+     },
+     "2": {
+      "tan": 119.1,
+      "fuku": null
+     },
+     "3": {
+      "tan": 32.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 29.5,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.3,
+      "fuku": null
+     },
+     "6": {
+      "tan": 171.4,
+      "fuku": null
+     },
+     "7": {
+      "tan": 6.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 185.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "10": {
+      "tan": 13.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 4.9,
+      "fuku": null
+     },
+     "12": {
+      "tan": 126.0,
+      "fuku": null
+     },
+     "13": {
+      "tan": 161.7,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 11.0,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:53:55.247203+09:00",
+    "odds": {
+     "1": {
+      "tan": 72.8,
+      "fuku": null
+     },
+     "2": {
+      "tan": 119.1,
+      "fuku": null
+     },
+     "3": {
+      "tan": 32.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 29.5,
+      "fuku": null
+     },
+     "5": {
+      "tan": 11.3,
+      "fuku": null
+     },
+     "6": {
+      "tan": 171.4,
+      "fuku": null
+     },
+     "7": {
+      "tan": 6.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 185.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "10": {
+      "tan": 13.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 4.9,
+      "fuku": null
+     },
+     "12": {
+      "tan": 126.0,
+      "fuku": null
+     },
+     "13": {
+      "tan": 161.7,
+      "fuku": null
+     },
+     "14": {
+      "tan": 2.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 11.0,
+      "fuku": null
+     }
+    }
    }
   ]
  },
@@ -2915,6 +3825,470 @@
      },
      "5": {
       "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:42:45.606275+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:45:56.141514+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:49:03.156241+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:52:09.935108+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:53:20.443491+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:54:30.988223+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:55:35.740839+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:56:41.433173+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:57:47.155618+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:58:52.261332+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:59:12.914292+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:00:17.880165+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 24.0,
+      "fuku": null
+     },
+     "3": {
+      "tan": 20.5,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.6,
+      "fuku": null
+     },
+     "5": {
+      "tan": 40.8,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:01:23.495720+09:00",
+    "odds": {
+     "1": {
+      "tan": 2.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 26.6,
+      "fuku": null
+     },
+     "3": {
+      "tan": 30.1,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.8,
+      "fuku": null
+     },
+     "5": {
+      "tan": 62.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:02:38.917079+09:00",
+    "odds": {
+     "1": {
+      "tan": 2.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 26.6,
+      "fuku": null
+     },
+     "3": {
+      "tan": 30.1,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.8,
+      "fuku": null
+     },
+     "5": {
+      "tan": 62.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:03:49.333027+09:00",
+    "odds": {
+     "1": {
+      "tan": 2.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 26.6,
+      "fuku": null
+     },
+     "3": {
+      "tan": 30.1,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.8,
+      "fuku": null
+     },
+     "5": {
+      "tan": 62.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.7,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:05:04.639777+09:00",
+    "odds": {
+     "1": {
+      "tan": 2.7,
+      "fuku": null
+     },
+     "2": {
+      "tan": 26.6,
+      "fuku": null
+     },
+     "3": {
+      "tan": 30.1,
+      "fuku": null
+     },
+     "4": {
+      "tan": 1.8,
+      "fuku": null
+     },
+     "5": {
+      "tan": 62.0,
       "fuku": null
      },
      "6": {
@@ -3026,6 +4400,594 @@
       "fuku": null
      }
     }
+   },
+   {
+    "t": "2026-11-08T10:42:50.305694+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:58:07.995807+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:01:28.474151+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:02:43.614024+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:03:54.045070+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:05:09.656389+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:06:15.374733+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:07:21.148718+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:08:31.644516+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:09:07.423926+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:10:12.516847+09:00",
+    "odds": {
+     "1": {
+      "tan": 4.3,
+      "fuku": null
+     },
+     "2": {
+      "tan": 18.8,
+      "fuku": null
+     },
+     "3": {
+      "tan": 17.3,
+      "fuku": null
+     },
+     "4": {
+      "tan": 9.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.0,
+      "fuku": null
+     },
+     "6": {
+      "tan": 3.8,
+      "fuku": null
+     },
+     "7": {
+      "tan": 27.8,
+      "fuku": null
+     },
+     "8": {
+      "tan": 35.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 25.3,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.2,
+      "fuku": null
+     },
+     "11": {
+      "tan": 7.2,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:11:23.158642+09:00",
+    "odds": {
+     "1": {
+      "tan": 3.4,
+      "fuku": null
+     },
+     "2": {
+      "tan": 31.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 35.2,
+      "fuku": null
+     },
+     "4": {
+      "tan": 12.9,
+      "fuku": null
+     },
+     "5": {
+      "tan": 7.2,
+      "fuku": null
+     },
+     "6": {
+      "tan": 2.5,
+      "fuku": null
+     },
+     "7": {
+      "tan": 59.3,
+      "fuku": null
+     },
+     "8": {
+      "tan": 62.0,
+      "fuku": null
+     },
+     "9": {
+      "tan": 48.9,
+      "fuku": null
+     },
+     "10": {
+      "tan": 6.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 11.5,
+      "fuku": null
+     }
+    }
    }
   ]
  },
@@ -3104,6 +5066,489 @@
    },
    {
     "t": "2026-11-08T10:27:41.443422+09:00",
+    "odds": {
+     "1": {
+      "tan": 83.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 80.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 34.0,
+      "fuku": null
+     },
+     "4": {
+      "tan": 44.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 16.9,
+      "fuku": null
+     },
+     "6": {
+      "tan": 15.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 3.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 163.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 21.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 3.1,
+      "fuku": null
+     },
+     "12": {
+      "tan": 44.2,
+      "fuku": null
+     },
+     "13": {
+      "tan": 101.9,
+      "fuku": null
+     },
+     "14": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "16": {
+      "tan": 41.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:42:55.345326+09:00",
+    "odds": {
+     "1": {
+      "tan": 83.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 80.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 34.0,
+      "fuku": null
+     },
+     "4": {
+      "tan": 44.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 16.9,
+      "fuku": null
+     },
+     "6": {
+      "tan": 15.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 3.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 163.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 21.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 3.1,
+      "fuku": null
+     },
+     "12": {
+      "tan": 44.2,
+      "fuku": null
+     },
+     "13": {
+      "tan": 101.9,
+      "fuku": null
+     },
+     "14": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "16": {
+      "tan": 41.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:58:12.670409+09:00",
+    "odds": {
+     "1": {
+      "tan": 83.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 80.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 34.0,
+      "fuku": null
+     },
+     "4": {
+      "tan": 44.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 16.9,
+      "fuku": null
+     },
+     "6": {
+      "tan": 15.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 3.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 163.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 21.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 3.1,
+      "fuku": null
+     },
+     "12": {
+      "tan": 44.2,
+      "fuku": null
+     },
+     "13": {
+      "tan": 101.9,
+      "fuku": null
+     },
+     "14": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "16": {
+      "tan": 41.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:01:33.179487+09:00",
+    "odds": {
+     "1": {
+      "tan": 83.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 80.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 34.0,
+      "fuku": null
+     },
+     "4": {
+      "tan": 44.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 16.9,
+      "fuku": null
+     },
+     "6": {
+      "tan": 15.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 3.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 163.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 21.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 3.1,
+      "fuku": null
+     },
+     "12": {
+      "tan": 44.2,
+      "fuku": null
+     },
+     "13": {
+      "tan": 101.9,
+      "fuku": null
+     },
+     "14": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "16": {
+      "tan": 41.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:04:44.827242+09:00",
+    "odds": {
+     "1": {
+      "tan": 83.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 80.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 34.0,
+      "fuku": null
+     },
+     "4": {
+      "tan": 44.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 16.9,
+      "fuku": null
+     },
+     "6": {
+      "tan": 15.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 3.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 163.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 21.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 3.1,
+      "fuku": null
+     },
+     "12": {
+      "tan": 44.2,
+      "fuku": null
+     },
+     "13": {
+      "tan": 101.9,
+      "fuku": null
+     },
+     "14": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "16": {
+      "tan": 41.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:07:56.847508+09:00",
+    "odds": {
+     "1": {
+      "tan": 83.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 80.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 34.0,
+      "fuku": null
+     },
+     "4": {
+      "tan": 44.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 16.9,
+      "fuku": null
+     },
+     "6": {
+      "tan": 15.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 3.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 163.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 21.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 3.1,
+      "fuku": null
+     },
+     "12": {
+      "tan": 44.2,
+      "fuku": null
+     },
+     "13": {
+      "tan": 101.9,
+      "fuku": null
+     },
+     "14": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "16": {
+      "tan": 41.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:11:03.335327+09:00",
+    "odds": {
+     "1": {
+      "tan": 83.1,
+      "fuku": null
+     },
+     "2": {
+      "tan": 80.7,
+      "fuku": null
+     },
+     "3": {
+      "tan": 34.0,
+      "fuku": null
+     },
+     "4": {
+      "tan": 44.3,
+      "fuku": null
+     },
+     "5": {
+      "tan": 16.9,
+      "fuku": null
+     },
+     "6": {
+      "tan": 15.6,
+      "fuku": null
+     },
+     "7": {
+      "tan": 3.9,
+      "fuku": null
+     },
+     "8": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "9": {
+      "tan": 163.7,
+      "fuku": null
+     },
+     "10": {
+      "tan": 21.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 3.1,
+      "fuku": null
+     },
+     "12": {
+      "tan": 44.2,
+      "fuku": null
+     },
+     "13": {
+      "tan": 101.9,
+      "fuku": null
+     },
+     "14": {
+      "tan": 4.1,
+      "fuku": null
+     },
+     "15": {
+      "tan": 14.6,
+      "fuku": null
+     },
+     "16": {
+      "tan": 41.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T11:12:13.962726+09:00",
     "odds": {
      "1": {
       "tan": 83.1,
@@ -3295,6 +5740,128 @@
      },
      "14": {
       "tan": 52.4,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:43:00.364166+09:00",
+    "odds": {
+     "1": {
+      "tan": 9.6,
+      "fuku": null
+     },
+     "2": {
+      "tan": 53.5,
+      "fuku": null
+     },
+     "3": {
+      "tan": 54.1,
+      "fuku": null
+     },
+     "4": {
+      "tan": 47.4,
+      "fuku": null
+     },
+     "5": {
+      "tan": 121.5,
+      "fuku": null
+     },
+     "6": {
+      "tan": 1.9,
+      "fuku": null
+     },
+     "7": {
+      "tan": 13.3,
+      "fuku": null
+     },
+     "8": {
+      "tan": 15.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 5.6,
+      "fuku": null
+     },
+     "10": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 32.4,
+      "fuku": null
+     },
+     "12": {
+      "tan": 17.1,
+      "fuku": null
+     },
+     "13": {
+      "tan": 14.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 51.8,
+      "fuku": null
+     }
+    }
+   },
+   {
+    "t": "2026-11-08T10:58:17.469375+09:00",
+    "odds": {
+     "1": {
+      "tan": 9.6,
+      "fuku": null
+     },
+     "2": {
+      "tan": 53.5,
+      "fuku": null
+     },
+     "3": {
+      "tan": 54.1,
+      "fuku": null
+     },
+     "4": {
+      "tan": 47.4,
+      "fuku": null
+     },
+     "5": {
+      "tan": 121.5,
+      "fuku": null
+     },
+     "6": {
+      "tan": 1.9,
+      "fuku": null
+     },
+     "7": {
+      "tan": 13.3,
+      "fuku": null
+     },
+     "8": {
+      "tan": 15.7,
+      "fuku": null
+     },
+     "9": {
+      "tan": 5.6,
+      "fuku": null
+     },
+     "10": {
+      "tan": 16.1,
+      "fuku": null
+     },
+     "11": {
+      "tan": 32.4,
+      "fuku": null
+     },
+     "12": {
+      "tan": 17.1,
+      "fuku": null
+     },
+     "13": {
+      "tan": 14.4,
+      "fuku": null
+     },
+     "14": {
+      "tan": 51.8,
       "fuku": null
      }
     }
