@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T01:34:37.091989",
+ "updated_at": "2026-11-14T01:08:14.352093",
  "race_count": 72,
  "races": {
   "202605050301": {
@@ -82,7 +82,7 @@
   "202605050308": {
    "race_id": "202605050308",
    "date": "20261114",
-   "race_name": "秋陽ジャンプ",
+   "race_name": "秋陽JS",
    "venue": "東京",
    "race_no": 8,
    "start_time": "13:45",
@@ -140,9 +140,9 @@
    "race_name": "2歳未勝利",
    "venue": "京都",
    "race_no": 1,
-   "start_time": "10:00",
+   "start_time": "10:01",
    "course": "ダ1400m",
-   "course_info": "10:00発走 ダ1400m",
+   "course_info": "10:01発走 ダ1400m",
    "is_past": false
   },
   "202608050302": {
@@ -228,9 +228,9 @@
    "race_name": "天橋立S",
    "venue": "京都",
    "race_no": 9,
-   "start_time": "14:30",
+   "start_time": "14:31",
    "course": "ダ1800m",
-   "course_info": "14:30発走 ダ1800m",
+   "course_info": "14:31発走 ダ1800m",
    "is_past": false
   },
   "202608050310": {
@@ -247,7 +247,7 @@
   "202608050311": {
    "race_id": "202608050311",
    "date": "20261114",
-   "race_name": "デイリー2S",
+   "race_name": "デイリー2歳",
    "venue": "京都",
    "race_no": 11,
    "start_time": "15:45",
@@ -338,9 +338,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "福島",
    "race_no": 7,
-   "start_time": "13:00",
+   "start_time": "13:01",
    "course": "ダ1700m",
-   "course_info": "13:00発走 ダ1700m",
+   "course_info": "13:01発走 ダ1700m",
    "is_past": false
   },
   "202603030308": {
@@ -393,9 +393,9 @@
    "race_name": "3歳以上1勝クラス",
    "venue": "福島",
    "race_no": 12,
-   "start_time": "16:00",
+   "start_time": "16:01",
    "course": "芝1200m",
-   "course_info": "16:00発走 芝1200m",
+   "course_info": "16:01発走 芝1200m",
    "is_past": false
   },
   "202605050401": {
